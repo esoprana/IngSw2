@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>My uni site</title>
+        <link rel="stylesheet" 
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" 
+		integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" 
+		crossorigin="anonymous">
+	</head>
+<body style="background-color:#808080">
+
+<div class="container-fluid">
+	<div class="row">
+		<aside class="col-2">
+			<form>
+				<div class="form-group">		
+				    <label for="dipartimento" class="control-label"><h4>Dipartimento: </h4></label>
+					<div>
+						<select name="dipartimento" id="dipartimentiSelect" ></select>
+					</div>  	
+				</div>
+				<div class="form-group">
+				    <label for="corso" class="control-label"><h4>Corso: </h4></label>
+					<div>
+						<select name="corso" id="corsiSelect"></select>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="anno" class="control-label"><h4>Anno: </h4></label>
+					<div>
+						<select name="anno" id="anniSelect"></select>
+					</div>
+				</div>
+				<div class="form-group">
+				<label for="lezione" class="control-label"><h4>Lezione: </h4></label>
+					<div>
+						<fieldset id="checklezione">
+					</div>	
+					</fieldset>
+				</div>
+	    	</form> 
+		</aside>
+	    <div class="col-10">
+			<div class="row">
+				<h4>Orario</h4><br>
+				<table>
+				
+				</table>
+			</div>
+			
+			<div class="row">
+				<div class="col-3">
+					<h4>Avvisi</h4><br>
+					<ul class="list-group" name="avviso" id="listavvisi"></ul>				
+				</div>
+				<div class="col-3">
+					<h4>Esami</h4><br>
+					<ul class="list-group" name="esame" id="listesami"></ul>		
+				</div>
+				<div class="col-3">
+					<h4>Eventi</h4><br>
+					<form>
+						<ul class="list-group" name="evento" id="listeventi">
+						</ul>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- script dei dipartimenti -->
+<script>
+var dipartimenti = [
+	{
+		nome: "dipartimento1",
+		codice: "dip001"
+	},
+	{
+		nome: "dipartimento2",
+		codice: "dip002"
+	},
+	{
+		nome: "dipartimento3",
+		codice: "dip002"
+	}
+];
+var dipartimentiSelect = document.getElementById('dipartimentiSelect');
+dipartimenti.forEach((dipartimento) => {
+	var option = document.createElement('option');
+	option.value = dipartimento.codice;
+	option.innerHTML = dipartimento.nome;
+	dipartimentiSelect.append(option);
+});
+</script>
+
+<!-- script dei corsi -->
+<script>
+var corsi = [
+	{
+		nome: "corso1",
+		codice: "cor001"
+	},
+	{
+		nome: "corso2",
+		codice: "cor002"
+	},
+	{
+		nome: "corso3",
+		codice: "cor003"
+	}
+];
+var corsiSelect = document.getElementById('corsiSelect');
+corsi.forEach((corso) => {
+	var option = document.createElement('option');
+	option.value = corso.codice;
+	option.innerHTML = corso.nome;
+	corsiSelect.append(option);
+});
+</script>
+
+<!-- script degli anni -->
+<script>
+var anni = [
+	{
+		nome: "anno1",
+		codice: "ann001"
+	},
+	{
+		nome: "anno3",
+		codice: "ann002"
+	},
+	{
+		nome: "anno2",
+		codice: "ann003"
+	}
+];
+var anniSelect = document.getElementById('anniSelect');
+anni.forEach((anno) => {
+	var option = document.createElement('option');
+	option.value = anno.codice;
+	option.innerHTML = anno.nome;
+	anniSelect.append(option);
+});
+</script>
+
+<!-- script degli lezione -->
+<script>
+var lezioni = [
+	{
+		nome: "lezione1",
+		codice: "lez001"
+	},
+	{
+		nome: "lezione2",
+		codice: "lez002"
+	},
+	{
+		nome: "lezione3",
+		codice: "lez003"
+	}
+];
+var checklezione = document.getElementById('checklezione');
+lezioni.forEach((lezione) => {
+	var checkbox = document.createElement('input');
+	checkbox.type = "checkbox";
+	checkbox.value = lezione.codice;
+	checkbox.name = lezione.codice;
+	checkbox.checked = "checked";
+	checkbox.innerHTML = lezione.nome;
+	checklezione.append(checkbox,document.createTextNode(lezione.nome),document.createElement('br'));
+});
+</script>
+
+<!-- script degli avvisi -->
+<script>
+var avvisi = [
+	{
+		nome: "avviso1",
+		codice: "avv001"
+	},
+	{
+		nome: "avviso2",
+		codice: "avv002"
+	},
+	{
+		nome: "avviso3",
+		codice: "avv003"
+	}
+];
+var listavvisi = document.getElementById('listavvisi');
+avvisi.forEach((avviso) => {
+	var li = document.createElement('li');
+	li.value = avviso.codice;
+	li.innerHTML = avviso.nome;
+	li.className="list-group-item list-group-item-dark";
+	listavvisi.append(li);
+});
+</script>
+
+<!-- script degli esami -->
+<script>
+var esami = [
+	{
+		nome: "esame1",
+		data_inizio: "11:00,03/01/18",
+		data_fine: "13:00,03/01/18",
+		aula: "a101",
+		codice: "esa001"
+	},
+	{
+		nome: "esame2",
+		data_inizio: "11:00,03/01/18",
+		data_fine: "13:00,03/01/18",
+		aula: "a102",
+		codice: "esa002"
+	},
+	{
+		nome: "esame3",
+		data_inizio: "11:00,03/01/18",
+		data_fine: "13:00,03/01/18",
+		aula: "a103",
+		codice: "esa003"
+	}
+];
+	var listesami = document.getElementById('listesami');
+	esami.forEach((esame) => {
+		var titolo = document.createElement('h5');
+		titolo.className = "mb-1";
+		titolo.innerHTML = esame.nome;
+		
+		var divPrincipale = document.createElement('div');
+		divPrincipale.className="d-flex w-100 justify-content-between";
+		divPrincipale.append(titolo);
+
+		var testo = document.createElement('p');
+		testo.className = "mb-1";
+		testo.innerHTML = esame.aula;
+			
+		var data = document.createElement('small');
+		data.className = "text-muted";
+		data.innerHTML = esame.data_inizio + " - " + esame.data_fine;
+		
+		var li = document.createElement('li');
+		li.className="list-group-item  list-group-item-dark flex-column align-items-start";
+		li.append(divPrincipale,testo,data);
+
+
+		listesami.append(li);
+	});
+</script>
+
+<!-- script degli eventi -->
+<script>
+var eventi = [
+	{
+		nome: "evento1",
+		luogo: "via Roma 1, Trento",
+		data_inizio: "11:00,01/03/18",
+		data_fine: "13:00,01/03/18",
+		codice: "eve001"
+	},
+	{
+		nome: "evento2",
+		luogo: "via Torino 1, Trento",
+		data_inizio: "11:00,02/03/18",
+		data_fine: "13:00,02/03/18",
+		codice: "eve002"
+	},
+	{
+		nome: "evento3",
+		luogo: "via Milano 1, Trento",
+		data_inizio: "11:00,03/03/18",
+		data_fine: "13:00,0/03/18",
+		codice: "eve003"
+	}
+];
+var listeventi = document.getElementById('listeventi');
+	eventi.forEach((evento) => {
+		var titolo = document.createElement('h5');
+		titolo.className = "mb-1";
+		titolo.innerHTML = evento.nome;
+		
+		var divPrincipale = document.createElement('div');
+		divPrincipale.className="d-flex w-100 justify-content-between";
+		divPrincipale.append(titolo);
+
+		var testo = document.createElement('p');
+		testo.className = "mb-1";
+		testo.innerHTML = evento.luogo;
+			
+		var data = document.createElement('small');
+		data.className = "text-muted";
+		data.innerHTML = evento.data_inizio + " - " + evento.data_fine;
+		
+		var li = document.createElement('li');
+		li.className="list-group-item  list-group-item-dark flex-column align-items-start";
+		li.append(divPrincipale,testo,data);
+
+
+		listeventi.append(li);
+	});
+</script>
+
+
+
+</body>
+</html>
