@@ -13,6 +13,7 @@ exports.getCal = (lang,anno,anno2,codes,corso,date) => {
 	form.append('ar_codes_',codes.join('|'));
 	form.append('ar_select_',(new Array(codes.length)).fill(true).join('|'));
 	form.append('corso',corso);
+	form.append('corso',corso);
 	form.append('date',date);
 	form.append('form-type','corso');
 
