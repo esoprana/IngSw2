@@ -9,9 +9,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "escodegen": "^1.9.0",
     "esprima": "^4.0.0",
     "express": "^4.16.2",
-    "node-fetch": "^1.7.3"
+    "node-fetch": "^1.7.3",
+    "static-eval": "^2.0.0"
   }
 }
