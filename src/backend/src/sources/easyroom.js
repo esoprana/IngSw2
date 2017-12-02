@@ -1,6 +1,8 @@
-const fetch = require('node-fetch');
-const parse = require('esprima').parse;
-const static_eval = require('static-eval')
+"use strict";
+
+const fetch = require('node-fetch'),
+	parse = require('esprima').parse,
+	static_eval = require('static-eval');
 
 /**
  * Funzione che confronta due oggetti e indica se hanno lo stesso tipo e se oggetti le stesse chiavi e gli stessi valori corrispondenti
@@ -43,25 +45,21 @@ function _objectEqual(a,b){
 	return ris;
 }
 
+
 /**
  * @typedef {Object.<
- *				anno,
+ *				codice_cdl,
  *				{{
- *					label : string,
- *					elenco:
- *						Array.<
- *							{Object.<
- *								codice_cdl,
- *								{{
- *									label: string,
- *									elenco_anni:
- *										{Object.<
- *											codice_percorso,
- *											Array.<{label: string}>
- *											>
- *										}
- *								}}>
- *							}>
+ *					label: string,
+ *					elenco_anni:
+ *						{Object.<
+ *							codice_percorso,
+ *							{{
+ *								label: string[],
+ *								elenco_insegnamenti: string[]
+ *							}}
+ *							>
+ *						}
  *				}}>
  *			} CorsiObj
  */
@@ -77,86 +75,63 @@ function _objectEqual(a,b){
  * @throws stringa con descrizione dell'errore
  */
 function _generateCorsi(elenco_anni_corsi){
+	// Funzione per accedere all'ultimo elemento di un array
+	function last(arr){
+		return arr[arr.length -1];
+	}
+
 	// Trasformo elenco_anni_corsi da
 	// [{
-	//		label: <label>,
-	//		valore: <anno>,
-	//		elenco: <elenco_corsi_di_laurea>
+	//		label: <nome_corso>,
+	//		valore: <codice_corso>,
+	//		elenco_anni: <elenco_anni>
 	//	},...]
 	// a
-	// { <anno>: {label: <label>, elenco: <trasformazione elenco_corsi_di_laurea>},... }
-	return elenco_anni_corsi.reduce((anni,annoScolastico) => {
-		// Trasformo elenco_corsi_di_laurea da
+	// { <codice_corso>: {label: <nome_corso>, elenco_anni: <trasformazione elenco_anni>},... }
+	return elenco_anni_corsi.reduce((elenco,corso) => {
+		// Trasformo elenco_anni da
 		// [{
-		//		label: <nome_corso>,
-		//		valore: <codice_corso>,
-		//		elenco_anni: <elenco_anni>
+		//		label: <label_anno>,
+		//		valore: <codice_anno_corso>,
 		//	},...]
 		// a
-		// { <codice_corso>: {label: <nome_corso>, elenco_anni: <trasformazione elenco_anni>},... }
-		const corsi = annoScolastico.elenco.reduce((elenco,corso) => {
-			// Trasformo elenco_anni da
-			// [{
-			//		label: <label_anno>,
-			//		valore: <codice_anno_corso>,
-			//	},...]
-			// a
-			// { <codice_anno_corso>: [{label: <label_anno>},...],... }
-			const anniCorso = corso.elenco_anni.reduce((x,annoCorso) => {
-				const nuovoValore = {
-					label: annoCorso.label
-				};
-
-				// Se il codice_anno_corso è già presente non creo un nuovo array ma aggiungo i dati
-				// a quello esistente mentre se codice_anno_corso non è già esistene creo un nuovo array
-				if (x[annoCorso.valore] !== undefined){
-					if(!x[annoCorso.valore].some((el)=> _objectEqual(el,nuovoValore))){
-						x[annoCorso.valore].push(nuovoValore);
-					}
-				} else {
-					x[annoCorso.valore] = [nuovoValore];
-				}
-
-				return x;
-			},{});
-
-			const nuovoValore = {
-				label: corso.label,
-				elenco_anni: anniCorso
-			};
-
-			if (elenco[corso.valore] !== undefined){
-				if(!_objectEqual(elenco[corso.valore],nuovoValore)) {
-					// In caso di codici duplicati che non hanno valori corrispondenti identici
-					// restituisco un errore
-					throw "Doppia occorrenza del corso " + corso.valore +
-						" nell'anno " + annoScolastico.valore +
-						" con oggetti diversi.\n";
+		// { <codice_anno_corso>: [{label: <label_anno>},...],... }
+		const anniCorso = corso.elenco_anni
+			.filter((codice) => !(last(codice.valore.split('|')) == 0))
+			.reduce((x,annoCorso) => {
+			// Se il codice_anno_corso è già presente non creo un nuovo array ma aggiungo i dati
+			// a quello esistente mentre se codice_anno_corso non è già esistene creo un nuovo array
+			if (x[annoCorso.valore] !== undefined){
+				if(!x[annoCorso.valore].label.some((el)=> _objectEqual(el,annoCorso.label))){
+					x[annoCorso.valore].label.push(annoCorso.label);
 				}
 			} else {
-				elenco[corso.valore] = nuovoValore;
+				x[annoCorso.valore] = {
+					label: [annoCorso.label]
+				};
 			}
 
-			return elenco;
+			return x;
 		},{});
 
 		const nuovoValore = {
-			label: annoScolastico.label,
-			elenco: corsi
+			label: corso.label,
+			elenco_anni: anniCorso
 		};
 
-		if(anni[annoScolastico.valore] !== undefined) {
-			if(!_objectEqual(anni[annoScolastico.valore],nuovoValore)) {
-				// In caso di codici duplicati che non hanno valori corrispondenti
-				// identici restituisco un errore
-				throw "Doppia occorrenza dell'anno " + annoScolastico.valore +
+		if (elenco[corso.valore] !== undefined){
+			if(!_objectEqual(elenco[corso.valore],nuovoValore)) {
+				// In caso di codici duplicati che non hanno valori corrispondenti identici
+				// restituisco un errore
+				throw "Doppia occorrenza del corso " + corso.valore +
+					" nell'anno " + annoScolastico.valore +
 					" con oggetti diversi.\n";
 			}
 		} else {
-			anni[annoScolastico.valore] = nuovoValore;
+			elenco[corso.valore] = nuovoValore;
 		}
 
-		return anni;
+		return elenco;
 	},{});
 }
 
@@ -207,18 +182,10 @@ function _generateSedi(elenco_sedi){
 	},{});
 }
 
-
 /**
  * @typedef {Object.<
- *				anno,
- *				{{
- *					label : string,
- *					elenco :
- *						{Object.<
- *							codice_corso,
- *							{{label: string}}
- *						>}
- *				}}
+ *				codice_attivita,
+ *				{{label: string}}
  *			>} AttivitaObj
  */
 
@@ -233,73 +200,38 @@ function _generateSedi(elenco_sedi){
  * @throws stringa con descrizione dell'errore
  */
 function _generateActivities(elenco_anni_attivita){
-	// Trasformo elenco_anni_attivita da
+	// Trasformo da elenco_anni_attivita
 	// [{
-	//		label: <label_anno>,
-	//		valore: <anno>,
-	//		elenco: <elenco_attivita>
+	//		label: <label_attivita>,
+	//		valore: <codice_attivita>,
 	//	},...]
 	// a
-	// { <anno>: {label: <label_anno>, elenco: <trasformazione elenco_attivita>},... }
-	return elenco_anni_attivita.reduce((ris,annoScolastico) => {
-		// Trasformo da elenco_attivita
-		// [{
-		//		label: <label_attivita>,
-		//		valore: <codice_attivita>,
-		//	},...]
-		// a
-		// { <codice_attivita>: {label: <label_attivita>},... }
-		const elenco_anni = annoScolastico.elenco.reduce((elenco,attivita) => {
-			const nuovoValore = {
-				label: attivita.label
-			};
-
-			if(elenco[attivita.valore] !== undefined){
-				if(!_objectEqual(elenco[attivita.valore],nuovoValore)) {
-					// In caso di codici duplicati che non hanno valori corrispondenti
-					// identici restituisco un errore
-					throw "Doppia occorrenza dell'attività " + attivita.valore +
-						" nell'anno " + annoScolastico.valore +
-						" con oggetti diversi.\n";
-				}
-			} else {
-				elenco[attivita.valore] = nuovoValore;
-			}
-
-			return elenco;
-		},{});
-
+	// { <codice_attivita>: {label: <label_attivita>},... }
+	return elenco_anni_attivita.reduce((elenco,attivita) => {
 		const nuovoValore = {
-			label: annoScolastico.label,
-			elenco: elenco_anni
+			label: attivita.label
 		};
 
-		if(ris[annoScolastico.valore] !== undefined) {
-			if(!_objectEqual(ris[annoScolastico.valore],nuovoValore)) {
+		if(elenco[attivita.valore] !== undefined){
+			if(!_objectEqual(elenco[attivita.valore],nuovoValore)) {
 				// In caso di codici duplicati che non hanno valori corrispondenti
 				// identici restituisco un errore
-				throw "Doppia occorrenza dell'anno " + annoScolastico.valore +
+				throw "Doppia occorrenza dell'attività " + attivita.valore +
+					" nell'anno " + annoScolastico.valore +
 					" con oggetti diversi.\n";
 			}
 		} else {
-			ris[annoScolastico.valore] = nuovoValore;
+			elenco[attivita.valore] = nuovoValore;
 		}
 
-		return ris;
+		return elenco;
 	},{});
 }
 
 /**
  * @typedef {Object.<
- *				anno,
- *				{{
- *					label : string,
- *					elenco :
- *						{Object.<
- *							codice_docente,
- *							{{label: string}}
- *						>}
- *				}}
+ *				codice_docente,
+ *				{{label: string}}
  *			>} DocentiObj
  */
 
@@ -316,89 +248,55 @@ function _generateActivities(elenco_anni_attivita){
 function _generateDocenti(elenco_anni_docenti){
 	// Trasformo da elenco_anni_docenti
 	// [{
-	//		label: <label_anno>,
-	//		valore: <anno>,
-	//		elenco: <elenco_docenti>
+	//		label: <nome_docente>,
+	//		valore: <codice_docente>,
 	//	},...]
 	// a
-	// { <anno>: {label: <label_anno>, elenco: <trasformazione elenco_docenti>},... }
-	return elenco_anni_docenti.reduce((ris,annoScolastico) => {
-		// Trasformo da elenco_docenti
-		// [{
-		//		label: <nome_docente>,
-		//		valore: <codice_docente>,
-		//	},...]
-		// a
-		// { <codice_docente>: {label: <nome_docente>},... }
-		const elenco_docenti = annoScolastico.elenco.reduce((elenco,docente) => {
-			// Usiamo una versione modificata del codice docente per prevenire
-			// conversioni a Number(perdendo i 0 all'inizio del numero es:"001")
-			const codice_docente = "D".concat(docente.valore);
-			const nuovoValore = {
-				label: docente.label,
-			};
-
-			if(elenco[codice_docente] !== undefined){
-				if(!_objectEqual(elenco[codice_docente],nuovoValore)) {
-					// In caso di codici duplicati che non hanno valori corrispondenti
-					// identici restituisco un errore
-					throw "Doppia occorrenza del docente " + codice_docente +
-						" nell'anno " +  annoScolastico.valore +
-						" con oggetti diversi.\n";
-				}
-			} else {
-				elenco[codice_docente] = nuovoValore;
-			}
-
-			return elenco;
-		},{});
-
+	// { <codice_docente>: {label: <nome_docente>},... }
+	return elenco_anni_docenti.reduce((elenco,docente) => {
+		// Usiamo una versione modificata del codice docente per prevenire
+		// conversioni a Number(perdendo i 0 all'inizio del numero es:"001")
+		const codice_docente = "D".concat(docente.valore);
 		const nuovoValore = {
-			label: annoScolastico.label,
-			elenco: elenco_docenti
+			label: docente.label,
 		};
 
-		if(ris[annoScolastico.valore] !== undefined) {
-			if(!_objectEqual(ris[annoScolastico.valore],nuovoValore)) {
+		if(elenco[codice_docente] !== undefined){
+			if(!_objectEqual(elenco[codice_docente],nuovoValore)) {
 				// In caso di codici duplicati che non hanno valori corrispondenti
 				// identici restituisco un errore
-				throw "Doppia occorrenza dell'anno" + annoScolastico.valore +
+				throw "Doppia occorrenza del docente " + codice_docente +
+					" nell'anno " +  annoScolastico.valore +
 					" con oggetti diversi.\n";
 			}
 		} else {
-			ris[annoScolastico.valore] = nuovoValore;
+			elenco[codice_docente] = nuovoValore;
 		}
 
-		return ris;
+		return elenco;
 	},{});
 }
 
 /**
- * @typedef {Object.<
- *				anno,
- *				{{
- *					label : string,
- *					elenco :
- *						{Object.<
- *							codice_cdl,
- *							{{
- *								label: string,
- *								elenco:
- *									{Object.<
- *										codice_percorso,
- *										{{
- *											label: string,
- *											elenco_sessioni:
- *												{Object.<
- *													codice_sessione,
- *													{{label: string}}
- *												>}
- *										}}
- *									>}
- *							}}
- *						>}
- *				}}
- *			>} CDLObj
+ * @typedef
+ *	{Object.<
+ *		codice_cdl,
+ *		{{
+ *			label: string[],
+ *			elenco:
+ *				{Object.<
+ *					codice_percorso,
+ *					{{
+ *						label: string,
+ *						elenco_sessioni:
+ *							{Object.<
+ *								codice_sessione,
+ *								{{label: string}}
+ *							>}
+ *					}}
+ *				>}
+ *		}}
+ *	>} CDLObj
  */
 
 /**
@@ -414,141 +312,108 @@ function _generateDocenti(elenco_anni_docenti){
 function _generateCDL(et_anni_elenco_cdl){
 	// Trasformo et_anni_elenco_cdl da
 	// [{
-	//		label: <label_anno>,
-	//		valore: <anno>,
-	//		elenco: <elenco_cdl>
+	//		label: <label_cdl>,
+	//		valore: <codice_cdl>,
+	//		elenco: <elenco_anni>
 	//	},...]
 	// a
-	// { <anno>: {label: <label_anno>, elenco: <trasformazione elenco_cdl>},... }
-	return et_anni_elenco_cdl.reduce((ris,annoScolastico) => {
-		// Trasformo elenco_cdl da
+	// { <codice_cdl>: {label: <label_cdl>, elenco: <trasformazione elenco_anni>},... }
+	return et_anni_elenco_cdl.reduce((cdls,cdl) => {
+		// Trasformo elenco_anni da
 		// [{
-		//		label: <label_cdl>,
-		//		valore: <codice_cdl>,
-		//		elenco: <elenco_anni>
+		//		label: <label_anno_cdl>,
+		//		valore: <codice_anno_cdl>,
+		//		elenco_sessioni: <elenco_sessioni>
 		//	},...]
-		// a
-		// { <codice_cdl>: {label: <label_cdl>, elenco: <trasformazione elenco_anni>},... }
-		const elenco = annoScolastico.elenco.reduce((cdls,cdl) => {
-			// Trasformo elenco_anni da
+		// in
+		// { <codice_anno_cdl>: {label: <label_anno_cdl>, elenco: <trasformazione elenco_sessioni>},... }
+		const anni_cdl = cdl.elenco_anni.reduce((anni,anno) => {
+			// Trasformo elenco_sessioni da
 			// [{
-			//		label: <label_anno_cdl>,
-			//		valore: <codice_anno_cdl>,
-			//		elenco_sessioni: <elenco_sessioni>
+			//		label: <label_sessione>,
+			//		valore: <codice_sessione>
 			//	},...]
 			// in
-			// { <codice_anno_cdl>: {label: <label_anno_cdl>, elenco: <trasformazione elenco_sessioni>},... }
-			const anni_cdl = cdl.elenco_anni.reduce((anni,anno) => {
-				// Trasformo elenco_sessioni da
-				// [{
-				//		label: <label_sessione>,
-				//		valore: <codice_sessione>
-				//	},...]
-				// in
-				// { <codice_sessione>: {label: <label_sessione>},... }
-				const elenco_sessioni = anno.elenco_sessioni.reduce((sessioni,sessione) => {
-					const nuovoValore = {
-						label: sessione.label
-					};
-
-					if(sessioni[sessione.valore] !== undefined){
-						if(!_objectEqual(sessioni[sessione.valore],nuovoValore)) {
-							// In caso di codici duplicati che non hanno valori corrispondenti
-							// identici restituisco un errore
-							throw "Doppia occorrenza della sessione" + sessione.valore +
-								" nell'anno/percorso " +  anno.valore +
-								" del cdl "+ cdl.valore +
-								" dell'anno "+ annoScolastico.valore +
-								" con oggetti diversi.\n";
-						}
-					} else {
-						sessioni[sessione.valore] = nuovoValore;
-					}
-
-					return sessioni;
-				},{});
-
+			// { <codice_sessione>: {label: <label_sessione>},... }
+			const elenco_sessioni = anno.elenco_sessioni.reduce((sessioni,sessione) => {
 				const nuovoValore = {
-					label: anno.label,
-					elenco_sessioni: elenco_sessioni
+					label: sessione.label
 				};
 
-				if(anni[anno.valore] !== undefined){
-					if(!_objectEqual(anni[anno.valore],nuovoValore)) {
+				if(sessioni[sessione.valore] !== undefined){
+					if(!_objectEqual(sessioni[sessione.valore],nuovoValore)) {
 						// In caso di codici duplicati che non hanno valori corrispondenti
 						// identici restituisco un errore
-						throw "Doppia occorrenza dell'anno/percorso " +  anno.valore
-							+ " del cdl "+ cdl.valore +
+						throw "Doppia occorrenza della sessione" + sessione.valore +
+							" nell'anno/percorso " +  anno.valore +
+							" del cdl "+ cdl.valore +
 							" dell'anno "+ annoScolastico.valore +
 							" con oggetti diversi.\n";
 					}
 				} else {
-					anni[anno.valore] = nuovoValore;
+					sessioni[sessione.valore] = nuovoValore;
 				}
 
-				return anni;
+				return sessioni;
 			},{});
 
 			const nuovoValore = {
-				label: cdl.label,
-				elenco: anni_cdl
+				label: anno.label,
+				elenco_sessioni: elenco_sessioni
 			};
 
-			if(cdls[cdl.valore] !== undefined) {
-				if(!_objectEqual(cdls[cdl.valore],nuovoValore)) {
+			if(anni[anno.valore] !== undefined){
+				if(!_objectEqual(anni[anno.valore],nuovoValore)) {
 					// In caso di codici duplicati che non hanno valori corrispondenti
 					// identici restituisco un errore
-					throw "Doppia occorrenza del cdl "+ cdl.valore +
+					throw "Doppia occorrenza dell'anno/percorso " +  anno.valore
+						+ " del cdl "+ cdl.valore +
 						" dell'anno "+ annoScolastico.valore +
 						" con oggetti diversi.\n";
 				}
 			} else {
-				cdls[cdl.valore] = nuovoValore;
+				anni[anno.valore] = nuovoValore;
 			}
 
-			return cdls;
+			return anni;
 		},{});
 
 		const nuovoValore = {
-			label: annoScolastico.label,
-			elenco: elenco
+			label: cdl.label,
+			elenco: anni_cdl
 		};
 
-
-		if(ris[annoScolastico.valore] !== undefined){
-			if(!_objectEqual(ris[annoScolastico.valore],nuovoValore)) {
+		if(cdls[cdl.valore] !== undefined) {
+			if(!_objectEqual(cdls[cdl.valore],nuovoValore)) {
 				// In caso di codici duplicati che non hanno valori corrispondenti
 				// identici restituisco un errore
-				throw "Doppia occorrenza dell'anno" + annoScolastico.valore +
+				throw "Doppia occorrenza del cdl "+ cdl.valore +
+					" dell'anno "+ annoScolastico.valore +
 					" con oggetti diversi.\n";
 			}
 		} else {
-			ris[annoScolastico.valore] = nuovoValore;
+			cdls[cdl.valore] = nuovoValore;
 		}
 
-		return ris;
+		return cdls;
 	},{});
 }
 
 /**
- * @typedef {Object.<
- *				anno,
+ * @typedef EtDocentiObj
+ * @type {object}
+ * @property {string} label
+ * @property {Object.<
+ *				codice_docente,
  *				{{
- *					label : string,
- *					elenco :
+ *					label: string,
+ *					elenco:
  *						{Object.<
- *							codice_docente,
- *							{{
- *								label: string,
- *								elenco:
- *									{Object.<
- *										codice_sessione,
- *										{{label: string}}
- *									>}
- *							}}
+ *							codice_sessione,
+ *							{{label: string}}
  *						>}
  *				}}
- *			>} EtDocentiObj
+ *			>} elenco
  */
 
 /**
@@ -562,113 +427,81 @@ function _generateCDL(et_anni_elenco_cdl){
  * @throws stringa con descrizione dell'errore
  */
 function _generateETDocenti(et_anni_elenco_docenti){
-	// Trasformo et_anni_elenco_cdl da
+	// Trasformo et_anni_elenco_docenti da
 	// [{
-	//		label: <label_anno>,
-	//		valore: <anno>,
-	//		elenco: <elenco_et_docenti>
+	//		label: <nome_docente>,
+	//		valore: <codice_docente>,
+	//		elenco: <elenco_sessioni>
 	//	},...]
 	// a
-	// { <anno>: {label: <label_anno>, elenco: <trasformazione elenco_et_docenti>},... }
-	return et_anni_elenco_docenti.reduce((ris,annoScolastico) => {
-		// Trasformo et_anni_elenco_cdl da
+	// { <codice_docente>: {label: <nome_docente>, elenco: <trasformazione elenco_sessioni>},... }
+	return et_anni_elenco_docenti.reduce((docenti,docente) => {
+		const codice_docente="D"+docente.valore;
+
+		// Trasformo elenco_sessioni da
 		// [{
-		//		label: <nome_docente>,
-		//		valore: <codice_docente>,
-		//		elenco: <elenco_sessioni>
+		//		label: <label_sessione>,
+		//		valore: <codice_sessione>,
 		//	},...]
 		// a
-		// { <codice_docente>: {label: <nome_docente>, elenco: <trasformazione elenco_sessioni>},... }
-		const elenco_docenti = annoScolastico.elenco.reduce((docenti,docente) => {
-			const codice_docente="D"+docente.valore;
-
-			// Trasformo elenco_sessioni da
-			// [{
-			//		label: <label_sessione>,
-			//		valore: <codice_sessione>,
-			//	},...]
-			// a
-			// { <codice_sessione>: {label: <label_sessione>},... }
-			const elenco_sessioni = docente.elenco.reduce((sessioni,sessione) => {
-				const nuovoValore = {
-					label: sessione.label
-				};
-
-				if(sessioni[sessione.valore] !== undefined){
-					if(!_objectEqual(sessioni[sessione.valore],nuovoValore)) {
-						// In caso di codici duplicati che non hanno valori corrispondenti
-						// identici restituisco un errore
-						throw "Doppia occorrenza della sessione" + sessione.valore +
-							" del docente " +  docente.valore +
-							" dell'anno "+ annoScolastico.valore +
-							" con oggetti diversi.\n";
-					}
-				} else {
-					sessioni[sessione.valore] = nuovoValore;
-				}
-
-				return sessioni;
-			},{});
-
+		// { <codice_sessione>: {label: <label_sessione>},... }
+		const elenco_sessioni = docente.elenco.reduce((sessioni,sessione) => {
 			const nuovoValore = {
-				label: docente.label,
-				elenco: elenco_sessioni
+				label: sessione.label
 			};
 
-			if(docenti[codice_docente] !== undefined){
-				if(!_objectEqual(docenti[codice_docente],nuovoValore)) {
+			if(sessioni[sessione.valore] !== undefined){
+				if(!_objectEqual(sessioni[sessione.valore],nuovoValore)) {
 					// In caso di codici duplicati che non hanno valori corrispondenti
 					// identici restituisco un errore
-					throw "Doppia occorrenza del docente " +  docente.valore +
+					throw "Doppia occorrenza della sessione" + sessione.valore +
+						" del docente " +  docente.valore +
 						" dell'anno "+ annoScolastico.valore +
 						" con oggetti diversi.\n";
 				}
 			} else {
-				docenti[codice_docente] = nuovoValore;
+				sessioni[sessione.valore] = nuovoValore;
 			}
 
-			return docenti;
+			return sessioni;
 		},{});
 
 		const nuovoValore = {
-			label: annoScolastico.label,
-			elenco: elenco_docenti
+			label: docente.label,
+			elenco: elenco_sessioni
 		};
 
-		if(ris[annoScolastico.valore] !== undefined){
-			if(!_objectEqual(ris[annoScolastico.valore],nuovoValore)) {
+		if(docenti[codice_docente] !== undefined){
+			if(!_objectEqual(docenti[codice_docente],nuovoValore)) {
 				// In caso di codici duplicati che non hanno valori corrispondenti
 				// identici restituisco un errore
-				throw "Doppia occorrenza dell'anno" + annoScolastico.valore +
+				throw "Doppia occorrenza del docente " +  docente.valore +
+					" dell'anno "+ annoScolastico.valore +
 					" con oggetti diversi.\n";
 			}
 		} else {
-			ris[annoScolastico.valore] = nuovoValore;
+			docenti[codice_docente] = nuovoValore;
 		}
 
-		return ris;
+		return docenti;
 	},{});
 }
 
 /**
- * @typedef {Object.<
- *				anno,
+ * @typedef InsegnamentiObj
+ * @type {object}
+ * @property {string} label
+ * @property {Object.<
+ *				codice_insegnamento,
  *				{{
- *					label : string,
- *					elenco :
+ *					label: string,
+ *					elenco:
  *						{Object.<
- *							codice_insegnamento,
- *							{{
- *								label: string,
- *								elenco:
- *									{Object.<
- *										codice_sessione,
- *										{{label: string}}
- *									>}
- *							}}
+ *							codice_sessione,
+ *							{{label: string}}
  *						>}
  *				}}
- *			>} InsegnamentiObj
+ *			>} elenco
  */
 
 /**
@@ -684,99 +517,74 @@ function _generateETDocenti(et_anni_elenco_docenti){
 function _generateETInsegnamenti(et_anni_elenco_insegnamenti){
 	// Trasformo et_anni_elenco_insegnamenti da
 	// [{
-	//		label: <label_anno>,
-	//		valore: <anno>,
-	//		elenco: <elenco_insegnamenti>
+	//		label: <nome_insegnamento>,
+	//		valore: <codice_insegnamento>,
+	//		elenco: <elenco_sessioni>
 	//	},...]
 	// a
-	// { <anno>: {label: <label_anno>, elenco: <trasformazione elenco_insegnamenti>},... }
-	return et_anni_elenco_insegnamenti.reduce((ris,annoScolastico) => {
-		// Trasformo elenco_insegnamenti da
+	// { <codice_insegnamento>: {label: <nome_insegnamento>, elenco: <trasformazione elenco_sessioni>},... }
+	return et_anni_elenco_insegnamenti.reduce((insegnamenti,insegnamento) => {
+		// Trasformo elenco_sessioni da
 		// [{
-		//		label: <nome_insegnamento>,
-		//		valore: <codice_insegnamento>,
-		//		elenco: <elenco_sessioni>
+		//		label: <label_sessione>,
+		//		valore: <codice_sessione>
 		//	},...]
 		// a
-		// { <codice_insegnamento>: {label: <nome_insegnamento>, elenco: <trasformazione elenco_sessioni>},... }
-		const elenco_insegnamenti = annoScolastico.elenco.reduce((insegnamenti,insegnamento) => {
-			// Trasformo elenco_sessioni da
-			// [{
-			//		label: <label_sessione>,
-			//		valore: <codice_sessione>
-			//	},...]
-			// a
-			// { <codice_sessione>: {label: <label_sessione>},... }
-			const elenco_sessioni = insegnamento.elenco.reduce((sessioni,sessione) => {
-				const nuovoValore = {
-					label: sessione.label
-				};
-
-				if(sessioni[sessione.valore] !== undefined){
-					if(!_objectEqual(sessioni[sessione.valore],nuovoValore)) {
-						// In caso di codici duplicati che non hanno valori corrispondenti
-						// identici restituisco un errore
-						throw "Doppia occorrenza della sessione" + sessione.valore +
-							" dell'insegnamento " +  insegnamento.valore +
-							" dell'anno "+ annoScolastico.valore +
-							" con oggetti diversi.\n";
-					}
-				} else {
-					sessioni[sessione.valore] = nuovoValore;
-				}
-
-				return sessioni;
-			},{});
-
+		// { <codice_sessione>: {label: <label_sessione>},... }
+		const elenco_sessioni = insegnamento.elenco.reduce((sessioni,sessione) => {
 			const nuovoValore = {
-				label: insegnamento.label,
-				elenco: elenco_sessioni
+				label: sessione.label
 			};
 
-			if(insegnamenti[insegnamento.valore] !== undefined) {
-				if(!_objectEqual(insegnamenti[insegnamento.valore],nuovoValore)) {
+			if(sessioni[sessione.valore] !== undefined){
+				if(!_objectEqual(sessioni[sessione.valore],nuovoValore)) {
 					// In caso di codici duplicati che non hanno valori corrispondenti
 					// identici restituisco un errore
-					throw "Doppia occorrenza dell'insegnamento " +  insegnamento.valore +
+					throw "Doppia occorrenza della sessione" + sessione.valore +
+						" dell'insegnamento " +  insegnamento.valore +
 						" dell'anno "+ annoScolastico.valore +
 						" con oggetti diversi.\n";
 				}
 			} else {
-				insegnamenti[insegnamento.valore] = nuovoValore;
+				sessioni[sessione.valore] = nuovoValore;
 			}
 
-			return insegnamenti;
+			return sessioni;
 		},{});
 
 		const nuovoValore = {
-			label: annoScolastico.label,
-			elenco: elenco_insegnamenti
+			label: insegnamento.label,
+			elenco: elenco_sessioni
 		};
 
-		if(ris[annoScolastico.valore] !== undefined) {
-			if(!_objectEqual(ris[annoScolastico.valore],nuovoValore)) {
+		if(insegnamenti[insegnamento.valore] !== undefined) {
+			if(!_objectEqual(insegnamenti[insegnamento.valore],nuovoValore)) {
 				// In caso di codici duplicati che non hanno valori corrispondenti
 				// identici restituisco un errore
-				throw "Doppia occorrenza dell'anno" + annoScolastico.valore +
+				throw "Doppia occorrenza dell'insegnamento " +  insegnamento.valore +
+					" dell'anno "+ annoScolastico.valore +
 					" con oggetti diversi.\n";
 			}
 		} else {
-			ris[annoScolastico.valore] = nuovoValore;
+			insegnamenti[insegnamento.valore] = nuovoValore;
 		}
 
-		return ris;
+		return insegnamenti;
 	},{});
 }
 
 /**
- * @typedef IdsObj
- * @type {object}
- * @property {CorsiObj} corsi
- * @property {SediObj} sedi
- * @property {AttivitaObj} attivita
- * @property {DocentiObj} docenti
- * @property {CDLObj} cdl
- * @property {InsegnamentiObj} insegnamenti
+ * @typedef {Object.<
+ *				anno,
+ *				{{
+ *					corsi: {CorsiObj},
+ *					sedi: {SediObj},
+ *					attivita: {AttivitaObj},
+ *					docenti: {DocentiObj},
+ *					cdl: {CDLObj},
+ *					insegnamenti: {InsegnamentiObj}
+ *				}}
+ *			>} IdsObj
  */
 
 /**
@@ -790,18 +598,23 @@ function _generateETInsegnamenti(et_anni_elenco_insegnamenti){
 
 exports.getIds = () => {
 	const url = 'https://easyroom.unitn.it/Orario/combo_call.php';
+	const ris = {};
+	const maxReq = 10;
+	const annoInizio = 2016;
+	const annoFine = 2017;
+	const variables_to_obtain = new Set([
+		'elenco_corsi',
+		'elenco_attivita',
+		'elenco_docenti',
+		'et_elenco_cdl',
+		'et_elenco_docenti',
+		'et_elenco_insegnamenti',
+		'elenco_sedi',
+	]);
+
 	return fetch(url)
 		.then(data => data.text())
 		.then(data => {
-			const variables_to_obtain = new Set([
-				'elenco_corsi',
-				'elenco_attivita',
-				'elenco_docenti',
-				'et_elenco_cdl',
-				'et_elenco_docenti',
-				'et_elenco_insegnamenti',
-				'elenco_sedi',
-			]);
 
 			/*
 			 * Converto le variabili globali in proprietà di un oggetto JSON
@@ -819,7 +632,7 @@ exports.getIds = () => {
 				.body
 				.filter(obj => obj.type === 'VariableDeclaration' )
 				.map(x => x.declarations)
-				.reduce( (a,b) => {return a.concat(b);})
+				.reduce( (a,b) => a.concat(b))
 				.filter( variable => variables_to_obtain.has(variable.id.name))
 				.reduce( (ris,varDeclarator) => {
 					ris[varDeclarator.id.name] = static_eval(varDeclarator.init);
@@ -828,20 +641,71 @@ exports.getIds = () => {
 				},{});
 
 			try{
-				const ris = JSON.stringify({
-					corsi: _generateCorsi(props.elenco_corsi),
-					sedi: _generateSedi(props.elenco_sedi),
-					attivita: _generateActivities(props.elenco_attivita),
-					docenti: _generateDocenti(props.elenco_docenti),
-					cdl: _generateCDL(props.et_elenco_cdl),
-					insegnamenti: _generateETInsegnamenti(props.et_elenco_insegnamenti),
-					et_docenti: _generateETDocenti(props.et_elenco_docenti)
-				});
+				for(let anno = annoInizio; anno <= annoFine; ++anno) {
+					ris[anno] = {
+						corsi: _generateCorsi(props.elenco_corsi.find(x => x.valore==anno).elenco),
+						attivita: _generateActivities(props.elenco_attivita.find(x => x.valore == anno).elenco),
+						docenti: _generateDocenti(props.elenco_docenti.find(x => x.valore == anno).elenco),
+						cdl: _generateCDL(props.et_elenco_cdl.find(x => x.valore == anno).elenco),
+						insegnamenti: _generateETInsegnamenti(props.et_elenco_insegnamenti.find(x => x.valore == anno).elenco),
+						et_docenti: _generateETDocenti(props.et_elenco_docenti.find(x => x.valore == anno).elenco)
+					};
+				}
+
+				ris.sedi = _generateSedi(props.elenco_sedi);
+
 				return ris;
 			}
 			catch(err){
 				return Promise.reject(new Error(err));
 			}
+
+		}).then(ris => {
+			// Creo un array contenente le triple (annoScolastico,corso,percorso+anno)
+			// per richiedere successivamente associazione con gli insegnamenti
+			const request = [];
+			for(var annoScolastico in ris) {
+				for(var corso in ris[annoScolastico].corsi){
+					for(var percorso in ris[annoScolastico].corsi[corso].elenco_anni) {
+						request.push({
+							anno: annoScolastico,
+							corso: corso,
+							percorso: percorso
+						});
+					}
+				}
+			}
+
+			//  Faccio 30 richieste alla volta per conoscere
+			//  ((annoScolastico,corso,percorso+anno) -> attivita)
+			function createPromise(objs){
+				return (tmp) => (
+					fetch('http://localhost:3000/fromPercorsoToInsegnamenti.json',{
+						method: 'POST',
+						headers: { 'Content-Type': 'application/json' },
+						body: JSON.stringify(objs)
+					})
+					.then(data => data.json())
+					.then(data => {
+						data.forEach(obj => {
+							tmp[obj.anno]
+								.corsi[obj.corso]
+								.elenco_anni[obj.percorso]
+								.elenco_attivita = obj.elenco_attivita;
+						});
+
+						return tmp;
+					})
+				);
+			}
+
+			let promise = Promise.resolve(ris);
+			for(let i=0;i*maxReq<request.length;++i){
+				promise = promise
+					.then(createPromise(request.slice(i*maxReq,(i+1)*maxReq)))
+			}
+
+			return promise;
 		});
 }
 
