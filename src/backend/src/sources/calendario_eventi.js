@@ -1,69 +1,47 @@
-/*var http = require('http');
-var cheerio = require('cheerio');
-
-const options = {
-    hostname: 'webmagazine.unitn.it',
-    path: '/calendario/ateneo/day/2017-10-24',
-    port: 80,
-    method: 'GET'
-};
-
-exports.getEvents = () => {
-    const req = http.request(options, (res) => {
-        res.setEncoding('utf8');
-
-		var json = [];
-        res.on('data', (chunk) => {
-            $ = cheerio.load(chunk);
-
-            $('.item a').each(function(i, elem) {
-				console.log($(this).attr('href'));
-				console.log($(this).children('img')[0]);
-				json.push({
-					href: $(this).attr('href'),
-					image_scr: $(this).children('img').eq(0).attr('src')
-				});
-            });
-        });
-        res.on('end', () => {
-			return JSON.stringify(json);
-        });
-    });
-
-    req.on('error', (e) => {
-        console.error('ERRORE: ' + e.message);
-    });
-
-    req.end();
-
-}*/
-
 var http = require('http');
 var fetch = require('node-fetch');
 var cheerio = require('cheerio');
 
-
-
-exports.getEvents = () => {
-    const url = 'http://webmagazine.unitn.it/calendario/ateneo/day/2017-10-24';
+exports.getEvents = (day) => {
+    const url = 'http://webmagazine.unitn.it/calendario/ateneo/day/'.concat(day);
+    var json = [];
+    var promises = [];
     return fetch(url)
         .then(data => data.text())
-        .then(data => {
-          console.log(data);  
-		  var json = [];
+        .then(data => {  
             $ = cheerio.load(data);
 
-            $('.item a').each(function(i, elem) {
-				console.log($(this).attr('href'));
-				console.log($(this).children('img')[0]);
-				json.push({
+            $('.item .cal-ateneo-visible a').each(function(i, elem) {
+                json.push({
+                    titolo_evento: $(this).children('span').children('p').text(),
 					href: $(this).attr('href'),
-					image_scr: $(this).children('img').eq(0).attr('src')
+					image_scr: 'http://webmagazine.unitn.it/'.concat($(this).children('img').attr('src'))
 				});
-        });
-			return JSON.stringify(json);
-    });
-
+                promises.push(
+                    fetch($(this).attr('href'))
+                        .then(data => data.text())
+                        .then(data => {
+                            $ = cheerio.load(data);
+                            if($('.nome-struttura p a').text().length == 0) {
+                                dipartimento = 'NON DEFINITO';
+                            } else {
+                                dipartimento = $('.nome-struttura p a').text();
+                            }
+                            json[i].dipartimento = dipartimento;
+                            if($('.views-field-field-evento-data-in-testata').children().text().length == 0) {
+                                data_stringa = 'NON DEFINITA';
+                            } else {
+                                data_stringa = $('.views-field-field-evento-data-in-testata').children().text();
+                            }
+                            json[i].data_stringa = data_stringa;
+                        })
+                );
+            });
+            return json;
+        })
+        .then(jsonData => {
+            return Promise.all(promises).then(data => {return JSON.stringify(json);});
+        })
+        .catch( error => console.error(error) );
 }
-
     

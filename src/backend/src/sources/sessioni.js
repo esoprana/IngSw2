@@ -17,8 +17,43 @@ exports.getSessions = (formtype, anno, cdl, annocdl, sessione, _lang) => {
 		})
         .then(data => data.text())
         .then(text => {
-            return JSON.stringify(text);
+            const json = JSON.parse(text);
+            var elenco = {};
+            elenco.infoSessione = {
+                AnnoAccademico: json.AnnoAccademico.ID,
+                NomeFacolta: json.FacoltaNome,
+                Sessione: json.Sessione,
+                DataInizioSessione: json.DataInizio,
+                DataFineSessione: json.DataFine
+            }
+            elenco.listaAppelli = [];
+            
+            for(let i=0; i<json.Insegnamenti.length; i++) {
+                elenco.listaAppelli.push({
+                    nomeCorso: json.Insegnamenti[i].DatiInsegnamento.Nome,
+                    codiceGenerale: json.Insegnamenti[i].DatiInsegnamento.CodiceGenerale,
+                    crediti: parseInt(json.Insegnamenti[i].DatiInsegnamento.Crediti),
+                    tipoEsame: json.Insegnamenti[i].DatiInsegnamento.TipoEsame,
+                    nomeDocente: json.Insegnamenti[i].DatiDocente.Nome.concat(" " + json.Insegnamenti[i].DatiDocente.Cognome),
+                    matricolaDocente: json.Insegnamenti[i].DatiDocente.Matricola,
+                    numeroAppelli: parseInt(json.Insegnamenti[i].DatiInsegnamento.NumeroAppelli),
+                    appelli: []
+                });
+                
+                for(let k=0; k<json.Insegnamenti[i].Appelli.length; k++) {
+                    elenco.listaAppelli[i].appelli.push({
+                        data: json.Insegnamenti[i].Appelli[k].Data,
+                        oraInizio: json.Insegnamenti[i].Appelli[k].OraInizio,
+                        oraFine: json.Insegnamenti[i].Appelli[k].OraFine,
+                        aula: json.Insegnamenti[i].Appelli[k].Aula,
+                        sede: json.Insegnamenti[i].Appelli[k].Sede
+                    });
+                }
+            }
+        
+            return JSON.stringify(elenco);
         
         })
+        .catch( error => console.error(error) );
     
 }
