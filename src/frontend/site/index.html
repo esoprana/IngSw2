@@ -16,25 +16,43 @@
 				<div class="form-group">		
 				    <label for="dipartimento" class="control-label"><h4>Dipartimento: </h4></label>
 					<div>
-						<select name="dipartimento" id="dipartimentiSelect" ></select>
+						<select name="dipartimento" id="dipartimentiSelect" style="background-color: #d3d3d3"></select>
 					</div>  	
 				</div>
+				<br>
+				<br>
+				<br>				
 				<div class="form-group">
-				    <label for="corso" class="control-label"><h4>Corso: </h4></label>
+				    <label for="corso" class="control-label"><h4>Corso di Studio: </h4></label>
 					<div>
-						<select name="corso" id="corsiSelect"></select>
+						<select name="corso" id="corsiSelect" style="background-color: #d3d3d3"></select>
 					</div>
 				</div>
+				<br>
+				<br>
+				<br>	
 				<div class="form-group">
-					<label for="anno" class="control-label"><h4>Anno: </h4></label>
+					<label for="annoacc" class="control-label"><h4>Anno Accademico: </h4></label>
 					<div>
-						<select name="anno" id="anniSelect"></select>
+						<select name="annoacc" id="anniaccSelect" style="background-color: #d3d3d3"></select>
 					</div>
 				</div>
+				<br>
+				<br>
+				<br>
+				<div class="form-group">
+					<label for="annostu" class="control-label"><h4>Anno di Studio: </h4></label>
+					<div>
+						<select name="annostu" id="annistuSelect" style="background-color: #d3d3d3"></select>
+					</div>
+				</div>
+				<br>
+				<br>
+				<br>		
 				<div class="form-group">
 				<label for="lezione" class="control-label"><h4>Lezione: </h4></label>
 					<div>
-						<fieldset id="checklezione">
+						<fieldset id="checklezione" style="background-color: #d3d3d3">
 					</div>	
 					</fieldset>
 				</div>
@@ -43,8 +61,85 @@
 	    <div class="col-10">
 			<div class="row">
 				<h4>Orario</h4><br>
-				<table>
-				
+				<table class="table table-inverse table-sm table-condensed table-bordered table-hover" style="padding-top:0px;">
+				  <thead>
+				    <tr>
+				      <th>#</th>
+				      <th>Lunedi</th>
+				      <th>Martedi</th>
+				      <th>Mercoledi</th>
+					  <th>Giovedi</th>
+					  <th>Venedi</th>
+				    </tr>
+				  </thead>
+				  <tbody>
+				    <tr>
+				      <th scope="row">8:00-8:30</th>
+				    </tr>
+				    <tr>
+				      <th scope="row">8:30-9:00</th>
+				    </tr>
+				    <tr>
+				      <th scope="row">9:00-9:30</th>
+				    </tr>
+					<tr>
+				      <th scope="row">9:30-10:00</th>
+				    </tr>
+				    <tr>
+				      <th scope="row">10:00-10:30</th>
+				    </tr>
+				    <tr>
+				      <th scope="row">10:30-11:00</th>
+				    </tr>
+				    <tr>
+				      <th scope="row">11:00-11:30</th>
+				    </tr>
+				    <tr>
+				      <th scope="row">11:30-12:00</th>
+				    </tr>					
+					<tr>
+				      <th scope="row">12:00-12:30</th>
+				    </tr>
+					<tr>
+				      <th scope="row">12:30-13:00</th>
+				    </tr>
+					<tr>
+				      <th scope="row">13:00-13:30</th>
+				    </tr>
+					<tr>
+				      <th scope="row">13:30-14:00</th>
+				    </tr>
+					<tr>
+				      <th scope="row">14:00-14:30</th>
+				    </tr>
+					<tr>
+				      <th scope="row">14:30-15:00</th>
+				    </tr>
+					<tr>
+				      <th scope="row">15:00-15:30</th>
+				    </tr>
+					<tr>
+				      <th scope="row">15:30-16:00</th>
+				    </tr>
+					<tr>
+				      <th scope="row">16:00-16:30</th>
+				    </tr>
+					<tr>
+				      <th scope="row">16:30-17:00</th>
+				    </tr>
+					<tr>
+				      <th scope="row">17:00-17:30</th>
+				    </tr>
+					<tr>
+				      <th scope="row">17:30-18:00</th>
+				    </tr>
+					<tr>
+				      <th scope="row">18:00-18:30</th>
+				    </tr>
+					<tr>
+				      <th scope="row">18:30-19:00</th>
+				    </tr>
+				  </tbody>
 				</table>
 			</div>
 			
@@ -59,10 +154,11 @@
 				</div>
 				<div class="col-3">
 					<h4>Eventi</h4><br>
-					<form>
-						<ul class="list-group" name="evento" id="listeventi">
-						</ul>
-					</form>
+					<ul class="list-group" name="evento" id="listeventi"></ul>
+				</div>
+				<div class="col-3">
+					<h4>Lezioni</h4><br>
+					<ul class="list-group" name="orario" id="listorari"></ul>
 				</div>
 			</div>
 		</div>
@@ -119,28 +215,53 @@ corsi.forEach((corso) => {
 });
 </script>
 
-<!-- script degli anni -->
+<!-- script degli anni accademici -->
 <script>
-var anni = [
+var anniacc = [
 	{
-		nome: "anno1",
+		nome: "anno accademico1",
 		codice: "ann001"
 	},
 	{
-		nome: "anno3",
+		nome: "anno accademico2",
 		codice: "ann002"
 	},
 	{
-		nome: "anno2",
+		nome: "anno accademico3",
 		codice: "ann003"
 	}
 ];
-var anniSelect = document.getElementById('anniSelect');
-anni.forEach((anno) => {
+var anniaccSelect = document.getElementById('anniaccSelect');
+anniacc.forEach((annoacc) => {
 	var option = document.createElement('option');
-	option.value = anno.codice;
-	option.innerHTML = anno.nome;
-	anniSelect.append(option);
+	option.value = annoacc.codice;
+	option.innerHTML = annoacc.nome;
+	anniaccSelect.append(option);
+});
+</script>
+
+<!-- script degli anni di Studio -->
+<script>
+var annistu = [
+	{
+		nome: "anno di studio1",
+		codice: "ann001"
+	},
+	{
+		nome: "anno di studio2",
+		codice: "ann002"
+	},
+	{
+		nome: "annos di studio3",
+		codice: "ann003"
+	}
+];
+var annistuSelect = document.getElementById('annistuSelect');
+annistu.forEach((annostu) => {
+	var option = document.createElement('option');
+	option.value = annostu.codice;
+	option.innerHTML = annostu.nome;
+	annistuSelect.append(option);
 });
 </script>
 
@@ -302,6 +423,105 @@ var listeventi = document.getElementById('listeventi');
 	});
 </script>
 
+<!-- script degli orari -->
+<script>
+var orari =
+	{"elenco_lezioni":
+		[
+			{
+				"insegnamento":{
+					"codice_insegnamento":"EC0514G_145005_145005/2_N0_BRUNA",
+					"docente":"Brunato Mauro"
+				},
+				"luogo":{
+					"codice_dipartimento":"E0503",
+					"codice_aula":"A101"
+				},
+				"timestamp":{
+					"inizio":"2017-10-13T07:00:00.000Z",
+					"fine":"2017-10-13T09:00:00.000Z"
+				},
+				"tipo":"Lezione"
+			},
+			{
+				"insegnamento":{
+					"codice_insegnamento":"EC0514G_145005_145005/2_N0_BRUNA",
+					"docente":"Brunato Mauro"
+				},
+				"luogo":{
+					"codice_dipartimento":"E0503",
+					"codice_aula":"B106"
+				},
+				"timestamp":{
+					"inizio":"2017-10-20T07:00:00.000Z",
+					"fine":"2017-10-20T09:00:00.000Z"
+				},
+				"tipo":"Lezione"
+			},
+			{
+				"insegnamento":{
+					"codice_insegnamento":"EC0514G_145005_145005/2_N0_BRUNA",
+					"docente":"Brunato Mauro"
+					},
+				"luogo":{
+					"codice_dipartimento":"E0503",
+					"codice_aula":"B106"
+				},
+				"timestamp":{
+					"inizio":"2017-10-27T07:00:00.000Z",
+					"fine":"2017-10-27T09:00:00.000Z"
+				},
+				"tipo":"Lezione"
+			},
+			{
+				"insegnamento":{
+					"codice_insegnamento":"EC0514G_145005_145005/2_N0_BRUNA",
+					"docente":"Brunato Mauro"},
+				"luogo":{
+					"codice_dipartimento":"E0503",
+					"codice_aula":"B106"},
+				"timestamp":{
+					"inizio":"2017-11-04T08:00:00.000Z",
+					"fine":"2017-11-04T10:00:00.000Z"
+				},
+				"tipo":"Lezione"
+			}
+		]
+	}
+	
+var listorari = document.getElementById('listorari');
+	orari.elenco_lezioni.forEach((orario) => {
+		var corso = document.createElement('h5');
+		corso.className = "mb-1";
+		corso.innerHTML = orario.insegnamento.codice_insegnamento;
+
+		var divPrincipale1 = document.createElement('div');
+		divPrincipale1.className="d-flex w-100 justify-content-between";
+		divPrincipale1.append(corso);
+
+		var docente = document.createElement('p');
+		docente.className = "mb-1";
+		docente.innerHTML = orario.insegnamento.docente;
+		
+		var aula = document.createElement('p');
+		aula.className = "mb-1";
+		aula.innerHTML = orario.luogo.codice_aula;
+		
+		var orain = document.createElement('p');
+		orain.className = "mb-1";
+		orain.innerHTML = new Date (orario.timestamp.inizio) 
+		
+		var orafi = document.createElement('p');
+		orafi.className = "mb-1";
+		orafi.innerHTML = new Date (orario.timestamp.fine);
+		
+		var li = document.createElement('li');
+		li.className="list-group-item  list-group-item-dark flex-column align-items-start";
+		li.append(divPrincipale1,docente,aula,orain,orafi);
+
+		listorari.append(li);
+	});
+</script>
 
 
 </body>
