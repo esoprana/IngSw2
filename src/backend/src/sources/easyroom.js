@@ -305,7 +305,7 @@ function _generateDocenti(elenco_anni_docenti) {
  * @returns {CDLObj} Oggetto che indica i corsi di laurea e le loro caratteristiche
  * @throws stringa con descrizione dell'errore
  */
-function _generateCDL(et_anni_elenco_cdl){
+function _generateCDL(et_anni_elenco_cdl) {
 	// Trasformo et_anni_elenco_cdl da
 	// [{
 	//		label: <label_cdl>,
@@ -572,6 +572,7 @@ const variables_to_obtain = new Set([
 	'elenco_sedi'
 ]);
 
+
 /**
  * Classe che ottiene i codici che identificano: corsi, percorso,attività,docenti,..
  * @class
@@ -709,8 +710,8 @@ class Codes {
 			return Promise.resolve(tmp.r);
 		}
 
-		function gen(oldName, newName, fun, oldVar, newVar) {
-			oldVar[oldName].forEach(x => {
+		function gen(fun, oldVar, newVar, newName) {
+			oldVar.forEach(x => {
 				const obj = fun(x.elenco);
 				if (newVar[x.valore] === undefined) {
 					newVar[x.valore] = {};
@@ -739,161 +740,170 @@ class Codes {
 			].join('-');
 		}
 
-		return fetch(this._url)
-			.then(data => data.text())
-			.then(data => {
-				const ris = {};
+		function transformData(data) {
+			const ris = {};
 
-				try {
-					/*
-					 * Converto le variabili globali in proprietà di un oggetto JSON
-					 * Procedimento:
-					 *  1. Faccio il parsing e prendo il body del file
-					 *  2. Individuo le variabili "immediatamente disponibili",
-					 *     ovvero le variabili globali
-					 *  3. Ogni dichiarazione può contenere più variabili (es: var x,y)
-					 *     quindi trasformo l'array di dichiarazioni
-					 *     (con dentro più varibili) a un singolo array di variabili
-					 *  4, Filtro in modo da ottenere unicamente le variabili che mi interassano
-					 *  5. Trasformo ogni variabile in una proprietà con uguale nome e valore
-					 */
-					const parsed = parse(data);
-					if (parsed.body.length === 0) {
-						throw new Error(
-							'L\'oggetto letto non è un file .js parsabile'
-						);
+			try {
+				/*
+				 * Converto le variabili globali in proprietà di un oggetto JSON
+				 * Procedimento:
+				 *  1. Faccio il parsing e prendo il body del file
+				 *  2. Individuo le variabili "immediatamente disponibili",
+				 *     ovvero le variabili globali
+				 *  3. Ogni dichiarazione può contenere più variabili (es: var x,y)
+				 *     quindi trasformo l'array di dichiarazioni
+				 *     (con dentro più varibili) a un singolo array di variabili
+				 *  4, Filtro in modo da ottenere unicamente le variabili che mi interassano
+				 *  5. Trasformo ogni variabile in una proprietà con uguale nome e valore
+				 */
+				const parsed = parse(data);
+				if (parsed.body.length === 0) {
+					throw new Error(
+						'L\'oggetto letto non è un file .js parsabile'
+					);
+				}
+
+				const props = parsed
+					.body
+					.filter(obj => obj.type === 'VariableDeclaration')
+					.map(x => x.declarations)
+					.reduce((a, b) => a.concat(b))
+					.filter(variable => variables_to_obtain.has(variable.id.name))
+					.reduce((ris, varDeclarator) => {
+						ris[varDeclarator.id.name] = staticEval(varDeclarator.init);
+
+						return ris;
+					}, {});
+
+				for (const x of variables_to_obtain) {
+					if (props[x] === undefined) {
+						throw new Error('Il file .js è incompleto(manca ' +
+							x + ')');
 					}
+				}
 
-					const props = parsed
-						.body
-						.filter(obj => obj.type === 'VariableDeclaration')
-						.map(x => x.declarations)
-						.reduce((a, b) => a.concat(b))
-						.filter(variable => variables_to_obtain.has(variable.id.name))
-						.reduce((ris, varDeclarator) => {
-							ris[varDeclarator.id.name] = staticEval(varDeclarator.init);
+				gen(_generateCorsi, props.elenco_corsi, ris, 'corsi');
+				gen(_generateActivities, props.elenco_attivita, ris, 'attivita');
+				gen(_generateDocenti, props.elenco_docenti, ris, 'docenti');
+				gen(_generateCDL, props.et_elenco_cdl, ris, 'cdl');
+				gen(_generateETInsegnamenti, props.et_elenco_insegnamenti, ris, 'insegnamenti');
+				gen(_generateETDocenti, props.et_elenco_docenti, ris, 'et_docenti');
 
-							return ris;
-						}, {});
+				ris.sedi = _generateSedi(props.elenco_sedi);
 
-					let complete_js = true;
-					for(const x of variables_to_obtain) {
-						if(props[x] === undefined){
-							throw new Error('Il file .js è incompleto(manca ' +
-								x + ')');
-						}
-					}
+				Object.keys(ris).filter(x => isFinite(x)).forEach(anno => {
+					for (const k in ris[anno].cdl) {
+						let same_course;
+						if (ris[anno].corsi[k] !== undefined) {
+							same_course = k;
+						} else {
+							const corso =
+								Object.keys(ris[anno].corsi)
+								.filter(x =>
+									ris[anno].corsi[x].label.toLowerCase() ===
+									ris[anno].cdl[k].label.toLowerCase()
+								);
 
-					gen('elenco_corsi', 'corsi', _generateCorsi, props, ris);
-					gen('elenco_attivita', 'attivita', _generateActivities, props, ris);
-					gen('elenco_docenti', 'docenti', _generateDocenti, props, ris);
-					gen('et_elenco_cdl', 'cdl', _generateCDL, props, ris);
-					gen('et_elenco_insegnamenti', 'insegnamenti', _generateETInsegnamenti, props, ris);
-					gen('et_elenco_docenti', 'et_docenti', _generateETDocenti, props, ris);
-
-					ris.sedi = _generateSedi(props.elenco_sedi);
-
-					Object.keys(ris).filter(x => isFinite(x)).forEach((anno) => {
-						for (const k in ris[anno].cdl){
-							let same_course = undefined;
-							if (ris[anno].corsi[k] !== undefined) {
-								same_course = k;
-							} else {
-								const corso =
-									Object.keys(ris[anno].corsi)
-									.filter(x =>
-										ris[anno].corsi[x]
-											.label
-											.toLowerCase()
-										===
-										ris[anno].cdl[k]
-											.label
-											.toLowerCase()
-									);
-
-								if (corso.length === 1) {
-									same_course = corso[0];
-								}
-								// Alcuni di questi vengono scartati/ignorati
-								// perchè non hanno nessuna corrispondenza
-								// (es: Arte magistrale 2017)
+							if (corso.length === 1) {
+								same_course = corso[0];
 							}
+							// Alcuni di questi vengono scartati/ignorati
+							// perchè non hanno nessuna corrispondenza
+							// (es: Arte magistrale 2017)
+						}
 
-							if(same_course !== undefined){
-								ris[anno].corsi[same_course].codice_cdl = k;
+						if (same_course !== undefined) {
+							ris[anno].corsi[same_course].codice_cdl = k;
 
-								for(const percorso in ris[anno].cdl[k].elenco) {
-									let same_percorso = undefined;
-									if(ris[anno].corsi[same_course].elenco_anni[percorso] !== undefined){
-										same_percorso = percorso;
-									} else {
-										const percorsi =
-											Object.keys(ris[anno].corsi[same_course].elenco_anni)
-											.filter(x =>
-												ris[anno].corsi[same_course]
-													.elenco_anni[x]
-													.label.some(label =>
-														label.toLowerCase()
-														===
-														ris[anno].cdl[k]
-															.elenco[percorso]
-															.label
-															.toLowerCase()
-													)
-											);
+							for (const percorso in ris[anno].cdl[k].elenco) {
+								let same_percorso;
+								if (ris[anno].corsi[same_course].elenco_anni[percorso] !== undefined) {
+									same_percorso = percorso;
+								} else {
+									const percorsi =
+										Object.keys(ris[anno].corsi[same_course].elenco_anni)
+										.filter(x =>
+											ris[anno].corsi[same_course]
+												.elenco_anni[x]
+												.label.some(label =>
+													label.toLowerCase() ===
+													ris[anno].cdl[k]
+														.elenco[percorso]
+														.label
+														.toLowerCase()
+												)
+										);
 
-										if(percorsi.length === 1){
-											same_percorso = percorsi[0];
-										}
-										// Alcuni risultati vengono scartati perchè non hanno un
-										// corrispondente(es: 3 anno standard di informatica che
-										// non ha orario perchè è obbligatorio scegliere un percorso)
+									if (percorsi.length === 1) {
+										same_percorso = percorsi[0];
 									}
+									// Alcuni risultati vengono scartati perchè non hanno un
+									// corrispondente(es: 3 anno standard di informatica che
+									// non ha orario perchè è obbligatorio scegliere un percorso)
+								}
 
-									if(same_percorso !== undefined){
-										ris[anno].corsi[same_course]
-											.elenco_anni[same_percorso]
-											.codice_percorso_cdl = percorso;
+								if (same_percorso !== undefined) {
+									ris[anno].corsi[same_course]
+										.elenco_anni[same_percorso]
+										.codice_percorso_cdl = percorso;
 
-										ris[anno].corsi[same_course]
-											.elenco_anni[same_percorso]
-											.elenco_sessioni
-										=
-										ris[anno].cdl[k]
+									ris[anno].corsi[same_course]
+										.elenco_anni[same_percorso]
+										.elenco_sessioni = ris[anno].cdl[k]
 											.elenco[percorso]
 											.elenco_sessioni;
-									}
 								}
 							}
 						}
-						delete ris[anno].cdl;
-					});
-				} catch (err) {
-					// Errore durante la conversione dei dati
-					return Promise.reject(err);
-				}
+					}
 
-				// Creo un array contenente le triple (annoScolastico,corso,percorso+anno)
-				// per richiedere successivamente associazione con gli insegnamenti
-				const request = [];
-				const date = getYYYYMMDDDate(new Date());
-				for (const annoScolastico in ris) {
-					for (const corso in ris[annoScolastico].corsi) {
-						for (const percorso in ris[annoScolastico].corsi[corso].elenco_anni) {
-							request.push({
-								lang: 'it',
-								anno: annoScolastico,
-								corso: corso,
-								percorso: percorso,
-								date: date
-							});
+					delete ris[anno].cdl;
+				});
+
+				Object.keys(ris).filter(x => isFinite(x)).forEach(anno => {
+					for (const docente in ris[anno].et_docenti) {
+						if (ris[anno].docenti[docente] === undefined) {
+							ris[anno].docenti[docente] =
+								ris[anno].et_docenti[docente];
+						} else {
+							ris[anno].docenti[docente].elenco_sessioni =
+								ris[anno].et_docenti[docente].elenco;
 						}
 					}
-				}
 
-				return Promise.resolve({ar: request, r: ris, i: 0})
-					.then(createPromise);
-			}).catch( reason => Promise.reject(reason)); // Do not fail silently
+					delete ris[anno].et_docenti;
+				});
+			} catch (err) {
+				// Errore durante la conversione dei dati
+				return Promise.reject(err);
+			}
+
+			// Creo un array contenente le triple (annoScolastico,corso,percorso+anno)
+			// per richiedere successivamente associazione con gli insegnamenti
+			const request = [];
+			const date = getYYYYMMDDDate(new Date());
+			for (const annoScolastico in ris) {
+				for (const corso in ris[annoScolastico].corsi) {
+					for (const percorso in ris[annoScolastico].corsi[corso].elenco_anni) {
+						request.push({
+							lang: 'it',
+							anno: annoScolastico,
+							corso: corso,
+							percorso: percorso,
+							date: date
+						});
+					}
+				}
+			}
+
+			return Promise.resolve({ar: request, r: ris, i: 0})
+				.then(createPromise);
+		}
+
+		return fetch(this._url)
+			.then(data => data.text())
+			.then(transformData)
+			.catch(reason => Promise.reject(reason)); // Do not fail silently
 	}
 }
 

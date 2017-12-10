@@ -48,7 +48,7 @@ const data = {
 	double_sedi_different_label : require('./data/double_sedi_different_label.js').d
 };
 
-function fixDefaultDate(m){
+function fixDefaultDate(m) {
 	return {
 		'2016': m[2016],
 		'2017': m[2017],
@@ -69,11 +69,11 @@ function fixDefaultDate(m){
 	};
 }
 
-function addElencoAttivita(x){
-	for (const k in x){
-		if((k !== 'sedi')&&(k !== 'failed')){
-			for(const corso in x[k].corsi){
-				for(const percorso in x[k].corsi[corso].elenco_anni){
+function addElencoAttivita(x) {
+	for (const k in x) {
+		if ((k !== 'sedi') && (k !== 'failed')) {
+			for (const corso in x[k].corsi) {
+				for (const percorso in x[k].corsi[corso].elenco_anni) {
 					x[k].corsi[corso]
 						.elenco_anni[percorso]
 						.elenco_attivita = ['attivitàFalse012'];
@@ -87,12 +87,12 @@ function addElencoAttivita(x){
 	return x;
 }
 
-describe('Codes constructor' ,() => {
+describe('Codes constructor' , () => {
 	test('Throw on undefined url', () => {
 		return expect(() => (new Codes(undefined, x => x, 20))).toThrow();
 	});
 
-	test('Throw on promiseJSON undefined',() => {
+	test('Throw on promiseJSON undefined', () => {
 		return expect(() => (new Codes('http://prova.test', undefined, 20))).toThrow();
 	});
 
@@ -101,7 +101,7 @@ describe('Codes constructor' ,() => {
 	});
 
 	test('Throw on promiseJSON of wrong arity(with arity 2)', () => {
-		return expect(() => (new Codes('http://prova.test', (x, w) => x + y, 20))).toThrow();
+		return expect(() => (new Codes('http://prova.test', (x, y) => x + y, 20))).toThrow();
 	});
 
 	test('Throw on promiseJSON of wrong arity(with arity 0)', () => {
@@ -139,7 +139,7 @@ describe('Error on invalid data', () => {
 		return expect(
 				(new Codes('http://prova.test', x => x, 12)).getIds()
 			).rejects.toBeInstanceOf(Error);
-	})
+	});
 
 	test('Error on not js file', () => {
 		fetch.mockResponse('Questo per certo non è un js infatti è una string', {
@@ -243,7 +243,7 @@ describe('Error on invalid data', () => {
 		});
 	});
 
-	describe('Check\'corsi\'',() => {
+	describe('Check\'corsi\'', () => {
 		test('Not error on double course', () => {
 			fetch.mockResponse(data.double_corso_same_year, {
 				status: 200,
@@ -278,7 +278,7 @@ describe('Error on invalid data', () => {
 
 	describe('Check \'attivita\'', () => {
 		// In realtà già presente
-		test('Not error on double activity',() => {
+		test('Not error on double activity', () => {
 			fetch.mockResponse(data.double_attivita_same_year, {
 				status: 200,
 				header: {'Content-Type': 'application/json'}
@@ -292,7 +292,7 @@ describe('Error on invalid data', () => {
 			).resolves.toEqual(fixDefaultDate(data.correct_with_no_PercorsoToInsegnamento));
 		});
 
-		test('Error on attivita.valore collision with different content',() => {
+		test('Error on attivita.valore collision with different content', () => {
 			fetch.mockResponse(data.double_attivita_same_year_different_label, {
 				status: 200,
 				header: {'Content-Type': 'application/json'}
@@ -311,7 +311,7 @@ describe('Error on invalid data', () => {
 
 	describe('Check \'docenti\'', () => {
 		// In realtà già presente
-		test('Not error on double activity',() => {
+		test('Not error on double activity', () => {
 			fetch.mockResponse(data.double_docenti_same_year, {
 				status: 200,
 				header: {'Content-Type': 'application/json'}
@@ -325,7 +325,7 @@ describe('Error on invalid data', () => {
 			).resolves.toEqual(fixDefaultDate(data.correct_with_no_PercorsoToInsegnamento));
 		});
 
-		test('Error on attivita.valore collision with different content',() => {
+		test('Error on attivita.valore collision with different content', () => {
 			fetch.mockResponse(data.double_docenti_same_year_different_label, {
 				status: 200,
 				header: {'Content-Type': 'application/json'}
@@ -342,8 +342,8 @@ describe('Error on invalid data', () => {
 		});
 	});
 
-	describe('Check \'cdl\'',() => {
-		test('Not error on double cdl',() => {
+	describe('Check \'cdl\'', () => {
+		test('Not error on double cdl', () => {
 			fetch.mockResponse(data.double_cdl_same_year, {
 				status: 200,
 				header: {'Content-Type': 'application/json'}
@@ -357,7 +357,7 @@ describe('Error on invalid data', () => {
 			).resolves.toEqual(fixDefaultDate(data.correct_with_no_PercorsoToInsegnamento));
 		});
 
-		test('Error on cdl.valore collision with different label',() => {
+		test('Error on cdl.valore collision with different label', () => {
 			fetch.mockResponse(data.double_cdl_same_year_different_label, {
 				status: 200,
 				header: {'Content-Type': 'application/json'}
@@ -373,7 +373,7 @@ describe('Error on invalid data', () => {
 			);
 		});
 
-		test('Not error on cdl.valore collision with double object in elenco_anni',() => {
+		test('Not error on cdl.valore collision with double object in elenco_anni', () => {
 			fetch.mockResponse(data.double_cdl_same_year_double_object_in_elenco, {
 				status: 200,
 				header: {'Content-Type': 'application/json'}
@@ -387,7 +387,7 @@ describe('Error on invalid data', () => {
 			).resolves.toEqual(fixDefaultDate(data.correct_with_no_PercorsoToInsegnamento));
 		});
 
-		test('Error on cdl.valore collision with different object in elenco_anni',() => {
+		test('Error on cdl.valore collision with different object in elenco_anni', () => {
 			fetch.mockResponse(data.double_cdl_same_year_different_object_in_elenco, {
 				status: 200,
 				header: {'Content-Type': 'application/json'}
@@ -403,7 +403,7 @@ describe('Error on invalid data', () => {
 			);
 		});
 
-		test('Error on cdl.valore collision with different sessioni in elenco_anni->elenco',() => {
+		test('Error on cdl.valore collision with different sessioni in elenco_anni->elenco', () => {
 			fetch.mockResponse(data.double_cdl_same_year_same_sessione_different_label, {
 				status: 200,
 				header: {'Content-Type': 'application/json'}
@@ -421,7 +421,7 @@ describe('Error on invalid data', () => {
 	});
 
 	describe('Check \'insegnamenti\'', () => {
-		test('Not error on double insegnamenti',() => {
+		test('Not error on double insegnamenti', () => {
 			fetch.mockResponse(data.double_insegnamento_same_year, {
 				status: 200,
 				header: {'Content-Type': 'application/json'}
@@ -435,7 +435,7 @@ describe('Error on invalid data', () => {
 			).resolves.toEqual(fixDefaultDate(data.correct_with_no_PercorsoToInsegnamento));
 		});
 
-		test('Error on insegnamento.valore collision with different label',() => {
+		test('Error on insegnamento.valore collision with different label', () => {
 			fetch.mockResponse(data.double_insegnamento_same_year_different_label, {
 				status: 200,
 				header: {'Content-Type': 'application/json'}
@@ -451,7 +451,7 @@ describe('Error on invalid data', () => {
 			);
 		});
 
-		test('Not error on insegnamento.valore collision with double object in elenco_anni',() => {
+		test('Not error on insegnamento.valore collision with double object in elenco_anni', () => {
 			fetch.mockResponse(data.double_insegnamento_same_year_double_object_in_elenco, {
 				status: 200,
 				header: {'Content-Type': 'application/json'}
@@ -465,7 +465,7 @@ describe('Error on invalid data', () => {
 			).resolves.toEqual(fixDefaultDate(data.correct_with_no_PercorsoToInsegnamento));
 		});
 
-		test('Error on insegnamento.valore collision with different object in elenco',() => {
+		test('Error on insegnamento.valore collision with different object in elenco', () => {
 			fetch.mockResponse(data.double_insegnamento_same_year_different_object_in_elenco, {
 				status: 200,
 				header: {'Content-Type': 'application/json'}
@@ -483,7 +483,7 @@ describe('Error on invalid data', () => {
 	});
 
 	describe('Check \'et_docenti\'', () => {
-		test('Not error on double et_docenti',() => {
+		test('Not error on double et_docenti', () => {
 			fetch.mockResponse(data.double_et_docenti_same_year, {
 				status: 200,
 				header: {'Content-Type': 'application/json'}
@@ -497,7 +497,7 @@ describe('Error on invalid data', () => {
 			).resolves.toEqual(fixDefaultDate(data.correct_with_no_PercorsoToInsegnamento));
 		});
 
-		test('Error on et_docente.valore collision with different label',() => {
+		test('Error on et_docente.valore collision with different label', () => {
 			fetch.mockResponse(data.double_et_docenti_same_year_different_label, {
 				status: 200,
 				header: {'Content-Type': 'application/json'}
@@ -513,7 +513,7 @@ describe('Error on invalid data', () => {
 			);
 		});
 
-		test('Not error on et_docente.valore collision with double object in elenco',() => {
+		test('Not error on et_docente.valore collision with double object in elenco', () => {
 			fetch.mockResponse(data.double_et_docenti_same_year_double_object_in_elenco, {
 				status: 200,
 				header: {'Content-Type': 'application/json'}
@@ -527,7 +527,7 @@ describe('Error on invalid data', () => {
 			).resolves.toEqual(fixDefaultDate(data.correct_with_no_PercorsoToInsegnamento));
 		});
 
-		test('Error on insegnamento.valore collision with different object in elenco',() => {
+		test('Error on insegnamento.valore collision with different object in elenco', () => {
 			fetch.mockResponse(data.double_et_docenti_same_year_different_object_in_elenco, {
 				status: 200,
 				header: {'Content-Type': 'application/json'}
@@ -544,8 +544,8 @@ describe('Error on invalid data', () => {
 		});
 	});
 
-	describe('Check \'sedi\'',() => {
-		test('Not error on double sedi',() => {
+	describe('Check \'sedi\'', () => {
+		test('Not error on double sedi', () => {
 			fetch.mockResponse(data.double_sedi, {
 				status: 200,
 				header: {'Content-Type': 'application/json'}
@@ -559,7 +559,7 @@ describe('Error on invalid data', () => {
 			).resolves.toEqual(fixDefaultDate(data.correct_with_no_PercorsoToInsegnamento));
 		});
 
-		test('Error on sede.valore collision with different label',() => {
+		test('Error on sede.valore collision with different label', () => {
 			fetch.mockResponse(data.double_sedi_different_label, {
 				status: 200,
 				header: {'Content-Type': 'application/json'}
@@ -577,7 +577,7 @@ describe('Error on invalid data', () => {
 	});
 
 	describe('Test on valid data', () => {
-		test('1',() => {
+		test('1', () => {
 			fetch.mockResponseOnce(data.combo_call, {
 				status: 200,
 				header: {'Content-Type': 'application/json'}
