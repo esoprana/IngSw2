@@ -21,8 +21,6 @@ const data = {
 
 	double_corso_same_year:  require('./data/double_corso_same_year.js').d,
 	double_corso_different_percorsi: require('./data/double_corso_different_percorsi.js').d,
-	double_percorso_same_year_different_label: require('./data/double_percorso_same_year_different_label.js').d,
-	double_percorso_same_year_different_label_ris: require('./data/double_percorso_same_year_different_label.json'),
 
 	double_attivita_same_year: require('./data/double_attivita_same_year.js').d,
 	double_attivita_same_year_different_label: require('./data/double_attivita_same_year_different_label.js').d,
@@ -62,7 +60,7 @@ function fixDefaultDate(m){
 			}
 			x.date = [
 				pad(d.getFullYear()),
-				pad(d.getMonth()+1),
+				pad(d.getMonth() + 1),
 				pad(d.getDate())
 			].join('-');
 
@@ -72,10 +70,10 @@ function fixDefaultDate(m){
 }
 
 function addElencoAttivita(x){
-	for (k in x){
+	for (const k in x){
 		if((k !== 'sedi')&&(k !== 'failed')){
-			for(corso in x[k].corsi){
-				for(percorso in x[k].corsi[corso].elenco_anni){
+			for(const corso in x[k].corsi){
+				for(const percorso in x[k].corsi[corso].elenco_anni){
 					x[k].corsi[corso]
 						.elenco_anni[percorso]
 						.elenco_attivita = ['attivitàFalse012'];
@@ -84,7 +82,7 @@ function addElencoAttivita(x){
 		}
 	}
 
-	x.failed = undefined;
+	delete x.failed;
 
 	return x;
 }
@@ -259,20 +257,6 @@ describe('Error on invalid data', () => {
 				(new Codes('http://prova.test', x => Promise.reject(), 12))
 				.getIds()
 			).resolves.toEqual(fixDefaultDate(data.correct_with_no_PercorsoToInsegnamento));
-		});
-
-		test('Not error on corso.valore.percorso.valore collision with different label', () => {
-			fetch.mockResponse(data.double_percorso_same_year_different_label, {
-				status: 200,
-				header: {'Content-Type': 'application/json'}
-			});
-
-			// Faccio fallire le promise successive per non fare tutto
-			// il procedimento ma solo il pezzo necessario per verificare il
-			// comportamento nel caso di un corso duplicato
-			return expect(
-				(new Codes('http://prova.test', x => Promise.reject(), 12)).getIds()
-			).resolves.toEqual(fixDefaultDate(data.double_percorso_same_year_different_label_ris));
 		});
 
 		test('Error on corso.valore collision with different percorsi', () => {
@@ -606,7 +590,7 @@ describe('Error on invalid data', () => {
 						corso: l.corso,
 						percorso: l.percorso,
 						date: '2017-12-09',
-						elenco_attivita:['attivitàFalse012']
+						elenco_attivita: ['attivitàFalse012']
 					}))),
 					12)).getIds()
 			).resolves.toEqual(addElencoAttivita(fixDefaultDate(data.correct_with_no_PercorsoToInsegnamento)));

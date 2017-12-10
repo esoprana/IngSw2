@@ -792,6 +792,82 @@ class Codes {
 					gen('et_elenco_docenti', 'et_docenti', _generateETDocenti, props, ris);
 
 					ris.sedi = _generateSedi(props.elenco_sedi);
+
+					Object.keys(ris).filter(x => isFinite(x)).forEach((anno) => {
+						for (const k in ris[anno].cdl){
+							let same_course = undefined;
+							if (ris[anno].corsi[k] !== undefined) {
+								same_course = k;
+							} else {
+								const corso =
+									Object.keys(ris[anno].corsi)
+									.filter(x =>
+										ris[anno].corsi[x]
+											.label
+											.toLowerCase()
+										===
+										ris[anno].cdl[k]
+											.label
+											.toLowerCase()
+									);
+
+								if (corso.length === 1) {
+									same_course = corso[0];
+								}
+								// Alcuni di questi vengono scartati/ignorati
+								// perchè non hanno nessuna corrispondenza
+								// (es: Arte magistrale 2017)
+							}
+
+							if(same_course !== undefined){
+								ris[anno].corsi[same_course].codice_cdl = k;
+
+								for(const percorso in ris[anno].cdl[k].elenco) {
+									let same_percorso = undefined;
+									if(ris[anno].corsi[same_course].elenco_anni[percorso] !== undefined){
+										same_percorso = percorso;
+									} else {
+										const percorsi =
+											Object.keys(ris[anno].corsi[same_course].elenco_anni)
+											.filter(x =>
+												ris[anno].corsi[same_course]
+													.elenco_anni[x]
+													.label.some(label =>
+														label.toLowerCase()
+														===
+														ris[anno].cdl[k]
+															.elenco[percorso]
+															.label
+															.toLowerCase()
+													)
+											);
+
+										if(percorsi.length === 1){
+											same_percorso = percorsi[0];
+										}
+										// Alcuni risultati vengono scartati perchè non hanno un
+										// corrispondente(es: 3 anno standard di informatica che
+										// non ha orario perchè è obbligatorio scegliere un percorso)
+									}
+
+									if(same_percorso !== undefined){
+										ris[anno].corsi[same_course]
+											.elenco_anni[same_percorso]
+											.codice_percorso_cdl = percorso;
+
+										ris[anno].corsi[same_course]
+											.elenco_anni[same_percorso]
+											.elenco_sessioni
+										=
+										ris[anno].cdl[k]
+											.elenco[percorso]
+											.elenco_sessioni;
+									}
+								}
+							}
+						}
+						delete ris[anno].cdl;
+					});
 				} catch (err) {
 					// Errore durante la conversione dei dati
 					return Promise.reject(err);
