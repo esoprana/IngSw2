@@ -3,22 +3,31 @@ const FormData = require('form-data');
 
 exports.getSessions = (formtype, anno, cdl, annocdl, sessione, _lang) => {
     const url = 'https://easyroom.unitn.it/Orario/test_call.php'
-	const form = new FormData();
-	form.append('form-type',formtype);
-	form.append('anno',anno);
-	form.append('cdl',cdl);
-	form.append('annocdl',annocdl);
-	form.append('sessione',sessione);
-	form.append('_lang',_lang);
+	
+    const form = new FormData();
+    form.append('form-type',formtype);
+    form.append('anno',anno);
+    form.append('cdl',cdl);
+    form.append('annocdl',annocdl);
+    form.append('sessione',sessione);
+    form.append('_lang',_lang);
     
     return fetch(url,{
 			method: 'POST',
 			body: form
 		})
-        .then(data => data.text())
+        .then(data => {
+             if (data.ok) { return data.text(); }
+            else { return Promise.reject('fetch response status: '.concat(data.status)); }
+        })
         .then(text => {
-            const json = JSON.parse(text);
+            var json;
+            try{
+                json = JSON.parse(text);
+            } catch(e) { return Promise.reject('parse to JSON failed')}
+        
             var elenco = {};
+        
             elenco.infoSessione = {
                 AnnoAccademico: json.AnnoAccademico.ID,
                 NomeFacolta: json.FacoltaNome,
@@ -52,8 +61,9 @@ exports.getSessions = (formtype, anno, cdl, annocdl, sessione, _lang) => {
             }
         
             return JSON.stringify(elenco);
-        
         })
-        .catch( error => console.error(error) );
-    
+        .catch( error => { // problemi di connessione oppure non ci sono sessioni corrispondenti ai parametri inseriti ('[]' è stato restituito).
+            console.error('fetch failed: '.concat(error));
+            return 'Problemi di acquisizione dati o nel trattamento dati. Controllare la connessione o i valori dei parametri della richiesta.' ;
+        });
 }
