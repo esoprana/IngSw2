@@ -25,7 +25,9 @@
     "setupFiles": [
       "./setupJest.js"
     ],
-	"collectCoverageFrom": ["src/**/*.js"],
+    "collectCoverageFrom": [
+      "src/**/*.js"
+    ],
     "collectCoverage": true
   }
 }

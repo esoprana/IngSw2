@@ -12,9 +12,9 @@ function pad(s) { return (s < 10) ? '0' + s : s; }
  * @param {string|String} url Url da cui prendere i dati
  */
 class Calendar{
-	constructor(url){
-		if((url == undefined) || ((typeof url !== 'string') && !(url instanceof String))){
-			throw "È necessario specificare un'url e che sia di tipo string o String";
+	constructor(url) {
+		if ((url === undefined) || ((typeof url !== 'string') && !(url instanceof String))) {
+			throw new Error('È necessario specificare un\'url e che sia di tipo string o String');
 		}
 
 		// Assegno _url in modo da ottenere typeof _url === 'string' anche se url instanceof String
@@ -51,64 +51,64 @@ class Calendar{
 	 * @param {string} date Data nel formato ISO o timestamp in millisecondi
 	 * @returns {Promise<CalObj>|Promise<Error>} In caso di successo una {Promise} contenente {@link CalObj}, una promise contenente {Error} altrimenti
 	 */
-	getCal(lang,anno,codice_percorso,codice_corso,date) {
-		let errors=[];
+	getCal(lang, anno, codice_percorso, codice_corso, date) {
+		const errors = [];
 		let formDate;
 		if (lang === undefined) {
-			errors.push("Il parametro lang è undefined");
-		} else if(lang instanceof String) {
+			errors.push('Il parametro lang è undefined');
+		} else if (lang instanceof String) {
 			lang = lang.toString();
-		} else if(typeof lang !== 'string') {
-			errors.push("Il parametro deve essere di tipo 'string' o instanceof String");
+		} else if (typeof lang !== 'string') {
+			errors.push('Il parametro deve essere di tipo \'string\' o instanceof String');
 		}
 
 		if (anno === undefined) {
-			errors.push("Il parametro anno è undefined");
-		} else if(!isFinite(anno)) {
-			errors.push("Il paramentro anno deve essere un numero");
+			errors.push('Il parametro anno è undefined');
+		} else if (!isFinite(anno)) {
+			errors.push('Il paramentro anno deve essere un numero');
 		}
 
 		if (codice_percorso === undefined) {
-			errors.push("Il parametro codice_percorso è undefined");
+			errors.push('Il parametro codice_percorso è undefined');
 		}
 
 		if (codice_corso === undefined) {
-			errors.push("Il parametro codice_corso è undefined");
+			errors.push('Il parametro codice_corso è undefined');
 		}
 
-		if(date === undefined) {
-			errors.push("Il parametro date è undefined");
+		if (date === undefined) {
+			errors.push('Il parametro date è undefined');
 		} else {
 			date = new Date(date);
-			if(date == "Invalid Date"){
+			if (date == 'Invalid Date') {
 				errors.push(
-					"Il parametro date deve essere una data in formato " +
-					"ISO(YYYY-MM-DD) o numero di millisecondi dopo il 1970-01-01"
+					'Il parametro date deve essere una data in formato ' +
+					'ISO(YYYY-MM-DD) o numero di millisecondi dopo il 1970-01-01'
 				);
 			} else {
 				formDate = [
 						pad(date.getDate()),
-						pad(date.getMonth()+1),
+						pad(date.getMonth() + 1),
 						date.getFullYear()
 					].join('-');
 			}
 		}
 
-		if(errors.length > 0){
+		if (errors.length > 0) {
 			return Promise.reject(new Error(errors.join('\n')));
 		}
 
 		const form = new FormData();
-		form.append('_lang',lang);
-		form.append('aa',anno);
-		form.append('anno',anno);
-		form.append('anno2',codice_percorso);
-		form.append('corso',codice_corso);
-		form.append('date',formDate);
-		form.append('all_events',1);
-		form.append('form-type','corso');
+		form.append('_lang', lang);
+		form.append('aa', anno);
+		form.append('anno', anno);
+		form.append('anno2', codice_percorso);
+		form.append('corso', codice_corso);
+		form.append('date', formDate);
+		form.append('all_events', 1);
+		form.append('form-type', 'corso');
 
-		return fetch(this._url,{
+		return fetch(this._url, {
 				method: 'POST',
 				body: form
 			})
@@ -120,12 +120,12 @@ class Calendar{
 						const orarioInizioSplit = cella.ora_inizio.split(':');
 						const orarioFineSplit = cella.ora_fine.split(':');
 						const begTimestamp = new Date(
-							dataSplit[2],dataSplit[1],dataSplit[0],
-							orarioInizioSplit[0],orarioInizioSplit[1]
+							dataSplit[2], dataSplit[1] - 1, dataSplit[0],
+							orarioInizioSplit[0], orarioInizioSplit[1]
 						);
 						const endTimestamp = new Date(
-							dataSplit[2],dataSplit[1],dataSplit[0],
-							orarioFineSplit[0],orarioFineSplit[1]
+							dataSplit[2], dataSplit[1] - 1, dataSplit[0],
+							orarioFineSplit[0], orarioFineSplit[1]
 						);
 						const codiceAulaSplit = cella.codice_aula.split('/');
 
@@ -134,9 +134,9 @@ class Calendar{
 								codice_attivita: cella.codice_insegnamento,
 								docente: cella.docente
 							},
-							luogo:{
+							luogo: {
 								codice_dipartimento: codiceAulaSplit[0],
-								codice_aula: codiceAulaSplit[1],
+								codice_aula: codiceAulaSplit[1]
 							},
 							timestamp: {
 								inizio: begTimestamp.toISOString(),
@@ -158,7 +158,7 @@ class Calendar{
 							pad(date.getDate())
 						].join('-')
 					});
-				} catch(err){
+				} catch(err) {
 					// err è già di tipo errrore quindi non lo incapsulo
 					return Promise.reject(err);
 				}
