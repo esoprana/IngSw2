@@ -155,7 +155,7 @@ const orarioSchema = new mongoose.Schema({
 }, {collection: 'orario'});
 //orarioSchema.index({anno: 1, attivita: 1, timestamp: 1}, {unique: true});
 
-const esamiSchema = new mongoose.Schema({
+const esameSchema = new mongoose.Schema({
 	anno: {
 		type: Number,
 		required: true
@@ -166,13 +166,17 @@ const esamiSchema = new mongoose.Schema({
 	},
 	crediti: {
 		type: Number,
-		required: true
+		required: false
 	},
 	tipo_esame: {
 		type: String,
-		required: true
+		required: false
 	},
 	matricola_docente: {
+		type: String,
+		required: true
+	},
+	nome_docente: {
 		type: String,
 		required: true
 	},
@@ -196,15 +200,15 @@ const esamiSchema = new mongoose.Schema({
 		},
 		aula: {
 			type: String,
-			required: true
+			required: false
 		},
 		sede: {
 			type: String,
-			required: true
+			required: false
 		}
 	}]
 }, {collection: 'esami'});
-esamiSchema.index({anno: 1, codice_generale: 1}, {unique: true});
+//esameSchema.index({anno: 1, codice_generale: 1}, {unique: true});
 
 const sedeSchema = new mongoose.Schema({
 	id: {
@@ -224,7 +228,7 @@ const Corso = mongoose.model('corsi', corsoSchema);
 const Attivita = mongoose.model('attivita', attivitaSchema);
 const Insegnamento = mongoose.model('insegnamenti', insegnamentoSchema);
 const Orario = mongoose.model('orario', orarioSchema);
-const Esami = mongoose.model('esami', esamiSchema);
+const Esame = mongoose.model('esami', esameSchema);
 const Sede = mongoose.model('sedi', sedeSchema);
 
 module.exports = {
@@ -233,6 +237,6 @@ module.exports = {
 	Attivita,
 	Insegnamento,
 	Orario,
-	Esami,
+	Esame,
 	Sede
 };

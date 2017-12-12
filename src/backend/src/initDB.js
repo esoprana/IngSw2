@@ -1,6 +1,7 @@
 const db = require('./db.js');
 const Codes = require('./sources/easyroom.js').Codes;
 const Calendar = require('./sources/calendar.js').Calendar;
+const Sessioni = require('./sources/sessioni.js');
 
 function insertCorsi(corsi, anno) {
 	const promises = [];
@@ -269,6 +270,108 @@ function insertOrari(r, pJSON, nReq) {
 	}).then(createPromise);
 }
 
+function insertEsami(r, pJSON, nReq) {
+	function createPromise(tmp) {
+		if (tmp.ar.length > 0) {
+			const thisRequest = tmp.ar.slice(0, nReq);
+			const otherRequest = tmp.ar.slice(nReq, undefined);
+
+			return pJSON(thisRequest)
+			.then(data => {
+				for (let idx = 0; idx < data.length; ++idx) {
+					const sessioni = data.reduce((a,sessione) => {
+						const r = sessione.listaAppelli.map(esame => new db.Esame({
+							anno: parseInt(sessione.infoSessione.AnnoAccademico),
+							codice_generale: esame.codiceGenerale,
+							crediti: esame.crediti,
+							tipo_esame: esame.tipoEsame,
+							matricola_docente: esame.matricolaDocente,
+							nome_docente: esame.nomeDocente,
+							numero_appelli: esame.numeroAppelli,
+							appelli: esame.appelli.map(appello => ({
+									timestamp: {
+										inizio: appello.dataInizio,
+										fine: appello.dataFine
+									},
+									aula: appello.aula,
+									sede: appello.sede
+								}))
+						}).save());
+
+						return a.concat(r);
+					}, []);
+
+					tmp.sessioni =
+						tmp.sessioni.concat(sessioni);
+				}
+
+				return Promise.resolve({
+					ar: otherRequest,
+					r: tmp.r,
+					sessioni: tmp.sessioni
+				}).then(createPromise);
+			}, reason => {
+				// In caso di fallimento della richiesta indico in
+				// tmp.r.failed la richiesta fallita
+				if (tmp.r.failed_esami === undefined) {
+					tmp.r.failed_esami = [];
+				}
+
+				tmp.r.failed_orari = tmp.r.failed_esami.concat(thisRequest);
+				return Promise.resolve({
+					ar: otherRequest,
+					r: tmp.r,
+					sessioni: tmp.sessioni
+				}).then(createPromise);
+			});
+		}
+
+		return Promise.resolve({
+			r: tmp.r,
+			sessioni: tmp.sessioni
+		});
+	}
+
+	const requests = [];
+
+	for (const anno in r) {
+		if (isFinite(anno)) {
+			const iAnno = parseInt(anno);
+			for (const codice_corso in r[anno].corsi) {
+				if (r[anno].corsi[codice_corso]
+						.codice_cdl !== undefined) {
+					for (const codice_anno in r[anno].corsi[codice_corso]
+												.elenco_anni) {
+						if(r[anno].corsi[codice_corso]
+								.elenco_anni[codice_anno]
+								.codice_percorso_cdl !== undefined) {
+							for (const codice_sessione in r[anno].corsi[codice_corso]
+															.elenco_anni[codice_anno]
+															.elenco_sessioni) {
+								requests.push({
+									anno: iAnno,
+									cdl: r[anno].corsi[codice_corso]
+											.codice_cdl,
+									annocdl: r[anno].corsi[codice_corso]
+												.elenco_anni[codice_anno]
+												.codice_percorso_cdl,
+									sessione: codice_sessione
+								});
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	return Promise.resolve({
+		ar: requests,
+		r,
+		sessioni: []
+	}).then(createPromise);
+}
+
 function initDB() {
 	const calendar = new Calendar(
 		'https://easyroom.unitn.it/Orario/grid_call.php'
@@ -310,6 +413,27 @@ function initDB() {
 			)
 			.then(tmp => {
 				return Promise.all(tmp.orari.map(x => x.save()))
+					.then(x => Promise.resolve(tmp.r));
+			});
+		})
+		.then(r => {
+			return insertEsami(
+				r,
+				requests => Promise.all(
+					requests.map(
+						request => Sessioni.getSessions(
+							'et_cdl',
+							request.anno,
+							request.cdl,
+							request.annocdl,
+							request.sessione
+						)
+					)
+				),
+				10
+			)
+			.then(tmp => {
+				return Promise.all(tmp.sessioni)
 					.then(x => Promise.resolve(tmp.r));
 			});
 		});
