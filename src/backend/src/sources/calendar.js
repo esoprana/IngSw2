@@ -115,36 +115,38 @@ class Calendar{
 			.then(data => data.json())
 			.then(json => {
 				try{
-					const elenco_lez = json.celle.map(cella => {
-						const dataSplit = cella.data.split('-');
-						const orarioInizioSplit = cella.ora_inizio.split(':');
-						const orarioFineSplit = cella.ora_fine.split(':');
-						const begTimestamp = new Date(
-							dataSplit[2], dataSplit[1] - 1, dataSplit[0],
-							orarioInizioSplit[0], orarioInizioSplit[1]
-						);
-						const endTimestamp = new Date(
-							dataSplit[2], dataSplit[1] - 1, dataSplit[0],
-							orarioFineSplit[0], orarioFineSplit[1]
-						);
-						const codiceAulaSplit = cella.codice_aula.split('/');
+					const elenco_lez = ((json.celle === undefined)||(json.celle === null))?
+						[]:
+						json.celle.map(cella => {
+							const dataSplit = cella.data.split('-');
+							const orarioInizioSplit = cella.ora_inizio.split(':');
+							const orarioFineSplit = cella.ora_fine.split(':');
+							const begTimestamp = new Date(
+								dataSplit[2], dataSplit[1] - 1, dataSplit[0],
+								orarioInizioSplit[0], orarioInizioSplit[1]
+							);
+							const endTimestamp = new Date(
+								dataSplit[2], dataSplit[1] - 1, dataSplit[0],
+								orarioFineSplit[0], orarioFineSplit[1]
+							);
+							const codiceAulaSplit = cella.codice_aula.split('/');
 
-						return {
-							attivita: {
-								codice_attivita: cella.codice_insegnamento,
-								docente: cella.docente
-							},
-							luogo: {
-								codice_dipartimento: codiceAulaSplit[0],
-								codice_aula: codiceAulaSplit[1]
-							},
-							timestamp: {
-								inizio: begTimestamp.toISOString(),
-								fine: endTimestamp.toISOString()
-							},
-							tipo: cella.tipo
-						}
-					});
+							return {
+								attivita: {
+									codice_attivita: cella.codice_insegnamento,
+									docente: cella.docente
+								},
+								luogo: {
+									codice_dipartimento: codiceAulaSplit[0],
+									codice_aula: codiceAulaSplit[1]
+								},
+								timestamp: {
+									inizio: begTimestamp.toISOString(),
+									fine: endTimestamp.toISOString()
+								},
+								tipo: cella.tipo
+							}
+						});
 
 					return Promise.resolve({
 						elenco_lezioni: elenco_lez,
