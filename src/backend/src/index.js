@@ -19,7 +19,7 @@ app.get('/calendario_eventi.json',(req,res) => {
 
 app.get('/sessioni.json',(req,res) => {
     
-    if(Object.keys(req.query).length != 6) {
+    if(Object.keys(req.query).length != 5) {
         console.log('numero parametri sbagliato');
         res.end('ParameterNumberException: numero parametri sbagliato');
     }
@@ -30,11 +30,11 @@ app.get('/sessioni.json',(req,res) => {
                 req.query.anno,
                 req.query.cdl,
                 req.query.annocdl,
-                req.query.sessione,
-                req.query._lang
+                req.query.sessione
+                //req.query._lang
             ).then(generatedJSON => {
 		      res.writeHead(200, { 'Content-Type': 'application/json'});
-		      res.end(generatedJSON);
+		      res.end(JSON.stringify(generatedJSON));
         });
         }catch(e) {
             console.log('nome parametri sbagliato');

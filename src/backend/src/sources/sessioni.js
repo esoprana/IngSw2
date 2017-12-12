@@ -1,7 +1,7 @@
 const fetch = require('node-fetch');
 const FormData = require('form-data');
 
-exports.getSessions = (formtype, anno, cdl, annocdl, sessione, _lang) => {
+exports.getSessions = (formtype, anno, cdl, annocdl, sessione) => {
     const url = 'https://easyroom.unitn.it/Orario/test_call.php'
 	
     const form = new FormData();
@@ -10,7 +10,7 @@ exports.getSessions = (formtype, anno, cdl, annocdl, sessione, _lang) => {
     form.append('cdl',cdl);
     form.append('annocdl',annocdl);
     form.append('sessione',sessione);
-    form.append('_lang',_lang);
+    form.append('_lang', 'it');
     
     return fetch(url,{
 			method: 'POST',
@@ -27,14 +27,18 @@ exports.getSessions = (formtype, anno, cdl, annocdl, sessione, _lang) => {
             } catch(e) { return Promise.reject('parse to JSON failed')}
         
             var elenco = {};
+            
+            const dataInizioSessioneSplit = json.DataInizio.split('-');  // ***********AGGIUNTO**********
+            const dataFineSessioneSplit = json.DataFine.split('-');      // ***********AGGIUNTO**********
         
             elenco.infoSessione = {
                 AnnoAccademico: json.AnnoAccademico.ID,
                 NomeFacolta: json.FacoltaNome,
                 Sessione: json.Sessione,
-                DataInizioSessione: json.DataInizio,
-                DataFineSessione: json.DataFine
+                DataInizioSessione: new Date(dataInizioSessioneSplit[2], dataInizioSessioneSplit[1] - 1, dataInizioSessioneSplit[0]),//json.DataInizio, 05-06-2017
+                DataFineSessione: new Date(dataFineSessioneSplit[2], dataFineSessioneSplit[1] - 1, dataFineSessioneSplit[0]) //json.DataFine 16-09-2017 
             }
+            
             elenco.listaAppelli = [];
             
             for(let i=0; i<json.Insegnamenti.length; i++) {
@@ -49,18 +53,25 @@ exports.getSessions = (formtype, anno, cdl, annocdl, sessione, _lang) => {
                     appelli: []
                 });
                 
+                
                 for(let k=0; k<json.Insegnamenti[i].Appelli.length; k++) {
+                    var dataSplit = json.Insegnamenti[i].Appelli[k].Data.split('-');         //********AGGIUNTO********
+                    var oraInizioSplit = json.Insegnamenti[i].Appelli[k].OraInizio.split(':');     //********AGGIUNTO********
+                    var oraFineSplit = json.Insegnamenti[i].Appelli[k].OraFine.split(':');         //********AGGIUNTO********
+                    
                     elenco.listaAppelli[i].appelli.push({
-                        data: json.Insegnamenti[i].Appelli[k].Data,
-                        oraInizio: json.Insegnamenti[i].Appelli[k].OraInizio,
-                        oraFine: json.Insegnamenti[i].Appelli[k].OraFine,
+                        //data: json.Insegnamenti[i].Appelli[k].Data,            29-08-2017
+                        //oraInizio: json.Insegnamenti[i].Appelli[k].OraInizio,  14:30
+                        //oraFine: json.Insegnamenti[i].Appelli[k].OraFine,      18:00
+                        dataInizio: new Date(dataSplit[2], dataSplit[1] - 1, dataSplit[0], oraInizioSplit[0], oraInizioSplit[1]),  //*****AGGIUNTO*****
+                        dataFine: new Date(dataSplit[2], dataSplit[1] - 1, dataSplit[0], oraFineSplit[0], oraFineSplit[1]),        //*****AGGIUNTO*****
                         aula: json.Insegnamenti[i].Appelli[k].Aula,
                         sede: json.Insegnamenti[i].Appelli[k].Sede
                     });
                 }
             }
         
-            return JSON.stringify(elenco);
+            return elenco;//JSON.stringify(elenco);
         })
         .catch( error => { // problemi di connessione oppure non ci sono sessioni corrispondenti ai parametri inseriti ('[]' è stato restituito).
             console.error('fetch failed: '.concat(error));

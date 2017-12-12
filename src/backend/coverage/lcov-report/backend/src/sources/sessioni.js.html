@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for backend/src/sources/sessioni.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="..\..\..\prettify.css" />
+    <link rel="stylesheet" href="..\..\..\base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(..\..\..\sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="..\..\..\index.html">All files</a> / <a href="index.html">backend/src/sources</a> sessioni.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">96.97% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>32/33</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>2/2</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>4/4</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">96.88% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>31/32</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80</td><td class="line-coverage quiet"><span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">56x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">56x</span>
+<span class="cline-any cline-yes">70x</span>
+<span class="cline-any cline-yes">70x</span>
+<span class="cline-any cline-yes">70x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">70x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const fetch = require('node-fetch');
+const FormData = require('form-data');
+&nbsp;
+exports.getSessions = (formtype, anno, cdl, annocdl, sessione, _lang) =&gt; {
+    const url = 'https://easyroom.unitn.it/Orario/test_call.php'
+	
+    const form = new FormData();
+    form.append('form-type',formtype);
+    form.append('anno',anno);
+    form.append('cdl',cdl);
+    form.append('annocdl',annocdl);
+    form.append('sessione',sessione);
+    form.append('_lang',_lang);
+    
+    return fetch(url,{
+			method: 'POST',
+			body: form
+		})
+        .then(data =&gt; {
+             if (data.ok) { return data.text(); }
+            else { return Promise.reject('fetch response status: '.concat(data.status)); }
+        })
+        .then(text =&gt; {
+            var json;
+            try{
+                json = JSON.parse(text);
+            } catch(e) { <span class="cstat-no" title="statement not covered" >return Promise.reject('parse to JSON failed')}</span>
+        
+            var elenco = {};
+            
+            const dataInizioSessioneSplit = json.DataInizio.split('-');  // ***********AGGIUNTO**********
+            const dataFineSessioneSplit = json.DataFine.split('-');      // ***********AGGIUNTO**********
+        
+            elenco.infoSessione = {
+                AnnoAccademico: json.AnnoAccademico.ID,
+                NomeFacolta: json.FacoltaNome,
+                Sessione: json.Sessione,
+                DataInizioSessione: new Date(dataInizioSessioneSplit[2], dataInizioSessioneSplit[1] - 1, dataInizioSessioneSplit[0]),//json.DataInizio, 05-06-2017
+                DataFineSessione: new Date(dataFineSessioneSplit[2], dataFineSessioneSplit[1] - 1, dataFineSessioneSplit[0]) //json.DataFine 16-09-2017 
+            }
+            
+            elenco.listaAppelli = [];
+            
+            for(let i=0; i&lt;json.Insegnamenti.length; i++) {
+                elenco.listaAppelli.push({
+                    nomeCorso: json.Insegnamenti[i].DatiInsegnamento.Nome,
+                    codiceGenerale: json.Insegnamenti[i].DatiInsegnamento.CodiceGenerale,
+                    crediti: parseInt(json.Insegnamenti[i].DatiInsegnamento.Crediti),
+                    tipoEsame: json.Insegnamenti[i].DatiInsegnamento.TipoEsame,
+                    nomeDocente: json.Insegnamenti[i].DatiDocente.Nome.concat(" " + json.Insegnamenti[i].DatiDocente.Cognome),
+                    matricolaDocente: json.Insegnamenti[i].DatiDocente.Matricola,
+                    numeroAppelli: parseInt(json.Insegnamenti[i].DatiInsegnamento.NumeroAppelli),
+                    appelli: []
+                });
+                
+                
+                for(let k=0; k&lt;json.Insegnamenti[i].Appelli.length; k++) {
+                    var dataSplit = json.Insegnamenti[i].Appelli[k].Data.split('-');         //********AGGIUNTO********
+                    var oraInizioSplit = json.Insegnamenti[i].Appelli[k].OraInizio.split(':');     //********AGGIUNTO********
+                    var oraFineSplit = json.Insegnamenti[i].Appelli[k].OraFine.split(':');         //********AGGIUNTO********
+                    
+                    elenco.listaAppelli[i].appelli.push({
+                        //data: json.Insegnamenti[i].Appelli[k].Data,            29-08-2017
+                        //oraInizio: json.Insegnamenti[i].Appelli[k].OraInizio,  14:30
+                        //oraFine: json.Insegnamenti[i].Appelli[k].OraFine,      18:00
+                        dataInizio: new Date(dataSplit[2], dataSplit[1] - 1, dataSplit[0], oraInizioSplit[0], oraInizioSplit[1]),  //*****AGGIUNTO*****
+                        dataFine: new Date(dataSplit[2], dataSplit[1] - 1, dataSplit[0], oraFineSplit[0], oraFineSplit[1]),        //*****AGGIUNTO*****
+                        aula: json.Insegnamenti[i].Appelli[k].Aula,
+                        sede: json.Insegnamenti[i].Appelli[k].Sede
+                    });
+                }
+            }
+        
+            return elenco;//JSON.stringify(elenco);
+        })
+        .catch( error =&gt; { // problemi di connessione oppure non ci sono sessioni corrispondenti ai parametri inseriti ('[]' è stato restituito).
+            console.error('fetch failed: '.concat(error));
+            return 'Problemi di acquisizione dati o nel trattamento dati. Controllare la connessione o i valori dei parametri della richiesta.' ;
+        });
+}</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue Dec 12 2017 15:38:07 GMT+0100 (ora solare Europa occidentale)
+</div>
+</div>
+<script src="..\..\..\prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="..\..\..\sorter.js"></script>
+</body>
+</html>
