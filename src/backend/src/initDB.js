@@ -11,6 +11,7 @@ function insertCorsi(corsi, anno) {
 		for (const codice_anno in corsi[codice_corso].elenco_anni) {
 			const elenco_sessioni = [];
 			if (corsi[codice_corso]
+					.elenco_anni[codice_anno]
 					.elenco_sessioni !== undefined) {
 				for (const codice_sessione in corsi[codice_corso]
 												.elenco_anni[codice_anno]
@@ -75,20 +76,23 @@ function insertDocenti(docenti, anno) {
 
 	for (const codice_docente in docenti) {
 		const sessioni = [];
-		if (docenti[codice_docente].elenco === undefined) {
+		if (docenti[codice_docente].elenco !== undefined) {
 			for (const codice_sessione in docenti[codice_docente].elenco) {
+				console.log(codice_sessione);
 				sessioni.push({
 					id: codice_sessione,
-					label: docenti[codice_docente].elenco[codice_sessione]
+					label: docenti[codice_docente].elenco[codice_sessione].label
 				});
 			}
 		}
+
+		console.log(sessioni);
 
 		const docente = new db.Docente({
 			anno,
 			id: codice_docente,
 			label: docenti[codice_docente].label,
-			sessioni: docenti[codice_docente].elenco_sessioni
+			sessioni
 		});
 
 		promises.push(docente.save());
@@ -201,12 +205,16 @@ function insertOrari(r, pJSON, nReq) {
 					tmp.orari = tmp.orari.concat(
 						data[idx].elenco_lezioni.map(att => {
 							const orario = new db.Orario({
-								anno: att.annoScolastico,
+								anno: data[idx].annoScolastico,
 								attivita: att.attivita.codice_attivita,
 								docente: att.attivita.docente,
 								timestamp: {
 									inizio: new Date(att.timestamp.inizio),
 									fine: new Date(att.timestamp.fine)
+								},
+								luogo: {
+									codice_aula: att.luogo['codice_aula'],
+									codice_sede: att.luogo['codice_dipartimento']
 								},
 								tipo: att.tipo
 							});
@@ -279,16 +287,21 @@ function insertEsami(r, pJSON, nReq) {
 			return pJSON(thisRequest)
 			.then(data => {
 				for (let idx = 0; idx < data.length; ++idx) {
-					const sessioni = data.reduce((a,sessione) => {
-						const r = sessione.listaAppelli.map(esame => new db.Esame({
-							anno: parseInt(sessione.infoSessione.AnnoAccademico),
-							codice_generale: esame.codiceGenerale,
-							crediti: esame.crediti,
-							tipo_esame: esame.tipoEsame,
-							matricola_docente: esame.matricolaDocente,
-							nome_docente: esame.nomeDocente,
-							numero_appelli: esame.numeroAppelli,
-							appelli: esame.appelli.map(appello => ({
+					const sessioni = data.reduce((a, sessione) => {
+						const r = sessione.listaAppelli.map(esame => {
+							if(esame.codiceGenerale === undefined ||
+								esame.codiceGenerale === null
+							) throw "cancaro";
+
+							const e = new db.Esame({
+								anno: parseInt(sessione.infoSessione.AnnoAccademico),
+								codice_generale: esame.codiceGenerale,
+								crediti: esame.crediti,
+								tipo_esame: esame.tipoEsame,
+								matricola_docente: esame.matricolaDocente,
+								nome_docente: esame.nomeDocente,
+								numero_appelli: esame.numeroAppelli,
+								appelli: esame.appelli.map(appello => ({
 									timestamp: {
 										inizio: appello.dataInizio,
 										fine: appello.dataFine
@@ -296,7 +309,9 @@ function insertEsami(r, pJSON, nReq) {
 									aula: appello.aula,
 									sede: appello.sede
 								}))
-						}).save());
+							});
+							return e.save();
+						});
 
 						return a.concat(r);
 					}, []);
@@ -311,6 +326,7 @@ function insertEsami(r, pJSON, nReq) {
 					sessioni: tmp.sessioni
 				}).then(createPromise);
 			}, reason => {
+				console.log(reason);
 				// In caso di fallimento della richiesta indico in
 				// tmp.r.failed la richiesta fallita
 				if (tmp.r.failed_esami === undefined) {

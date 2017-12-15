@@ -86,7 +86,7 @@ const docenteSchema = new mongoose.Schema({
 	},
 	sessioni: {
 		type: [{
-			valore: {
+			id: {
 				type: Number
 			},
 			label: String
@@ -134,6 +134,16 @@ const orarioSchema = new mongoose.Schema({
 	docente: {
 		type: String,
 		required: false
+	},
+	luogo: {
+		codice_aula: {
+			type: String,
+			required: false
+		},
+		codice_sede: {
+			type: String,
+			required: false
+		}
 	},
 	timestamp: {
 		type: {
