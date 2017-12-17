@@ -211,10 +211,10 @@ function insertOrari(r, pJSON, nReq) {
 								timestamp_fine: new Date(att.timestamp.fine),
 								tipo: att.tipo
 							}, {
-								$addToSet: {luogo: att.luogo.map(x => ({
+								$addToSet: {luogo: {$each: att.luogo.map(x => ({
 									codice_sede: x.codice_dipartimento,
 									codice_aula: x.codice_aula
-								}))}
+								})) } }
 							}, {
 								upsert: true
 							});

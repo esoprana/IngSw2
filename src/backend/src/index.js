@@ -14,7 +14,7 @@ function logAndFowardError(res, err, def) {
 		return res.status(err.status).end(err.message);
 	}
 
-	console.log('err: ' + err);
+	console.log('err: ' + JSON.stringify(err, null, 4));
 
 	return res.status(def.status).end(def.err);
 }
@@ -42,14 +42,14 @@ api.route('/orari/corsi/:anno/:codice_corso/:codice_percorso')
 			const timeFine = new Date(req.query.timestampFine);
 
 			if ((timeInizio == 'Invalid Date') || (timeFine == 'Invalid Date')) {
-				return Promise.reject({
+				return logAndFowardError(res, {
 					status: 400,
 					message: 'Invalid timestampInizio/timestampFine',
 					log: 0
 				});
 			}
 
-			richiestaOrari['timestamp.inizio'] = {
+			richiestaOrari['timestamp_inizio'] = {
 				$gte: timeInizio, $lte: timeFine
 			};
 		}
@@ -73,7 +73,16 @@ api.route('/orari/corsi/:anno/:codice_corso/:codice_percorso')
 					.elenco_attivita
 			};
 
-			return db.Orario.find(richiestaOrari).sort({'timestamp_inizio': 1}).then(orari => {
+			return db.Orario.find(
+				richiestaOrari, {
+					_id: 0,
+					__v:0,
+					'luogo._id': 0
+			})
+			.sort({'timestamp_inizio': 1})
+			.then(orari => {
+				console.log(orari.map(orario => orario.luogo));
+
 				const ris = {
 					elenco_lezioni: orari.map(orario => ({
 						insegnamento: {
@@ -183,6 +192,8 @@ api.route('/orari/:anno/:codice_attivita/:timestamp_inizio/:timestamp_fine')
 				});
 			}
 
+			console.log(orario);
+
 			const ris = orario.toObject();
 
 			if (req.query.deNorm !== undefined) {
@@ -230,7 +241,7 @@ api.route('/orari/:anno/:codice_attivita/:timestamp_inizio/:timestamp_fine')
 			});
 		}
 
-		if (req.body.docente === undefined) {
+		if (req.body.docente !== undefined) {
 			if (typeof req.body.docente !== 'string') {
 				return logAndFowardError(res, {
 					status: 400,
@@ -254,10 +265,11 @@ api.route('/orari/:anno/:codice_attivita/:timestamp_inizio/:timestamp_fine')
 					status: 400,
 					message: 'Il campo luogo deve essere un array'
 				});
-			} else if (!req.body.luogo.every(x => (x.codice_aula !== undefined) &&
-												(x.codice_sede !== undefined) &&
-												(typeof x.codice_aula === 'string') &&
-												(typeof x.codice_sede === 'string')
+			} else if (!req.body.luogo.every(x =>
+				((x.codice_aula === undefined) ||
+					(typeof x.codice_aula === 'string')) &&
+				((x.codice_sede === undefined) ||
+					(typeof x.codice_sede === 'string'))
 			)) {
 				return logAndFowardError(res, {
 					status: 400,
@@ -360,10 +372,11 @@ api.route('/orari/:anno/:codice_attivita/:timestamp_inizio/:timestamp_fine')
 				status: 400,
 				message: 'Il campo luogo deve essere un array'
 			});
-		} else if (!req.body.luogo.every(x => (x.codice_aula !== undefined) &&
-											(x.codice_sede !== undefined) &&
-											(typeof x.codice_aula === 'string') &&
-											(typeof x.codice_sede === 'string')
+		} else if (!req.body.luogo.every(x =>
+			((x.codice_aula === undefined) ||
+				(typeof x.codice_aula === 'string')) &&
+			((x.codice_sede === undefined) ||
+				(typeof x.codice_sede === 'string'))
 		)) {
 			return logAndFowardError(res, {
 				status: 400,
@@ -380,7 +393,13 @@ api.route('/orari/:anno/:codice_attivita/:timestamp_inizio/:timestamp_fine')
 			timestamp_inizio: req.params.timestamp_inizio,
 			timestamp_fine: req.params.timestamp_fine,
 			tipo: req.body.tipo
-		}).save();
+		}).save().then(
+			ok => res.json({status: 'ok'}),
+			err => logAndFowardError(res, err, {
+				status: 500,
+				message: 'Impossibile inserire l'
+			})
+		);
 	})
 	.delete((req, res) => {
 		if (!isFinite(req.params.anno)) {
@@ -453,14 +472,14 @@ api.route('/orari/:anno/:codice_attivita')
 			const timeFine = new Date(req.query.timestampFine);
 
 			if ((timeInizio == 'Invalid Date') || (timeFine == 'Invalid Date')) {
-				return Promise.reject({
+				return logAndFowardError(res, {
 					status: 400,
 					message: 'Invalid timestampInizio/timestampFine',
 					log: 0
 				});
 			}
 
-			richiesta['timestamp.inizio'] = {
+			richiesta['timestamp_inizio'] = {
 				$gte: timeInizio, $lte: timeFine
 			};
 		}
