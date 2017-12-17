@@ -4,27 +4,26 @@ const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 
 const db = require('./db.js');
-const initDB = require('./initDB.js').initDB;
-
-const jsonParser = bodyParser.json({type: '*/*'});
-
-const api = express.Router();
+// const initDB = require('./initDB.js').initDB; Per inizializzare il db
 
 function logAndFowardError(res, err, def) {
 	if ((typeof err === 'object') && (!(err instanceof Error))) {
 		if (err.log === undefined || err.log == true) {
-			console.log('err: ' + JSON.stringify(err));
+			console.log('err: ' + err);
 		}
 		return res.status(err.status).end(err.message);
 	}
 
-	console.log('err: ' + JSON.stringify(err));
+	console.log('err: ' + err);
 
 	return res.status(def.status).end(def.err);
 }
 
-api.get('/orari/corsi/:anno/:codice_corso',
-	(req, res) => {
+const jsonParser = bodyParser.json({type: '*/*'});
+const api = express.Router();
+
+api.route('/orari/corsi/:anno/:codice_corso/:codice_percorso')
+	.get((req, res) => {
 		if (!isFinite(req.params.anno)) {
 			return logAndFowardError(res, {
 				status: 400,
@@ -33,118 +32,26 @@ api.get('/orari/corsi/:anno/:codice_corso',
 			});
 		}
 
-		return db.Corso.findOne({
-			anno: req.params.anno,
-			id: req.params.codice_corso
-		}, {elenco_anni: 1}).then(corso => {
-			if (corso === null) {
+		const richiestaOrari = {
+			anno: parseInt(req.params.anno)
+		};
+
+		if ((req.query.timestampInizio !== undefined) &&
+			(req.query.timestampFine !== undefined)) {
+			const timeInizio = new Date(req.query.timestampInizio);
+			const timeFine = new Date(req.query.timestampFine);
+
+			if ((timeInizio == 'Invalid Date') || (timeFine == 'Invalid Date')) {
 				return Promise.reject({
-					status: 404,
-					message: 'L\'elemento richiesto non è stato trovato',
+					status: 400,
+					message: 'Invalid timestampInizio/timestampFine',
 					log: 0
 				});
 			}
 
-			const richiesta = {
-				anno: parseInt(req.params.anno),
-				attivita: {
-					$in: corso.elenco_anni.reduce((r, anno) =>
-						r.concat(anno.elenco_attivita), [])
-				}
+			richiestaOrari['timestamp.inizio'] = {
+				$gte: timeInizio, $lte: timeFine
 			};
-
-			if ((req.query.timestampInizio !== undefined) &&
-				(req.query.timestampFine !== undefined)) {
-				const timeInizio = new Date(req.query.timestampInizio);
-				const timeFine = new Date(req.query.timestampFine);
-
-				if ((timeInizio === 'Invalid Date') || (timeFine === 'Invalid Date')) {
-					return Promise.reject({
-						status: 400,
-						message: 'Invalid timestampInizio/timestampFine',
-						log: 0
-					});
-				}
-
-				richiesta['timestamp.inizio'] = {
-					$gte: timeInizio, $lte: timeFine
-				};
-			}
-
-			return db.Orario.find(richiesta).sort({'timestamp.inizio': 1}).then(orari => {
-				const ris = {
-					elenco_lezioni: orari.map(orario => ({
-						insegnamento: {
-							codice_insegnamento: orario.attivita,
-							docente: orario.docente
-						},
-						luogo: {
-							codice_aula: orario.luogo.codice_aula,
-							codice_sede: orario.luogo.codice_sede
-						},
-						timestamp: {
-							inizio: orario.timestamp.inizio,
-							fine: orario.timestamp.fine
-						},
-						tipo: orario.tipo
-					})),
-					anno: req.params.anno,
-					codice_corso: req.params.codice_corso,
-					codice_percorso: req.params.codice_percorso,
-					timestampInizio: req.query.timestampInizio,
-					timestampFine: req.query.timestampFine,
-					deNorm: req.query.deNorm
-				};
-
-				if (req.query.deNorm !== undefined) {
-					return db.Attivita.find({
-						anno: req.params.anno,
-						id: {$in: orari.map(orario => orario.attivita)}
-					}, {
-						id: 1,
-						label: 1
-					}).then(data => {
-						const elencoAttivita = new Map(data.map(attivita => [attivita.id, attivita.label]));
-						ris.elenco_lezioni.forEach(lezione => {
-							lezione.insegnamento.nome_insegnamento =
-								elencoAttivita.get(lezione.insegnamento.codice_insegnamento);
-						});
-
-						return Promise.resolve();
-					}).then(() => {
-						return db.Sede.find({
-							id: {$in: orari.map(orario => orario.luogo.codice_sede)}
-						}).then(sedi => {
-							const elencoSedi = new Map(sedi.map(sede => [sede.id, sede.label]));
-							ris.elenco_lezioni.forEach(lezione => {
-								lezione.luogo.nome_sede = elencoSedi.get(lezione.luogo.codice_sede);
-							});
-
-							return Promise.resolve(ris);
-						});
-					});
-				}
-
-				return Promise.resolve(ris);
-			});
-		}).then(
-			json => res.json(json),
-			err => logAndFowardError(res, err, {
-				status: 500,
-				message: 'Impossibile ottenere l\'elemento richiesto'
-			})
-		);
-	}
-);
-
-api.get('/orari/corsi/:anno/:codice_corso/:codice_percorso',
-	(req, res) => {
-		if (!isFinite(req.params.anno)) {
-			return logAndFowardError(res, {
-				status: 400,
-				message: 'Il campo anno deve essere un numero finito',
-				log: 0
-			});
 		}
 
 		return db.Corso.findOne({
@@ -160,48 +67,25 @@ api.get('/orari/corsi/:anno/:codice_corso/:codice_percorso',
 				});
 			}
 
-			const richiesta = {
-				anno: parseInt(req.params.anno),
-				attivita: {
-					$in: corso.elenco_anni
-						.find(percorso => percorso.id === req.params.codice_percorso)
-						.elenco_attivita
-				}
+			richiestaOrari.attivita = {
+				$in: corso.elenco_anni
+					.find(percorso => percorso.id === req.params.codice_percorso)
+					.elenco_attivita
 			};
 
-			if ((req.query.timestampInizio !== undefined) &&
-				(req.query.timestampFine !== undefined)) {
-				const timeInizio = new Date(req.query.timestampInizio);
-				const timeFine = new Date(req.query.timestampFine);
-
-				if ((timeInizio == 'Invalid Date') || (timeFine == 'Invalid Date')) {
-					return Promise.reject({
-						status: 400,
-						message: 'Invalid timestampInizio/timestampFine',
-						log: 0
-					});
-				}
-
-				richiesta['timestamp.inizio'] = {
-					$gte: timeInizio, $lte: timeFine
-				};
-			}
-
-			return db.Orario.find(richiesta).sort({'timestamp.inizio': 1}).then(orari => {
+			return db.Orario.find(richiestaOrari).sort({'timestamp_inizio': 1}).then(orari => {
 				const ris = {
 					elenco_lezioni: orari.map(orario => ({
 						insegnamento: {
 							codice_insegnamento: orario.attivita,
 							docente: orario.docente
 						},
-						luogo: {
-							codice_aula: orario.luogo.codice_aula,
-							codice_sede: orario.luogo.codice_sede
-						},
-						timestamp: {
-							inizio: orario.timestamp.inizio,
-							fine: orario.timestamp.fine
-						},
+						luogo: orario.luogo.map(x => ({
+							codice_aula: x.codice_aula,
+							codice_sede: x.codice_sede
+						})),
+						timestamp_inizio: orario.timestamp_inizio,
+						timestamp_fine: orario.timestamp_fine,
 						tipo: orario.tipo
 					})),
 					anno: req.params.anno,
@@ -229,11 +113,17 @@ api.get('/orari/corsi/:anno/:codice_corso/:codice_percorso',
 						return Promise.resolve();
 					}).then(() => {
 						return db.Sede.find({
-							id: {$in: orari.map(orario => orario.luogo.codice_sede)}
+							id: {$in: orari.map(orario => orario.luogo)
+											.reduce((a, b) =>
+												a.concat(b.map(x => x.codice_sede))
+											, [])
+							}
 						}).then(sedi => {
 							const elencoSedi = new Map(sedi.map(sede => [sede.id, sede.label]));
 							ris.elenco_lezioni.forEach(lezione => {
-								lezione.luogo.nome_sede = elencoSedi.get(lezione.luogo.codice_sede);
+								lezione.luogo.forEach(l => {
+									l.nome_sede = elencoSedi.get(l.codice_sede);
+								});
 							});
 
 							return Promise.resolve(ris);
@@ -250,36 +140,403 @@ api.get('/orari/corsi/:anno/:codice_corso/:codice_percorso',
 				message: 'Impossibile ottenere l\'elemento richiesto'
 			})
 		);
-	}
-);
+	});
 
-api.get('/attivita/:anno', (req, res) => {
-	if (!isFinite(req.params.anno)) {
-		return logAndFowardError(res, {
-			status: 400,
-			message: 'Il campo anno deve essere un numero finito',
-			log: 0
-		});
-	}
+api.route('/orari/:anno/:codice_attivita/:timestamp_inizio/:timestamp_fine')
+	.get((req, res) => {
+		if (!isFinite(req.params.anno)) {
+			return logAndFowardError(res, {
+				status: 400,
+				message: 'Il campo anno deve essere di tipo Number'
+			});
+		}
 
-	return db.Attivita.find({
-		anno: req.params.anno
-	}, {
-		_id: 0,
-		id: 1,
-		label: 1
-	})
-	.then(
-		result => res.json({
+		req.params.codice_attivita =
+			req.params.codice_attivita.replace('^', '/');
+
+		const tInizio = new Date(req.params.timestamp_inizio);
+		const tFine = new Date(req.params.timestamp_fine);
+
+		if ((tInizio == 'Invalid Date') || (tFine == 'Invalid Date')) {
+			return logAndFowardError(res, {
+				status: 400,
+				message: 'I campi timestamp_inizio e timestamp_fine devono essere una data ISO'
+			});
+		}
+
+		return db.Orario.findOne({
 			anno: req.params.anno,
-			elenco_attivita: result
-		}),
-		err => logAndFowardError(res, err, {
-			status: 500,
-			message: 'Impossibile trovare l\'elemento richiesto'
+			attivita: req.params.codice_attivita,
+			timestamp_inizio: tInizio,
+			timestamp_fine: tFine
+		}, {
+			_id: 0,
+			__v: 0,
+			'luogo._id': 0
 		})
-	);
-});
+		.then(orario => {
+			if (orario === null) {
+				return Promise.reject({
+					status: 404,
+					message: 'L\'elemento richiesto non è stato trovato',
+					log: 0
+				});
+			}
+
+			const ris = orario.toObject();
+
+			if (req.query.deNorm !== undefined) {
+				return db.Sede.find({
+					id: {$in: orario.luogo.map(x => x.codice_sede)}
+				}).then(sedi => {
+					const elencoSedi = new Map(sedi.map(sede => [sede.id, sede.label]));
+					ris.luogo.forEach(l => {
+						l.nome_sede = elencoSedi.get(l.codice_sede);
+					});
+
+					return Promise.resolve(ris);
+				});
+			}
+
+			return Promise.resolve(ris);
+		})
+		.then(
+			result => res.json(result),
+			err => logAndFowardError(res, err, {
+				status: 500,
+				message: 'Impossibile ottenere l\'orario richiesto'
+			})
+		);
+	})
+	.post(jsonParser, (req, res) => {
+		if (!isFinite(req.params.anno)) {
+			return logAndFowardError(res, {
+				status: 400,
+				message: 'Il campo anno deve essere di tipo Number'
+			});
+		}
+
+		req.params.codice_attivita =
+			req.params.codice_attivita.replace('^', '/');
+
+		const tInizio = new Date(req.params.timestamp_inizio);
+		const tFine = new Date(req.params.timestamp_fine);
+
+		if ((tInizio == 'Invalid Date') || (tFine == 'Invalid Date')) {
+			return logAndFowardError(res, {
+				status: 400,
+				message: 'I campi timestamp_inizio e timestamp_fine devono ' +
+							'essere una data ISO'
+			});
+		}
+
+		if (req.body.docente === undefined) {
+			if (typeof req.body.docente !== 'string') {
+				return logAndFowardError(res, {
+					status: 400,
+					message: 'Il campo docente deve essere di tipo string'
+				});
+			}
+		}
+
+		if (req.body.tipo !== undefined) {
+			if (typeof req.body.tipo !== 'string') {
+				return logAndFowardError(res, {
+					status: 400,
+					message: 'Il campo tipo deve essere di tipo string'
+				});
+			}
+		}
+
+		if (req.body.luogo !== undefined) {
+			if (!Array.isArray(req.body.luogo)) {
+				return logAndFowardError(res, {
+					status: 400,
+					message: 'Il campo luogo deve essere un array'
+				});
+			} else if (!req.body.luogo.every(x => (x.codice_aula !== undefined) &&
+												(x.codice_sede !== undefined) &&
+												(typeof x.codice_aula === 'string') &&
+												(typeof x.codice_sede === 'string')
+			)) {
+				return logAndFowardError(res, {
+					status: 400,
+					message: 'Il campo luogo deve avere struttura \n' +
+								'[{codice_aula: string, codice_sede: string}...]'
+				});
+			}
+		}
+
+		return db.Orario.findOne({
+			anno: req.params.anno,
+			attivita: req.params.codice_attivita,
+			timestamp_inizio: req.params.timestamp_inizio,
+			timestamp_fine: req.params.timestamp_fine
+		}).then(
+			result => {
+				if (result === null) {
+					Promise.reject({
+						status: 404,
+						message: 'Impossibile trovare l\'elemento richiesto',
+						log: 0
+					});
+				}
+
+				if (req.body.docente !== undefined) {
+					result.docente = req.body.docente;
+				}
+
+				if (req.body.luogo !== undefined) {
+					result.luogo = req.body.luogo;
+				}
+
+				if (req.body.tipo !== undefined) {
+					result.tipo = req.body.tipo;
+				}
+
+				return result.save().then(res => Promise.resolve({status: 'ok'}));
+			}
+		).then(
+			json => res.json(json),
+			err => logAndFowardError(res, err, {
+				status: 500,
+				message: 'Impossibile fare l\'update dell\'elemento richiesto'
+			})
+		);
+	})
+	.put(jsonParser, (req, res) => {
+		if (!isFinite(req.params.anno)) {
+			return logAndFowardError(res, {
+				status: 400,
+				message: 'Il campo anno deve essere di tipo Number'
+			});
+		}
+
+		req.params.codice_attivita =
+			req.params.codice_attivita.replace('^', '/');
+
+		const tInizio = new Date(req.params.timestamp_inizio);
+		const tFine = new Date(req.params.timestamp_fine);
+
+		if ((tInizio == 'Invalid Date') || (tFine == 'Invalid Date')) {
+			return logAndFowardError(res, {
+				status: 400,
+				message: 'I campi timestamp_inizio e timestamp_fine devono ' +
+							'essere una data ISO'
+			});
+		}
+
+		if (req.body.docente === undefined) {
+			return logAndFowardError(res, {
+				status: 400,
+				message: 'Il campo docente è mancante'
+			});
+		} else if (typeof req.body.docente !== 'string') {
+			return logAndFowardError(res, {
+				status: 400,
+				message: 'Il campo docente deve essere di tipo string'
+			});
+		}
+
+		if (req.body.tipo === undefined) {
+			return logAndFowardError(res, {
+				status: 400,
+				message: 'Il campo tipo è mancante'
+			});
+		} else if (typeof req.body.tipo !== 'string') {
+			return logAndFowardError(res, {
+				status: 400,
+				message: 'Il campo tipo deve essere di tipo string'
+			});
+		}
+
+		if (req.body.luogo === undefined) {
+			return logAndFowardError(res, {
+				status: 400,
+				message: 'Il campo luogo deve essere presente'
+			});
+		} else if (!Array.isArray(req.body.luogo)) {
+			return logAndFowardError(res, {
+				status: 400,
+				message: 'Il campo luogo deve essere un array'
+			});
+		} else if (!req.body.luogo.every(x => (x.codice_aula !== undefined) &&
+											(x.codice_sede !== undefined) &&
+											(typeof x.codice_aula === 'string') &&
+											(typeof x.codice_sede === 'string')
+		)) {
+			return logAndFowardError(res, {
+				status: 400,
+				message: 'Il campo luogo deve avere struttura \n' +
+							'[{codice_aula: string, codice_sede: string}...]'
+			});
+		}
+
+		return new db.Orario({
+			anno: req.params.anno,
+			attivita: req.params.codice_attivita,
+			docente: req.body.docente,
+			luogo: req.body.luogo,
+			timestamp_inizio: req.params.timestamp_inizio,
+			timestamp_fine: req.params.timestamp_fine,
+			tipo: req.body.tipo
+		}).save();
+	})
+	.delete((req, res) => {
+		if (!isFinite(req.params.anno)) {
+			return logAndFowardError(res, {
+				status: 400,
+				message: 'Il campo anno deve essere di tipo Number'
+			});
+		}
+
+		req.params.codice_attivita =
+			req.params.codice_attivita.replace('^', '/');
+
+		const tInizio = new Date(req.params.timestamp_inizio);
+		const tFine = new Date(req.params.timestamp_fine);
+
+		if ((tInizio == 'Invalid Date') || (tFine == 'Invalid Date')) {
+			return logAndFowardError(res, {
+				status: 400,
+				message: 'I campi timestamp_inizio e timestamp_fine devono ' +
+							'essere una data ISO'
+			});
+		}
+
+		return db.Orario.deleteOne({
+			anno: req.params.anno,
+			attivita: req.params.codice_attivita,
+			timestamp_inizio: req.params.timestamp_inizio,
+			timestamp_fine: req.params.timestamp_fine
+		}).then(
+			r => {
+				if ((r.result.ok === 1) && (r.result.n === 1)) {
+					return Promise.resolve({status: 'ok'});
+				}
+
+				return Promise.reject({
+					status: 500,
+					message: 'Impossibile eliminare l\'oggetto richiesto',
+					log: 0
+				});
+			})
+		.then(
+			r => res.json(r),
+			err => logAndFowardError(res, err, {
+				status: 500,
+				message: 'Impossibile eliminare l\'oggetto richiesto'
+			})
+		);
+	});
+
+api.route('/orari/:anno/:codice_attivita')
+	.get((req, res) => {
+		if (!isFinite(req.params.anno)) {
+			return logAndFowardError(res, {
+				status: 400,
+				message: 'Il campo anno deve essere di tipo Number'
+			});
+		}
+
+		req.params.codice_attivita =
+			req.params.codice_attivita.replace('^', '/');
+
+		const richiesta = {
+			anno: req.params.anno,
+			attivita: req.params.codice_attivita
+		};
+
+		if ((req.query.timestampInizio !== undefined) &&
+			(req.query.timestampFine !== undefined)) {
+			const timeInizio = new Date(req.query.timestampInizio);
+			const timeFine = new Date(req.query.timestampFine);
+
+			if ((timeInizio == 'Invalid Date') || (timeFine == 'Invalid Date')) {
+				return Promise.reject({
+					status: 400,
+					message: 'Invalid timestampInizio/timestampFine',
+					log: 0
+				});
+			}
+
+			richiesta['timestamp.inizio'] = {
+				$gte: timeInizio, $lte: timeFine
+			};
+		}
+
+		return db.Orario.find(richiesta, {
+			_id: 0,
+			anno: 0,
+			__v: 0,
+			attivita: 0,
+			'luogo._id': 0
+		})
+		.sort({'timestamp_inizio': 1})
+		.then(orari => {
+			const ris = orari.map(x => x.toObject());
+			if (req.query.deNorm !== undefined) {
+				return db.Sede.find({
+					id: {$in: orari.map(orario => orario.luogo)
+									.reduce((a, b) =>
+										a.concat(b.map(x => x.codice_sede))
+									, [])
+					}
+				}).then(sedi => {
+					const elencoSedi = new Map(sedi.map(sede => [sede.id, sede.label]));
+					ris.forEach(lezione => {
+						lezione.luogo.forEach(l => {
+							l.nome_sede = elencoSedi.get(l.codice_sede);
+						});
+					});
+
+					return Promise.resolve(ris);
+				});
+			}
+
+			return Promise.resolve(ris);
+		})
+		.then(
+			result => res.json({
+				anno: req.params.anno,
+				attivita: req.params.codice_attivita,
+				elenco_orari: result
+			}),
+			err => logAndFowardError(res, err, {
+				status: 500,
+				message: 'Impossibile ottenere l\'orario richiesto'
+			})
+		);
+	});
+
+api.route('/attivita/:anno')
+	.get((req, res) => {
+		if (!isFinite(req.params.anno)) {
+			return logAndFowardError(res, {
+				status: 400,
+				message: 'Il campo anno deve essere un numero finito',
+				log: 0
+			});
+		}
+
+		return db.Attivita.find({
+			anno: req.params.anno
+		}, {
+			_id: 0,
+			id: 1,
+			label: 1
+		})
+		.then(
+			result => res.json({
+				anno: req.params.anno,
+				elenco_attivita: result
+			}),
+			err => logAndFowardError(res, err, {
+				status: 500,
+				message: 'Impossibile trovare l\'elemento richiesto'
+			})
+		);
+	});
 
 api.route('/attivita/:anno/:codice_attivita')
 	.get((req, res) => {
@@ -356,7 +613,7 @@ api.route('/attivita/:anno/:codice_attivita')
 		.then(
 			result => {
 				if (result === null) {
-					return Promise.rejct({
+					return Promise.reject({
 						status: 400,
 						message: 'L\'elemento richiesto non è stato trovato',
 						log: 0
@@ -366,14 +623,11 @@ api.route('/attivita/:anno/:codice_attivita')
 				result.label = req.body.label;
 
 				return result.save().then(
-					result => res.json({status: 'ok'}),
-					err => Promise.reject({
-						status: 500,
-						message: 'Impossibile fare l\'update dell\'elemento richiesto',
-						log: 1
-					})
+					result => Promise.resolve({status: 'ok'})
 				);
-			},
+			}
+		).then(
+			json => res.json(json),
 			err => logAndFowardError(res, err, {
 				status: 500,
 				message: 'Impossibile trovare l\'elemento richiesto'
@@ -442,7 +696,7 @@ api.route('/attivita/:anno/:codice_attivita')
 				return Promise.reject({
 					status: 500,
 					message: 'Impossibile eliminare l\'oggetto richiesto',
-					log: 0
+					log: 1
 				});
 			})
 		.then(
@@ -454,30 +708,36 @@ api.route('/attivita/:anno/:codice_attivita')
 		);
 	});
 
-api.get('/docenti/:anno', (req, res) => {
-	if (!isFinite(req.params.anno)) {
-		return logAndFowardError(res, {
-			status: 400,
-			message: 'Il campo anno deve essere un numero finito',
-			log: 0
-		});
-	}
+api.route('/docenti/:anno')
+	.get((req, res) => {
+		if (!isFinite(req.params.anno)) {
+			return logAndFowardError(res, {
+				status: 400,
+				message: 'Il campo anno deve essere un numero finito',
+				log: 0
+			});
+		}
 
-	return db.Docente.find({
-		anno: req.params.anno
-	}, {
-		_id: 0,
-		anno: 0,
-		__v: 0,
-		'sessioni._id': 0
-	}).then(
-		result => res.json({anno: req.params.anno, elenco_docenti: result}),
-		err => logAndFowardError(res, err, {
-			status: 500,
-			message: 'Impossibile recuperare l\'elemento richiesto'
-		})
-	);
-});
+		return db.Docente.find({
+			anno: req.params.anno
+		}, {
+			_id: 0,
+			anno: 0,
+			__v: 0,
+			'sessioni._id': 0
+		}).then(
+			result => Promise.resolve({
+				anno: req.params.anno,
+				elenco_docenti: result
+			}
+		)).then(
+			json => res.json(json),
+			err => logAndFowardError(res, err, {
+				status: 500,
+				message: 'Impossibile recuperare l\'elemento richiesto'
+			})
+		);
+	});
 
 api.route('/docenti/:anno/:codice_docente')
 	.get((req, res) => {
@@ -501,19 +761,21 @@ api.route('/docenti/:anno/:codice_docente')
 		}).then(
 			result => {
 				if (result === null) {
-					return Promise.rejects({
+					return Promise.reject({
 						status: 404,
 						message: 'L\'elemento richiesto non è stato trovato',
 						log: 0
 					});
 				}
 
-				return res.json({
+				return Promise.resolve({
 					docente: result,
 					anno: req.params.anno,
 					id: req.params.codice_docente
 				});
-			},
+			})
+		.then(
+			json => res.json(json),
 			err => logAndFowardError(res, err, {
 				status: 500,
 				message: 'Impossibile trovare l\'elemento richiesto'
@@ -552,11 +814,11 @@ api.route('/docenti/:anno/:codice_docente')
 					message: 'Il campo sessioni deve essere un array',
 					log: 0
 				});
-			} else if (req.body.sessioni
+			} else if (!req.body.sessioni
 								.every(x => (x.label !== undefined) &&
 											(typeof x.label === 'string') &&
-											(x.valore !== undefined) &&
-											(isFinite(x.valore))
+											(x.id !== undefined) &&
+											(isFinite(x.id))
 			)) {
 				return logAndFowardError(res, {
 					status: 400,
@@ -573,7 +835,7 @@ api.route('/docenti/:anno/:codice_docente')
 		}).then(
 			result => {
 				if (result === null) {
-					return Promise.rejects({
+					return Promise.reject({
 						status: 404,
 						message: 'L\'elemento richiesto non è stato trovato',
 						log: 0
@@ -589,14 +851,11 @@ api.route('/docenti/:anno/:codice_docente')
 				}
 
 				return result.save().then(
-					ok => Promise.resolve({status: 'ok'}),
-					err => Promise.rejects({
-						status: 500,
-						message: 'Impossibile fare l\'update dell\'elemento richiesto',
-						log: 0
-					})
+					ok => Promise.resolve({status: 'ok'})
 				);
-			},
+			}
+		).then(
+			json => res.json(json),
 			err => logAndFowardError(res, err, {
 				status: 500,
 				message: 'Impossibile fare l\'update dell\'elemento richiesto'
@@ -639,11 +898,11 @@ api.route('/docenti/:anno/:codice_docente')
 					message: 'Il campo sessioni deve essere un array',
 					log: 0
 				});
-			} else if (req.body.sessioni
+			} else if (!req.body.sessioni
 								.every(x => (x.label !== undefined) &&
-											(typeof x.label === 'string') &&
-											(x.valore !== undefined) &&
-											(isFinite(x.valore))
+									(typeof x.label === 'string') &&
+									(x.id !== undefined) &&
+									(isFinite(x.id))
 			)) {
 				return logAndFowardError(res, {
 					status: 400,
@@ -688,123 +947,123 @@ api.route('/docenti/:anno/:codice_docente')
 				return Promise.reject({
 					status: 500,
 					message: 'Impossibile eliminare l\'oggetto richiesto',
-					log: 0
+					log: 1
 				});
 			}
 		).then(
 			json => res.json(json),
 			err => logAndFowardError(res, err, {
 				status: 500,
-				message:'Impossibile eliminare l\'oggetto richiesto'
+				message: 'Impossibile eliminare l\'oggetto richiesto'
 			})
 		);
 	});
 
+api.route('/corsi')
+	.get((req, res) => {
+		return db.Corso.distinct('anno')
+			.then(
+				json => res.json(json),
+				err => logAndFowardError(res, err, {
+					status: 500,
+					message: 'Impossibile recuperare la lista degli anni'
+				})
+			);
+	});
 
-api.get('/corsi', (req, res) => {
-	return db.Corso.distinct('anno')
-		.then(
-			json => res.json(json),
-			err => logAndFowardError(res, err, {
-				status: 500,
-				message: 'Impossibile recuperare la lista degli anni'
-			})
-		);
-});
+api.route('/corsi/:anno')
+	.get((req, res) => {
+		if (!isFinite(req.params.anno)) {
+			return logAndFowardError(res, {
+				status: 400,
+				message: 'Il campo anno deve essere un numero finito',
+				log: 0
+			});
+		}
 
-api.get('/corsi/:anno', (req, res) => {
-	if (!isFinite(req.params.anno)) {
-		return logAndFowardError(res, {
-			status: 400,
-			message: 'Il campo anno deve essere un numero finito',
-			log: 0
-		});
-	}
+		let promise = Promise.resolve();
 
-	let promise = Promise.resolve();
+		if (req.query.deNorm !== undefined) {
+			promise = promise.then(() => {
+				return db.Attivita.find({
+					anno: req.params.anno
+				}, {
+					_id: 0,
+					id: 1,
+					label: 1
+				}).then(x => Promise.resolve(new Map(
+					x.map(k => [k.id, k.label])
+				)));
+			});
+		}
 
-	if (req.query.deNorm !== undefined) {
-		promise = promise.then(() => {
-			return db.Attivita.find({
+		return promise.then(attMap => {
+			return db.Corso.find({
 				anno: req.params.anno
 			}, {
 				_id: 0,
-				id: 1,
-				label: 1
-			}).then(x => Promise.resolve(new Map(
-				x.map(k => [k.id, {label: k.label}])
-			)));
-		});
-	}
+				anno: 0,
+				codice_cdl: 0,
+				__v: 0,
+				'elenco_anni.elenco_sessioni._id': 0,
+				'elenco_anni.codice_percorso_cdl': 0,
+				'elenco_anni._id': 0
+			})
+			.then(corsi => {
+				const newCorsi = corsi.reduce((corsi, corso) => {
+					const newElencoAnni =
+						corso.elenco_anni.reduce((percorsi, percorso) => {
+							let newElencoAttivita;
+							if (req.query.deNorm !== undefined) {
+								newElencoAttivita = {};
+								percorso.elenco_attivita.forEach(codice_attivita => {
+									newElencoAttivita[codice_attivita] = {
+										label: attMap.get(codice_attivita)
+									};
+								});
+							} else {
+								newElencoAttivita = percorso.elenco_attivita;
+							}
 
-	return promise.then(attMap => {
-		return db.Corso.find({
-			anno: req.params.anno
-		}, {
-			_id: 0,
-			anno: 0,
-			codice_cdl: 0,
-			__v: 0,
-			'elenco_anni.elenco_sessioni._id': 0,
-			'elenco_anni.codice_percorso_cdl': 0,
-			'elenco_anni._id': 0
-		})
-		.then(corsi => {
-			const newCorsi = corsi.reduce((corsi, corso) => {
-				const newElencoAnni =
-					corso.elenco_anni.reduce((percorsi, percorso) => {
-						let newElencoAttivita;
-						if (req.query.deNorm !== undefined) {
-							newElencoAttivita = {};
-							percorso.elenco_attivita.forEach(codice_attivita => {
-								if (attMap.has(codice_attivita)) {
-									newElencoAttivita[codice_attivita] =
-										attMap.get(codice_attivita);
-								}
-							});
-						} else {
-							newElencoAttivita = percorso.elenco_attivita;
-						}
+							const newElencoSessioni =
+								percorso.elenco_sessioni.reduce((r, sessione) => {
+									r[sessione.id] = {
+										label: sessione.label
+									};
 
-						const newElencoSessioni =
-							percorso.elenco_sessioni.reduce((r, sessione) => {
-								r[sessione.id] = {
-									label: sessione.label
-								};
+									return r;
+								}, {});
 
-								return r;
-							}, {});
+							percorsi[percorso.id] = {
+								label: percorso.label,
+								elenco_sessioni: newElencoSessioni,
+								elenco_attivita: newElencoAttivita
+							};
+							return percorsi;
+						}, {});
 
-						percorsi[percorso.id] = {
-							label: percorso.label,
-							elenco_sessioni: newElencoSessioni,
-							elenco_attivita: newElencoAttivita
-						};
-						return percorsi;
-					}, {});
+					corsi[corso.id] = {
+						label: corso.label,
+						elenco_anni: newElencoAnni
+					};
 
-				corsi[corso.id] = {
-					label: corso.label,
-					elenco_anni: newElencoAnni
-				};
+					return corsi;
+				}, {});
 
-				return corsi;
-			}, {});
-
-			return Promise.resolve({
-				anno: req.params.anno,
-				corsi: newCorsi,
-				deNorm: req.query.deNorm
+				return Promise.resolve({
+					anno: req.params.anno,
+					corsi: newCorsi,
+					deNorm: req.query.deNorm
+				});
 			});
-		});
-	}).then(
-		json => res.json(json),
-		err => logAndFowardError(res, err, {
-			status: 500,
-			message: 'Impossibile recuperare la lista dei corsi dell\'anno richiesto'
-		})
-	);
-});
+		}).then(
+			json => res.json(json),
+			err => logAndFowardError(res, err, {
+				status: 500,
+				message: 'Impossibile recuperare la lista dei corsi dell\'anno richiesto'
+			})
+		);
+	});
 
 api.route('/corsi/:anno/:codice_corso')
 	.get((req, res) => {
@@ -835,7 +1094,7 @@ api.route('/corsi/:anno/:codice_corso')
 				});
 			}
 
-			const elencoAttivita = new Map();
+			const elencoAttivita = [];
 
 			const newElencoAnni = json.elenco_anni.reduce((r, percorso) => {
 				const newElencoSessioni =
@@ -853,19 +1112,12 @@ api.route('/corsi/:anno/:codice_corso')
 				};
 
 				if (req.query.deNorm !== undefined) {
-					r[percorso.id].elenco_attivita = {};
 					percorso.elenco_attivita.forEach(codice_attivita => {
-						if (!elencoAttivita.has(codice_attivita)){
-							elencoAttivita.set(codice_attivita, []);
-						}
-
-						elencoAttivita.get(codice_attivita).push({
-							codice_percorso: percorso.id
-						});
+						elencoAttivita.push(codice_attivita);
 					});
-				} else {
-					r[percorso.id].elenco_attivita = percorso.elenco_attivita;
 				}
+
+				r[percorso.id].elenco_attivita = percorso.elenco_attivita;
 
 				return r;
 			}, {});
@@ -883,21 +1135,29 @@ api.route('/corsi/:anno/:codice_corso')
 			if (req.query.deNorm !== undefined) {
 				return db.Attivita.find({
 					anno: req.params.anno,
-					id: {$in: [...elencoAttivita.keys()]}
+					id: {$in: elencoAttivita}
 				}, {
 					_id: 0,
 					id: 1,
 					label: 1
 				}).then(data => {
-					data.forEach(attivita => {
-						elencoAttivita.get(attivita.id).forEach(pos => {
-							ris.corso
-								.elenco_anni[pos.codice_percorso]
-								.elenco_attivita[attivita.id] = {
-									label: attivita.label
-								};
-						});
-					});
+					const mapAttivita =
+						new Map([...(data.map(x => [x.id, x.label]))]);
+
+					for (const codice_percorso in  ris.corso.elenco_anni) {
+						ris.corso.elenco_anni[codice_percorso]
+							.elenco_attivita =
+								ris.corso
+								.elenco_anni[codice_percorso]
+								.elenco_attivita
+								.reduce((r, codice_attivita) => {
+									r[codice_attivita] = {
+										label: mapAttivita.get(codice_attivita)
+									};
+
+									return r;
+								}, {});
+					}
 
 					return Promise.resolve(ris);
 				});
@@ -921,6 +1181,20 @@ api.route('/corsi/:anno/:codice_corso')
 			});
 		}
 
+		if (req.body.label === undefined) {
+			return logAndFowardError(res, {
+				status: 400,
+				message: 'Il campo label non è presente',
+				log: 0
+			});
+		} else if (typeof req.body.label !== 'string') {
+			return logAndFowardError(res, {
+				status: 400,
+				message: 'Il campo label deve essere di tipo string',
+				log: 0
+			});
+		}
+
 		if (req.body.elenco_anni === undefined) {
 			return logAndFowardError(res, {
 				status: 400,
@@ -933,14 +1207,34 @@ api.route('/corsi/:anno/:codice_corso')
 				message: 'Il campo elenco_anni deve essere un array',
 				log: 0
 			});
-		} else if (req.body.elenco_anni.every(
+		} else if (!req.body.elenco_anni.every(
 				x => ((x.id !== undefined) && (typeof x.id === 'string') &&
 					(x.label !== undefined) && (Array.isArray(x.label)) &&
-					(x.label.every(l => typeof l === 'string'))))) {
+					(x.label.every(l => typeof l === 'string')) &&
+					((x.codice_percorso_cdl === undefined) ||
+					(typeof x.codice_percorso_cdl === 'string')) &&
+					((x.elenco_attivita === undefined) ||
+					(Array.isArray(x.elenco_attivita) &&
+					(x.elenco_attivita.every(att => typeof att === 'string')))) &&
+					((x.elenco_sessioni === undefined) ||
+					(Array.isArray(x.elenco_sessioni) &&
+					(x.elenco_sessioni.every(s => (s.id !== undefined) &&
+					(isFinite(s.id) && (s.label !== undefined) &&
+					(typeof s.label === 'string'))))))
+				))) {
 			return logAndFowardError(res, {
 				status: 400,
 				message: 'Il campo elenco_anni deve avere struttura\n' +
-						'[{id: string, label:[string,...]},...]',
+						'[{\n' +
+						'\tid: string, \n' +
+						'\tlabel:[string,...], \n' +
+						'\telenco_attivita: [string,...], \n' +
+						'\tcodice_percorso_cdl: string,\n' +
+						'\telenco_sessioni: { \n' +
+						'\t\tid: number,\n' +
+						'\t\tlabel: string\n' +
+						'\t}' +
+						'},...] con solo id e label obbligatori',
 				log: 0
 			});
 		}
@@ -1007,14 +1301,34 @@ api.route('/corsi/:anno/:codice_corso')
 					message: 'Il campo elenco_anni deve essere un array',
 					log: 0
 				});
-			} else if (req.body.elenco_anni.every(
-					x => ((x.id !== undefined) && (typeof x.id === 'string') &&
-						(x.label !== undefined) && (Array.isArray(x.label)) &&
-						(x.label.every(l => typeof l === 'string'))))) {
+			} else if (!req.body.elenco_anni.every(
+				x => ((x.id !== undefined) && (typeof x.id === 'string') &&
+					(x.label !== undefined) && (Array.isArray(x.label)) &&
+					(x.label.every(l => typeof l === 'string')) &&
+					((x.codice_percorso_cdl === undefined) ||
+					(typeof x.codice_percorso_cdl === 'string')) &&
+					((x.elenco_attivita === undefined) ||
+					(Array.isArray(x.elenco_attivita) &&
+					(x.elenco_attivita.every(att => typeof att === 'string')))) &&
+					((x.elenco_sessioni === undefined) ||
+					(Array.isArray(x.elenco_sessioni) &&
+					(x.elenco_sessioni.every(s => (s.id !== undefined) &&
+					(isFinite(s.id) && (s.label !== undefined) &&
+					(typeof s.label === 'string'))))))
+			))) {
 				return logAndFowardError(res, {
 					status: 400,
 					message: 'Il campo elenco_anni deve avere struttura\n' +
-							'[{id: string, label:[string,...]},...]',
+							'[{\n' +
+							'\tid: string, \n' +
+							'\tlabel:[string,...], \n' +
+							'\telenco_attivita: [string,...], \n' +
+							'\tcodice_percorso_cdl: string,\n' +
+							'\telenco_sessioni: { \n' +
+							'\t\tid: number,\n' +
+							'\t\tlabel: string\n' +
+							'\t}' +
+							'},...] con solo id e label obbligatori',
 					log: 0
 				});
 			}
@@ -1054,12 +1368,7 @@ api.route('/corsi/:anno/:codice_corso')
 				}
 
 				return result.save().then(
-					result => Promise.resolve({status: 'ok'}),
-					err => Promise.rejects({
-						status: 500,
-						message: 'Impossibile fare l\'update dell\'elemento richiesto',
-						log: 1
-					})
+					result => Promise.resolve({status: 'ok'})
 				);
 			}
 		).then(
@@ -1151,6 +1460,7 @@ api.route('/corsi/:anno/:codice_corso/:codice_percorso')
 			};
 
 			if (req.query.deNorm !== undefined) {
+				ris.percorso.elenco_attivita = {};
 				return db.Attivita.find({
 					anno: req.params.anno,
 					id: {$in: tmpPercorso.elenco_attivita}
@@ -1159,10 +1469,10 @@ api.route('/corsi/:anno/:codice_corso/:codice_percorso')
 					id: 1,
 					label: 1
 				}).then(data => {
-					ris.percorso.elenco_attivita = {};
-					data.forEach(attivita => {
-						ris.percorso.elenco_attivita[attivita.id] = {
-							label: attivita.label
+					const mapAttivita = new Map(data.map(x => [x.id, x.label]));
+					tmpPercorso.elenco_attivita.forEach(codice_attivita => {
+						ris.percorso.elenco_attivita[codice_attivita] = {
+							label: mapAttivita.get(codice_attivita)
 						};
 					});
 

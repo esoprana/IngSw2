@@ -129,17 +129,33 @@ class Calendar{
 								dataSplit[2], dataSplit[1] - 1, dataSplit[0],
 								orarioFineSplit[0], orarioFineSplit[1]
 							);
-							const codiceAulaSplit = cella.codice_aula.split('/');
+							const luoghi = cella.codice_aula.split(',').map(luogo => {
+								const codiceAulaSplit = luogo.split('/');
+								if (codiceAulaSplit.length === 1) {
+									if (codiceAulaSplit[0].startsWith('E') ||
+										codiceAulaSplit[0].startsWith('CLA')) {
+										return {
+											codice_dipartimento: codiceAulaSplit[0].trim()
+										};
+									}
+
+									return {
+										codice_aula: codiceAulaSplit[0].trim()
+									};
+								}
+
+								return {
+									codice_dipartimento: codiceAulaSplit[0].trim(),
+									codice_aula: codiceAulaSplit[1].trim()
+								};
+							});
 
 							return {
 								attivita: {
 									codice_attivita: cella.codice_insegnamento,
 									docente: cella.docente
 								},
-								luogo: {
-									codice_dipartimento: codiceAulaSplit[0],
-									codice_aula: codiceAulaSplit[1]
-								},
+								luogo: luoghi,
 								timestamp: {
 									inizio: begTimestamp.toISOString(),
 									fine: endTimestamp.toISOString()

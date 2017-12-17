@@ -78,15 +78,12 @@ function insertDocenti(docenti, anno) {
 		const sessioni = [];
 		if (docenti[codice_docente].elenco !== undefined) {
 			for (const codice_sessione in docenti[codice_docente].elenco) {
-				console.log(codice_sessione);
 				sessioni.push({
 					id: codice_sessione,
 					label: docenti[codice_docente].elenco[codice_sessione].label
 				});
 			}
 		}
-
-		console.log(sessioni);
 
 		const docente = new db.Docente({
 			anno,
@@ -204,22 +201,23 @@ function insertOrari(r, pJSON, nReq) {
 				for (let idx = 0; idx < data.length; ++idx) {
 					tmp.orari = tmp.orari.concat(
 						data[idx].elenco_lezioni.map(att => {
-							const orario = new db.Orario({
+							// In caso esistano più luoghi in cui viene
+							// fatta la stessa lezione li uniamo
+							return db.Orario.update({
 								anno: data[idx].annoScolastico,
 								attivita: att.attivita.codice_attivita,
 								docente: att.attivita.docente,
-								timestamp: {
-									inizio: new Date(att.timestamp.inizio),
-									fine: new Date(att.timestamp.fine)
-								},
-								luogo: {
-									codice_aula: att.luogo['codice_aula'],
-									codice_sede: att.luogo['codice_dipartimento']
-								},
+								timestamp_inizio: new Date(att.timestamp.inizio),
+								timestamp_fine: new Date(att.timestamp.fine),
 								tipo: att.tipo
+							}, {
+								$addToSet: {luogo: att.luogo.map(x => ({
+									codice_sede: x.codice_dipartimento,
+									codice_aula: x.codice_aula
+								}))}
+							}, {
+								upsert: true
 							});
-
-							return orario;
 						})
 					);
 				}
@@ -326,7 +324,6 @@ function insertEsami(r, pJSON, nReq) {
 					sessioni: tmp.sessioni
 				}).then(createPromise);
 			}, reason => {
-				console.log(reason);
 				// In caso di fallimento della richiesta indico in
 				// tmp.r.failed la richiesta fallita
 				if (tmp.r.failed_esami === undefined) {
@@ -428,11 +425,12 @@ function initDB() {
 				10
 			)
 			.then(tmp => {
-				return Promise.all(tmp.orari.map(x => x.save()))
+				return Promise.all(tmp.orari)
 					.then(x => Promise.resolve(tmp.r));
 			});
 		})
 		.then(r => {
+			console.log(r.failed_orari);
 			return insertEsami(
 				r,
 				requests => Promise.all(
@@ -449,6 +447,7 @@ function initDB() {
 				10
 			)
 			.then(tmp => {
+				console.log(r.failed_esami);
 				return Promise.all(tmp.sessioni)
 					.then(x => Promise.resolve(tmp.r));
 			});
@@ -456,5 +455,17 @@ function initDB() {
 }
 
 module.exports = {
-	initDB
+	initDB,
+	subcommands: {
+		insertCodes,
+		codes: {
+			insertCorsi,
+			insertAttivita,
+			insertDocenti,
+			insertInsegnamenti,
+			insertSedi
+		},
+		insertOrari,
+		insertEsami
+	}
 };

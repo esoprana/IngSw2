@@ -44,15 +44,29 @@ const corsoSchema = new mongoose.Schema({
 		},
 		codice_percorso_cdl: {
 			type: String,
-			require: true
+			require: false
 		},
 		elenco_sessioni: {
-			type: [{id: Number, label: String}],
+			type: [{
+				id: {
+					type: Number,
+					required: true
+				},
+				label: {
+					type: String,
+					required: true
+				}
+			}],
 			default: []
 		}
 	}]
 }, {collection: 'corsi'});
-corsoSchema.index({anno: 1, id: 1}, {unique: true});
+corsoSchema.index({
+	anno: 1,
+	id: 1
+}, {
+	unique: true
+});
 
 const attivitaSchema = new mongoose.Schema({
 	anno: {
@@ -68,7 +82,12 @@ const attivitaSchema = new mongoose.Schema({
 		require: true
 	}
 }, {collection: 'attivita'});
-attivitaSchema.index({anno: 1, id: 1}, {unique:true});
+attivitaSchema.index({
+	anno: 1,
+	id: 1
+}, {
+	unique: true
+});
 
 const docenteSchema = new mongoose.Schema({
 	anno: {
@@ -87,9 +106,13 @@ const docenteSchema = new mongoose.Schema({
 	sessioni: {
 		type: [{
 			id: {
-				type: Number
+				type: Number,
+				required: true
 			},
-			label: String
+			label: {
+				type: String,
+				required: true
+			}
 		}],
 		default: []
 	}
@@ -119,7 +142,12 @@ const insegnamentoSchema = new mongoose.Schema({
 		default: []
 	}
 }, {collection: 'insegnamenti'});
-insegnamentoSchema.index({anno: 1, id: 1}, {unique: true});
+insegnamentoSchema.index({
+	anno: 1,
+	id: 1
+}, {
+	unique: true
+});
 
 const orarioSchema = new mongoose.Schema({
 	anno: {
@@ -128,34 +156,31 @@ const orarioSchema = new mongoose.Schema({
 	},
 	attivita: {
 		type: String,
-		required: true,
-		index: true
+		required: true
 	},
 	docente: {
 		type: String,
-		required: false
+		required: true
 	},
 	luogo: {
-		codice_aula: {
-			type: String,
-			required: false
-		},
-		codice_sede: {
-			type: String,
-			required: false
-		}
-	},
-	timestamp: {
-		type: {
-			inizio: {
-				type: Date,
-				required: true
+		type: [{
+			codice_aula: {
+				type: String,
+				required: false
 			},
-			fine: {
-				type: Date,
-				required: true
+			codice_sede: {
+				type: String,
+				required: false
 			}
-		},
+		}],
+		default: []
+	},
+	timestamp_inizio: {
+		type: Date,
+		required: true
+	},
+	timestamp_fine: {
+		type: Date,
 		required: true
 	},
 	tipo: {
@@ -163,7 +188,32 @@ const orarioSchema = new mongoose.Schema({
 		required: true
 	}
 }, {collection: 'orario'});
-//orarioSchema.index({anno: 1, attivita: 1, timestamp: 1}, {unique: true});
+orarioSchema.index({
+	anno: 1,
+	attivita: 1
+});
+
+// Favorisce periodo rispetto all'attività
+// Ricerco varie attività in un periodo(es: voglio le lezioni da settembre a
+// novembre di tutte le attività)
+orarioSchema.index({
+	anno: 1,
+	timestamp_inizio: 1,
+	timestamp_fine: 1,
+	attivita: 1
+}, {
+	unique: true
+});
+
+// Favorisce attività rispetto al periodo
+// Cerco una singola attività in un periodo(es voglio tutte le lezioni
+// dell'attività x da settembre a novembre)
+orarioSchema.index({
+	anno: 1,
+	attivita: 1,
+	timestamp_inizio: 1,
+	timestamp_fine: 1
+});
 
 const esameSchema = new mongoose.Schema({
 	anno: {

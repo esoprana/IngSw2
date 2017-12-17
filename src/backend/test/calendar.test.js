@@ -3,6 +3,8 @@ const fetchMock = require('node-fetch');
 fetchMock.mockImplementation(global.fetch);
 require('./error_matching.js');
 
+const fs = require('fs');
+
 const Calendar = require('./../src/sources/calendar.js').Calendar;
 const data = {
 	i1: require('./data/i1.json'),
@@ -11,76 +13,11 @@ const data = {
 	o2: require('./data/o2.json'),
 	i3: require('./data/i3.json'),
 	i4: require('./data/i4.json'),
+	i21: require('./data/i21.json'),
 	o10: require('./data/o10.json'),
-	o20: require('./data/o20.json')
+	o20: require('./data/o20.json'),
+	o21: require('./data/o21.json')
 };
-/*
-expect.extend({
-	toMatchError(received,argument){
-		if (received instanceof Error) {
-			if(received.message == argument) {
-				return {
-					message: () => ``,
-					pass: true,
-				};
-			} else {
-				return {
-					message: () =>
-						this.utils.matcherHint('.toMatchError') +
-						'\n\n' +
-						`Expected message of error to be :\n` +
-						`  ${this.utils.printExpected(argument)}\n` +
-						`Received:\n` +
-						`  ${this.utils.printReceived(received.message)}`,
-					pass: false,
-				};
-			}
-		} else {
-			return {
-				message: () =>
-						this.utils.matcherHint('.toMatchError') +
-						'\n\n' +
-						`Expected type ${this.utils.printExpected('Error')} `+
-						`but type of object is ${this.utils.printReceived(typeof received)}`,
-				pass: false,
-			};
-		}
-	},
-	toMatchLengthErrorLines(received,argument){
-		if(received instanceof Error){
-			const s = received.message.split('\n');
-			if((s.length) == argument) {
-				return {
-					message: () => ``,
-					pass: true,
-				};
-			} else {
-				return {
-					message: () =>
-						this.utils.matcherHint('.toMatchLengthErrorLines') +
-						'\n\n' +
-						`Expected number of lines of the error message to be :\n` +
-						`  ${this.utils.printExpected(argument)}\n` +
-						`Received:\n` +
-						`  ${this.utils.printReceived(s.length)}\n` +
-						`with\n` +
-						`${this.utils.printReceived(received.message)}`,
-					pass: false,
-				};
-			}
-		} else {
-			return {
-				message: () =>
-						this.utils.matcherHint('.toMatchLengthErrorLines') +
-						'\n\n' +
-						`Expected type ${this.utils.printExpected('Error')} `+
-						`but type of object is ${this.utils.printReceived(typeof received)}`,
-				pass: false,
-			};
-		}
-	}
-});
-*/
 describe("Calendar constructor",() => {
 	test("Throw on Calendar(undefined)",() => {
 		return expect(() => (new Calendar(undefined))).toThrow();
@@ -273,6 +210,21 @@ describe("Calendar.getCal",() => {
 					.getCal(new String("it"),"2017","P0003|1","0332H",1511740800000)
 			)).resolves.toEqual(data.o2);
 		});
+
+		test("Not reject on valid parameters 3(with correct result)", () => {
+			fetch.mockResponse(
+					JSON.stringify(data.i21),
+					{
+						status: 200,
+						header: {'Content-Type':'application/json'}
+					}
+			);
+
+			return expect((
+				new Calendar('https://easyroom.unitn.it/Orario/grid_call.php')
+					.getCal("it","2017","P0003|2","0332H","2017-11-27")
+			)).resolves.toEqual(data.o21);
+		});
 	});
 
 	describe("Error on invalid data",() => {
@@ -306,6 +258,17 @@ describe("Calendar.getCal",() => {
 					.getCal("it","2017","P0003|2","0332H","2017-11-27")
 			).rejects.toBeInstanceOf(Error);
 		});
+
+		test("Empty response on undefined params in json body(json.celle)",()=>{
+			fetch.mockResponse('{}', {
+				status: 200,
+				header: {'Content-Type':'application/json'}
+			});
+			return expect(
+				(new Calendar('http://prova.test')) // Test non routable address
+					.getCal("it","2017","P0003|2","0332H","2017-11-27")
+			).rejects.toBeInstanceOf(Error);
+		});
 	});
 });
 
@@ -319,8 +282,34 @@ describe("Calendar.getAssoc()",() => {
 
 			return expect(
 				(new Calendar('http://prova.test')) // Test non routable address
-					.getAssoc("it","2017","P0003|2","0332H","2017-11-27")
+					.getCal("it","2017","P0003|2","0332H","2017-11-27")
 			).rejects.toBeInstanceOf(Error);
+		});
+
+		//test("Reject on failed fetch",()=> {
+		//	fetch.mockResponse('', {
+		//		status: 404,
+		//		header: {}
+		//	});
+
+		//	return expect(
+		//		(new Calendar('http://prova.test')) // Test non routable address
+		//			.getCal("it","2017","P0003|2","0332H","2017-11-27")
+		//	).rejects.toBeInstanceOf(Error);
+		//});
+	});
+
+	describe("Invalid 'lang' parameter", () => {
+		test("Reject on 'lang' parameter undefined", () => {
+			return expect((new Calendar('https://easyroom.unitn.it/Orario/grid_call.php'))
+					.getAssoc(undefined,"2017","P0003|2","0332H","2017-11-27")
+				).rejects.toMatchError('Il parametro lang è undefined');
+		});
+
+		test("Reject on 'lang' parameter number(not string or String)",() => {
+			return expect((new Calendar('https://easyroom.unitn.it/Orario/grid_call.php'))
+					.getAssoc(21,"2017","P0003|2","0332H","2017-11-27")
+				).rejects.toMatchError("Il parametro deve essere di tipo 'string' o instanceof String");
 		});
 	});
 
