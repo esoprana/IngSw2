@@ -1,0 +1,651 @@
+{
+    "anno": "2016",
+    "corsi": {
+	        "0422H": {
+			            "label": "Letterature euroamericane, traduzione e critica letteraria (Magistrale)",
+			            "elenco_anni": {
+						                "P0004D1|1": {
+										                    "label": [
+															                        "1 anno - Standard"
+															                    ],
+										                    "elenco_sessioni": {
+															                        "61": {
+																					                            "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+																					                        }
+															                    },
+										                    "elenco_attivita": {
+															                        "EC0422H_130167_CURZE": {
+																					                            "label": "130167 - Storia medievale I - LM [E. CURZEL]"
+																					                        },
+															                        "EC0422H_130501_TARAV": {
+																					                            "label": "130501 - Lingua e traduzione spagnola e letteratura spagnola I [P. TARAVACCI]"
+																					                        },
+															                        "EC0422H_130502_ALGRA_ese": {
+																					                            "label": "130502 - Lingua e traduzione tedesca e letteratura tedesca I_ese [C. ALGRANATI]"
+																					                        },
+															                        "EC0422H_130154_ZANGA": {
+																					                            "label": "130154 - Storia del cristianesimo e delle chiese II - LM [V. ZANGARA]"
+																					                        },
+															                        "EC0422H_130261_CAPEL": {
+																					                            "label": "130261 - Filologia romanza - LM [R. CAPELLI]"
+																					                        },
+															                        "EC0422H_130503_PRICE_ese": {
+																					                            "label": "130503 - Lingua e traduzione inglese e lingue e letterature angloamericane I_ese [J. PRICE]"
+																					                        },
+															                        "EC0422H_130247_CORDI": {
+																					                            "label": "130247 - Linguistica generale [P. CORDIN]"
+																					                        },
+															                        "EC0422H_130503_DIAMO_ese": {
+																					                            "label": "130503 - Lingua e traduzione inglese e lingue e letterature angloamericane I_ese [I. DIAMOND]"
+																					                        },
+															                        "EC0422H_130259_PAREN": {
+																					                            "label": "130259 - Glottologia - LM [A. PARENTI]"
+																					                        },
+															                        "EC0422H_130225_IERAN": {
+																					                            "label": "130225 - Storia del teatro greco [G. IERANO']"
+																					                        },
+															                        "EC0422H_130500_PRICE_ese": {
+																					                            "label": "130500 - Lingua e traduzione inglese e letteratura inglese I_ese [J. PRICE]"
+																					                        },
+															                        "EC0422H_130499_COUCK_ese": {
+																					                            "label": "130499 - Lingua e traduzione francese e letteratura francese I_ese [A. VANDAMME]"
+																					                        },
+															                        "EC0422H_130267_MINGA": {
+																					                            "label": "130267 - Letterature comparate III - LM [A. MINGATI]"
+																					                        },
+															                        "EC0422H_130502_CRESC": {
+																					                            "label": "130502 - Lingua e traduzione tedesca e letteratura tedesca I [L. CRESCENZI]"
+																					                        },
+															                        "EC0422H_130171_BELLA": {
+																					                            "label": "130171 - Storia moderna II - LM [M. BELLABARBA]"
+																					                        },
+															                        "EC0422H_130503_COVI": {
+																					                            "label": "130503 - Lingua e traduzione inglese e lingue e letterature angloamericane I [G. COVI]"
+																					                        },
+															                        "EC0422H_130247_CORDI_ese": {
+																					                            "label": "130247 - Linguistica generale_ese [P. CORDIN]"
+																					                        },
+															                        "EC0422H_130500_DIBL": {
+																					                            "label": "130500 - Lingua e traduzione inglese e letteratura inglese I [F. DI BLASIO]"
+																					                        },
+															                        "EC0422H_130500_DIAMO_ese": {
+																					                            "label": "130500 - Lingua e traduzione inglese e letteratura inglese I_ese [I. DIAMOND]"
+																					                        },
+															                        "EC0422H_130502_STRIC_ese": {
+																					                            "label": "130502 - Lingua e traduzione tedesca e letteratura tedesca I_ese [S. STRICKER]"
+																					                        },
+															                        "EC0422H_130499_ACERE": {
+																					                            "label": "130499 - Lingua e traduzione francese e letteratura francese I [G. ACERENZA]"
+																					                        },
+															                        "EC0422H_130501_PASTO_ese": {
+																					                            "label": "130501 - Lingua e traduzione spagnola e letteratura spagnola I_ese [M. PASTOR]"
+																					                        },
+															                        "EC0422H_130249_GIUNT": {
+																					                            "label": "130249 - Letteratura italiana II - LM [C. GIUNTA]"
+																					                        },
+															                        "EC0422H_130245_CAPEL": {
+																					                            "label": "130245 - Filologia romanza I - LM [R. CAPELLI]"
+																					                        },
+															                        "EC0422H_130216_CAVAZ": {
+																					                            "label": "130216 - Storia dell'arte medievale I [L. CAVAZZINI]"
+																					                        }
+															                    }
+										                },
+						                "P0004D1|2": {
+										                    "label": [
+															                        "2 anno - Standard"
+															                    ],
+										                    "elenco_sessioni": {
+															                        "61": {
+																					                            "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+																					                        }
+															                    },
+										                    "elenco_attivita": {
+															                        "EC0422H_130507_DADE_a": {
+																					                            "label": "130507 - Lingua e traduzione tedesca e letteratura tedesca II_a [L. CRESCENZI]"
+																					                        },
+															                        "EC0422H_130508_COVI_a": {
+																					                            "label": "130508 - Lingua e traduzione inglese e lingue e letterature angloamericane II_a [G. COVI]"
+																					                        },
+															                        "EC0422H_130508_PRICE_ese": {
+																					                            "label": "130508 - Lingua e traduzione inglese e lingue e letterature angloamericane II_ese [J. PRICE]"
+																					                        },
+															                        "EC0422H_130507_TONIO_ese": {
+																					                            "label": "130507 - Lingua e traduzione tedesca e letteratura tedesca II_ese [S. TONIOLO]"
+																					                        },
+															                        "EC0422H_130505_PRICE_ese": {
+																					                            "label": "130505 - Lingua e traduzione inglese e letteratura inglese II_ese [J. PRICE]"
+																					                        },
+															                        "EC0422H_130506_ANDRE_ese": {
+																					                            "label": "130506 - Lingua e traduzione spagnola e letteratura spagnola II_ese [F. ANDRES MIEZA]"
+																					                        },
+															                        "EC0422H_130504_ACERE": {
+																					                            "label": "130504 - Lingua e traduzione francese e letteratura francese II [G. ACERENZA]"
+																					                        },
+															                        "EC0422H_130505_DIAMO_ese": {
+																					                            "label": "130505 - Lingua e traduzione inglese e letteratura inglese II_ese [I. DIAMOND]"
+																					                        },
+															                        "EC0422H_130508_DIAMO_ese": {
+																					                            "label": "130508 - Lingua e traduzione inglese e lingue e letterature angloamericane II_ese [I. DIAMOND]"
+																					                        },
+															                        "EC0422H_130504_COUCK_ese": {
+																					                            "label": "130504 - Lingua e traduzione francese e letteratura francese II_ese [F. FAVART]"
+																					                        },
+															                        "EC0422H_130508_FRANC": {
+																					                            "label": "130508 - Lingua e traduzione inglese e lingue e letterature angloamericane II [S. FRANCESCONI]"
+																					                        },
+															                        "EC0422H_130507_STEIG_ese": {
+																					                            "label": "130507 - Lingua e traduzione tedesca e letteratura tedesca II_ese [S. STRICKER]"
+																					                        },
+															                        "EC0422H_130507_MORON": {
+																					                            "label": "130507 - Lingua e traduzione tedesca e letteratura tedesca II [M. MORONI]"
+																					                        },
+															                        "EC0422H_130505_FRANC": {
+																					                            "label": "130505 - Lingua e traduzione inglese e letteratura inglese II [S. FRANCESCONI]"
+																					                        },
+															                        "EC0422H_130508_COVI_b": {
+																					                            "label": "130508 - Lingua e traduzione inglese e lingue e letterature angloamericane II_b [G. COVI]"
+																					                        },
+															                        "EC0422H_130507_DADE_b": {
+																					                            "label": "130507 - Lingua e traduzione tedesca e letteratura tedesca II_b [L. CRESCENZI]"
+																					                        }
+															                    }
+										                }
+						            }
+			        },
+	        "0423H": {
+			            "label": "Mediazione linguistica, turismo e culture (Magistrale)",
+			            "elenco_anni": {
+						                "P0004D1|1": {
+										                    "label": [
+															                        "1 anno - Standard"
+															                    ],
+										                    "elenco_sessioni": {
+															                        "61": {
+																					                            "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+																					                        }
+															                    },
+										                    "elenco_attivita": {
+															                        "EC0423H_130270_LI_ese": {
+																					                            "label": "130270 - Lingua e cultura cinese I_ese [X. LI]"
+																					                        },
+															                        "EC0423H_130509_MARTI": {
+																					                            "label": "130509 - Economia della cultura e del turismo e marketing della cultura e del turismo [U. MARTINI]"
+																					                        },
+															                        "EC0423H_130509_DELLA": {
+																					                            "label": "130509 - Economia della cultura e del turismo e marketing della cultura e del turismo [M. DELLA LUCIA]"
+																					                        },
+															                        "EC0423H_130271_MINGA": {
+																					                            "label": "130271 - Lingua e cultura russa I [A. MINGATI]"
+																					                        },
+															                        "EC0423H_130273_BEITT_eseA": {
+																					                            "label": "130273 - Lingua inglese I - LM_eseA [M. BEITTEL]"
+																					                        },
+															                        "EC0423H_130272_FAVAR_ese": {
+																					                            "label": "130272 - Lingua francese I - LM_ese [F. FAVART]"
+																					                        },
+															                        "EC0423H_130273_SOMER_eseA": {
+																					                            "label": "130273 - Lingua inglese I - LM_eseA [S. SOMERS]"
+																					                        },
+															                        "EC0423H_130274_CORRE_ese": {
+																					                            "label": "130274 - Lingua spagnola I - LM_ese [L. HERNANDEZ DIAZ]"
+																					                        },
+															                        "EC0423H_130275_TONIO_ese": {
+																					                            "label": "130275 - Lingua tedesca I - LM_ese [S. TONIOLO]"
+																					                        },
+															                        "EC0423H_130275_ALGRA_ese": {
+																					                            "label": "130275 - Lingua tedesca I - LM_ese [C. ALGRANATI]"
+																					                        },
+															                        "EC0423H_130274_DADE": {
+																					                            "label": "130274 - Lingua spagnola I - LM [M. FOX]"
+																					                        },
+															                        "EC0423H_130269_DAIP": {
+																					                            "label": "130269 - Geografia e progettazione strategica degli spazi turistici [E. DAI PRA']"
+																					                        },
+															                        "EC0423H_130273_STEWA": {
+																					                            "label": "130273 - Lingua inglese I - LM [D. STEWART]"
+																					                        },
+															                        "EC0423H_130271_FRYSH_eseB": {
+																					                            "label": "130271 - Lingua e cultura russa I_eseB [O. FRYSHEVA]"
+																					                        },
+															                        "EC0423H_130273_BEITT_eseB": {
+																					                            "label": "130273 - Lingua inglese I - LM_eseB [M. BEITTEL]"
+																					                        },
+															                        "EC0423H_130273_SOMER_eseB": {
+																					                            "label": "130273 - Lingua inglese I - LM_eseB [S. SOMERS]"
+																					                        }
+															                    }
+										                },
+						                "P0004D1|2": {
+										                    "label": [
+															                        "2 anno - Standard"
+															                    ],
+										                    "elenco_sessioni": {
+															                        "61": {
+																					                            "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+																					                        }
+															                    },
+										                    "elenco_attivita": {
+															                        "EC0423H_130357_ALGRA_ese": {
+																					                            "label": "130357 - Lingua tedesca II - LM_ese [C. ALGRANATI]"
+																					                        },
+															                        "EC0423H_130352_LI_ese": {
+																					                            "label": "130352 - Lingua e cultura cinese II_ese [X. LI]"
+																					                        },
+															                        "EC0423H_130526_DELLA": {
+																					                            "label": "130526 - Altre conoscenze utili per l'inserimento nel mondo del lavoro [M. DELLA LUCIA]"
+																					                        },
+															                        "EC0423H_130355_HAIGH_eseB": {
+																					                            "label": "130355 - Lingua inglese II - LM_eseB"
+																					                        },
+															                        "EC0423H_130354_FAVAR_ese": {
+																					                            "label": "130354 - Lingua francese II - LM_ese [F. FAVART]"
+																					                        },
+															                        "EC0423H_130353_FRYSH_ese": {
+																					                            "label": "130353 - Lingua e cultura russa II_ese [O. FRYSHEVA]"
+																					                        },
+															                        "EC0423H_130511_DELLA": {
+																					                            "label": "130511 - Laboratorio di analisi della cultura e del turismo e sistemi informativi per il turismo [M. DELLA LUCIA]"
+																					                        },
+															                        "EC0423H_130353_MINGA": {
+																					                            "label": "130353 - Lingua e cultura russa II [A. MINGATI]"
+																					                        },
+															                        "EC0423H_130357_TONIO_ese": {
+																					                            "label": "130357 - Lingua tedesca II - LM_ese [S. TONIOLO]"
+																					                        },
+															                        "EC0423H_130356_MARTI_ese": {
+																					                            "label": "130356 - Lingua spagnola II - LM_ese [I. MARTIN RUIZ]"
+																					                        }
+															                    }
+										                }
+						            }
+			        },
+	        "0427G": {
+			            "label": "Lingue moderne (Triennale)",
+			            "elenco_anni": {
+						                "P0104D1|1": {
+										                    "label": [
+															                        "1 anno - Letterature, lingue e traduzione"
+															                    ],
+										                    "elenco_sessioni": {},
+										                    "elenco_attivita": {
+															                        "EC0427G_130137_TARAV": {
+																					                            "label": "130137 - Letteratura spagnola I [P. TARAVACCI]"
+																					                        },
+															                        "EC0427G_130136_DIBL": {
+																					                            "label": "130136 - Letteratura inglese I [F. DI BLASIO]"
+																					                        }
+															                    }
+										                },
+						                "P0104D1|2": {
+										                    "label": [
+															                        "2 anno - Letterature, lingue e traduzione"
+															                    ],
+										                    "elenco_sessioni": {},
+										                    "elenco_attivita": {
+															                        "EC0427G_130471_NIDER": {
+																					                            "label": "130471 - Lingua e traduzione spagnola e letteratura spagnola [V. NIDER]"
+																					                        },
+															                        "EC0427G_130471_ANDRE_ese": {
+																					                            "label": "130471 - Lingua e traduzione spagnola e letteratura spagnola_ese [F. ANDRES MIEZA]"
+																					                        },
+															                        "EC0427G_130472_STEIG_ese": {
+																					                            "label": "130472 - Lingua e traduzione tedesca e letteratura tedesca_ese [C. ALGRANATI]"
+																					                        },
+															                        "EC0427G_130472_BIDES": {
+																					                            "label": "130472 - Lingua e traduzione tedesca e letteratura tedesca [E. BIDESE]"
+																					                        },
+															                        "EC0427G_130470_DIAMO_ese": {
+																					                            "label": "130470 - Lingua e traduzione inglese e lingue e letterature angloamericane_ese [I. DIAMOND]"
+																					                        },
+															                        "EC0427G_130470_FRANC": {
+																					                            "label": "130470 - Lingua e traduzione inglese e lingue e letterature angloamericane [S. FRANCESCONI]"
+																					                        },
+															                        "EC0427G_130470_SQUIB_ese": {
+																					                            "label": "130470 - Lingua e traduzione inglese e lingue e letterature angloamericane_ese [M. SQUIBB]"
+																					                        },
+															                        "EC0427G_130469_VANDA_ese": {
+																					                            "label": "130469 - Lingua e traduzione francese e letteratura francese_ese [A. VANDAMME]"
+																					                        },
+															                        "EC0427G_130471_DEMAT": {
+																					                            "label": "130471 - Lingua e traduzione spagnola e letteratura spagnola [C. DEMATTE']"
+																					                        },
+															                        "EC0427G_130472_STRIC_ese": {
+																					                            "label": "130472 - Lingua e traduzione tedesca e letteratura tedesca_ese [S. STRICKER]"
+																					                        },
+															                        "EC0427G_130469_DUFIE": {
+																					                            "label": "130469 - Lingua e traduzione francese e letteratura francese [J. DUFIET]"
+																					                        },
+															                        "EC0427G_130472_CRESC": {
+																					                            "label": "130472 - Lingua e traduzione tedesca e letteratura tedesca [L. CRESCENZI]"
+																					                        }
+															                    }
+										                },
+						                "P0104D1|3": {
+										                    "label": [
+															                        "3 anno - Letterature, lingue e traduzione"
+															                    ],
+										                    "elenco_sessioni": {},
+										                    "elenco_attivita": {
+															                        "EC0427G_130374_FERRA": {
+																					                            "label": "130374 - Filologia germanica II [F. FERRARI]"
+																					                        },
+															                        "EC0427G_130478_BINEL": {
+																					                            "label": "130478 - Lingua e traduzione inglese [A. BINELLI]"
+																					                        },
+															                        "EC0427G_130477_VANDA_ese": {
+																					                            "label": "130477 - Lingua e traduzione francese_ese [A. VANDAMME]"
+																					                        },
+															                        "EC0427G_130480_ALGRA_ese": {
+																					                            "label": "130480 - Lingua e traduzione tedesca_ese [C. ALGRANATI]"
+																					                        },
+															                        "EC0427G_130480_STRIC_ese": {
+																					                            "label": "130480 - Lingua e traduzione tedesca_ese [S. STRICKER]"
+																					                        },
+															                        "EC0427G_130375_CAPEL": {
+																					                            "label": "130375 - Filologia romanza II [R. CAPELLI]"
+																					                        },
+															                        "EC0427G_130479_DEMAT": {
+																					                            "label": "130479 - Lingua e traduzione spagnola [C. DEMATTE']"
+																					                        },
+															                        "EC0427G_130479_ANDRE_ese": {
+																					                            "label": "130479 - Lingua e traduzione spagnola_ese [F. ANDRES MIEZA]"
+																					                        },
+															                        "EC0427G_130480_BIDES": {
+																					                            "label": "130480 - Lingua e traduzione tedesca [E. BIDESE]"
+																					                        },
+															                        "EC0427G_130478_SQUIB_ese": {
+																					                            "label": "130478 - Lingua e traduzione inglese_ese [M. SQUIBB]"
+																					                        },
+															                        "EC0427G_130477_ACERE": {
+																					                            "label": "130477 - Lingua e traduzione francese [G. ACERENZA]"
+																					                        },
+															                        "EC0427G_130480_TONIO_ese": {
+																					                            "label": "130480 - Lingua e traduzione tedesca_ese [S. TONIOLO]"
+																					                        }
+															                    }
+										                },
+						                "P0204D1|1": {
+										                    "label": [
+															                        "1 anno - Lingue per l'intermediazione turistica e d'impresa"
+															                    ],
+										                    "elenco_sessioni": {},
+										                    "elenco_attivita": {}
+										                },
+						                "P0204D1|2": {
+										                    "label": [
+															                        "2 anno - Lingue per l'intermediazione turistica e d'impresa"
+															                    ],
+										                    "elenco_sessioni": {},
+										                    "elenco_attivita": {
+															                        "EC0427G_130484_STEIG_eseA": {
+																					                            "label": "130484 - Linguistica tedesca I_eseA [A. GHANE]"
+																					                        },
+															                        "EC0427G_130484_STEIG_eseB": {
+																					                            "label": "130484 - Linguistica tedesca I_eseB [A. GHANE]"
+																					                        },
+															                        "EC0427G_130481_DADE": {
+																					                            "label": "130481 - Linguistica francese I [F. FAVART]"
+																					                        },
+															                        "EC0427G_130483_CANAL": {
+																					                            "label": "130483 - Linguistica spagnola I [J. CANALS PINAS]"
+																					                        },
+															                        "EC0427G_130484_ALGRA_eseA": {
+																					                            "label": "130484 - Linguistica tedesca I_eseA [C. ALGRANATI]"
+																					                        },
+															                        "EC0427G_130484_TONIO_eseB": {
+																					                            "label": "130484 - Linguistica tedesca I_eseB [S. TONIOLO]"
+																					                        },
+															                        "EC0427G_130468_DADE": {
+																					                            "label": "130468 - Economia politica e aziendale [O. CLAUSER]"
+																					                        },
+															                        "EC0427G_130468_BUFFA": {
+																					                            "label": "130468 - Economia politica e aziendale [F. BUFFA]"
+																					                        },
+															                        "EC0427G_130483_MARTI_ese": {
+																					                            "label": "130483 - Linguistica spagnola I_ese [I. MARTIN RUIZ]"
+																					                        },
+															                        "EC0427G_130481_FAVAR_ese": {
+																					                            "label": "130481 - Linguistica francese I_ese [F. FAVART]"
+																					                        },
+															                        "EC0427G_130482_DIAMO_eseA": {
+																					                            "label": "130482 - Linguistica inglese I_eseA [I. DIAMOND]"
+																					                        },
+															                        "EC0427G_130482_DIAMO_eseB": {
+																					                            "label": "130482 - Linguistica inglese I_eseB [I. DIAMOND]"
+																					                        },
+															                        "EC0427G_130482_DIAMO_eseC": {
+																					                            "label": "130482 - Linguistica inglese I_eseC [I. DIAMOND]"
+																					                        },
+															                        "EC0427G_130482_PRICE_eseA": {
+																					                            "label": "130482 - Linguistica inglese I_eseA [J. PRICE]"
+																					                        },
+															                        "EC0427G_130482_SQUIB_eseB": {
+																					                            "label": "130482 - Linguistica inglese I_eseB [M. SQUIBB]"
+																					                        },
+															                        "EC0427G_130482_PRICE_eseC": {
+																					                            "label": "130482 - Linguistica inglese I_eseC [J. PRICE]"
+																					                        },
+															                        "EC0427G_130482_GREG_eseD": {
+																					                            "label": "130482 - Linguistica inglese i_esed [E. GREGSON]"
+																					                        }
+															                    }
+										                },
+						                "P0204D1|3": {
+										                    "label": [
+															                        "3 anno - Lingue per l'intermediazione turistica e d'impresa"
+															                    ],
+										                    "elenco_sessioni": {},
+										                    "elenco_attivita": {
+															                        "EC0427G_130488_ALGRA_eseB": {
+																					                            "label": "130488 - Linguistica tedesca II_eseB [C. ALGRANATI]"
+																					                        },
+															                        "EC0427G_130487_DADE": {
+																					                            "label": "130487 - Linguistica spagnola II [M. FOX]"
+																					                        },
+															                        "EC0427G_130485_FAVAR_ese": {
+																					                            "label": "130485 - Linguistica francese II_ese [F. FAVART]"
+																					                        },
+															                        "EC0427G_130486_GREGS_eseA": {
+																					                            "label": "130486 - Linguistica inglese II_eseA [E. GREGSON]"
+																					                        },
+															                        "EC0427G_130488_STRIC_eseA": {
+																					                            "label": "130488 - Linguistica tedesca II_eseA [S. STRICKER]"
+																					                        },
+															                        "EC0427G_130488_TONIO_eseA": {
+																					                            "label": "130488 - Linguistica tedesca II_eseA [S. TONIOLO]"
+																					                        },
+															                        "EC0427G_130487_CORRE_ese": {
+																					                            "label": "130487 - Linguistica spagnola II_ese [L. HERNANDEZ DIAZ]"
+																					                        },
+															                        "EC0427G_130485_DUFIE": {
+																					                            "label": "130485 - Linguistica francese II [J. DUFIET]"
+																					                        },
+															                        "EC0427G_130486_BINEL": {
+																					                            "label": "130486 - Linguistica inglese II [A. BINELLI]"
+																					                        },
+															                        "EC0427G_130486_SQUIB_eseB": {
+																					                            "label": "130486 - Linguistica inglese II_eseB [M. SQUIBB]"
+																					                        },
+															                        "EC0427G_130488_BIDES": {
+																					                            "label": "130488 - Linguistica tedesca II [E. BIDESE]"
+																					                        },
+															                        "EC0427G_130378_BUFFA": {
+																					                            "label": "130378 - Organizzazione aziendale [F. BUFFA]"
+																					                        },
+															                        "EC0427G_130486_GREGS_eseC": {
+																					                            "label": "130486 - Linguistica inglese II_eseC [E. GREGSON]"
+																					                        },
+															                        "EC0427G_130488_STRIC_eseB": {
+																					                            "label": "130488 - Linguistica tedesca II_eseB [S. STRICKER]"
+																					                        }
+															                    }
+										                },
+						                "P0004D1|1": {
+										                    "label": [
+															                        "1 anno - Standard"
+															                    ],
+										                    "elenco_sessioni": {},
+										                    "elenco_attivita": {
+															                        "EC0427G_130126_VANDA_esePri": {
+																					                            "label": "130126 - Lingua francese I_esePri [A. VANDAMME]"
+																					                        },
+															                        "EC0427G_130127_DIAMO_eseD": {
+																					                            "label": "130127 - Lingua inglese I_eseD [I. DIAMOND]"
+																					                        },
+															                        "EC0427G_130127_PRICE_eseA": {
+																					                            "label": "130127 - Lingua inglese I_eseA [J. PRICE]"
+																					                        },
+															                        "EC0427G_130128_PASTO_esePri": {
+																					                            "label": "130128 - Lingua spagnola I_esePri [M. PASTOR]"
+																					                        },
+															                        "EC0427G_130127_BEITT_eseA": {
+																					                            "label": "130127 - Lingua inglese I_eseA [M. BEITTEL]"
+																					                        },
+															                        "EC0427G_130128_CANAL": {
+																					                            "label": "130128 - Lingua spagnola I [J. CANALS PINAS]"
+																					                        },
+															                        "EC0427G_130129_ALGRA_eseProB": {
+																					                            "label": "130129 - Lingua tedesca I_eseProB [C. ALGRANATI]"
+																					                        },
+															                        "EC0427G_130126_FAVAR_esePro": {
+																					                            "label": "130126 - Lingua francese I_esePro [F. FAVART]"
+																					                        },
+															                        "EC0427G_130129_STRIC_esePriA": {
+																					                            "label": "130129 - Lingua tedesca I_esePriA [M. BEHRMANN]"
+																					                        },
+															                        "EC0427G_130126_RAVAZ": {
+																					                            "label": "130126 - Lingua francese I"
+																					                        },
+															                        "EC0427G_130129_BIDES": {
+																					                            "label": "130129 - Lingua tedesca I [E. BIDESE]"
+																					                        },
+															                        "EC0427G_130475_NIDER": {
+																					                            "label": "130475 - Cultura e letteratura spagnola [V. NIDER]"
+																					                        },
+															                        "EC0427G_130127_STEWA": {
+																					                            "label": "130127 - Lingua inglese I [D. STEWART]"
+																					                        },
+															                        "EC0427G_130129_TONIO_esePriB": {
+																					                            "label": "130129 - Lingua tedesca I_esePriB [S. TONIOLO]"
+																					                        },
+															                        "EC0427G_130129_STEIG_esePriA": {
+																					                            "label": "130129 - Lingua tedesca I_esePriA [A. GHANE]"
+																					                        },
+															                        "EC0427G_130474_DADE": {
+																					                            "label": "130474 - Cultura e letteratura inglese [G. PERLETTI]"
+																					                        },
+															                        "EC0427G_130127_SOMER_eseB": {
+																					                            "label": "130127 - Lingua inglese I_eseB [S. SOMERS]"
+																					                        },
+															                        "EC0427G_130128_MARTI_esePro": {
+																					                            "label": "130128 - Lingua spagnola I_esePro [I. MARTIN RUIZ]"
+																					                        },
+															                        "EC0427G_130127_BEITT_eseC": {
+																					                            "label": "130127 - Lingua inglese I_eseC [M. BEITTEL]"
+																					                        },
+															                        "EC0427G_130127_DIAMO_eseB": {
+																					                            "label": "130127 - Lingua inglese I_eseB [I. DIAMOND]"
+																					                        },
+															                        "EC0427G_130127_PRICE_eseC": {
+																					                            "label": "130127 - Lingua inglese I_eseC [J. PRICE]"
+																					                        },
+															                        "EC0427G_130127_SOMER_eseD": {
+																					                            "label": "130127 - Lingua inglese I_eseD [S. SOMERS]"
+																					                        },
+															                        "EC0427G_130129_STRIC_esePriB": {
+																					                            "label": "130129 - Lingua tedesca I_esePriB [A. GHANE]"
+																					                        },
+															                        "EC0427G_130129_STEIG_esePriB": {
+																					                            "label": "130129 - Lingua tedesca I_esePriB [A. GHANE]"
+																					                        },
+															                        "EC0427G_130129_STRIC_eseProA": {
+																					                            "label": "130129 - Lingua tedesca I_eseProA [A. GHANE]"
+																					                        },
+															                        "EC0427G_130129_STEIG_eseProA": {
+																					                            "label": "130129 - Lingua tedesca I_eseProA [C. ALGRANATI]"
+																					                        },
+															                        "EC0427G_130129_STRIC_eseProB": {
+																					                            "label": "130129 - Lingua tedesca I_eseProB [C. ALGRANATI]"
+																					                        },
+															                        "EC0427G_130127_SOMER_eseE": {
+																					                            "label": "130127 - Lingua inglese I_eseE [S. SOMERS]"
+																					                        },
+															                        "EC0427G_130127_DIAMO_eseE": {
+																					                            "label": "130127 - Lingua inglese I_eseE [I. DIAMOND]"
+																					                        },
+															                        "EC0427G_130129_GIUPP_esePriA": {
+																					                            "label": "130129 - Lingua tedesca I_esePriA_ [E. GIUPPONI]"
+																					                        }
+															                    }
+										                },
+						                "P0004D1|2": {
+										                    "label": [
+															                        "2 anno - Standard"
+															                    ],
+										                    "elenco_sessioni": {},
+										                    "elenco_attivita": {
+															                        "EC0427G_130359_CAPEL": {
+																					                            "label": "130359 - Filologia romanza I [R. CAPELLI]"
+																					                        },
+															                        "EC0427G_130321_FERRA": {
+																					                            "label": "130321 - Filologia germanica I [F. FERRARI]"
+																					                        }
+															                    }
+										                },
+						                "P0004D1|3": {
+										                    "label": [
+															                        "3 anno - Standard"
+															                    ],
+										                    "elenco_sessioni": {},
+										                    "elenco_attivita": {
+															                        "EC0427G_130314_RITA": {
+																					                            "label": "130314 - Lingua portoghese II [E. RITA DOS SANTOS]"
+																					                        }
+															                    }
+										                }
+						            }
+			        },
+	        "CLA": {
+			            "label": "Centro linguistico d'ateneo (unico)",
+			            "elenco_anni": {
+						                "PDS0-2014|1": {
+										                    "label": [
+															                        "1 anno - Comune"
+															                    ],
+										                    "elenco_sessioni": {},
+										                    "elenco_attivita": {
+															                        "ECC_IT2IA6_ROSAN": {
+																					                            "label": "C_IT2IA6 - Corso di italiano b1a - ii periodo (intensivo) [M. Rosanelli]"
+																					                        },
+															                        "ECC_EN2JA1_MOREL": {
+																					                            "label": "C_EN2JA1 - Corso di inglese b1 blended type 1 - ii periodo (intensivo) [E. MORELLI]"
+																					                        },
+															                        "ECC_DE2IA3_GHANE": {
+																					                            "label": "C_DE2IA3 - Corso di tedesco a2a - ii periodo (intensivo) [A. GHANE]"
+																					                        },
+															                        "ECC_IT2IA4_ROSAN": {
+																					                            "label": "C_IT2IA4 - Corso di italiano a2a - ii periodo (intensivo) [M. Rosanelli]"
+																					                        },
+															                        "ECC_EN2JA3_KAPLA": {
+																					                            "label": "C_EN2JA3 - Corso di inglese b2 blended type 1 - ii periodo (intensivo) [L. KAPLAN]"
+																					                        },
+															                        "ECC_IT2IA3_RITON": {
+																					                            "label": "C_IT2IA3 - Corso di italiano a1b - ii periodo (intensivo) [P. Ritondale Spano]"
+																					                        },
+															                        "ECC_DE2IB1_STRIC": {
+																					                            "label": "C_DE2IB1 - Corso di tedesco a1a - ii periodo (intensivo) [S. STRICKER]"
+																					                        },
+															                        "ECC_EN2JA2_MOREL": {
+																					                            "label": "C_EN2JB2 - Corso di inglese b1 blended type 2 - ii periodo (intensivo) [E. MORELLI]"
+																					                        },
+															                        "ECC_DE2IA5_STRIC": {
+																					                            "label": "C_DE2IB5 - Corso di tedesco b1a - ii periodo (intensivo) [S. STRICKER]"
+																					                        }
+															                    }
+										                }
+						            }
+			        }
+	    },
+    "deNorm": ""
+}

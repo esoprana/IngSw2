@@ -1,0 +1,6686 @@
+{
+    "anno": "2016",
+    "elenco_docenti": [
+        {
+            "id": "D000033",
+            "label": "Leoni Matteo",
+            "sessioni": [
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000058",
+            "label": "CARPAGNANO MICHELE",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000064",
+            "label": "PENASA SIMONE",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000072",
+            "label": "BRENTARI CARLO",
+            "sessioni": [
+                {
+                    "id": 61,
+                    "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000075",
+            "label": "Quendolo Alessandra",
+            "sessioni": [
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000087",
+            "label": "FOX MANUELA",
+            "sessioni": []
+        },
+        {
+            "id": "D000088",
+            "label": "MARANGON PAOLO",
+            "sessioni": [
+                {
+                    "id": 61,
+                    "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000092",
+            "label": "CUBELLI ROBERTO",
+            "sessioni": [
+                {
+                    "id": 35,
+                    "label": "Autunnale (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 40,
+                    "label": "Autunnale cimec (21/08/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000094",
+            "label": "Velegrakis Yannis",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000096",
+            "label": "PIETRINI SANDRA",
+            "sessioni": [
+                {
+                    "id": 61,
+                    "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000097",
+            "label": "MANCA ANNA GIANNA",
+            "sessioni": [
+                {
+                    "id": 61,
+                    "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000098",
+            "label": "Montresor Alberto",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000100",
+            "label": "Crispo Bruno",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000123",
+            "label": "ZAMPINI MASSIMILIANO",
+            "sessioni": [
+                {
+                    "id": 35,
+                    "label": "Autunnale (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 40,
+                    "label": "Autunnale cimec (21/08/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000150",
+            "label": "FERRARI MATTEO",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000169",
+            "label": "Cau Maurizio",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000176",
+            "label": "BERTOLETTI NELLO",
+            "sessioni": [
+                {
+                    "id": 61,
+                    "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000187",
+            "label": "Carusotto Iacopo",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D0002044",
+            "label": "De Guttry Andreas M.t.",
+            "sessioni": [
+                {
+                    "id": 64,
+                    "label": "Sessione autunnale (01/09/2017 - 22/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000282",
+            "label": "TARAVACCI PIETRO",
+            "sessioni": []
+        },
+        {
+            "id": "D000292",
+            "label": "GIULIANI MASSIMO",
+            "sessioni": [
+                {
+                    "id": 61,
+                    "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000296",
+            "label": "PIGNATELLI ROBERTO",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 61,
+                    "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000306",
+            "label": "Caranti Andrea",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000312",
+            "label": "Cortese Fulvio",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000318",
+            "label": "Zanolli Paola",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000323",
+            "label": "Zanon Bruno",
+            "sessioni": [
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000326",
+            "label": "CLAUSER ONORIO",
+            "sessioni": []
+        },
+        {
+            "id": "D000342",
+            "label": "Visintin Augusto",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000343",
+            "label": "Casulli Vincenzo",
+            "sessioni": [
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000345",
+            "label": "Vitale Stefano",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D0003487",
+            "label": "Ali Antonino",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                },
+                {
+                    "id": 64,
+                    "label": "Sessione autunnale (01/09/2017 - 22/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000355",
+            "label": "ANDREATTA MARCO",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 61,
+                    "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000359",
+            "label": "Toniatti Roberto",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000361",
+            "label": "Zerbini Sergio",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000366",
+            "label": "Colombo Diego Giordano Bruno",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000367",
+            "label": "Tosi Paolo",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000371",
+            "label": "Zorat Alessandro",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000375",
+            "label": "CORDIN PATRIZIA",
+            "sessioni": []
+        },
+        {
+            "id": "D000381",
+            "label": "ZUCAL SILVANO",
+            "sessioni": [
+                {
+                    "id": 61,
+                    "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000387",
+            "label": "Zandonini Riccardo",
+            "sessioni": [
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000392",
+            "label": "GUIDO SANTE",
+            "sessioni": [
+                {
+                    "id": 61,
+                    "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D0003921",
+            "label": "Baldi Giacomo",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000413",
+            "label": "CURZEL EMANUELE",
+            "sessioni": []
+        },
+        {
+            "id": "D000487",
+            "label": "ROSA PAOLO",
+            "sessioni": [
+                {
+                    "id": 64,
+                    "label": "Sessione autunnale (01/09/2017 - 22/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000492",
+            "label": "PISANU FRANCESCO",
+            "sessioni": [
+                {
+                    "id": 35,
+                    "label": "Autunnale (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 40,
+                    "label": "Autunnale cimec (21/08/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000516",
+            "label": "MINGATI ADALGISA",
+            "sessioni": []
+        },
+        {
+            "id": "D000526",
+            "label": "Marchese Maurizio",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000542",
+            "label": "Viola Francesca",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000546",
+            "label": "BOMBARDELLI OLGA",
+            "sessioni": [
+                {
+                    "id": 61,
+                    "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000547",
+            "label": "Scarponi Stefania",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000548",
+            "label": "ALBERTONI GIUSEPPE",
+            "sessioni": [
+                {
+                    "id": 61,
+                    "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000553",
+            "label": "CRISTOFORETTI PAOLO",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000566",
+            "label": "MEROI FABRIZIO",
+            "sessioni": [
+                {
+                    "id": 61,
+                    "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000568",
+            "label": "Rocca Paolo",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000578",
+            "label": "MOSCON VALENTINA",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000593",
+            "label": "CAVULLI FABIO",
+            "sessioni": [
+                {
+                    "id": 61,
+                    "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000598",
+            "label": "PIAZZA MANUELA",
+            "sessioni": [
+                {
+                    "id": 35,
+                    "label": "Autunnale (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 40,
+                    "label": "Autunnale cimec (21/08/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000600",
+            "label": "DE FALCO SIMONA",
+            "sessioni": [
+                {
+                    "id": 35,
+                    "label": "Autunnale (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 40,
+                    "label": "Autunnale cimec (21/08/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000604",
+            "label": "Sala Massimiliano",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000605",
+            "label": "Jousson Olivier",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000633",
+            "label": "CASO ROBERTO",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000634",
+            "label": "MARCHETTI BARBARA",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000635",
+            "label": "CASONATO CARLO",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                },
+                {
+                    "id": 61,
+                    "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000636",
+            "label": "Massari Giovanna",
+            "sessioni": [
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000637",
+            "label": "SABATINI MARCO",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                },
+                {
+                    "id": 61,
+                    "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000646",
+            "label": "Abeni Luca",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000665",
+            "label": "MANCINI INES",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000671",
+            "label": "SALOMONE RICCARDO",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D0006783",
+            "label": "Primerano Beatrice",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000682",
+            "label": "SURIAN LUCA",
+            "sessioni": [
+                {
+                    "id": 35,
+                    "label": "Autunnale (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 40,
+                    "label": "Autunnale cimec (21/08/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000685",
+            "label": "BASSO GIANPAOLO",
+            "sessioni": [
+                {
+                    "id": 35,
+                    "label": "Autunnale (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 40,
+                    "label": "Autunnale cimec (21/08/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000688",
+            "label": "MICELI GABRIELE",
+            "sessioni": [
+                {
+                    "id": 35,
+                    "label": "Autunnale (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 40,
+                    "label": "Autunnale cimec (21/08/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000691",
+            "label": "Piccolroaz Andrea",
+            "sessioni": [
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000692",
+            "label": "MARINELLI MARINO",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000693",
+            "label": "GHISLANDI PATRIZIA",
+            "sessioni": [
+                {
+                    "id": 35,
+                    "label": "Autunnale (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 40,
+                    "label": "Autunnale cimec (21/08/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000699",
+            "label": "Quattrone Alessandro",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000714",
+            "label": "Occhetta Gianluca",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000715",
+            "label": "Picco Gian Pietro",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000739",
+            "label": "Maniglio Devid",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000755",
+            "label": "Boato Giulia",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000756",
+            "label": "POSSENTI ELISA",
+            "sessioni": [
+                {
+                    "id": 61,
+                    "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000757",
+            "label": "DE LUISE FULVIA",
+            "sessioni": [
+                {
+                    "id": 61,
+                    "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000760",
+            "label": "VESPIGNANI FRANCESCO",
+            "sessioni": [
+                {
+                    "id": 35,
+                    "label": "Autunnale (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 40,
+                    "label": "Autunnale cimec (21/08/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000761",
+            "label": "Casati Fabio",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000767",
+            "label": "PALADINO MARIA PAOLA",
+            "sessioni": [
+                {
+                    "id": 35,
+                    "label": "Autunnale (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 40,
+                    "label": "Autunnale cimec (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 61,
+                    "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000771",
+            "label": "Brunetti Romeo",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000775",
+            "label": "Di Maggio Rosa",
+            "sessioni": [
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000776",
+            "label": "RICCI GAROTTI FEDERICA",
+            "sessioni": [
+                {
+                    "id": 61,
+                    "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000778",
+            "label": "MARTINI UMBERTO",
+            "sessioni": []
+        },
+        {
+            "id": "D000779",
+            "label": "Quaranta Alberto",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000782",
+            "label": "TURATTO MASSIMO",
+            "sessioni": [
+                {
+                    "id": 35,
+                    "label": "Autunnale (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 40,
+                    "label": "Autunnale cimec (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 61,
+                    "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000792",
+            "label": "Dejaco Mario Claudio",
+            "sessioni": [
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000795",
+            "label": "Dal Corso Francesco",
+            "sessioni": [
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000807",
+            "label": "Bertoldi Walter",
+            "sessioni": [
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000815",
+            "label": "FINOCCHIARO CHIARA",
+            "sessioni": [
+                {
+                    "id": 35,
+                    "label": "Autunnale (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 40,
+                    "label": "Autunnale cimec (21/08/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000816",
+            "label": "Ghiloni Riccardo",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000817",
+            "label": "Passerone Roberto",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000820",
+            "label": "Majone Bruno",
+            "sessioni": [
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000851",
+            "label": "Volpi Cristiana",
+            "sessioni": [
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000873",
+            "label": "FRACASSO ANDREA",
+            "sessioni": [
+                {
+                    "id": 64,
+                    "label": "Sessione autunnale (01/09/2017 - 22/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000878",
+            "label": "Galletti Danilo",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000883",
+            "label": "NIDER VALENTINA",
+            "sessioni": []
+        },
+        {
+            "id": "D000884",
+            "label": "TRONCON RENATO",
+            "sessioni": [
+                {
+                    "id": 35,
+                    "label": "Autunnale (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 40,
+                    "label": "Autunnale cimec (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 61,
+                    "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000885",
+            "label": "BELLABARBA MARCO",
+            "sessioni": []
+        },
+        {
+            "id": "D000886",
+            "label": "Bonaccorsi Stefano",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000898",
+            "label": "BIDESE ERMENEGILDO",
+            "sessioni": []
+        },
+        {
+            "id": "D000901",
+            "label": "Bazzani Mario Alessandro",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000903",
+            "label": "Geneletti Davide",
+            "sessioni": [
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000906",
+            "label": "COMBONI ANDREA",
+            "sessioni": [
+                {
+                    "id": 61,
+                    "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000907",
+            "label": "Pellizzari Massimo",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000923",
+            "label": "Varzi Achille",
+            "sessioni": [
+                {
+                    "id": 61,
+                    "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D0009322",
+            "label": "Tondini Nicola",
+            "sessioni": [
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000933",
+            "label": "JOVICICH JORGE",
+            "sessioni": [
+                {
+                    "id": 35,
+                    "label": "Autunnale (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 40,
+                    "label": "Autunnale cimec (21/08/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000937",
+            "label": "DELLANTONIO SARA",
+            "sessioni": [
+                {
+                    "id": 35,
+                    "label": "Autunnale (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 40,
+                    "label": "Autunnale cimec (21/08/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D000999",
+            "label": "NATALINI CECILIA FRIDA",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D001003",
+            "label": "PASQUINO TERESA",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D001010",
+            "label": "PIANESI FABIO",
+            "sessioni": [
+                {
+                    "id": 35,
+                    "label": "Autunnale (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 40,
+                    "label": "Autunnale cimec (21/08/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D001015",
+            "label": "ZAMPARELLI ROBERTO",
+            "sessioni": [
+                {
+                    "id": 35,
+                    "label": "Autunnale (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 40,
+                    "label": "Autunnale cimec (21/08/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D001016",
+            "label": "MICH LUISA",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D0010570",
+            "label": "Mitzman Elena",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D001083",
+            "label": "Castellucci Ignazio",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D001171",
+            "label": "COLLETTI LEONARDO",
+            "sessioni": []
+        },
+        {
+            "id": "D001479",
+            "label": "Lazzarin Renato",
+            "sessioni": [
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D0015038",
+            "label": "Decarli Giorgia",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D001700",
+            "label": "Dalfovo Franco",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D00174534",
+            "label": "Centis Barbara",
+            "sessioni": [
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D0018722",
+            "label": "LORANDINI FRANCESCA",
+            "sessioni": [
+                {
+                    "id": 61,
+                    "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D0019033",
+            "label": "ALLEGRI DAVIDE",
+            "sessioni": []
+        },
+        {
+            "id": "D0019133",
+            "label": "SIRACUSANO LUCA",
+            "sessioni": [
+                {
+                    "id": 61,
+                    "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D002187",
+            "label": "Checchetto Riccardo",
+            "sessioni": [
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D002324",
+            "label": "Di Paolo Gabriella",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D002391",
+            "label": "SARTORI FILIPPO",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D002392",
+            "label": "Palopoli Luigi",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D002394",
+            "label": "Donelli Massimo",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D002395",
+            "label": "Riccardi Giuseppe",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D002398",
+            "label": "Pradi Andrea",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D002401",
+            "label": "COSTA LORENA",
+            "sessioni": [
+                {
+                    "id": 61,
+                    "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D002410",
+            "label": "GRIMALDI STEFANO",
+            "sessioni": [
+                {
+                    "id": 61,
+                    "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D002411",
+            "label": "UVIETTA MARCO",
+            "sessioni": []
+        },
+        {
+            "id": "D0027392",
+            "label": "Pelacani Gracy",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D002946",
+            "label": "Roberti Pierluigi",
+            "sessioni": [
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D002950",
+            "label": "Bellin Alberto",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D002957",
+            "label": "RONCHETTI MARCO",
+            "sessioni": [
+                {
+                    "id": 35,
+                    "label": "Autunnale (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 40,
+                    "label": "Autunnale cimec (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D002958",
+            "label": "CAGOL FRANCO",
+            "sessioni": [
+                {
+                    "id": 61,
+                    "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D002963",
+            "label": "LUGARESI NICOLA",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D002970",
+            "label": "DI BLASIO FRANCESCA",
+            "sessioni": []
+        },
+        {
+            "id": "D002986",
+            "label": "PEDERZINI ELISABETTA",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D002992",
+            "label": "Pederiva Francesco",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D002995",
+            "label": "Sacchi Claudio",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003001",
+            "label": "Quaglioni Diego",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003043",
+            "label": "Pugliese Andrea",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003067",
+            "label": "Granelli Fabrizio",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003071",
+            "label": "BONINI SERGIO",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003073",
+            "label": "CANAL LUISA",
+            "sessioni": [
+                {
+                    "id": 35,
+                    "label": "Autunnale (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 40,
+                    "label": "Autunnale cimec (21/08/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003077",
+            "label": "FORNASARI GABRIELE",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003088",
+            "label": "ALBERTAZZI LILIANA",
+            "sessioni": [
+                {
+                    "id": 61,
+                    "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003102",
+            "label": "Prodi Giovanni Andrea",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003105",
+            "label": "PARENTI ALESSANDRO",
+            "sessioni": []
+        },
+        {
+            "id": "D003115",
+            "label": "Camassa Erminia",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003132",
+            "label": "Campostrini Renzo",
+            "sessioni": [
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003133",
+            "label": "Bigoni Davide",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003145",
+            "label": "RUZZA CARLO",
+            "sessioni": [
+                {
+                    "id": 64,
+                    "label": "Sessione autunnale (01/09/2017 - 22/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003149",
+            "label": "Cacciaguerra Giorgio",
+            "sessioni": [
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003151",
+            "label": "BUSSOLON STEFANO",
+            "sessioni": [
+                {
+                    "id": 35,
+                    "label": "Autunnale (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 40,
+                    "label": "Autunnale cimec (21/08/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003155",
+            "label": "Baldassino Nadia",
+            "sessioni": [
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003161",
+            "label": "Dalla Betta Gianfranco",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003165",
+            "label": "CARTA PAOLO",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                },
+                {
+                    "id": 61,
+                    "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003174",
+            "label": "Foladori Paola",
+            "sessioni": [
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003188",
+            "label": "Cosulich Matteo",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003194",
+            "label": "Giorgini Stefano",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003198",
+            "label": "Zatelli Paolo",
+            "sessioni": [
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003201",
+            "label": "Pilati Luciano",
+            "sessioni": [
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003212",
+            "label": "ROTTOLI MAURO",
+            "sessioni": [
+                {
+                    "id": 61,
+                    "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003223",
+            "label": "Brusa Roberto Sennen",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003232",
+            "label": "Bursi Oreste Salvatore",
+            "sessioni": [
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003237",
+            "label": "CORNI GUSTAVO",
+            "sessioni": []
+        },
+        {
+            "id": "D003263",
+            "label": "Pavesi Lorenzo",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003265",
+            "label": "Tonella Paolo",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003267",
+            "label": "ANGELUCCI DIEGO",
+            "sessioni": [
+                {
+                    "id": 61,
+                    "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003290",
+            "label": "JOB REMO",
+            "sessioni": [
+                {
+                    "id": 35,
+                    "label": "Autunnale (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 40,
+                    "label": "Autunnale cimec (21/08/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003330",
+            "label": "Brunato Mauro",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003336",
+            "label": "Zortea Massimo",
+            "sessioni": [
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003346",
+            "label": "LORANDINI CINZIA",
+            "sessioni": [
+                {
+                    "id": 61,
+                    "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003350",
+            "label": "De Cecco Mariolino",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003355",
+            "label": "Benedetti Matteo",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003393",
+            "label": "TENTORI KATYA",
+            "sessioni": [
+                {
+                    "id": 35,
+                    "label": "Autunnale (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 40,
+                    "label": "Autunnale cimec (21/08/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003402",
+            "label": "De Graaf Willem Adriaan",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003403",
+            "label": "Weber William Joseph",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003405",
+            "label": "RITA DOS SANTOS ELSA HENRIQUES",
+            "sessioni": []
+        },
+        {
+            "id": "D003410",
+            "label": "BONA CARLO",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003411",
+            "label": "GUARDA PAOLO",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003418",
+            "label": "Battaino Claudia",
+            "sessioni": [
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003419",
+            "label": "GUBERT CARLA",
+            "sessioni": [
+                {
+                    "id": 61,
+                    "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003426",
+            "label": "MARCHETTO GIULIANO",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003427",
+            "label": "Vitti Alfonso",
+            "sessioni": [
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003428",
+            "label": "Fodella Alessandro",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003429",
+            "label": "FORADORI PAOLO",
+            "sessioni": [
+                {
+                    "id": 64,
+                    "label": "Sessione autunnale (01/09/2017 - 22/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003430",
+            "label": "DAI PRA' ELENA",
+            "sessioni": []
+        },
+        {
+            "id": "D003431",
+            "label": "Baratieri Marco",
+            "sessioni": [
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003433",
+            "label": "Faccioli Pietro",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003436",
+            "label": "BONFIGLIOLI CLAUDIA",
+            "sessioni": [
+                {
+                    "id": 35,
+                    "label": "Autunnale (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 40,
+                    "label": "Autunnale cimec (21/08/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D0034377",
+            "label": "ADAMS DANIEL",
+            "sessioni": [
+                {
+                    "id": 35,
+                    "label": "Autunnale (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 40,
+                    "label": "Autunnale cimec (21/08/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003439",
+            "label": "DEMATTE' CLAUDIA",
+            "sessioni": []
+        },
+        {
+            "id": "D003441",
+            "label": "GALLI ALDO",
+            "sessioni": [
+                {
+                    "id": 61,
+                    "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003443",
+            "label": "Ascenzi Daniela",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003447",
+            "label": "Dalpra Michela",
+            "sessioni": [
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003448",
+            "label": "Grigiante Maurizio",
+            "sessioni": [
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003449",
+            "label": "Macii David",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003456",
+            "label": "Toffolon Marco",
+            "sessioni": [
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003457",
+            "label": "Rossi Stefano",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003458",
+            "label": "Motta Antonella",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003461",
+            "label": "IZZO UMBERTO",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003462",
+            "label": "BORZAGA MATTEO",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                },
+                {
+                    "id": 64,
+                    "label": "Sessione autunnale (01/09/2017 - 22/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003463",
+            "label": "Brun Stefania",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003467",
+            "label": "Veber Daniele",
+            "sessioni": [
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003491",
+            "label": "Dani Marco",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003492",
+            "label": "RILEY CATHERINE ELIZABETH",
+            "sessioni": [
+                {
+                    "id": 64,
+                    "label": "Sessione autunnale (01/09/2017 - 22/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003496",
+            "label": "BUSETTO MARCELLO LUIGI",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003526",
+            "label": "Franceschini Giulia",
+            "sessioni": [
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003532",
+            "label": "SORARÙ Gian Domenico",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003537",
+            "label": "Stringari Sandro",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003567",
+            "label": "Benacchio Gian Antonio",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003571",
+            "label": "Benciolini Giovanni Battista",
+            "sessioni": [
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003580",
+            "label": "SANTARONI MASSIMO",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003588",
+            "label": "Scardi Paolo",
+            "sessioni": [
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003594",
+            "label": "Scotoni Mario",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003596",
+            "label": "SERAPIONI RAUL PAOLO",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003597",
+            "label": "Sglavo Vincenzo Maria",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003601",
+            "label": "MARZATICO FRANCO",
+            "sessioni": [
+                {
+                    "id": 61,
+                    "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003608",
+            "label": "MICCIOLO ROCCO",
+            "sessioni": [
+                {
+                    "id": 35,
+                    "label": "Autunnale (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 40,
+                    "label": "Autunnale cimec (21/08/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003620",
+            "label": "Massacci Fabio",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003629",
+            "label": "ZENI NICOLA",
+            "sessioni": []
+        },
+        {
+            "id": "D003630",
+            "label": "Ragazzi Marco",
+            "sessioni": [
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003637",
+            "label": "Deflorian Flavio",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D0036524",
+            "label": "DROESCHER CORA ARIANE",
+            "sessioni": [
+                {
+                    "id": 61,
+                    "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003654",
+            "label": "CIAPPELLI GIOVANNI",
+            "sessioni": [
+                {
+                    "id": 61,
+                    "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003658",
+            "label": "ZENDRI CHRISTIAN",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                },
+                {
+                    "id": 61,
+                    "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003661",
+            "label": "Righetti Maurizio",
+            "sessioni": [
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003680",
+            "label": "Baratella Stefano",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003681",
+            "label": "Bosetti Paolo",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003698",
+            "label": "Conci Nicola",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003699",
+            "label": "Sebastiani Roberto",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003704",
+            "label": "MATTEI ANTONIO",
+            "sessioni": [
+                {
+                    "id": 35,
+                    "label": "Autunnale (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 40,
+                    "label": "Autunnale cimec (21/08/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003715",
+            "label": "BIANCHIN LUCIA",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003720",
+            "label": "Dolesi Rita",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003726",
+            "label": "GOZZI MARCO",
+            "sessioni": [
+                {
+                    "id": 61,
+                    "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003728",
+            "label": "Pagani Enrico",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003736",
+            "label": "BINELLI ANDREA",
+            "sessioni": []
+        },
+        {
+            "id": "D003741",
+            "label": "Di Nicola Andrea",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003759",
+            "label": "Oss Stefano",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003787",
+            "label": "Bettotti Paolo",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003794",
+            "label": "Fiori Luca",
+            "sessioni": [
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003795",
+            "label": "Villafiorita Monteleone Adolfo",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003808",
+            "label": "Ciolli Marco",
+            "sessioni": [
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003809",
+            "label": "Costantini Maurizio",
+            "sessioni": [
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003813",
+            "label": "Schuster Alexander",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003828",
+            "label": "PAVANI FRANCESCO",
+            "sessioni": [
+                {
+                    "id": 35,
+                    "label": "Autunnale (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 40,
+                    "label": "Autunnale cimec (21/08/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003837",
+            "label": "Orlandini Giuseppina",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003845",
+            "label": "Massenz Alberto",
+            "sessioni": [
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003848",
+            "label": "ROSSATO ANDREA",
+            "sessioni": [
+                {
+                    "id": 35,
+                    "label": "Autunnale (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 40,
+                    "label": "Autunnale cimec (21/08/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003869",
+            "label": "FLAIM MICHELE",
+            "sessioni": [
+                {
+                    "id": 61,
+                    "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003878",
+            "label": "Simeoni Lucia",
+            "sessioni": [
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003890",
+            "label": "Quaglia Paola",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003910",
+            "label": "SCHIAVO STEFANO",
+            "sessioni": [
+                {
+                    "id": 64,
+                    "label": "Sessione autunnale (01/09/2017 - 22/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D003959",
+            "label": "Ricci Leonardo",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D0040017",
+            "label": "Trocker Nicolò Giuseppe",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004016",
+            "label": "Nicolini Giorgio",
+            "sessioni": [
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004026",
+            "label": "BOUQUET PAOLO",
+            "sessioni": [
+                {
+                    "id": 35,
+                    "label": "Autunnale (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 40,
+                    "label": "Autunnale cimec (21/08/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004031",
+            "label": "Larcher Roberto",
+            "sessioni": [
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004041",
+            "label": "Matteuzzi Maurizio",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004042",
+            "label": "MORETTI GABRIELLA",
+            "sessioni": [
+                {
+                    "id": 61,
+                    "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004044",
+            "label": "FRANCESCONI SABRINA",
+            "sessioni": []
+        },
+        {
+            "id": "D004062",
+            "label": "BELLANTUONO GIUSEPPE",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004078",
+            "label": "IORIATTI ELENA",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004130",
+            "label": "Pancheri Lucio",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004133",
+            "label": "MONTAGNA MAURIZIO",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 61,
+                    "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004137",
+            "label": "Lamanna Claudio",
+            "sessioni": [
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004156",
+            "label": "SIMONATI ANNA",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                },
+                {
+                    "id": 61,
+                    "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004157",
+            "label": "Molinari Alberto",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004161",
+            "label": "BARONI ANSELMO",
+            "sessioni": [
+                {
+                    "id": 61,
+                    "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004166",
+            "label": "Moretti Valter",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004176",
+            "label": "Perotti Alessandro",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004180",
+            "label": "Bagagiolo Fabio",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004183",
+            "label": "Migliaresi Claudio",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004196",
+            "label": "Fauri Maurizio",
+            "sessioni": [
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004197",
+            "label": "Melgani Farid",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004199",
+            "label": "BUFFA FEDERICA",
+            "sessioni": []
+        },
+        {
+            "id": "D004201",
+            "label": "Miotello Antonio",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004202",
+            "label": "Mauro Raffaele",
+            "sessioni": [
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004206",
+            "label": "CASSATELLA ANTONIO",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004213",
+            "label": "MELCHIONDA ALESSANDRO",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004218",
+            "label": "Rosatti Giorgio",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004221",
+            "label": "DELLA LUCIA MARIA",
+            "sessioni": []
+        },
+        {
+            "id": "D004222",
+            "label": "Zardi Dino",
+            "sessioni": [
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004233",
+            "label": "Serra Cassano Francesco",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004239",
+            "label": "Ceccato Riccardo",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004246",
+            "label": "ZANINOTTO ENRICO",
+            "sessioni": [
+                {
+                    "id": 35,
+                    "label": "Autunnale (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 40,
+                    "label": "Autunnale cimec (21/08/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004248",
+            "label": "GIACOMONI PAOLA",
+            "sessioni": [
+                {
+                    "id": 61,
+                    "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004267",
+            "label": "Rigon Riccardo",
+            "sessioni": [
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004278",
+            "label": "Andreottola Gianni",
+            "sessioni": [
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004316",
+            "label": "Frattari Antonio",
+            "sessioni": [
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004325",
+            "label": "Diamantini Corrado",
+            "sessioni": [
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004343",
+            "label": "Fornasini Paolo",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D0043470",
+            "label": "ARNOLDI CHRISTIAN",
+            "sessioni": [
+                {
+                    "id": 35,
+                    "label": "Autunnale (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 40,
+                    "label": "Autunnale cimec (21/08/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004358",
+            "label": "FERRARI FULVIO",
+            "sessioni": []
+        },
+        {
+            "id": "D004360",
+            "label": "Fambri Luca",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004364",
+            "label": "MAGGIONI PAOLO",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004368",
+            "label": "Molinari Andrea",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D0043687",
+            "label": "CRESCENZI LUCA",
+            "sessioni": []
+        },
+        {
+            "id": "D004375",
+            "label": "Fedrizzi Mario",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004377",
+            "label": "FRIOLI DONATELLA",
+            "sessioni": [
+                {
+                    "id": 61,
+                    "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004379",
+            "label": "Fedrizzi Michele",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004383",
+            "label": "Scarpa Marina",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004384",
+            "label": "Armanini Aronne",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004386",
+            "label": "Giunchiglia Fausto",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D0043866",
+            "label": "Adinolfi Giovanna",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004390",
+            "label": "Florenzano Damiano",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004391",
+            "label": "PASCUZZI GIOVANNI",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004394",
+            "label": "SANTUCCI GIANNI",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004397",
+            "label": "Dirè Sandra",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004401",
+            "label": "Bertolazzi Enrico",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004405",
+            "label": "Pegoretti Alessandro",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004408",
+            "label": "NOGLER LUCA",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004412",
+            "label": "Delladio Silvano",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004417",
+            "label": "TORO ELEUTERIO FRANCISCO",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004418",
+            "label": "ABBRUZZESE SALVATORE",
+            "sessioni": [
+                {
+                    "id": 61,
+                    "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004431",
+            "label": "Antolini Renzo",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004432",
+            "label": "Piazza Maurizio",
+            "sessioni": [
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004436",
+            "label": "Salvi Giampaolo",
+            "sessioni": [
+                {
+                    "id": 61,
+                    "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004437",
+            "label": "Defranceschi Anneliese",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004438",
+            "label": "Battiti Roberto",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004440",
+            "label": "DEGL'INNOCENTI ANTONELLA",
+            "sessioni": [
+                {
+                    "id": 61,
+                    "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004441",
+            "label": "Cantiani Maria",
+            "sessioni": [
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004451",
+            "label": "Anzellotti Gabriele",
+            "sessioni": [
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004457",
+            "label": "Straffelini Giovanni",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004459",
+            "label": "DI RICCO ALESSANDRA",
+            "sessioni": [
+                {
+                    "id": 61,
+                    "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004460",
+            "label": "Gajo Alessandro",
+            "sessioni": [
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004465",
+            "label": "Dal Maschio Roberto",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004466",
+            "label": "GATTI PAOLO",
+            "sessioni": [
+                {
+                    "id": 61,
+                    "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004467",
+            "label": "Tubaro Luciano",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004470",
+            "label": "LOCATELLI CARLA",
+            "sessioni": [
+                {
+                    "id": 35,
+                    "label": "Autunnale (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 40,
+                    "label": "Autunnale cimec (21/08/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004477",
+            "label": "Valli Alberto",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004481",
+            "label": "Vanzo Luciano",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004499",
+            "label": "MIGLIARIO ELVIRA",
+            "sessioni": [
+                {
+                    "id": 61,
+                    "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004501",
+            "label": "MATTEVI ELENA",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004505",
+            "label": "Bertamini Massimo",
+            "sessioni": [
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004506",
+            "label": "Cavazza Agostino",
+            "sessioni": [
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004517",
+            "label": "STEWART DOMINIC",
+            "sessioni": []
+        },
+        {
+            "id": "D004526",
+            "label": "COVI GIOVANNA",
+            "sessioni": []
+        },
+        {
+            "id": "D004527",
+            "label": "MANZIN MAURIZIO",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004530",
+            "label": "Trivellato Filippo",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004537",
+            "label": "Blanzieri Enrico",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004552",
+            "label": "Biral Francesco",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004568",
+            "label": "ZANCANARO MASSIMO",
+            "sessioni": [
+                {
+                    "id": 35,
+                    "label": "Autunnale (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 40,
+                    "label": "Autunnale cimec (21/08/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004573",
+            "label": "Bortoluzzi Daniele",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004589",
+            "label": "DUFIET JEAN PAUL",
+            "sessioni": []
+        },
+        {
+            "id": "D004591",
+            "label": "BAGGIO SERENELLA",
+            "sessioni": [
+                {
+                    "id": 61,
+                    "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004592",
+            "label": "VENUTI PAOLA",
+            "sessioni": [
+                {
+                    "id": 35,
+                    "label": "Autunnale (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 40,
+                    "label": "Autunnale cimec (21/08/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004599",
+            "label": "PERTILE MARCO",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                },
+                {
+                    "id": 64,
+                    "label": "Sessione autunnale (01/09/2017 - 22/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004603",
+            "label": "BACCAGLINI LAURA",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004609",
+            "label": "Kuper Gabriel Mark",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004612",
+            "label": "Piciocchi Cinzia",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004614",
+            "label": "GROFF SILVANO",
+            "sessioni": [
+                {
+                    "id": 61,
+                    "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004618",
+            "label": "CANALS PINAS JORGE",
+            "sessioni": []
+        },
+        {
+            "id": "D004622",
+            "label": "Campolongo Fabio",
+            "sessioni": [
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004631",
+            "label": "Donelli Andrea",
+            "sessioni": [
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004634",
+            "label": "Azaro Renzo",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004643",
+            "label": "FRACCAROLI FRANCO",
+            "sessioni": [
+                {
+                    "id": 35,
+                    "label": "Autunnale (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 40,
+                    "label": "Autunnale cimec (21/08/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004644",
+            "label": "LOMBARDI LUIGI",
+            "sessioni": [
+                {
+                    "id": 35,
+                    "label": "Autunnale (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 40,
+                    "label": "Autunnale cimec (21/08/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004645",
+            "label": "Lo Cigno Renato Antonio",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004646",
+            "label": "GIUNTA CLAUDIO",
+            "sessioni": []
+        },
+        {
+            "id": "D004647",
+            "label": "MIGLIETTA MASSIMO",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004648",
+            "label": "Petri Dario",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004650",
+            "label": "Cristofolini Ilaria",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004673",
+            "label": "Della Volpe Claudio",
+            "sessioni": [
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004676",
+            "label": "Mazzucchi Sonia",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004677",
+            "label": "MAGLIARO ALESSANDRA",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004683",
+            "label": "PUPPO FEDERICO",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004684",
+            "label": "MENGHINI ANTONIA",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004687",
+            "label": "Ballico Edoardo",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004689",
+            "label": "Perna Luigi",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004701",
+            "label": "Zonta Daniele",
+            "sessioni": [
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004711",
+            "label": "Alonso Rodriguez Ana Maria",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004714",
+            "label": "Bruzzone Lorenzo",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004721",
+            "label": "Perini Anna",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004726",
+            "label": "TAMASSIA PAOLO",
+            "sessioni": [
+                {
+                    "id": 61,
+                    "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004729",
+            "label": "Ballerini Marco",
+            "sessioni": [
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004731",
+            "label": "GIORGI ANDREA",
+            "sessioni": [
+                {
+                    "id": 61,
+                    "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004735",
+            "label": "Lutterotti Luca",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004739",
+            "label": "Giorgini Paolo",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004741",
+            "label": "Maceratini Ruggero",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004743",
+            "label": "Albatici Rossano",
+            "sessioni": [
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004773",
+            "label": "LONGO LUCIA",
+            "sessioni": [
+                {
+                    "id": 61,
+                    "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004781",
+            "label": "Massa Andrea",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004783",
+            "label": "Fontanari Vigilio",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004787",
+            "label": "Lazzizzera Ignazio",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004790",
+            "label": "IERANO' GIORGIO",
+            "sessioni": []
+        },
+        {
+            "id": "D004808",
+            "label": "Zolezzi Guido",
+            "sessioni": [
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004811",
+            "label": "CORRÀ Michele",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004819",
+            "label": "LUISI NICOLA DEMETRIO",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004824",
+            "label": "Iannelli Mimmo",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004826",
+            "label": "Baggio Paolo",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004833",
+            "label": "De Natale Francesco",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004834",
+            "label": "D'ANDREA VINCENZO",
+            "sessioni": [
+                {
+                    "id": 35,
+                    "label": "Autunnale (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 40,
+                    "label": "Autunnale cimec (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004838",
+            "label": "Siboni Stefano",
+            "sessioni": [
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004845",
+            "label": "ZANGARA VINCENZA",
+            "sessioni": []
+        },
+        {
+            "id": "D004847",
+            "label": "RIZZANTE MASSIMO",
+            "sessioni": [
+                {
+                    "id": 61,
+                    "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004851",
+            "label": "BELLONI LUIGI",
+            "sessioni": [
+                {
+                    "id": 61,
+                    "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004862",
+            "label": "Tubino Marco",
+            "sessioni": [
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004873",
+            "label": "Grisenti Rolly",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004878",
+            "label": "ANTONIOLLI LUISA",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                },
+                {
+                    "id": 64,
+                    "label": "Sessione autunnale (01/09/2017 - 22/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004880",
+            "label": "Guella Graziano",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004883",
+            "label": "Springhetti Roberta",
+            "sessioni": [
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004885",
+            "label": "CARRARA VITTORIO",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004886",
+            "label": "Battisti Lorenzo",
+            "sessioni": [
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004889",
+            "label": "GIALANELLA STEFANO",
+            "sessioni": [
+                {
+                    "id": 61,
+                    "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004895",
+            "label": "GIANGIULIO MAURIZIO",
+            "sessioni": [
+                {
+                    "id": 61,
+                    "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004899",
+            "label": "Pugliese Silvio",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004905",
+            "label": "PEDROTTI ANNALUISA",
+            "sessioni": [
+                {
+                    "id": 61,
+                    "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004912",
+            "label": "Goglio Silvio",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004918",
+            "label": "Raffaelli Roberta",
+            "sessioni": [
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004920",
+            "label": "Novi Inverardi Pier Luigi",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004928",
+            "label": "Gatti Maria Paola",
+            "sessioni": [
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004938",
+            "label": "COPPOLA MARIA MICAELA",
+            "sessioni": [
+                {
+                    "id": 35,
+                    "label": "Autunnale (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 40,
+                    "label": "Autunnale cimec (21/08/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D004940",
+            "label": "SOMMAGGIO PAOLO",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D0054315",
+            "label": "STRAZZARI FRANCESCO",
+            "sessioni": [
+                {
+                    "id": 64,
+                    "label": "Sessione autunnale (01/09/2017 - 22/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D0055171",
+            "label": "PEELEN MARIUS VINCENT",
+            "sessioni": [
+                {
+                    "id": 35,
+                    "label": "Autunnale (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 40,
+                    "label": "Autunnale cimec (21/08/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D005644",
+            "label": "Tebaldi Toma",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D009183",
+            "label": "De Pellegrini Francesco",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D010616",
+            "label": "ESPOSITO GIANLUCA",
+            "sessioni": [
+                {
+                    "id": 35,
+                    "label": "Autunnale (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 40,
+                    "label": "Autunnale cimec (21/08/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D010976",
+            "label": "CARIA ANDREA",
+            "sessioni": [
+                {
+                    "id": 35,
+                    "label": "Autunnale (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 40,
+                    "label": "Autunnale cimec (21/08/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D011430",
+            "label": "DUCATO ROSSANA",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D011894",
+            "label": "GIOVANELLA FEDERICA",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D0119585",
+            "label": "VAN ZOEST LOUISE JOHANNA FRANCISCA MARIA",
+            "sessioni": [
+                {
+                    "id": 35,
+                    "label": "Autunnale (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 40,
+                    "label": "Autunnale cimec (21/08/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D012152",
+            "label": "Giongo Ivan",
+            "sessioni": [
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D0125743",
+            "label": "HICKEY CLAYTON MICHAEL",
+            "sessioni": [
+                {
+                    "id": 35,
+                    "label": "Autunnale (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 40,
+                    "label": "Autunnale cimec (21/08/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D0127223",
+            "label": "AGARWAL NIVEDITA",
+            "sessioni": [
+                {
+                    "id": 35,
+                    "label": "Autunnale (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 40,
+                    "label": "Autunnale cimec (21/08/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D0127883",
+            "label": "BOTTAZZI EMANUELE",
+            "sessioni": [
+                {
+                    "id": 35,
+                    "label": "Autunnale (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 40,
+                    "label": "Autunnale cimec (21/08/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D014148",
+            "label": "Poli Lorenzo",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D0143323",
+            "label": "TURELLA LUCA",
+            "sessioni": [
+                {
+                    "id": 35,
+                    "label": "Autunnale (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 40,
+                    "label": "Autunnale cimec (21/08/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D014874",
+            "label": "CALICETI EUGENIO",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D015039",
+            "label": "Detassis Carlo",
+            "sessioni": [
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D0152164",
+            "label": "DI DONATO MARCO",
+            "sessioni": [
+                {
+                    "id": 61,
+                    "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D0158903",
+            "label": "Cecinato Francesco",
+            "sessioni": [
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D0160323",
+            "label": "LAURIA MARIO",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D0164688",
+            "label": "GIORGI SILVIA",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D0164691",
+            "label": "Lauwers Gracienne",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D0164967",
+            "label": "Di Rocco Maurizio",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D0166543",
+            "label": "ZAVATTERO IRENE GIUSEPPINA",
+            "sessioni": [
+                {
+                    "id": 61,
+                    "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D0166864",
+            "label": "Mione Maria Caterina",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D0169770",
+            "label": "FRANCHIN LAURA",
+            "sessioni": [
+                {
+                    "id": 35,
+                    "label": "Autunnale (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 40,
+                    "label": "Autunnale cimec (21/08/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D0172144",
+            "label": "VAES JEROEN ANDRE FILIP",
+            "sessioni": [
+                {
+                    "id": 35,
+                    "label": "Autunnale (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 40,
+                    "label": "Autunnale cimec (21/08/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D0172512",
+            "label": "Ricci Mose",
+            "sessioni": [
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D0172757",
+            "label": "Rinaldi Massimiliano",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D0172759",
+            "label": "CAVAZZINI LAURA",
+            "sessioni": []
+        },
+        {
+            "id": "D0174105",
+            "label": "Hanczyc Martin Michael",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D0174693",
+            "label": "Lattanzi Gianluca",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D0176183",
+            "label": "VIVA DENIS",
+            "sessioni": [
+                {
+                    "id": 61,
+                    "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D0176414",
+            "label": "Canossa Marco",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D018002",
+            "label": "MARCHI ILARIA",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D0180699",
+            "label": "CAMPOREALE STEFANO",
+            "sessioni": [
+                {
+                    "id": 61,
+                    "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D0181337",
+            "label": "Guarneri Daniela",
+            "sessioni": [
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D0182793",
+            "label": "Torri Valentina",
+            "sessioni": [
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D0183431",
+            "label": "GIUSTI SERENA",
+            "sessioni": [
+                {
+                    "id": 64,
+                    "label": "Sessione autunnale (01/09/2017 - 22/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D018489",
+            "label": "Giovannini Lorenzo",
+            "sessioni": [
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D0185921",
+            "label": "LI XUESONG",
+            "sessioni": []
+        },
+        {
+            "id": "D018803",
+            "label": "FEDEL MICHELE",
+            "sessioni": [
+                {
+                    "id": 61,
+                    "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D0188109",
+            "label": "Piccoli Giovanni",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D0188789",
+            "label": "DE VILLA MASSIMILIANO",
+            "sessioni": [
+                {
+                    "id": 61,
+                    "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D0188884",
+            "label": "TURBANTI GIACOMO",
+            "sessioni": [
+                {
+                    "id": 61,
+                    "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D0189125",
+            "label": "Marucci Oronzo",
+            "sessioni": [
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D018928",
+            "label": "Brunelli Matteo",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D019081",
+            "label": "Segata Nicola",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D0195019",
+            "label": "Fontana Marco",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D0195059",
+            "label": "Ariatti Simone",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D0195758",
+            "label": "Sgarbossa Fabio",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D0195988",
+            "label": "PERETTA ROBERTO GIOVANNI ROMANO",
+            "sessioni": []
+        },
+        {
+            "id": "D019745",
+            "label": "Tomasi Serena",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D019887",
+            "label": "Viani Federico",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D019895",
+            "label": "Prada Alessandro",
+            "sessioni": [
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D023612",
+            "label": "Pozzato Annarita",
+            "sessioni": [
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D025055",
+            "label": "ZERBINI LEILA",
+            "sessioni": [
+                {
+                    "id": 35,
+                    "label": "Autunnale (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 40,
+                    "label": "Autunnale cimec (21/08/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D025715",
+            "label": "Maculan Elena",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D025980",
+            "label": "Bezzi Marco",
+            "sessioni": [
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D026066",
+            "label": "Scagnol Matteo",
+            "sessioni": [
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D027163",
+            "label": "Beqiraj Julinda",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D028028",
+            "label": "CVAJNER MARTINA",
+            "sessioni": [
+                {
+                    "id": 35,
+                    "label": "Autunnale (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 40,
+                    "label": "Autunnale cimec (21/08/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D028411",
+            "label": "BEHRMANN MEIKE HEIDEMARIE",
+            "sessioni": []
+        },
+        {
+            "id": "D028505",
+            "label": "Leidemann Winfried",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D028513",
+            "label": "WOELK JENS",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                },
+                {
+                    "id": 64,
+                    "label": "Sessione autunnale (01/09/2017 - 22/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D028526",
+            "label": "BAJONS ENA MARLIS",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D029602",
+            "label": "Dumbser Michael",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D029603",
+            "label": "Moschitti Alessandro",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D030798",
+            "label": "Teso Stefano",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D031157",
+            "label": "DE BASTIANI PIERLUIGI",
+            "sessioni": [
+                {
+                    "id": 35,
+                    "label": "Autunnale (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 40,
+                    "label": "Autunnale cimec (21/08/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D031235",
+            "label": "MARTELLI MARIO",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D031442",
+            "label": "Macchi Paolo Pasquale",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D031598",
+            "label": "Provenzani Alessandro",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D032139",
+            "label": "De Polo Fabio",
+            "sessioni": [
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D032237",
+            "label": "ROSPOCHER MASSIMO",
+            "sessioni": [
+                {
+                    "id": 61,
+                    "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D032523",
+            "label": "TRUXILLO DONALD MARTIN",
+            "sessioni": [
+                {
+                    "id": 35,
+                    "label": "Autunnale (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 40,
+                    "label": "Autunnale cimec (21/08/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D032736",
+            "label": "MORONI MANUELA CATERINA",
+            "sessioni": []
+        },
+        {
+            "id": "D032974",
+            "label": "COZZIO MICHELE",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D033056",
+            "label": "Scaglione Giuseppe",
+            "sessioni": [
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D033184",
+            "label": "Denti Michela",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D033234",
+            "label": "GHIA FRANCESCO",
+            "sessioni": [
+                {
+                    "id": 61,
+                    "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D033322",
+            "label": "Mattei Alberto",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D033739",
+            "label": "BRAUN HEINRICH CHRISTOPH",
+            "sessioni": [
+                {
+                    "id": 35,
+                    "label": "Autunnale (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 40,
+                    "label": "Autunnale cimec (21/08/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D033916",
+            "label": "Zunino Roberto",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D034176",
+            "label": "PRIMERANO DOMENICA",
+            "sessioni": [
+                {
+                    "id": 61,
+                    "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D034679",
+            "label": "MORDEGLIA CATERINA",
+            "sessioni": [
+                {
+                    "id": 61,
+                    "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D034680",
+            "label": "SOVRANO VALERIA ANNA",
+            "sessioni": [
+                {
+                    "id": 35,
+                    "label": "Autunnale (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 40,
+                    "label": "Autunnale cimec (21/08/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D034681",
+            "label": "MAZZA VERONICA",
+            "sessioni": [
+                {
+                    "id": 35,
+                    "label": "Autunnale (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 40,
+                    "label": "Autunnale cimec (21/08/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D035080",
+            "label": "Cauduro Andrea",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D035286",
+            "label": "Tosolini Cristina",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D035318",
+            "label": "Powers Melissa Ann",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D036326",
+            "label": "FRANZ FABIO",
+            "sessioni": [
+                {
+                    "id": 35,
+                    "label": "Autunnale (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 40,
+                    "label": "Autunnale cimec (21/08/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D036382",
+            "label": "BALDAUF DANIEL",
+            "sessioni": [
+                {
+                    "id": 35,
+                    "label": "Autunnale (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 40,
+                    "label": "Autunnale cimec (21/08/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D038950",
+            "label": "BOZZI YURI",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D039036",
+            "label": "Casarosa Simona",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D039577",
+            "label": "VILLOTTI PATRIZIA",
+            "sessioni": [
+                {
+                    "id": 35,
+                    "label": "Autunnale (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 40,
+                    "label": "Autunnale cimec (21/08/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D039608",
+            "label": "Passerini Andrea",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D039790",
+            "label": "CAPELLI ROBERTA",
+            "sessioni": []
+        },
+        {
+            "id": "D039874",
+            "label": "Inga Alberto",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D040977",
+            "label": "MICH ORNELLA",
+            "sessioni": [
+                {
+                    "id": 35,
+                    "label": "Autunnale (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 40,
+                    "label": "Autunnale cimec (21/08/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D043286",
+            "label": "FRANCHI ELENA",
+            "sessioni": [
+                {
+                    "id": 61,
+                    "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D044958",
+            "label": "TOMASI FRANCESCA",
+            "sessioni": [
+                {
+                    "id": 61,
+                    "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D045243",
+            "label": "Ghulinyan Mher",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D046599",
+            "label": "Oliveri Giacomo",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D046643",
+            "label": "FONTANARI CLAUDIO",
+            "sessioni": [
+                {
+                    "id": 35,
+                    "label": "Autunnale (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 40,
+                    "label": "Autunnale cimec (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 61,
+                    "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D047723",
+            "label": "Fontanelli Daniele",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D048844",
+            "label": "GABRIELLI SILVIA",
+            "sessioni": [
+                {
+                    "id": 35,
+                    "label": "Autunnale (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 40,
+                    "label": "Autunnale cimec (21/08/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D048943",
+            "label": "HASSON URI",
+            "sessioni": [
+                {
+                    "id": 35,
+                    "label": "Autunnale (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 40,
+                    "label": "Autunnale cimec (21/08/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D051343",
+            "label": "Alberti Luigi",
+            "sessioni": [
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D051575",
+            "label": "PALAZZO ALESSANDRO",
+            "sessioni": [
+                {
+                    "id": 61,
+                    "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D051623",
+            "label": "ACERENZA GERARDO",
+            "sessioni": []
+        },
+        {
+            "id": "D051994",
+            "label": "SEBE NICULAE",
+            "sessioni": [
+                {
+                    "id": 35,
+                    "label": "Autunnale (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 40,
+                    "label": "Autunnale cimec (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D052043",
+            "label": "DE ANGELI ANTONELLA",
+            "sessioni": [
+                {
+                    "id": 35,
+                    "label": "Autunnale (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 40,
+                    "label": "Autunnale cimec (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D052284",
+            "label": "GALIZZI KROEGEL ALESSANDRA",
+            "sessioni": [
+                {
+                    "id": 61,
+                    "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D053445",
+            "label": "HAASE ALBRECHT",
+            "sessioni": [
+                {
+                    "id": 35,
+                    "label": "Autunnale (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 40,
+                    "label": "Autunnale cimec (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D053660",
+            "label": "FAIRHALL SCOTT LAURENCE",
+            "sessioni": [
+                {
+                    "id": 35,
+                    "label": "Autunnale (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 40,
+                    "label": "Autunnale cimec (21/08/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D053767",
+            "label": "Monaco Giulio",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D053912",
+            "label": "MINIUSSI CARLO",
+            "sessioni": [
+                {
+                    "id": 35,
+                    "label": "Autunnale (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 40,
+                    "label": "Autunnale cimec (21/08/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D054282",
+            "label": "LORENZI GIORGIO",
+            "sessioni": [
+                {
+                    "id": 35,
+                    "label": "Autunnale (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 40,
+                    "label": "Autunnale cimec (21/08/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D054349",
+            "label": "ZAGO STEFANO",
+            "sessioni": [
+                {
+                    "id": 35,
+                    "label": "Autunnale (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 40,
+                    "label": "Autunnale cimec (21/08/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D054374",
+            "label": "Grandi Guido",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D054505",
+            "label": "Mansy Sheref Samir",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D055609",
+            "label": "LEE SANG AH",
+            "sessioni": [
+                {
+                    "id": 35,
+                    "label": "Autunnale (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 40,
+                    "label": "Autunnale cimec (21/08/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D059179",
+            "label": "Ciribilli Yari",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D059483",
+            "label": "PASQUALOTTO ANGELA",
+            "sessioni": [
+                {
+                    "id": 35,
+                    "label": "Autunnale (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 40,
+                    "label": "Autunnale cimec (21/08/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D061203",
+            "label": "Bernardi Alessandra",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D061243",
+            "label": "BERNARDI RAFFAELLA",
+            "sessioni": [
+                {
+                    "id": 35,
+                    "label": "Autunnale (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 40,
+                    "label": "Autunnale cimec (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 61,
+                    "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D061446",
+            "label": "Filippas Vittorino",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D062623",
+            "label": "Schwarz Marco",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D062804",
+            "label": "OSMANI VENET",
+            "sessioni": [
+                {
+                    "id": 35,
+                    "label": "Autunnale (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 40,
+                    "label": "Autunnale cimec (21/08/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D063324",
+            "label": "TOMASINI DANIEL",
+            "sessioni": [
+                {
+                    "id": 35,
+                    "label": "Autunnale (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 40,
+                    "label": "Autunnale cimec (21/08/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D064343",
+            "label": "AVANZI LORENZO",
+            "sessioni": [
+                {
+                    "id": 35,
+                    "label": "Autunnale (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 40,
+                    "label": "Autunnale cimec (21/08/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D064404",
+            "label": "Cereseto Anna",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D067134",
+            "label": "Demichelis Francesca",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D072707",
+            "label": "De Masi Alessandro",
+            "sessioni": [
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D073374",
+            "label": "Sola Conde Edoardo Luis",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D073803",
+            "label": "Zaccarian Luca",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D076393",
+            "label": "VOLTOLINI FRANCESCA",
+            "sessioni": [
+                {
+                    "id": 35,
+                    "label": "Autunnale (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 40,
+                    "label": "Autunnale cimec (21/08/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D076703",
+            "label": "Demir Begum",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D080123",
+            "label": "HIDANO NOBORU",
+            "sessioni": [
+                {
+                    "id": 35,
+                    "label": "Autunnale (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 40,
+                    "label": "Autunnale cimec (21/08/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D097020",
+            "label": "Minati Marco",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D119623",
+            "label": "Ferrari Gabriele",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D120706",
+            "label": "Tuzov Daniil",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D120984",
+            "label": "NOBILE MAURO",
+            "sessioni": [
+                {
+                    "id": 61,
+                    "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D123554",
+            "label": "GIORGI ALBERTA",
+            "sessioni": [
+                {
+                    "id": 64,
+                    "label": "Sessione autunnale (01/09/2017 - 22/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D131263",
+            "label": "Panzani Giulio",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D132483",
+            "label": "Baudet Marie Laure Michele",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D139503",
+            "label": "ALAIMO ANGELA",
+            "sessioni": [
+                {
+                    "id": 61,
+                    "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D145223",
+            "label": "Pizzato Massimo",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D157824",
+            "label": "Kahramanogullari Ozan",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D160163",
+            "label": "Domenici Enrico",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D160344",
+            "label": "Conti Luciano",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D162063",
+            "label": "BANNO' Mariasole",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D164223",
+            "label": "Giacomazzo Bruno",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D169922",
+            "label": "Stefani Giovanni",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D17281",
+            "label": "DIAMOND IRENE MARY",
+            "sessioni": []
+        },
+        {
+            "id": "D172967",
+            "label": "Basso Manuela",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D174714",
+            "label": "Biagioli Marta",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D174743",
+            "label": "Biressi Stefano",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D175247",
+            "label": "DUCCESCHI LUCA",
+            "sessioni": [
+                {
+                    "id": 35,
+                    "label": "Autunnale (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 40,
+                    "label": "Autunnale cimec (21/08/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D175675",
+            "label": "Mezzetti Nicola",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D177902",
+            "label": "Streicher Wolfgang",
+            "sessioni": [
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D180155",
+            "label": "DEL BIANCO TERESA",
+            "sessioni": [
+                {
+                    "id": 35,
+                    "label": "Autunnale (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 40,
+                    "label": "Autunnale cimec (21/08/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D180157",
+            "label": "ZAPPOLI ALESSANDRA",
+            "sessioni": [
+                {
+                    "id": 35,
+                    "label": "Autunnale (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 40,
+                    "label": "Autunnale cimec (21/08/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D180162",
+            "label": "CIAMPA VALERIA",
+            "sessioni": [
+                {
+                    "id": 35,
+                    "label": "Autunnale (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 40,
+                    "label": "Autunnale cimec (21/08/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D180508",
+            "label": "MALBERTI CORRADO",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D181543",
+            "label": "CASELLI MAURO",
+            "sessioni": [
+                {
+                    "id": 64,
+                    "label": "Sessione autunnale (01/09/2017 - 22/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D181898",
+            "label": "Agostinelli Claudio",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D182805",
+            "label": "Tommasino Francesco",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D183216",
+            "label": "Mazzieri Lorenzo",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 60,
+                    "label": "Sessione estiva std (19/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D184833",
+            "label": "Visconti Andrea",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D185249",
+            "label": "Biasini Emiliano",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D187588",
+            "label": "Onorato Pasquale",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D187669",
+            "label": "MAZZAGGIO GRETA",
+            "sessioni": [
+                {
+                    "id": 35,
+                    "label": "Autunnale (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 40,
+                    "label": "Autunnale cimec (21/08/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D188140",
+            "label": "Rinaldo Giancarlo",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D189066",
+            "label": "VANDAMME ANNE SOPHIE",
+            "sessioni": []
+        },
+        {
+            "id": "D189384",
+            "label": "Scifoni Emanuele",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D190029",
+            "label": "Givant Steven Roger",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D192502",
+            "label": "Cerasino Leonardo",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D192533",
+            "label": "Lucchetta Giovanni",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D194285",
+            "label": "KAPLAN LEAH BETH",
+            "sessioni": []
+        },
+        {
+            "id": "D195689",
+            "label": "GRAZIANI SOFIA",
+            "sessioni": [
+                {
+                    "id": 61,
+                    "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D196469",
+            "label": "Speziari Daniele",
+            "sessioni": [
+                {
+                    "id": 61,
+                    "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D28349",
+            "label": "GHANE ANITA",
+            "sessioni": []
+        },
+        {
+            "id": "D39400",
+            "label": "Politi Mauro",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D3950",
+            "label": "BEITTEL MARK STEVEN",
+            "sessioni": []
+        },
+        {
+            "id": "D40692",
+            "label": "GRECUCCI ALESSANDRO",
+            "sessioni": [
+                {
+                    "id": 35,
+                    "label": "Autunnale (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 40,
+                    "label": "Autunnale cimec (21/08/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D47153",
+            "label": "ALFIERI FERNANDA",
+            "sessioni": [
+                {
+                    "id": 61,
+                    "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D47194",
+            "label": "RODLER LUCIA",
+            "sessioni": [
+                {
+                    "id": 35,
+                    "label": "Autunnale (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 40,
+                    "label": "Autunnale cimec (21/08/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D55064",
+            "label": "Schwalm Peter Jörg",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D55065",
+            "label": "CLARONI ALESSIO",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D55066",
+            "label": "MACILOTTI MATTEO",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D55076",
+            "label": "SQUIBB MARGARET",
+            "sessioni": []
+        },
+        {
+            "id": "D55227",
+            "label": "GIUPPONI ELENA",
+            "sessioni": []
+        },
+        {
+            "id": "D55676",
+            "label": "NESI GIUSEPPE",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D55843",
+            "label": "FRYSHEVA OLENA",
+            "sessioni": []
+        },
+        {
+            "id": "D56020",
+            "label": "STRICKER SABINE CHRISTINE",
+            "sessioni": []
+        },
+        {
+            "id": "D56118",
+            "label": "PASTOR MARIA PILAR",
+            "sessioni": []
+        },
+        {
+            "id": "D56303",
+            "label": "Saracino Barbara",
+            "sessioni": [
+                {
+                    "id": 61,
+                    "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D57136",
+            "label": "Rosanelli Maurizio",
+            "sessioni": []
+        },
+        {
+            "id": "D62644",
+            "label": "MAYORA IBARRA OSCAR ARTURO",
+            "sessioni": [
+                {
+                    "id": 35,
+                    "label": "Autunnale (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 40,
+                    "label": "Autunnale cimec (21/08/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D69333",
+            "label": "ALGRANATI CRISTINA",
+            "sessioni": []
+        },
+        {
+            "id": "D69631",
+            "label": "FAVART FRANCOISE",
+            "sessioni": []
+        },
+        {
+            "id": "D69633",
+            "label": "ORME LESLEY ANN",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                },
+                {
+                    "id": 64,
+                    "label": "Sessione autunnale (01/09/2017 - 22/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D69808",
+            "label": "STRAUB RICHARD",
+            "sessioni": [
+                {
+                    "id": 64,
+                    "label": "Sessione autunnale (01/09/2017 - 22/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D69809",
+            "label": "MORELLI ELISABETTA",
+            "sessioni": []
+        },
+        {
+            "id": "D69813",
+            "label": "TONIOLO SILVIA",
+            "sessioni": []
+        },
+        {
+            "id": "D69851",
+            "label": "Dalla Bontà Silvana",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D69990",
+            "label": "SOMERS SEAN EDWARD",
+            "sessioni": []
+        },
+        {
+            "id": "D70035",
+            "label": "PRICE JANE ELIZABETH",
+            "sessioni": []
+        },
+        {
+            "id": "D70082",
+            "label": "ANDRES MIEZA FRANCISCO JAVIER",
+            "sessioni": []
+        },
+        {
+            "id": "D70097",
+            "label": "GREGSON ELIZABETH ANNE",
+            "sessioni": []
+        },
+        {
+            "id": "D70165",
+            "label": "LUCIANER MICHELE",
+            "sessioni": [
+                {
+                    "id": 35,
+                    "label": "Autunnale (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 40,
+                    "label": "Autunnale cimec (21/08/2017 - 15/09/2017)"
+                },
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D70367",
+            "label": "Stoffella Stefania",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D70446",
+            "label": "HERNANDEZ DIAZ LEONOR",
+            "sessioni": []
+        },
+        {
+            "id": "D70447",
+            "label": "COUCKE JOSEFINE PETRE LYDIA",
+            "sessioni": []
+        },
+        {
+            "id": "D70448",
+            "label": "Ritondale Spano Patrizia",
+            "sessioni": []
+        },
+        {
+            "id": "D70451",
+            "label": "MARTIN RUIZ IRATXE",
+            "sessioni": []
+        },
+        {
+            "id": "D70706",
+            "label": "Albanese Bruno Mathieu",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D71260",
+            "label": "Pieri Fabio",
+            "sessioni": [
+                {
+                    "id": 50,
+                    "label": "Sessione estiva 2016/2017 (05/06/2017 - 15/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D72095",
+            "label": "PERLETTI GRETA",
+            "sessioni": []
+        },
+        {
+            "id": "D72167",
+            "label": "Tavano Blessi Giorgio",
+            "sessioni": [
+                {
+                    "id": 61,
+                    "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                }
+            ]
+        },
+        {
+            "id": "D72208",
+            "label": "COGNOLA FEDERICA",
+            "sessioni": []
+        },
+        {
+            "id": "D78313",
+            "label": "DI FONZO CLAUDIA",
+            "sessioni": [
+                {
+                    "id": 52,
+                    "label": "Sessione autunnale 2016/17 (01/09/2017 - 08/09/2017)"
+                }
+            ]
+        }
+    ]
+}

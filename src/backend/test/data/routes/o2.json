@@ -1,0 +1,219 @@
+{
+    "elenco_lezioni": [
+        {
+            "insegnamento": {
+                "codice_insegnamento": "EC0115G_120128_120128/1_Nessun partizionamento_BEHRM",
+                "docente": "BEHRMANN MEIKE HEIDEMARIE"
+            },
+            "luogo": [
+                {
+                    "codice_aula": "A06",
+                    "codice_sede": "E0101"
+                }
+            ],
+            "timestamp_inizio": "2017-10-23T06:30:00.000Z",
+            "timestamp_fine": "2017-10-23T08:30:00.000Z",
+            "tipo": "Lezione"
+        },
+        {
+            "insegnamento": {
+                "codice_insegnamento": "EC0115G_120000_120000/3_ESE_Nessun partizionamento_FERRA",
+                "docente": "Ferrari Fabio"
+            },
+            "luogo": [
+                {
+                    "codice_aula": "A02",
+                    "codice_sede": "E0101"
+                }
+            ],
+            "timestamp_inizio": "2017-10-23T13:00:00.000Z",
+            "timestamp_fine": "2017-10-23T15:00:00.000Z",
+            "tipo": "Lezione"
+        },
+        {
+            "insegnamento": {
+                "codice_insegnamento": "EC0115G_120004_120004/1_Nessun partizionamento_FAILL",
+                "docente": "Faillo Marco"
+            },
+            "luogo": [
+                {
+                    "codice_aula": "A02",
+                    "codice_sede": "E0101"
+                }
+            ],
+            "timestamp_inizio": "2017-10-23T15:00:00.000Z",
+            "timestamp_fine": "2017-10-23T17:00:00.000Z",
+            "tipo": "Lezione"
+        },
+        {
+            "insegnamento": {
+                "codice_insegnamento": "EC0115G_120004_120004/1_Nessun partizionamento_FAILL",
+                "docente": "Faillo Marco"
+            },
+            "luogo": [
+                {
+                    "codice_aula": "A02",
+                    "codice_sede": "E0101"
+                }
+            ],
+            "timestamp_inizio": "2017-10-24T06:30:00.000Z",
+            "timestamp_fine": "2017-10-24T08:30:00.000Z",
+            "tipo": "Lezione"
+        },
+        {
+            "insegnamento": {
+                "codice_insegnamento": "EC0115G_120000_120000/2_Nessun partizionamento_FERRA",
+                "docente": "Brunelli Matteo, Ferrari Fabio"
+            },
+            "luogo": [
+                {
+                    "codice_aula": "A02",
+                    "codice_sede": "E0101"
+                }
+            ],
+            "timestamp_inizio": "2017-10-24T08:30:00.000Z",
+            "timestamp_fine": "2017-10-24T10:30:00.000Z",
+            "tipo": "Lezione"
+        },
+        {
+            "insegnamento": {
+                "codice_insegnamento": "EC0115G_120128_120128/1_Nessun partizionamento_BEHRM",
+                "docente": "BEHRMANN MEIKE HEIDEMARIE"
+            },
+            "luogo": [
+                {
+                    "codice_aula": "A06",
+                    "codice_sede": "E0101"
+                }
+            ],
+            "timestamp_inizio": "2017-10-24T11:00:00.000Z",
+            "timestamp_fine": "2017-10-24T13:00:00.000Z",
+            "tipo": "Lezione"
+        },
+        {
+            "insegnamento": {
+                "codice_insegnamento": "EC0115G_120004_120004/2_ESE_Nessun partizionamento_CATTU",
+                "docente": "Baggio Marianna"
+            },
+            "luogo": [
+                {
+                    "codice_aula": "A02",
+                    "codice_sede": "E0101"
+                }
+            ],
+            "timestamp_inizio": "2017-10-24T13:00:00.000Z",
+            "timestamp_fine": "2017-10-24T15:00:00.000Z",
+            "tipo": "Lezione"
+        },
+        {
+            "insegnamento": {
+                "codice_insegnamento": "EC0115G_120006_120006/2_ESE_Nessun partizionamento_BONAF",
+                "docente": "Bonafini Michela"
+            },
+            "luogo": [
+                {
+                    "codice_aula": "A02",
+                    "codice_sede": "E0101"
+                }
+            ],
+            "timestamp_inizio": "2017-10-24T15:00:00.000Z",
+            "timestamp_fine": "2017-10-24T17:00:00.000Z",
+            "tipo": "Lezione"
+        },
+        {
+            "insegnamento": {
+                "codice_insegnamento": "EC0115G_120000_120000/2_Nessun partizionamento_FERRA",
+                "docente": "Brunelli Matteo, Ferrari Fabio"
+            },
+            "luogo": [
+                {
+                    "codice_aula": "A02",
+                    "codice_sede": "E0101"
+                }
+            ],
+            "timestamp_inizio": "2017-10-25T08:30:00.000Z",
+            "timestamp_fine": "2017-10-25T10:30:00.000Z",
+            "tipo": "Lezione"
+        },
+        {
+            "insegnamento": {
+                "codice_insegnamento": "EC0115G_120006_120006/1_Nessun partizionamento_FRANC",
+                "docente": "Francesconi Andrea"
+            },
+            "luogo": [
+                {
+                    "codice_aula": "A02",
+                    "codice_sede": "E0101"
+                }
+            ],
+            "timestamp_inizio": "2017-10-25T11:00:00.000Z",
+            "timestamp_fine": "2017-10-25T13:00:00.000Z",
+            "tipo": "Lezione"
+        },
+        {
+            "insegnamento": {
+                "codice_insegnamento": "EC0115G_120127_120127/1_Nessun partizionamento_MCMA",
+                "docente": "Mc Manus Ellenor"
+            },
+            "luogo": [
+                {
+                    "codice_aula": "A10",
+                    "codice_sede": "E0101"
+                }
+            ],
+            "timestamp_inizio": "2017-10-25T12:00:00.000Z",
+            "timestamp_fine": "2017-10-25T15:00:00.000Z",
+            "tipo": "Lezione"
+        },
+        {
+            "insegnamento": {
+                "codice_insegnamento": "EC0115G_120004_120004/2_ESE_Nessun partizionamento_CATTU",
+                "docente": "Baggio Marianna"
+            },
+            "luogo": [
+                {
+                    "codice_aula": "A02",
+                    "codice_sede": "E0101"
+                }
+            ],
+            "timestamp_inizio": "2017-10-25T13:00:00.000Z",
+            "timestamp_fine": "2017-10-25T15:00:00.000Z",
+            "tipo": "Lezione"
+        },
+        {
+            "insegnamento": {
+                "codice_insegnamento": "EC0115G_120000_120000/3_ESE_Nessun partizionamento_FERRA",
+                "docente": "Ferrari Fabio"
+            },
+            "luogo": [
+                {
+                    "codice_aula": "A02",
+                    "codice_sede": "E0101"
+                }
+            ],
+            "timestamp_inizio": "2017-10-25T15:00:00.000Z",
+            "timestamp_fine": "2017-10-25T17:00:00.000Z",
+            "tipo": "Lezione"
+        },
+        {
+            "insegnamento": {
+                "codice_insegnamento": "EC0115G_120128_120128/1_Nessun partizionamento_BEHRM",
+                "docente": "BEHRMANN MEIKE HEIDEMARIE"
+            },
+            "luogo": [
+                {
+                    "codice_aula": "A25",
+                    "codice_sede": "E0101"
+                }
+            ],
+            "timestamp_inizio": "2017-10-25T15:00:00.000Z",
+            "timestamp_fine": "2017-10-25T17:00:00.000Z",
+            "tipo": "Lezione"
+        }
+    ],
+    "anno": "2017",
+    "codice_corso": "0115G",
+    "codice_percorso": "P0001|1",
+    "timestampInizio": "2017-10-20T02:00:00.000Z",
+    "timestampFine": "2017-10-27T02:00:00.000Z"
+}

@@ -1,0 +1,318 @@
+{
+    "anno": "2016",
+    "corsi": {
+        "0422H": {
+            "label": "Letterature euroamericane, traduzione e critica letteraria (Magistrale)",
+            "elenco_anni": {
+                "P0004D1|1": {
+                    "label": [
+                        "1 anno - Standard"
+                    ],
+                    "elenco_sessioni": {
+                        "61": {
+                            "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                        }
+                    },
+                    "elenco_attivita": [
+                        "EC0422H_130167_CURZE",
+                        "EC0422H_130501_TARAV",
+                        "EC0422H_130502_ALGRA_ese",
+                        "EC0422H_130154_ZANGA",
+                        "EC0422H_130261_CAPEL",
+                        "EC0422H_130503_PRICE_ese",
+                        "EC0422H_130247_CORDI",
+                        "EC0422H_130503_DIAMO_ese",
+                        "EC0422H_130259_PAREN",
+                        "EC0422H_130225_IERAN",
+                        "EC0422H_130500_PRICE_ese",
+                        "EC0422H_130499_COUCK_ese",
+                        "EC0422H_130267_MINGA",
+                        "EC0422H_130502_CRESC",
+                        "EC0422H_130171_BELLA",
+                        "EC0422H_130503_COVI",
+                        "EC0422H_130247_CORDI_ese",
+                        "EC0422H_130500_DIBL",
+                        "EC0422H_130500_DIAMO_ese",
+                        "EC0422H_130502_STRIC_ese",
+                        "EC0422H_130499_ACERE",
+                        "EC0422H_130501_PASTO_ese",
+                        "EC0422H_130249_GIUNT",
+                        "EC0422H_130245_CAPEL",
+                        "EC0422H_130216_CAVAZ"
+                    ]
+                },
+                "P0004D1|2": {
+                    "label": [
+                        "2 anno - Standard"
+                    ],
+                    "elenco_sessioni": {
+                        "61": {
+                            "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                        }
+                    },
+                    "elenco_attivita": [
+                        "EC0422H_130507_DADE_a",
+                        "EC0422H_130508_COVI_a",
+                        "EC0422H_130508_PRICE_ese",
+                        "EC0422H_130507_TONIO_ese",
+                        "EC0422H_130505_PRICE_ese",
+                        "EC0422H_130506_ANDRE_ese",
+                        "EC0422H_130504_ACERE",
+                        "EC0422H_130505_DIAMO_ese",
+                        "EC0422H_130508_DIAMO_ese",
+                        "EC0422H_130504_COUCK_ese",
+                        "EC0422H_130508_FRANC",
+                        "EC0422H_130507_STEIG_ese",
+                        "EC0422H_130507_MORON",
+                        "EC0422H_130505_FRANC",
+                        "EC0422H_130508_COVI_b",
+                        "EC0422H_130507_DADE_b"
+                    ]
+                }
+            }
+        },
+        "0423H": {
+            "label": "Mediazione linguistica, turismo e culture (Magistrale)",
+            "elenco_anni": {
+                "P0004D1|1": {
+                    "label": [
+                        "1 anno - Standard"
+                    ],
+                    "elenco_sessioni": {
+                        "61": {
+                            "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                        }
+                    },
+                    "elenco_attivita": [
+                        "EC0423H_130270_LI_ese",
+                        "EC0423H_130509_MARTI",
+                        "EC0423H_130509_DELLA",
+                        "EC0423H_130271_MINGA",
+                        "EC0423H_130273_BEITT_eseA",
+                        "EC0423H_130272_FAVAR_ese",
+                        "EC0423H_130273_SOMER_eseA",
+                        "EC0423H_130274_CORRE_ese",
+                        "EC0423H_130275_TONIO_ese",
+                        "EC0423H_130275_ALGRA_ese",
+                        "EC0423H_130274_DADE",
+                        "EC0423H_130269_DAIP",
+                        "EC0423H_130273_STEWA",
+                        "EC0423H_130271_FRYSH_eseB",
+                        "EC0423H_130273_BEITT_eseB",
+                        "EC0423H_130273_SOMER_eseB"
+                    ]
+                },
+                "P0004D1|2": {
+                    "label": [
+                        "2 anno - Standard"
+                    ],
+                    "elenco_sessioni": {
+                        "61": {
+                            "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                        }
+                    },
+                    "elenco_attivita": [
+                        "EC0423H_130357_ALGRA_ese",
+                        "EC0423H_130352_LI_ese",
+                        "EC0423H_130526_DELLA",
+                        "EC0423H_130355_HAIGH_eseB",
+                        "EC0423H_130354_FAVAR_ese",
+                        "EC0423H_130353_FRYSH_ese",
+                        "EC0423H_130511_DELLA",
+                        "EC0423H_130353_MINGA",
+                        "EC0423H_130357_TONIO_ese",
+                        "EC0423H_130356_MARTI_ese"
+                    ]
+                }
+            }
+        },
+        "0427G": {
+            "label": "Lingue moderne (Triennale)",
+            "elenco_anni": {
+                "P0104D1|1": {
+                    "label": [
+                        "1 anno - Letterature, lingue e traduzione"
+                    ],
+                    "elenco_sessioni": {},
+                    "elenco_attivita": [
+                        "EC0427G_130137_TARAV",
+                        "EC0427G_130136_DIBL"
+                    ]
+                },
+                "P0104D1|2": {
+                    "label": [
+                        "2 anno - Letterature, lingue e traduzione"
+                    ],
+                    "elenco_sessioni": {},
+                    "elenco_attivita": [
+                        "EC0427G_130471_NIDER",
+                        "EC0427G_130471_ANDRE_ese",
+                        "EC0427G_130472_STEIG_ese",
+                        "EC0427G_130472_BIDES",
+                        "EC0427G_130470_DIAMO_ese",
+                        "EC0427G_130470_FRANC",
+                        "EC0427G_130470_SQUIB_ese",
+                        "EC0427G_130469_VANDA_ese",
+                        "EC0427G_130471_DEMAT",
+                        "EC0427G_130472_STRIC_ese",
+                        "EC0427G_130469_DUFIE",
+                        "EC0427G_130472_CRESC"
+                    ]
+                },
+                "P0104D1|3": {
+                    "label": [
+                        "3 anno - Letterature, lingue e traduzione"
+                    ],
+                    "elenco_sessioni": {},
+                    "elenco_attivita": [
+                        "EC0427G_130374_FERRA",
+                        "EC0427G_130478_BINEL",
+                        "EC0427G_130477_VANDA_ese",
+                        "EC0427G_130480_ALGRA_ese",
+                        "EC0427G_130480_STRIC_ese",
+                        "EC0427G_130375_CAPEL",
+                        "EC0427G_130479_DEMAT",
+                        "EC0427G_130479_ANDRE_ese",
+                        "EC0427G_130480_BIDES",
+                        "EC0427G_130478_SQUIB_ese",
+                        "EC0427G_130477_ACERE",
+                        "EC0427G_130480_TONIO_ese"
+                    ]
+                },
+                "P0204D1|1": {
+                    "label": [
+                        "1 anno - Lingue per l'intermediazione turistica e d'impresa"
+                    ],
+                    "elenco_sessioni": {},
+                    "elenco_attivita": []
+                },
+                "P0204D1|2": {
+                    "label": [
+                        "2 anno - Lingue per l'intermediazione turistica e d'impresa"
+                    ],
+                    "elenco_sessioni": {},
+                    "elenco_attivita": [
+                        "EC0427G_130484_STEIG_eseA",
+                        "EC0427G_130484_STEIG_eseB",
+                        "EC0427G_130481_DADE",
+                        "EC0427G_130483_CANAL",
+                        "EC0427G_130484_ALGRA_eseA",
+                        "EC0427G_130484_TONIO_eseB",
+                        "EC0427G_130468_DADE",
+                        "EC0427G_130468_BUFFA",
+                        "EC0427G_130483_MARTI_ese",
+                        "EC0427G_130481_FAVAR_ese",
+                        "EC0427G_130482_DIAMO_eseA",
+                        "EC0427G_130482_DIAMO_eseB",
+                        "EC0427G_130482_DIAMO_eseC",
+                        "EC0427G_130482_PRICE_eseA",
+                        "EC0427G_130482_SQUIB_eseB",
+                        "EC0427G_130482_PRICE_eseC",
+                        "EC0427G_130482_GREG_eseD"
+                    ]
+                },
+                "P0204D1|3": {
+                    "label": [
+                        "3 anno - Lingue per l'intermediazione turistica e d'impresa"
+                    ],
+                    "elenco_sessioni": {},
+                    "elenco_attivita": [
+                        "EC0427G_130488_ALGRA_eseB",
+                        "EC0427G_130487_DADE",
+                        "EC0427G_130485_FAVAR_ese",
+                        "EC0427G_130486_GREGS_eseA",
+                        "EC0427G_130488_STRIC_eseA",
+                        "EC0427G_130488_TONIO_eseA",
+                        "EC0427G_130487_CORRE_ese",
+                        "EC0427G_130485_DUFIE",
+                        "EC0427G_130486_BINEL",
+                        "EC0427G_130486_SQUIB_eseB",
+                        "EC0427G_130488_BIDES",
+                        "EC0427G_130378_BUFFA",
+                        "EC0427G_130486_GREGS_eseC",
+                        "EC0427G_130488_STRIC_eseB"
+                    ]
+                },
+                "P0004D1|1": {
+                    "label": [
+                        "1 anno - Standard"
+                    ],
+                    "elenco_sessioni": {},
+                    "elenco_attivita": [
+                        "EC0427G_130126_VANDA_esePri",
+                        "EC0427G_130127_DIAMO_eseD",
+                        "EC0427G_130127_PRICE_eseA",
+                        "EC0427G_130128_PASTO_esePri",
+                        "EC0427G_130127_BEITT_eseA",
+                        "EC0427G_130128_CANAL",
+                        "EC0427G_130129_ALGRA_eseProB",
+                        "EC0427G_130126_FAVAR_esePro",
+                        "EC0427G_130129_STRIC_esePriA",
+                        "EC0427G_130126_RAVAZ",
+                        "EC0427G_130129_BIDES",
+                        "EC0427G_130475_NIDER",
+                        "EC0427G_130127_STEWA",
+                        "EC0427G_130129_TONIO_esePriB",
+                        "EC0427G_130129_STEIG_esePriA",
+                        "EC0427G_130474_DADE",
+                        "EC0427G_130127_SOMER_eseB",
+                        "EC0427G_130128_MARTI_esePro",
+                        "EC0427G_130127_BEITT_eseC",
+                        "EC0427G_130127_DIAMO_eseB",
+                        "EC0427G_130127_PRICE_eseC",
+                        "EC0427G_130127_SOMER_eseD",
+                        "EC0427G_130129_STRIC_esePriB",
+                        "EC0427G_130129_STEIG_esePriB",
+                        "EC0427G_130129_STRIC_eseProA",
+                        "EC0427G_130129_STEIG_eseProA",
+                        "EC0427G_130129_STRIC_eseProB",
+                        "EC0427G_130127_SOMER_eseE",
+                        "EC0427G_130127_DIAMO_eseE",
+                        "EC0427G_130129_GIUPP_esePriA"
+                    ]
+                },
+                "P0004D1|2": {
+                    "label": [
+                        "2 anno - Standard"
+                    ],
+                    "elenco_sessioni": {},
+                    "elenco_attivita": [
+                        "EC0427G_130359_CAPEL",
+                        "EC0427G_130321_FERRA"
+                    ]
+                },
+                "P0004D1|3": {
+                    "label": [
+                        "3 anno - Standard"
+                    ],
+                    "elenco_sessioni": {},
+                    "elenco_attivita": [
+                        "EC0427G_130314_RITA"
+                    ]
+                }
+            }
+        },
+        "CLA": {
+            "label": "Centro linguistico d'ateneo (unico)",
+            "elenco_anni": {
+                "PDS0-2014|1": {
+                    "label": [
+                        "1 anno - Comune"
+                    ],
+                    "elenco_sessioni": {},
+                    "elenco_attivita": [
+                        "ECC_IT2IA6_ROSAN",
+                        "ECC_EN2JA1_MOREL",
+                        "ECC_DE2IA3_GHANE",
+                        "ECC_IT2IA4_ROSAN",
+                        "ECC_EN2JA3_KAPLA",
+                        "ECC_IT2IA3_RITON",
+                        "ECC_DE2IB1_STRIC",
+                        "ECC_EN2JA2_MOREL",
+                        "ECC_DE2IA5_STRIC"
+                    ]
+                }
+            }
+        }
+    }
+}

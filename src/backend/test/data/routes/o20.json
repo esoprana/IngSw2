@@ -1,0 +1,93 @@
+{
+    "percorso": {
+        "label": [
+            "1 anno - Standard"
+        ],
+        "elenco_sessioni": {
+            "61": {
+                "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+            }
+        },
+        "elenco_attivita": {
+            "EC0422H_130167_CURZE": {
+                "label": "130167 - Storia medievale I - LM [E. CURZEL]"
+            },
+            "EC0422H_130501_TARAV": {
+                "label": "130501 - Lingua e traduzione spagnola e letteratura spagnola I [P. TARAVACCI]"
+            },
+            "EC0422H_130502_ALGRA_ese": {
+                "label": "130502 - Lingua e traduzione tedesca e letteratura tedesca I_ese [C. ALGRANATI]"
+            },
+            "EC0422H_130154_ZANGA": {
+                "label": "130154 - Storia del cristianesimo e delle chiese II - LM [V. ZANGARA]"
+            },
+            "EC0422H_130261_CAPEL": {
+                "label": "130261 - Filologia romanza - LM [R. CAPELLI]"
+            },
+            "EC0422H_130503_PRICE_ese": {
+                "label": "130503 - Lingua e traduzione inglese e lingue e letterature angloamericane I_ese [J. PRICE]"
+            },
+            "EC0422H_130247_CORDI": {
+                "label": "130247 - Linguistica generale [P. CORDIN]"
+            },
+            "EC0422H_130503_DIAMO_ese": {
+                "label": "130503 - Lingua e traduzione inglese e lingue e letterature angloamericane I_ese [I. DIAMOND]"
+            },
+            "EC0422H_130259_PAREN": {
+                "label": "130259 - Glottologia - LM [A. PARENTI]"
+            },
+            "EC0422H_130225_IERAN": {
+                "label": "130225 - Storia del teatro greco [G. IERANO']"
+            },
+            "EC0422H_130500_PRICE_ese": {
+                "label": "130500 - Lingua e traduzione inglese e letteratura inglese I_ese [J. PRICE]"
+            },
+            "EC0422H_130499_COUCK_ese": {
+                "label": "130499 - Lingua e traduzione francese e letteratura francese I_ese [A. VANDAMME]"
+            },
+            "EC0422H_130267_MINGA": {
+                "label": "130267 - Letterature comparate III - LM [A. MINGATI]"
+            },
+            "EC0422H_130502_CRESC": {
+                "label": "130502 - Lingua e traduzione tedesca e letteratura tedesca I [L. CRESCENZI]"
+            },
+            "EC0422H_130171_BELLA": {
+                "label": "130171 - Storia moderna II - LM [M. BELLABARBA]"
+            },
+            "EC0422H_130503_COVI": {
+                "label": "130503 - Lingua e traduzione inglese e lingue e letterature angloamericane I [G. COVI]"
+            },
+            "EC0422H_130247_CORDI_ese": {
+                "label": "130247 - Linguistica generale_ese [P. CORDIN]"
+            },
+            "EC0422H_130500_DIBL": {
+                "label": "130500 - Lingua e traduzione inglese e letteratura inglese I [F. DI BLASIO]"
+            },
+            "EC0422H_130500_DIAMO_ese": {
+                "label": "130500 - Lingua e traduzione inglese e letteratura inglese I_ese [I. DIAMOND]"
+            },
+            "EC0422H_130502_STRIC_ese": {
+                "label": "130502 - Lingua e traduzione tedesca e letteratura tedesca I_ese [S. STRICKER]"
+            },
+            "EC0422H_130499_ACERE": {
+                "label": "130499 - Lingua e traduzione francese e letteratura francese I [G. ACERENZA]"
+            },
+            "EC0422H_130501_PASTO_ese": {
+                "label": "130501 - Lingua e traduzione spagnola e letteratura spagnola I_ese [M. PASTOR]"
+            },
+            "EC0422H_130249_GIUNT": {
+                "label": "130249 - Letteratura italiana II - LM [C. GIUNTA]"
+            },
+            "EC0422H_130245_CAPEL": {
+                "label": "130245 - Filologia romanza I - LM [R. CAPELLI]"
+            },
+            "EC0422H_130216_CAVAZ": {
+                "label": "130216 - Storia dell'arte medievale I [L. CAVAZZINI]"
+            }
+        }
+    },
+    "anno": 2016,
+    "id": "0422H",
+    "id_percorso": "P0004D1|1",
+    "deNorm": ""
+}

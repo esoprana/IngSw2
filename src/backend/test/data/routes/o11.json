@@ -1,0 +1,765 @@
+{
+    "anno": "2016",
+    "elenco_attivita": [
+        {
+            "id": "EC0422H_130152_CORNI",
+            "label": "130152 - Storia contemporaena II - LM [G. CORNI]"
+        },
+        {
+            "id": "EC0422H_130154_ZANGA",
+            "label": "130154 - Storia del cristianesimo e delle chiese II - LM [V. ZANGARA]"
+        },
+        {
+            "id": "EC0422H_130157_DADE",
+            "label": "130157 - Storia della scienza e delle tecniche - LM [L. COLLETTI]"
+        },
+        {
+            "id": "EC0422H_130167_CURZE",
+            "label": "130167 - Storia medievale I - LM [E. CURZEL]"
+        },
+        {
+            "id": "EC0422H_130171_BELLA",
+            "label": "130171 - Storia moderna II - LM [M. BELLABARBA]"
+        },
+        {
+            "id": "EC0422H_130216_CAVAZ",
+            "label": "130216 - Storia dell'arte medievale I [L. CAVAZZINI]"
+        },
+        {
+            "id": "EC0422H_130225_IERAN",
+            "label": "130225 - Storia del teatro greco [G. IERANO']"
+        },
+        {
+            "id": "EC0422H_130231_UVIET",
+            "label": "130231 - Storia della musica II - LM [M. UVIETTA]"
+        },
+        {
+            "id": "EC0422H_130245_CAPEL",
+            "label": "130245 - Filologia romanza I - LM [R. CAPELLI]"
+        },
+        {
+            "id": "EC0422H_130247_CORDI",
+            "label": "130247 - Linguistica generale [P. CORDIN]"
+        },
+        {
+            "id": "EC0422H_130247_CORDI_ese",
+            "label": "130247 - Linguistica generale_ese [P. CORDIN]"
+        },
+        {
+            "id": "EC0422H_130247_DADE",
+            "label": "130247 - Linguistica generale"
+        },
+        {
+            "id": "EC0422H_130249_GIUNT",
+            "label": "130249 - Letteratura italiana II - LM [C. GIUNTA]"
+        },
+        {
+            "id": "EC0422H_130259_PAREN",
+            "label": "130259 - Glottologia - LM [A. PARENTI]"
+        },
+        {
+            "id": "EC0422H_130261_CAPEL",
+            "label": "130261 - Filologia romanza - LM [R. CAPELLI]"
+        },
+        {
+            "id": "EC0422H_130267_MINGA",
+            "label": "130267 - Letterature comparate III - LM [A. MINGATI]"
+        },
+        {
+            "id": "EC0422H_130499_ACERE",
+            "label": "130499 - Lingua e traduzione francese e letteratura francese I [G. ACERENZA]"
+        },
+        {
+            "id": "EC0422H_130499_COUCK_ese",
+            "label": "130499 - Lingua e traduzione francese e letteratura francese I_ese [A. VANDAMME]"
+        },
+        {
+            "id": "EC0422H_130500_DIAMO_ese",
+            "label": "130500 - Lingua e traduzione inglese e letteratura inglese I_ese [I. DIAMOND]"
+        },
+        {
+            "id": "EC0422H_130500_DIBL",
+            "label": "130500 - Lingua e traduzione inglese e letteratura inglese I [F. DI BLASIO]"
+        },
+        {
+            "id": "EC0422H_130500_PRICE_ese",
+            "label": "130500 - Lingua e traduzione inglese e letteratura inglese I_ese [J. PRICE]"
+        },
+        {
+            "id": "EC0422H_130501_PASTO_ese",
+            "label": "130501 - Lingua e traduzione spagnola e letteratura spagnola I_ese [M. PASTOR]"
+        },
+        {
+            "id": "EC0422H_130501_TARAV",
+            "label": "130501 - Lingua e traduzione spagnola e letteratura spagnola I [P. TARAVACCI]"
+        },
+        {
+            "id": "EC0422H_130502_ALGRA_ese",
+            "label": "130502 - Lingua e traduzione tedesca e letteratura tedesca I_ese [C. ALGRANATI]"
+        },
+        {
+            "id": "EC0422H_130502_CRESC",
+            "label": "130502 - Lingua e traduzione tedesca e letteratura tedesca I [L. CRESCENZI]"
+        },
+        {
+            "id": "EC0422H_130502_STRIC_ese",
+            "label": "130502 - Lingua e traduzione tedesca e letteratura tedesca I_ese [S. STRICKER]"
+        },
+        {
+            "id": "EC0422H_130503_COVI",
+            "label": "130503 - Lingua e traduzione inglese e lingue e letterature angloamericane I [G. COVI]"
+        },
+        {
+            "id": "EC0422H_130503_DIAMO_ese",
+            "label": "130503 - Lingua e traduzione inglese e lingue e letterature angloamericane I_ese [I. DIAMOND]"
+        },
+        {
+            "id": "EC0422H_130503_PRICE_ese",
+            "label": "130503 - Lingua e traduzione inglese e lingue e letterature angloamericane I_ese [J. PRICE]"
+        },
+        {
+            "id": "EC0422H_130504_ACERE",
+            "label": "130504 - Lingua e traduzione francese e letteratura francese II [G. ACERENZA]"
+        },
+        {
+            "id": "EC0422H_130504_COUCK_ese",
+            "label": "130504 - Lingua e traduzione francese e letteratura francese II_ese [F. FAVART]"
+        },
+        {
+            "id": "EC0422H_130505_DADE",
+            "label": "130505 - Lingua e traduzione inglese e letteratura inglese II [G. PERLETTI]"
+        },
+        {
+            "id": "EC0422H_130505_DIAMO_ese",
+            "label": "130505 - Lingua e traduzione inglese e letteratura inglese II_ese [I. DIAMOND]"
+        },
+        {
+            "id": "EC0422H_130505_FRANC",
+            "label": "130505 - Lingua e traduzione inglese e letteratura inglese II [S. FRANCESCONI]"
+        },
+        {
+            "id": "EC0422H_130505_PRICE_ese",
+            "label": "130505 - Lingua e traduzione inglese e letteratura inglese II_ese [J. PRICE]"
+        },
+        {
+            "id": "EC0422H_130506_ANDRE_ese",
+            "label": "130506 - Lingua e traduzione spagnola e letteratura spagnola II_ese [F. ANDRES MIEZA]"
+        },
+        {
+            "id": "EC0422H_130507_DADE_a",
+            "label": "130507 - Lingua e traduzione tedesca e letteratura tedesca II_a [L. CRESCENZI]"
+        },
+        {
+            "id": "EC0422H_130507_DADE_b",
+            "label": "130507 - Lingua e traduzione tedesca e letteratura tedesca II_b [L. CRESCENZI]"
+        },
+        {
+            "id": "EC0422H_130507_MORON",
+            "label": "130507 - Lingua e traduzione tedesca e letteratura tedesca II [M. MORONI]"
+        },
+        {
+            "id": "EC0422H_130507_STEIG_ese",
+            "label": "130507 - Lingua e traduzione tedesca e letteratura tedesca II_ese [S. STRICKER]"
+        },
+        {
+            "id": "EC0422H_130507_TONIO_ese",
+            "label": "130507 - Lingua e traduzione tedesca e letteratura tedesca II_ese [S. TONIOLO]"
+        },
+        {
+            "id": "EC0422H_130508_COVI_a",
+            "label": "130508 - Lingua e traduzione inglese e lingue e letterature angloamericane II_a [G. COVI]"
+        },
+        {
+            "id": "EC0422H_130508_COVI_b",
+            "label": "130508 - Lingua e traduzione inglese e lingue e letterature angloamericane II_b [G. COVI]"
+        },
+        {
+            "id": "EC0422H_130508_DIAMO_ese",
+            "label": "130508 - Lingua e traduzione inglese e lingue e letterature angloamericane II_ese [I. DIAMOND]"
+        },
+        {
+            "id": "EC0422H_130508_FRANC",
+            "label": "130508 - Lingua e traduzione inglese e lingue e letterature angloamericane II [S. FRANCESCONI]"
+        },
+        {
+            "id": "EC0422H_130508_PRICE_ese",
+            "label": "130508 - Lingua e traduzione inglese e lingue e letterature angloamericane II_ese [J. PRICE]"
+        },
+        {
+            "id": "EC0423H_130269_DADE_ese",
+            "label": "130269_ese - Geografia e progettazione strategica degli spazi turistici [D. ALLEGRI]"
+        },
+        {
+            "id": "EC0423H_130269_DAIP",
+            "label": "130269 - Geografia e progettazione strategica degli spazi turistici [E. DAI PRA']"
+        },
+        {
+            "id": "EC0423H_130270_LI_ese",
+            "label": "130270 - Lingua e cultura cinese I_ese [X. LI]"
+        },
+        {
+            "id": "EC0423H_130271_FRYSH_eseA",
+            "label": "130271 - Lingua e cultura russa I_eseA [O. FRYSHEVA]"
+        },
+        {
+            "id": "EC0423H_130271_FRYSH_eseB",
+            "label": "130271 - Lingua e cultura russa I_eseB [O. FRYSHEVA]"
+        },
+        {
+            "id": "EC0423H_130271_MINGA",
+            "label": "130271 - Lingua e cultura russa I [A. MINGATI]"
+        },
+        {
+            "id": "EC0423H_130272_FAVAR_ese",
+            "label": "130272 - Lingua francese I - LM_ese [F. FAVART]"
+        },
+        {
+            "id": "EC0423H_130273_BEITT_eseA",
+            "label": "130273 - Lingua inglese I - LM_eseA [M. BEITTEL]"
+        },
+        {
+            "id": "EC0423H_130273_BEITT_eseB",
+            "label": "130273 - Lingua inglese I - LM_eseB [M. BEITTEL]"
+        },
+        {
+            "id": "EC0423H_130273_SOMER_eseA",
+            "label": "130273 - Lingua inglese I - LM_eseA [S. SOMERS]"
+        },
+        {
+            "id": "EC0423H_130273_SOMER_eseB",
+            "label": "130273 - Lingua inglese I - LM_eseB [S. SOMERS]"
+        },
+        {
+            "id": "EC0423H_130273_STEWA",
+            "label": "130273 - Lingua inglese I - LM [D. STEWART]"
+        },
+        {
+            "id": "EC0423H_130274_CORRE_ese",
+            "label": "130274 - Lingua spagnola I - LM_ese [L. HERNANDEZ DIAZ]"
+        },
+        {
+            "id": "EC0423H_130274_DADE",
+            "label": "130274 - Lingua spagnola I - LM [M. FOX]"
+        },
+        {
+            "id": "EC0423H_130275_ALGRA_ese",
+            "label": "130275 - Lingua tedesca I - LM_ese [C. ALGRANATI]"
+        },
+        {
+            "id": "EC0423H_130275_TONIO_ese",
+            "label": "130275 - Lingua tedesca I - LM_ese [S. TONIOLO]"
+        },
+        {
+            "id": "EC0423H_130352_LI_ese",
+            "label": "130352 - Lingua e cultura cinese II_ese [X. LI]"
+        },
+        {
+            "id": "EC0423H_130353_FRYSH_ese",
+            "label": "130353 - Lingua e cultura russa II_ese [O. FRYSHEVA]"
+        },
+        {
+            "id": "EC0423H_130353_MINGA",
+            "label": "130353 - Lingua e cultura russa II [A. MINGATI]"
+        },
+        {
+            "id": "EC0423H_130354_FAVAR_ese",
+            "label": "130354 - Lingua francese II - LM_ese [F. FAVART]"
+        },
+        {
+            "id": "EC0423H_130355_HAIGH_eseB",
+            "label": "130355 - Lingua inglese II - LM_eseB"
+        },
+        {
+            "id": "EC0423H_130356_MARTI_ese",
+            "label": "130356 - Lingua spagnola II - LM_ese [I. MARTIN RUIZ]"
+        },
+        {
+            "id": "EC0423H_130357_ALGRA_ese",
+            "label": "130357 - Lingua tedesca II - LM_ese [C. ALGRANATI]"
+        },
+        {
+            "id": "EC0423H_130357_TONIO_ese",
+            "label": "130357 - Lingua tedesca II - LM_ese [S. TONIOLO]"
+        },
+        {
+            "id": "EC0423H_130509_DELLA",
+            "label": "130509 - Economia della cultura e del turismo e marketing della cultura e del turismo [M. DELLA LUCIA]"
+        },
+        {
+            "id": "EC0423H_130509_MARTI",
+            "label": "130509 - Economia della cultura e del turismo e marketing della cultura e del turismo [U. MARTINI]"
+        },
+        {
+            "id": "EC0423H_130511_DADE",
+            "label": "130511 - Laboratorio di analisi della cultura e del turismo e sistemi informativi per il turismo [R. PERETTA]"
+        },
+        {
+            "id": "EC0423H_130511_DELLA",
+            "label": "130511 - Laboratorio di analisi della cultura e del turismo e sistemi informativi per il turismo [M. DELLA LUCIA]"
+        },
+        {
+            "id": "EC0423H_130526_DADE",
+            "label": "130526 - Altre conoscenze utili per l'inserimento nel mondo del lavoro [R. PERETTA]"
+        },
+        {
+            "id": "EC0423H_130526_DELLA",
+            "label": "130526 - Altre conoscenze utili per l'inserimento nel mondo del lavoro [M. DELLA LUCIA]"
+        },
+        {
+            "id": "EC0427G_130126_FAVAR_esePro",
+            "label": "130126 - Lingua francese I_esePro [F. FAVART]"
+        },
+        {
+            "id": "EC0427G_130126_RAVAZ",
+            "label": "130126 - Lingua francese I"
+        },
+        {
+            "id": "EC0427G_130126_VANDA_esePri",
+            "label": "130126 - Lingua francese I_esePri [A. VANDAMME]"
+        },
+        {
+            "id": "EC0427G_130127_BEITT_eseA",
+            "label": "130127 - Lingua inglese I_eseA [M. BEITTEL]"
+        },
+        {
+            "id": "EC0427G_130127_BEITT_eseC",
+            "label": "130127 - Lingua inglese I_eseC [M. BEITTEL]"
+        },
+        {
+            "id": "EC0427G_130127_DIAMO_eseB",
+            "label": "130127 - Lingua inglese I_eseB [I. DIAMOND]"
+        },
+        {
+            "id": "EC0427G_130127_DIAMO_eseD",
+            "label": "130127 - Lingua inglese I_eseD [I. DIAMOND]"
+        },
+        {
+            "id": "EC0427G_130127_DIAMO_eseE",
+            "label": "130127 - Lingua inglese I_eseE [I. DIAMOND]"
+        },
+        {
+            "id": "EC0427G_130127_PRICE_eseA",
+            "label": "130127 - Lingua inglese I_eseA [J. PRICE]"
+        },
+        {
+            "id": "EC0427G_130127_PRICE_eseC",
+            "label": "130127 - Lingua inglese I_eseC [J. PRICE]"
+        },
+        {
+            "id": "EC0427G_130127_SOMER_eseB",
+            "label": "130127 - Lingua inglese I_eseB [S. SOMERS]"
+        },
+        {
+            "id": "EC0427G_130127_SOMER_eseD",
+            "label": "130127 - Lingua inglese I_eseD [S. SOMERS]"
+        },
+        {
+            "id": "EC0427G_130127_SOMER_eseE",
+            "label": "130127 - Lingua inglese I_eseE [S. SOMERS]"
+        },
+        {
+            "id": "EC0427G_130127_STEWA",
+            "label": "130127 - Lingua inglese I [D. STEWART]"
+        },
+        {
+            "id": "EC0427G_130128_CANAL",
+            "label": "130128 - Lingua spagnola I [J. CANALS PINAS]"
+        },
+        {
+            "id": "EC0427G_130128_MARTI_esePro",
+            "label": "130128 - Lingua spagnola I_esePro [I. MARTIN RUIZ]"
+        },
+        {
+            "id": "EC0427G_130128_PASTO_esePri",
+            "label": "130128 - Lingua spagnola I_esePri [M. PASTOR]"
+        },
+        {
+            "id": "EC0427G_130129_ALGRA_eseProB",
+            "label": "130129 - Lingua tedesca I_eseProB [C. ALGRANATI]"
+        },
+        {
+            "id": "EC0427G_130129_BIDES",
+            "label": "130129 - Lingua tedesca I [E. BIDESE]"
+        },
+        {
+            "id": "EC0427G_130129_GIUPP_esePriA",
+            "label": "130129 - Lingua tedesca I_esePriA_ [E. GIUPPONI]"
+        },
+        {
+            "id": "EC0427G_130129_STEIG_esePriA",
+            "label": "130129 - Lingua tedesca I_esePriA [A. GHANE]"
+        },
+        {
+            "id": "EC0427G_130129_STEIG_esePriB",
+            "label": "130129 - Lingua tedesca I_esePriB [A. GHANE]"
+        },
+        {
+            "id": "EC0427G_130129_STEIG_eseProA",
+            "label": "130129 - Lingua tedesca I_eseProA [C. ALGRANATI]"
+        },
+        {
+            "id": "EC0427G_130129_STRIC_esePriA",
+            "label": "130129 - Lingua tedesca I_esePriA [M. BEHRMANN]"
+        },
+        {
+            "id": "EC0427G_130129_STRIC_esePriB",
+            "label": "130129 - Lingua tedesca I_esePriB [A. GHANE]"
+        },
+        {
+            "id": "EC0427G_130129_STRIC_eseProA",
+            "label": "130129 - Lingua tedesca I_eseProA [A. GHANE]"
+        },
+        {
+            "id": "EC0427G_130129_STRIC_eseProB",
+            "label": "130129 - Lingua tedesca I_eseProB [C. ALGRANATI]"
+        },
+        {
+            "id": "EC0427G_130129_TONIO_esePriB",
+            "label": "130129 - Lingua tedesca I_esePriB [S. TONIOLO]"
+        },
+        {
+            "id": "EC0427G_130136_DIBL",
+            "label": "130136 - Letteratura inglese I [F. DI BLASIO]"
+        },
+        {
+            "id": "EC0427G_130137_TARAV",
+            "label": "130137 - Letteratura spagnola I [P. TARAVACCI]"
+        },
+        {
+            "id": "EC0427G_130314_RITA",
+            "label": "130314 - Lingua portoghese II [E. RITA DOS SANTOS]"
+        },
+        {
+            "id": "EC0427G_130321_FERRA",
+            "label": "130321 - Filologia germanica I [F. FERRARI]"
+        },
+        {
+            "id": "EC0427G_130359_CAPEL",
+            "label": "130359 - Filologia romanza I [R. CAPELLI]"
+        },
+        {
+            "id": "EC0427G_130374_FERRA",
+            "label": "130374 - Filologia germanica II [F. FERRARI]"
+        },
+        {
+            "id": "EC0427G_130375_CAPEL",
+            "label": "130375 - Filologia romanza II [R. CAPELLI]"
+        },
+        {
+            "id": "EC0427G_130378_BUFFA",
+            "label": "130378 - Organizzazione aziendale [F. BUFFA]"
+        },
+        {
+            "id": "EC0427G_130468_BUFFA",
+            "label": "130468 - Economia politica e aziendale [F. BUFFA]"
+        },
+        {
+            "id": "EC0427G_130468_DADE",
+            "label": "130468 - Economia politica e aziendale [O. CLAUSER]"
+        },
+        {
+            "id": "EC0427G_130469_DUFIE",
+            "label": "130469 - Lingua e traduzione francese e letteratura francese [J. DUFIET]"
+        },
+        {
+            "id": "EC0427G_130469_VANDA_ese",
+            "label": "130469 - Lingua e traduzione francese e letteratura francese_ese [A. VANDAMME]"
+        },
+        {
+            "id": "EC0427G_130470_DIAMO_ese",
+            "label": "130470 - Lingua e traduzione inglese e lingue e letterature angloamericane_ese [I. DIAMOND]"
+        },
+        {
+            "id": "EC0427G_130470_FRANC",
+            "label": "130470 - Lingua e traduzione inglese e lingue e letterature angloamericane [S. FRANCESCONI]"
+        },
+        {
+            "id": "EC0427G_130470_SQUIB_ese",
+            "label": "130470 - Lingua e traduzione inglese e lingue e letterature angloamericane_ese [M. SQUIBB]"
+        },
+        {
+            "id": "EC0427G_130471_ANDRE_ese",
+            "label": "130471 - Lingua e traduzione spagnola e letteratura spagnola_ese [F. ANDRES MIEZA]"
+        },
+        {
+            "id": "EC0427G_130471_DEMAT",
+            "label": "130471 - Lingua e traduzione spagnola e letteratura spagnola [C. DEMATTE']"
+        },
+        {
+            "id": "EC0427G_130471_NIDER",
+            "label": "130471 - Lingua e traduzione spagnola e letteratura spagnola [V. NIDER]"
+        },
+        {
+            "id": "EC0427G_130472_BIDES",
+            "label": "130472 - Lingua e traduzione tedesca e letteratura tedesca [E. BIDESE]"
+        },
+        {
+            "id": "EC0427G_130472_CRESC",
+            "label": "130472 - Lingua e traduzione tedesca e letteratura tedesca [L. CRESCENZI]"
+        },
+        {
+            "id": "EC0427G_130472_STEIG_ese",
+            "label": "130472 - Lingua e traduzione tedesca e letteratura tedesca_ese [C. ALGRANATI]"
+        },
+        {
+            "id": "EC0427G_130472_STRIC_ese",
+            "label": "130472 - Lingua e traduzione tedesca e letteratura tedesca_ese [S. STRICKER]"
+        },
+        {
+            "id": "EC0427G_130474_DADE",
+            "label": "130474 - Cultura e letteratura inglese [G. PERLETTI]"
+        },
+        {
+            "id": "EC0427G_130475_NIDER",
+            "label": "130475 - Cultura e letteratura spagnola [V. NIDER]"
+        },
+        {
+            "id": "EC0427G_130477_ACERE",
+            "label": "130477 - Lingua e traduzione francese [G. ACERENZA]"
+        },
+        {
+            "id": "EC0427G_130477_VANDA_ese",
+            "label": "130477 - Lingua e traduzione francese_ese [A. VANDAMME]"
+        },
+        {
+            "id": "EC0427G_130478_BINEL",
+            "label": "130478 - Lingua e traduzione inglese [A. BINELLI]"
+        },
+        {
+            "id": "EC0427G_130478_SQUIB_ese",
+            "label": "130478 - Lingua e traduzione inglese_ese [M. SQUIBB]"
+        },
+        {
+            "id": "EC0427G_130479_ANDRE_ese",
+            "label": "130479 - Lingua e traduzione spagnola_ese [F. ANDRES MIEZA]"
+        },
+        {
+            "id": "EC0427G_130479_DEMAT",
+            "label": "130479 - Lingua e traduzione spagnola [C. DEMATTE']"
+        },
+        {
+            "id": "EC0427G_130480_ALGRA_ese",
+            "label": "130480 - Lingua e traduzione tedesca_ese [C. ALGRANATI]"
+        },
+        {
+            "id": "EC0427G_130480_BIDES",
+            "label": "130480 - Lingua e traduzione tedesca [E. BIDESE]"
+        },
+        {
+            "id": "EC0427G_130480_STRIC_ese",
+            "label": "130480 - Lingua e traduzione tedesca_ese [S. STRICKER]"
+        },
+        {
+            "id": "EC0427G_130480_TONIO_ese",
+            "label": "130480 - Lingua e traduzione tedesca_ese [S. TONIOLO]"
+        },
+        {
+            "id": "EC0427G_130481_DADE",
+            "label": "130481 - Linguistica francese I [F. FAVART]"
+        },
+        {
+            "id": "EC0427G_130481_FAVAR_ese",
+            "label": "130481 - Linguistica francese I_ese [F. FAVART]"
+        },
+        {
+            "id": "EC0427G_130482_DIAMO_eseA",
+            "label": "130482 - Linguistica inglese I_eseA [I. DIAMOND]"
+        },
+        {
+            "id": "EC0427G_130482_DIAMO_eseB",
+            "label": "130482 - Linguistica inglese I_eseB [I. DIAMOND]"
+        },
+        {
+            "id": "EC0427G_130482_DIAMO_eseC",
+            "label": "130482 - Linguistica inglese I_eseC [I. DIAMOND]"
+        },
+        {
+            "id": "EC0427G_130482_GREG_eseD",
+            "label": "130482 - Linguistica inglese i_esed [E. GREGSON]"
+        },
+        {
+            "id": "EC0427G_130482_PRICE_eseA",
+            "label": "130482 - Linguistica inglese I_eseA [J. PRICE]"
+        },
+        {
+            "id": "EC0427G_130482_PRICE_eseC",
+            "label": "130482 - Linguistica inglese I_eseC [J. PRICE]"
+        },
+        {
+            "id": "EC0427G_130482_SQUIB_eseB",
+            "label": "130482 - Linguistica inglese I_eseB [M. SQUIBB]"
+        },
+        {
+            "id": "EC0427G_130483_CANAL",
+            "label": "130483 - Linguistica spagnola I [J. CANALS PINAS]"
+        },
+        {
+            "id": "EC0427G_130483_MARTI_ese",
+            "label": "130483 - Linguistica spagnola I_ese [I. MARTIN RUIZ]"
+        },
+        {
+            "id": "EC0427G_130484_ALGRA_eseA",
+            "label": "130484 - Linguistica tedesca I_eseA [C. ALGRANATI]"
+        },
+        {
+            "id": "EC0427G_130484_DADE",
+            "label": "130484 - Linguistica tedesca I [F. COGNOLA]"
+        },
+        {
+            "id": "EC0427G_130484_STEIG_eseA",
+            "label": "130484 - Linguistica tedesca I_eseA [A. GHANE]"
+        },
+        {
+            "id": "EC0427G_130484_STEIG_eseB",
+            "label": "130484 - Linguistica tedesca I_eseB [A. GHANE]"
+        },
+        {
+            "id": "EC0427G_130484_TONIO_eseB",
+            "label": "130484 - Linguistica tedesca I_eseB [S. TONIOLO]"
+        },
+        {
+            "id": "EC0427G_130485_DUFIE",
+            "label": "130485 - Linguistica francese II [J. DUFIET]"
+        },
+        {
+            "id": "EC0427G_130485_FAVAR_ese",
+            "label": "130485 - Linguistica francese II_ese [F. FAVART]"
+        },
+        {
+            "id": "EC0427G_130486_BINEL",
+            "label": "130486 - Linguistica inglese II [A. BINELLI]"
+        },
+        {
+            "id": "EC0427G_130486_GREGS_eseA",
+            "label": "130486 - Linguistica inglese II_eseA [E. GREGSON]"
+        },
+        {
+            "id": "EC0427G_130486_GREGS_eseC",
+            "label": "130486 - Linguistica inglese II_eseC [E. GREGSON]"
+        },
+        {
+            "id": "EC0427G_130486_SQUIB_eseB",
+            "label": "130486 - Linguistica inglese II_eseB [M. SQUIBB]"
+        },
+        {
+            "id": "EC0427G_130487_CORRE_ese",
+            "label": "130487 - Linguistica spagnola II_ese [L. HERNANDEZ DIAZ]"
+        },
+        {
+            "id": "EC0427G_130487_DADE",
+            "label": "130487 - Linguistica spagnola II [M. FOX]"
+        },
+        {
+            "id": "EC0427G_130488_ALGRA_eseB",
+            "label": "130488 - Linguistica tedesca II_eseB [C. ALGRANATI]"
+        },
+        {
+            "id": "EC0427G_130488_BIDES",
+            "label": "130488 - Linguistica tedesca II [E. BIDESE]"
+        },
+        {
+            "id": "EC0427G_130488_STRIC_eseA",
+            "label": "130488 - Linguistica tedesca II_eseA [S. STRICKER]"
+        },
+        {
+            "id": "EC0427G_130488_STRIC_eseB",
+            "label": "130488 - Linguistica tedesca II_eseB [S. STRICKER]"
+        },
+        {
+            "id": "EC0427G_130488_TONIO_eseA",
+            "label": "130488 - Linguistica tedesca II_eseA [S. TONIOLO]"
+        },
+        {
+            "id": "EC0427G_130489_DADE",
+            "label": "130489 - Tecnologie informatiche per la comunicazione [N. ZENI]"
+        },
+        {
+            "id": "EC0427G_130489_DADE_ese",
+            "label": "130489 - Tecnologie informatiche per la comunicazione_ese [N. ZENI]"
+        },
+        {
+            "id": "ECC_DE2IA2_GHANE",
+            "label": "C_DE2IA2 - Corso di tedesco a1b - ii periodo (intensivo) [A. GHANE]"
+        },
+        {
+            "id": "ECC_DE2IA3_GHANE",
+            "label": "C_DE2IA3 - Corso di tedesco a2a - ii periodo (intensivo) [A. GHANE]"
+        },
+        {
+            "id": "ECC_DE2IA4_GHANE",
+            "label": "C_DE2IA4 - Corso di tedesco a2b - ii periodo (intensivo) [A. GHANE]"
+        },
+        {
+            "id": "ECC_DE2IA5_STRIC",
+            "label": "C_DE2IB5 - Corso di tedesco b1a - ii periodo (intensivo) [S. STRICKER]"
+        },
+        {
+            "id": "ECC_DE2IB1_STRIC",
+            "label": "C_DE2IB1 - Corso di tedesco a1a - ii periodo (intensivo) [S. STRICKER]"
+        },
+        {
+            "id": "ECC_EN2IB1_MOREL",
+            "label": "C_EN2IA1 - Corso di inglese a2 - ii periodo (intensivo) [E. MORELLI]"
+        },
+        {
+            "id": "ECC_EN2JA1_MOREL",
+            "label": "C_EN2JA1 - Corso di inglese b1 blended type 1 - ii periodo (intensivo) [E. MORELLI]"
+        },
+        {
+            "id": "ECC_EN2JA2_MOREL",
+            "label": "C_EN2JB2 - Corso di inglese b1 blended type 2 - ii periodo (intensivo) [E. MORELLI]"
+        },
+        {
+            "id": "ECC_EN2JA3_KAPLA",
+            "label": "C_EN2JA3 - Corso di inglese b2 blended type 1 - ii periodo (intensivo) [L. KAPLAN]"
+        },
+        {
+            "id": "ECC_ES2IA3_MARTI",
+            "label": "C_ES2IA3 - Corso di spagnolo a2b - ii periodo (intensivo) [I. MARTIN RUIZ]"
+        },
+        {
+            "id": "ECC_ES2IA4_ANDRE",
+            "label": "C_ES2IA4 - Corso di spagnolo b1 - ii periodo (intensivo) [F. ANDRES MIEZA]"
+        },
+        {
+            "id": "ECC_ES2IB1_HERNA",
+            "label": "C_ES2IB1 - Corso di spagnolo a1 - ii periodo (intensivo) [L. HERNANDEZ DIAZ]"
+        },
+        {
+            "id": "ECC_FR2IA2_VANDA",
+            "label": "C_FR2IA2 - Corso di francese a2 - ii periodo (intensivo) [A. VANDAMME]"
+        },
+        {
+            "id": "ECC_FR2IA3_FAVAR",
+            "label": "C_FR2IA3 - Corso di francese b1 - ii periodo (intensivo) [F. FAVART]"
+        },
+        {
+            "id": "ECC_FR2IA3_VANDA",
+            "label": "C_FR2IB3 - Corso di francese b1 - ii periodo (intensivo) [A. VANDAMME]"
+        },
+        {
+            "id": "ECC_FR2IA4_VANDA",
+            "label": "C_FR2IA4 - Corso di francese b2a - ii periodo (intensivo) [A. VANDAMME]"
+        },
+        {
+            "id": "ECC_FR2IB1_COUCK",
+            "label": "C_FR2IB1 - Corso di francese a1 - ii periodo (intensivo) [J. COUCKE]"
+        },
+        {
+            "id": "ECC_FR2IB1_FAVAR",
+            "label": "C_FR2IA1 - Corso di francese a1 - ii periodo (intensivo) [F. FAVART]"
+        },
+        {
+            "id": "ECC_IT2IA3_RITON",
+            "label": "C_IT2IA3 - Corso di italiano a1b - ii periodo (intensivo) [P. Ritondale Spano]"
+        },
+        {
+            "id": "ECC_IT2IA4_ROSAN",
+            "label": "C_IT2IA4 - Corso di italiano a2a - ii periodo (intensivo) [M. Rosanelli]"
+        },
+        {
+            "id": "ECC_IT2IA6_ROSAN",
+            "label": "C_IT2IA6 - Corso di italiano b1a - ii periodo (intensivo) [M. Rosanelli]"
+        }
+    ]
+}

@@ -9,7 +9,7 @@ const db = require('./db.js');
 function logAndFowardError(res, err, def) {
 	if ((typeof err === 'object') && (!(err instanceof Error))) {
 		if (err.log === undefined || err.log == true) {
-			console.log('err: ' + err);
+			console.log('err: ' + JSON.stringify(err));
 		}
 		return res.status(err.status).end(err.message);
 	}
@@ -21,8 +21,16 @@ function logAndFowardError(res, err, def) {
 
 const jsonParser = bodyParser.json({type: '*/*'});
 const api = express.Router();
-
 api.route('/orari/corsi/:anno/:codice_corso/:codice_percorso')
+	/**
+	 * @name OrariWithCorso
+	 * Permette di ottenere le informazioni riguardanti gli orari di un determinato
+	 * (anno, corso, percorso)
+	 * @route {GET} /orari/corsi/:anno/:codice_corso/:codice_percorso/
+	 * @routeparam {Number} anno anno all'interno degl quale cercare il corso
+	 * @routeparam {String} codice_corso codice che identifica il corso
+	 * @routeparam {String} codice_percorso codice che identifica il percorso
+	 */
 	.get((req, res) => {
 		if (!isFinite(req.params.anno)) {
 			return logAndFowardError(res, {
@@ -81,8 +89,6 @@ api.route('/orari/corsi/:anno/:codice_corso/:codice_percorso')
 			})
 			.sort({'timestamp_inizio': 1})
 			.then(orari => {
-				console.log(orari.map(orario => orario.luogo));
-
 				const ris = {
 					elenco_lezioni: orari.map(orario => ({
 						insegnamento: {
@@ -152,6 +158,15 @@ api.route('/orari/corsi/:anno/:codice_corso/:codice_percorso')
 	});
 
 api.route('/orari/:anno/:codice_attivita/:timestamp_inizio/:timestamp_fine')
+	/**
+	 * @name OrariComplete
+	 * Permette di ottenere le informazioni rigurdanti un determinato orario
+	 * @route {GET} /orari/:anno/:codice_attivita/:timestamp_inizio/:timestamp_fine
+	 * @routeparam {Number} anno anno all'interno degl quale cercare l'attivita legata
+	 * @routeparam {String} codice_attivita codice che identifica l'attivita legata all'orario
+	 * @routeparam {Date} timestamp_inizio timestamp in ISO che identifica l'inizio dell'attivita
+	 * @routeparam {Date} timestamp_fine timestamp in ISO che identifica l'inizio dell'attivita
+	 */
 	.get((req, res) => {
 		if (!isFinite(req.params.anno)) {
 			return logAndFowardError(res, {
@@ -192,8 +207,6 @@ api.route('/orari/:anno/:codice_attivita/:timestamp_inizio/:timestamp_fine')
 				});
 			}
 
-			console.log(orario);
-
 			const ris = orario.toObject();
 
 			if (req.query.deNorm !== undefined) {
@@ -219,6 +232,19 @@ api.route('/orari/:anno/:codice_attivita/:timestamp_inizio/:timestamp_fine')
 			})
 		);
 	})
+	/**
+	 * @name OrariComplete
+	 * Permette di aggiornare le informazioni riguardanti un determinato orario
+	 * @route {POST} /orari/:anno/:codice_attivita/:timestamp_inizio/:timestamp_fine
+	 * @routeparam {Number} anno anno all'interno degl quale cercare l'attivita legata
+	 * @routeparam {String} codice_attivita codice che identifica l'attivita legata all'orario
+	 * @routeparam {Date} timestamp_inizio timestamp in ISO che identifica l'inizio dell'attivita
+	 * @routeparam {Date} timestamp_fine timestamp in ISO che identifica l'inizio dell'attivita
+	 * @bodyparam {String} docente nome del docente
+	 * @bodyparam {String} tipo tipo di attivita(lezione, esercitazione,ecc)
+	 * @bodyparam Array.<{codice_aula: String, codice_sede: String}>
+	 *			luogo luogo dove si svolge l'attivita
+	 */
 	.post(jsonParser, (req, res) => {
 		if (!isFinite(req.params.anno)) {
 			return logAndFowardError(res, {
@@ -274,7 +300,8 @@ api.route('/orari/:anno/:codice_attivita/:timestamp_inizio/:timestamp_fine')
 				return logAndFowardError(res, {
 					status: 400,
 					message: 'Il campo luogo deve avere struttura \n' +
-								'[{codice_aula: string, codice_sede: string}...]'
+								'[{codice_aula: string, codice_sede: string}...]',
+					log: 0
 				});
 			}
 		}
@@ -287,7 +314,7 @@ api.route('/orari/:anno/:codice_attivita/:timestamp_inizio/:timestamp_fine')
 		}).then(
 			result => {
 				if (result === null) {
-					Promise.reject({
+					return Promise.reject({
 						status: 404,
 						message: 'Impossibile trovare l\'elemento richiesto',
 						log: 0
@@ -316,11 +343,25 @@ api.route('/orari/:anno/:codice_attivita/:timestamp_inizio/:timestamp_fine')
 			})
 		);
 	})
+	/**
+	 * @name OrariComplete
+	 * Permette di aggiornare le informazioni riguardanti una determinato orario
+	 * @route {PUT} /orari/:anno/:codice_attivita/:timestamp_inizio/:timestamp_fine
+	 * @routeparam {Number} anno anno all'interno degl quale cercare l'attivita legata
+	 * @routeparam {String} codice_attivita codice che identifica l'attivita legata all'orario
+	 * @routeparam {Date} timestamp_inizio timestamp in ISO che identifica l'inizio dell'orario
+	 * @routeparam {Date} timestamp_fine timestamp in ISO che identifica l'inizio dell'orario
+	 * @bodyparam {String} docente nome del docente
+	 * @bodyparam {String} tipo tipo di attivita(lezione, esercitazione,ecc)
+	 * @bodyparam Array.<{codice_aula: String, codice_sede: String}>
+	 *			luogo luogo dove si svolge l'attivita
+	 */
 	.put(jsonParser, (req, res) => {
 		if (!isFinite(req.params.anno)) {
 			return logAndFowardError(res, {
 				status: 400,
-				message: 'Il campo anno deve essere di tipo Number'
+				message: 'Il campo anno deve essere di tipo Number',
+				log: 0
 			});
 		}
 
@@ -401,6 +442,15 @@ api.route('/orari/:anno/:codice_attivita/:timestamp_inizio/:timestamp_fine')
 			})
 		);
 	})
+	/**
+	 * @name OrariWithAttivitaComplete
+	 * Permette di cancellare un orario
+	 * @route {DELETE} /orari/:anno/:codice_attivita/:timestamp_inizio/:timestamp_fine
+	 * @routeparam {Number} anno anno all'interno degl quale cercare l'attivita legata
+	 * @routeparam {String} codice_attivita codice che identifica l'attivita legata all'orario
+	 * @routeparam {Date} timestamp_inizio timestamp in ISO che identifica l'inizio dell'attivita
+	 * @routeparam {Date} timestamp_fine timestamp in ISO che identifica l'inizio dell'attivita
+	 */
 	.delete((req, res) => {
 		if (!isFinite(req.params.anno)) {
 			return logAndFowardError(res, {
@@ -450,6 +500,13 @@ api.route('/orari/:anno/:codice_attivita/:timestamp_inizio/:timestamp_fine')
 	});
 
 api.route('/orari/:anno/:codice_attivita')
+	/**
+	 * @name OrariWithAttivita
+	 * Permette di ottenere tutte gli orari legati ad una attivita
+	 * @route {GET} /orari/:anno/:codice_attivita
+	 * @routeparam {Number} anno anno all'interno del quale cercare l'attivita legata
+	 * @routeparam {String} codice_attivita codice che identifica l'attivita legata all'orario
+	 */
 	.get((req, res) => {
 		if (!isFinite(req.params.anno)) {
 			return logAndFowardError(res, {
@@ -529,6 +586,12 @@ api.route('/orari/:anno/:codice_attivita')
 	});
 
 api.route('/attivita/:anno')
+	/**
+	 * @name AttivitaWithAnno
+	 * Permette di ottenere tutte le attivita di un anno
+	 * @route {GET} /attivita/:anno
+	 * @routeparam {Number} anno anno di cui visualizzare le attivita
+	 */
 	.get((req, res) => {
 		if (!isFinite(req.params.anno)) {
 			return logAndFowardError(res, {
@@ -558,6 +621,13 @@ api.route('/attivita/:anno')
 	});
 
 api.route('/attivita/:anno/:codice_attivita')
+	/**
+	 * @name AttivitaComplete
+	 * Permette di ottenere una determinata attivita
+	 * @route {GET} /attivita/:anno/:codice_attivita
+	 * @routeparam {Number} anno anno dell'attivita
+	 * @routeparam {String} codice_attivita codice che identifica l'attività
+	 */
 	.get((req, res) => {
 		if (!isFinite(req.params.anno)) {
 			return logAndFowardError(res, {
@@ -596,6 +666,14 @@ api.route('/attivita/:anno/:codice_attivita')
 			})
 		);
 	})
+	/**
+	 * @name AttivitaComplete
+	 * Permette di modificare una determinata attivita
+	 * @route {POST} /attivita/:anno/:codice_attivita
+	 * @routeparam {Number} anno anno dell'attivita
+	 * @routeparam {String} codice_attivita codice che identifica l'attività
+	 * @bodyparam {String} label label da attribuire all'attività
+	 */
 	.post(jsonParser, (req, res) => {
 		if (!isFinite(req.params.anno)) {
 			return logAndFowardError(res, {
@@ -653,6 +731,14 @@ api.route('/attivita/:anno/:codice_attivita')
 			})
 		);
 	})
+	/**
+	 * @name AttivitaComplete
+	 * Permette di create un'attivita
+	 * @route {PUT} /attivita/:anno/:codice_attivita
+	 * @routeparam {Number} anno anno dell'attivita
+	 * @routeparam {String} codice_attivita codice che identifica l'attività
+	 * @bodyparam {String} label label da attribuire all'attività
+	 */
 	.put(jsonParser, (req, res) => {
 		if (!isFinite(req.params.anno)) {
 			return logAndFowardError(res, {
@@ -694,6 +780,13 @@ api.route('/attivita/:anno/:codice_attivita')
 			})
 		);
 	})
+	/**
+	 * @name AttivitaComplete
+	 * Permette di cancellare un'attivita
+	 * @route {DELETE} /attivita/:anno/:codice_attivita
+	 * @routeparam {Number} anno anno dell'attivita
+	 * @routeparam {String} codice_attivita codice che identifica l'attività
+	 */
 	.delete((req, res) => {
 		if (!isFinite(req.params.anno)) {
 			return logAndFowardError(res, {
@@ -728,6 +821,12 @@ api.route('/attivita/:anno/:codice_attivita')
 	});
 
 api.route('/docenti/:anno')
+	/**
+	 * @name DocentiWithAnno
+	 * Permette di ottenere la lista dei docenti di un anno
+	 * @route {GET} /docenti/:anno
+	 * @routeparam {Number} anno anno del quale restituire la lista docenti
+	 */
 	.get((req, res) => {
 		if (!isFinite(req.params.anno)) {
 			return logAndFowardError(res, {
@@ -759,6 +858,13 @@ api.route('/docenti/:anno')
 	});
 
 api.route('/docenti/:anno/:codice_docente')
+	/**
+	 * @name DocentiComplete
+	 * Permette di ottenere informazioni su un determinato docente
+	 * @route {GET} /docenti/:anno/:codice_docente
+	 * @routeparam {Number} anno anno del quale restituire la lista docenti
+	 * @routeparam {String} codice_docente codice che identifica il docente
+	 */
 	.get((req, res) => {
 		if (!isFinite(req.params.anno)) {
 			return logAndFowardError(res, {
@@ -801,9 +907,19 @@ api.route('/docenti/:anno/:codice_docente')
 			})
 		);
 	})
+	/**
+	 * @name DocentiComplete
+	 * Permette di modificare le informazioni su un determinato docente
+	 * @route {POST} /docenti/:anno/:codice_docente
+	 * @routeparam {Number} anno anno del quale restituire la lista docenti
+	 * @routeparam {String} codice_docente codice che identifica il docente
+	 * @bodyparam {String} label nome del docente(opzionale)
+	 * @bodyparam {Array<{id: number, label: String}> sessioni elenco delle
+	 *			sessioni in cui è presente il docente(opzionale)
+	 */
 	.post(jsonParser, (req, res) => {
 		if (!isFinite(req.params.anno)) {
-			return logAndFowardError({
+			return logAndFowardError(res, {
 				status: 400,
 				message: 'Il campo anno deve essere un numero finito',
 				log: 0
@@ -881,6 +997,16 @@ api.route('/docenti/:anno/:codice_docente')
 			})
 		);
 	})
+	/**
+	 * @name DocentiComplete
+	 * Permette di aggiungere informazioni su un docente
+	 * @route {PUT} /docenti/:anno/:codice_docente
+	 * @routeparam {Number} anno anno del quale restituire la lista docenti
+	 * @routeparam {String} codice_docente codice che identifica il docente
+	 * @bodyparam {String} label nome del docente(obbligatorio)
+	 * @bodyparam {Array<{id: number, label: String}> sessioni elenco delle
+	 *			sessioni in cui è presente il docente(opzionale)
+	 */
 	.put(jsonParser, (req, res) => {
 		if (!isFinite(req.params.anno)) {
 			return logAndFowardError(res, {
@@ -945,6 +1071,16 @@ api.route('/docenti/:anno/:codice_docente')
 			})
 		);
 	})
+	/**
+	 * @name DocentiComplete
+	 * Permette di cancellare le informazioni su un docente
+	 * @route {PUT} /docenti/:anno/:codice_docente
+	 * @routeparam {Number} anno anno del quale restituire la lista docenti
+	 * @routeparam {String} codice_docente codice che identifica il docente
+	 * @bodyparam {String} label nome del docente(obbligatorio)
+	 * @bodyparam {Array<{id: number, label: String}> sessioni elenco delle
+	 *			sessioni in cui è presente il docente(opzionale)
+	 */
 	.delete((req, res) => {
 		if (!isFinite(req.params.anno)) {
 			return logAndFowardError(res, {
@@ -979,6 +1115,11 @@ api.route('/docenti/:anno/:codice_docente')
 	});
 
 api.route('/corsi')
+	/**
+	 * @name Corsi
+	 * Permette di ottenere la lista degli anni nei quali ci sono stati corsi
+	 * @route {GET} /corsi
+	 */
 	.get((req, res) => {
 		return db.Corso.distinct('anno')
 			.then(
@@ -991,6 +1132,13 @@ api.route('/corsi')
 	});
 
 api.route('/corsi/:anno')
+	/**
+	 * @name CorsiWithAnno
+	 * Permette di ottenere le informazioni di tutti i corsi di un anno
+	 * @route {GET} /corsi/:anno
+	 * @routeparam {Number} anno anno del quale restituire la lista docenti
+	 * @queryparams {} deNorm se presente i dati vengono restituiti denormalizzati
+	 */
 	.get((req, res) => {
 		if (!isFinite(req.params.anno)) {
 			return logAndFowardError(res, {
@@ -1085,6 +1233,14 @@ api.route('/corsi/:anno')
 	});
 
 api.route('/corsi/:anno/:codice_corso')
+	/**
+	 * @name CorsiComplete
+	 * Permette di ottenere informazioni riguardo a un determinato corso
+	 * @route {GET} /corsi/:anno/:codice_corso
+	 * @routeparam {Number} anno annoScolastico al quale il corso da cercare appartiene
+	 * @routeparam {String} codice_corso codice che identifica il corso
+	 * @queryparams {} deNorm se presente i dati vengono restituiti denormalizzati
+	 */
 	.get((req, res) => {
 		if (!isFinite(req.params.anno)) {
 			return logAndFowardError(res, {
@@ -1191,6 +1347,23 @@ api.route('/corsi/:anno/:codice_corso')
 			})
 		);
 	})
+	/**
+	 * @name CorsiComplete
+	 * Permette di inserire un nuovo corso
+	 * @route {PUT} /corsi/:anno/:codice_corso
+	 * @routeparam {Number} anno anno nel quel inserire il corso
+	 * @routeparam {String} codice_corso codice che identifica il corso
+	 * @bodyparam {String} label nome del corso
+	 * @bodyparam {String} codice_cdl codice che identifica il corso negli esami
+	 * @bodyparam {Array.<{
+	 *					id: String,
+	 *					label: String,
+	 *					codice_percorso_cdl: String,(opzionale)
+	 *					elenco_attivita: Array.<String>,(opzionale)
+	 *					elenco_sessioni: Array.<{id: Number, label: String}>(opzionale)
+	 *				}>} elenco_anni lista degli anni+percorsi presenti e delle
+	 *				loro proprietà
+	 */
 	.put(jsonParser, (req, res) => {
 		if (!isFinite(req.params.anno)) {
 			return logAndFowardError(res, {
@@ -1249,10 +1422,10 @@ api.route('/corsi/:anno/:codice_corso')
 						'\tlabel:[string,...], \n' +
 						'\telenco_attivita: [string,...], \n' +
 						'\tcodice_percorso_cdl: string,\n' +
-						'\telenco_sessioni: { \n' +
+						'\telenco_sessioni: [{ \n' +
 						'\t\tid: number,\n' +
 						'\t\tlabel: string\n' +
-						'\t}' +
+						'\t}]' +
 						'},...] con solo id e label obbligatori',
 				log: 0
 			});
@@ -1286,7 +1459,32 @@ api.route('/corsi/:anno/:codice_corso')
 				})
 			);
 	})
+	/**
+	 * @name CorsiComplete
+	 * Permette di modificare un corso
+	 * @route {POST} /corsi/:anno/:codice_corso
+	 * @routeparam {Number} anno anno nel quel inserire il corso
+	 * @routeparam {String} codice_corso codice che identifica il corso
+	 * @bodyparam {String} label nome del corso(opzionale)
+	 * @bodyparam {String} codice_cdl codice che identifica il corso negli esami(opzionale)
+	 * @bodyparam {Array.<{
+	 *					id: String,
+	 *					label: String,
+	 *					codice_percorso_cdl: String,(opzionale)
+	 *					elenco_attivita: Array.<String>,(opzionale)
+	 *					elenco_sessioni: Array.<{id: Number, label: String}>(opzionale)
+	 *				}>} elenco_anni lista degli anni+percorsi presenti e delle
+	 *				loro proprietà(opzionale)
+	 */
 	.post(jsonParser, (req, res) => {
+		if (!isFinite(req.params.anno)) {
+			return logAndFowardError(res, {
+				status: 400,
+				message: 'Il campo anno deve essere un numero finito',
+				log: 0
+			});
+		}
+
 		const toSet = {};
 
 		if (req.body.codice_cdl !== undefined) {
@@ -1398,7 +1596,22 @@ api.route('/corsi/:anno/:codice_corso')
 			})
 		);
 	})
+	/**
+	 * @name CorsiComplete
+	 * Permette di cancellare un corso
+	 * @route {DELETE} /corsi/:anno/:codice_corso
+	 * @routeparam {Number} anno anno nel quel inserire il corso
+	 * @routeparam {String} codice_corso codice che identifica il corso
+	 */
 	.delete((req, res) => {
+		if (!isFinite(req.params.anno)) {
+			return logAndFowardError(res, {
+				status: 400,
+				message: 'Il campo anno deve essere un numero finito',
+				log: 0
+			});
+		}
+
 		return db.Corso.deleteOne({
 			anno: req.params.anno,
 			id: req.params.codice_corso
@@ -1424,6 +1637,14 @@ api.route('/corsi/:anno/:codice_corso')
 	});
 
 api.route('/corsi/:anno/:codice_corso/:codice_percorso')
+	/**
+	 * @name CorsiWithPercorso
+	 * Permette di ottenere le informazioni riguardanti un (anno,corso,percorso)
+	 * @route {GET} /corsi/:anno/:codice_corso/:codice_percorso
+	 * @routeparam {Number} anno anno nel quel inserire il corso
+	 * @routeparam {String} codice_corso codice che identifica il corso
+	 * @routeparam {String} codice_percorso codice che identifica il percorso
+	 */
 	.get((req, res) => {
 		if (!isFinite(req.params.anno)) {
 			return logAndFowardError(res, {
@@ -1513,4 +1734,7 @@ api.route('/corsi/:anno/:codice_corso/:codice_percorso')
 
 const app = express();
 app.use('/api', api);
-app.listen(3000);
+const expressServer = app.listen(3000);
+
+// export necessario per poter chiudere express in jest a fine test
+exports.expressServer = expressServer;

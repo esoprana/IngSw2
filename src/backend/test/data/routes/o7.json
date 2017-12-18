@@ -1,0 +1,14 @@
+{
+    "anno": 2017,
+    "attivita": "EC0115G_120000_120000/2_Nessun partizionamento_FERRA",
+    "docente": "Brunelli Matteo, Ferrari Fabio",
+    "timestamp_fine": "2017-09-19T10:30:00.000Z",
+    "timestamp_inizio": "2017-09-19T08:30:00.000Z",
+    "tipo": "Lezione",
+    "luogo": [
+        {
+            "codice_aula": "A02",
+            "codice_sede": "E0101"
+        }
+    ]
+}

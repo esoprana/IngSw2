@@ -1,0 +1,74 @@
+{
+    "corso": {
+        "label": "Letterature euroamericane, traduzione e critica letteraria (Magistrale)",
+        "elenco_anni": {
+            "P0004D1|1": {
+                "label": [
+                    "1 anno - Standard"
+                ],
+                "elenco_sessioni": {
+                    "61": {
+                        "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                    }
+                },
+                "elenco_attivita": [
+                    "EC0422H_130167_CURZE",
+                    "EC0422H_130501_TARAV",
+                    "EC0422H_130502_ALGRA_ese",
+                    "EC0422H_130154_ZANGA",
+                    "EC0422H_130261_CAPEL",
+                    "EC0422H_130503_PRICE_ese",
+                    "EC0422H_130247_CORDI",
+                    "EC0422H_130503_DIAMO_ese",
+                    "EC0422H_130259_PAREN",
+                    "EC0422H_130225_IERAN",
+                    "EC0422H_130500_PRICE_ese",
+                    "EC0422H_130499_COUCK_ese",
+                    "EC0422H_130267_MINGA",
+                    "EC0422H_130502_CRESC",
+                    "EC0422H_130171_BELLA",
+                    "EC0422H_130503_COVI",
+                    "EC0422H_130247_CORDI_ese",
+                    "EC0422H_130500_DIBL",
+                    "EC0422H_130500_DIAMO_ese",
+                    "EC0422H_130502_STRIC_ese",
+                    "EC0422H_130499_ACERE",
+                    "EC0422H_130501_PASTO_ese",
+                    "EC0422H_130249_GIUNT",
+                    "EC0422H_130245_CAPEL",
+                    "EC0422H_130216_CAVAZ"
+                ]
+            },
+            "P0004D1|2": {
+                "label": [
+                    "2 anno - Standard"
+                ],
+                "elenco_sessioni": {
+                    "61": {
+                        "label": "Sess. estiva e autunnale 16/17 (05/06/2017 - 16/09/2017)"
+                    }
+                },
+                "elenco_attivita": [
+                    "EC0422H_130507_DADE_a",
+                    "EC0422H_130508_COVI_a",
+                    "EC0422H_130508_PRICE_ese",
+                    "EC0422H_130507_TONIO_ese",
+                    "EC0422H_130505_PRICE_ese",
+                    "EC0422H_130506_ANDRE_ese",
+                    "EC0422H_130504_ACERE",
+                    "EC0422H_130505_DIAMO_ese",
+                    "EC0422H_130508_DIAMO_ese",
+                    "EC0422H_130504_COUCK_ese",
+                    "EC0422H_130508_FRANC",
+                    "EC0422H_130507_STEIG_ese",
+                    "EC0422H_130507_MORON",
+                    "EC0422H_130505_FRANC",
+                    "EC0422H_130508_COVI_b",
+                    "EC0422H_130507_DADE_b"
+                ]
+            }
+        }
+    },
+    "anno": 2016,
+    "id": "0422H"
+}
