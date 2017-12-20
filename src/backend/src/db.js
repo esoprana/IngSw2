@@ -220,23 +220,31 @@ const esameSchema = new mongoose.Schema({
 		type: Number,
 		required: true
 	},
+    anno_cdl: {
+		type: String,
+		required: true
+	},
+    cdl: {
+		type: String,
+		required: true
+	},
+    id_sessione: {
+		type: Number,
+		required: true
+	},
 	codice_generale: {
 		type: String,
 		required: true
 	},
 	crediti: {
 		type: Number,
-		required: false
+		required: true
 	},
 	tipo_esame: {
 		type: String,
-		required: false
-	},
-	matricola_docente: {
-		type: String,
 		required: true
 	},
-	nome_docente: {
+	matricola_docente: {
 		type: String,
 		required: true
 	},
@@ -260,15 +268,15 @@ const esameSchema = new mongoose.Schema({
 		},
 		aula: {
 			type: String,
-			required: false
+			required: true
 		},
 		sede: {
 			type: String,
-			required: false
+			required: true
 		}
 	}]
 }, {collection: 'esami'});
-//esameSchema.index({anno: 1, codice_generale: 1}, {unique: true});
+esameSchema.index({"anno": 1, "anno_cdl": 1, "cdl": 1, "id_sessione": 1, "codice_generale": 1 }, {unique: true});
 
 const sedeSchema = new mongoose.Schema({
 	id: {

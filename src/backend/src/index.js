@@ -3,6 +3,9 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 
+const calendario_eventi = require('./sources/calendario_eventi.js');
+const sessioni = require('./sources/sessioni.js');
+
 const db = require('./db.js');
 // const initDB = require('./initDB.js').initDB; Per inizializzare il db
 
@@ -235,7 +238,7 @@ api.route('/orari/:anno/:codice_attivita/:timestamp_inizio/:timestamp_fine')
 	/**
 	 * @name OrariComplete
 	 * Permette di aggiornare le informazioni riguardanti un determinato orario
-	 * @route {POST} /orari/:anno/:codice_attivita/:timestamp_inizio/:timestamp_fine
+	 * @route {PUT} /orari/:anno/:codice_attivita/:timestamp_inizio/:timestamp_fine
 	 * @routeparam {Number} anno anno all'interno degl quale cercare l'attivita legata
 	 * @routeparam {String} codice_attivita codice che identifica l'attivita legata all'orario
 	 * @routeparam {Date} timestamp_inizio timestamp in ISO che identifica l'inizio dell'attivita
@@ -245,7 +248,7 @@ api.route('/orari/:anno/:codice_attivita/:timestamp_inizio/:timestamp_fine')
 	 * @bodyparam Array.<{codice_aula: String, codice_sede: String}>
 	 *			luogo luogo dove si svolge l'attivita
 	 */
-	.post(jsonParser, (req, res) => {
+	.put(jsonParser, (req, res) => {
 		if (!isFinite(req.params.anno)) {
 			return logAndFowardError(res, {
 				status: 400,
@@ -346,7 +349,7 @@ api.route('/orari/:anno/:codice_attivita/:timestamp_inizio/:timestamp_fine')
 	/**
 	 * @name OrariComplete
 	 * Permette di aggiornare le informazioni riguardanti una determinato orario
-	 * @route {PUT} /orari/:anno/:codice_attivita/:timestamp_inizio/:timestamp_fine
+	 * @route {POST} /orari/:anno/:codice_attivita/:timestamp_inizio/:timestamp_fine
 	 * @routeparam {Number} anno anno all'interno degl quale cercare l'attivita legata
 	 * @routeparam {String} codice_attivita codice che identifica l'attivita legata all'orario
 	 * @routeparam {Date} timestamp_inizio timestamp in ISO che identifica l'inizio dell'orario
@@ -356,7 +359,7 @@ api.route('/orari/:anno/:codice_attivita/:timestamp_inizio/:timestamp_fine')
 	 * @bodyparam Array.<{codice_aula: String, codice_sede: String}>
 	 *			luogo luogo dove si svolge l'attivita
 	 */
-	.put(jsonParser, (req, res) => {
+	.post(jsonParser, (req, res) => {
 		if (!isFinite(req.params.anno)) {
 			return logAndFowardError(res, {
 				status: 400,
@@ -669,12 +672,12 @@ api.route('/attivita/:anno/:codice_attivita')
 	/**
 	 * @name AttivitaComplete
 	 * Permette di modificare una determinata attivita
-	 * @route {POST} /attivita/:anno/:codice_attivita
+	 * @route {PUT} /attivita/:anno/:codice_attivita
 	 * @routeparam {Number} anno anno dell'attivita
 	 * @routeparam {String} codice_attivita codice che identifica l'attività
 	 * @bodyparam {String} label label da attribuire all'attività
 	 */
-	.post(jsonParser, (req, res) => {
+	.put(jsonParser, (req, res) => {
 		if (!isFinite(req.params.anno)) {
 			return logAndFowardError(res, {
 				status: 400,
@@ -734,12 +737,12 @@ api.route('/attivita/:anno/:codice_attivita')
 	/**
 	 * @name AttivitaComplete
 	 * Permette di create un'attivita
-	 * @route {PUT} /attivita/:anno/:codice_attivita
+	 * @route {POST} /attivita/:anno/:codice_attivita
 	 * @routeparam {Number} anno anno dell'attivita
 	 * @routeparam {String} codice_attivita codice che identifica l'attività
 	 * @bodyparam {String} label label da attribuire all'attività
 	 */
-	.put(jsonParser, (req, res) => {
+	.post(jsonParser, (req, res) => {
 		if (!isFinite(req.params.anno)) {
 			return logAndFowardError(res, {
 				status: 400,
@@ -910,14 +913,14 @@ api.route('/docenti/:anno/:codice_docente')
 	/**
 	 * @name DocentiComplete
 	 * Permette di modificare le informazioni su un determinato docente
-	 * @route {POST} /docenti/:anno/:codice_docente
+	 * @route {PUT} /docenti/:anno/:codice_docente
 	 * @routeparam {Number} anno anno del quale restituire la lista docenti
 	 * @routeparam {String} codice_docente codice che identifica il docente
 	 * @bodyparam {String} label nome del docente(opzionale)
 	 * @bodyparam {Array<{id: number, label: String}> sessioni elenco delle
 	 *			sessioni in cui è presente il docente(opzionale)
 	 */
-	.post(jsonParser, (req, res) => {
+	.put(jsonParser, (req, res) => {
 		if (!isFinite(req.params.anno)) {
 			return logAndFowardError(res, {
 				status: 400,
@@ -1000,14 +1003,14 @@ api.route('/docenti/:anno/:codice_docente')
 	/**
 	 * @name DocentiComplete
 	 * Permette di aggiungere informazioni su un docente
-	 * @route {PUT} /docenti/:anno/:codice_docente
+	 * @route {POST} /docenti/:anno/:codice_docente
 	 * @routeparam {Number} anno anno del quale restituire la lista docenti
 	 * @routeparam {String} codice_docente codice che identifica il docente
 	 * @bodyparam {String} label nome del docente(obbligatorio)
 	 * @bodyparam {Array<{id: number, label: String}> sessioni elenco delle
 	 *			sessioni in cui è presente il docente(opzionale)
 	 */
-	.put(jsonParser, (req, res) => {
+	.post(jsonParser, (req, res) => {
 		if (!isFinite(req.params.anno)) {
 			return logAndFowardError(res, {
 				status: 400,
@@ -1074,7 +1077,7 @@ api.route('/docenti/:anno/:codice_docente')
 	/**
 	 * @name DocentiComplete
 	 * Permette di cancellare le informazioni su un docente
-	 * @route {PUT} /docenti/:anno/:codice_docente
+	 * @route {DELETE} /docenti/:anno/:codice_docente
 	 * @routeparam {Number} anno anno del quale restituire la lista docenti
 	 * @routeparam {String} codice_docente codice che identifica il docente
 	 * @bodyparam {String} label nome del docente(obbligatorio)
@@ -1350,7 +1353,7 @@ api.route('/corsi/:anno/:codice_corso')
 	/**
 	 * @name CorsiComplete
 	 * Permette di inserire un nuovo corso
-	 * @route {PUT} /corsi/:anno/:codice_corso
+	 * @route {POST} /corsi/:anno/:codice_corso
 	 * @routeparam {Number} anno anno nel quel inserire il corso
 	 * @routeparam {String} codice_corso codice che identifica il corso
 	 * @bodyparam {String} label nome del corso
@@ -1364,7 +1367,7 @@ api.route('/corsi/:anno/:codice_corso')
 	 *				}>} elenco_anni lista degli anni+percorsi presenti e delle
 	 *				loro proprietà
 	 */
-	.put(jsonParser, (req, res) => {
+	.post(jsonParser, (req, res) => {
 		if (!isFinite(req.params.anno)) {
 			return logAndFowardError(res, {
 				status: 400,
@@ -1462,7 +1465,7 @@ api.route('/corsi/:anno/:codice_corso')
 	/**
 	 * @name CorsiComplete
 	 * Permette di modificare un corso
-	 * @route {POST} /corsi/:anno/:codice_corso
+	 * @route {PUT} /corsi/:anno/:codice_corso
 	 * @routeparam {Number} anno anno nel quel inserire il corso
 	 * @routeparam {String} codice_corso codice che identifica il corso
 	 * @bodyparam {String} label nome del corso(opzionale)
@@ -1476,7 +1479,7 @@ api.route('/corsi/:anno/:codice_corso')
 	 *				}>} elenco_anni lista degli anni+percorsi presenti e delle
 	 *				loro proprietà(opzionale)
 	 */
-	.post(jsonParser, (req, res) => {
+	.put(jsonParser, (req, res) => {
 		if (!isFinite(req.params.anno)) {
 			return logAndFowardError(res, {
 				status: 400,
@@ -1728,6 +1731,161 @@ api.route('/corsi/:anno/:codice_corso/:codice_percorso')
 			err => logAndFowardError(res, err, {
 				status: 500,
 				message: 'Impossibile recuperare il percorso indicato'
+			})
+		);
+	});
+
+api.route('/calendario_eventi.json')
+	.get((req, res) => {
+		if (Object.keys(req.query).length != 1) {
+			console.log('numero parametri sbagliato');
+			res.end('ParameterNumberException: numero parametri sbagliato');
+		} else {
+			calendario_eventi.getEvents(req.query.day)
+				.then(generatedJSON => {
+					res.status(200).json(generatedJSON);
+				});
+		}
+	});
+
+api.route('/esami/:anno/:cdl/:annocdl/:idSessione/:codiceGenerale')
+	.get((req, res) => {
+		return db.Esami.findOne({
+			anno: req.params.anno,
+			anno_cdl: req.params.annocdl,
+			cdl: req.params.cdl,
+			id_sessione: req.params.idSessione,
+			codice_generale: req.params.codiceGenerale
+		}).then(
+			esame =>  {
+				if (esame === null) {
+					return Promise.reject({
+						status: 404,
+						message: 'Nessun elemento trovato',
+						log: 0
+					});
+				}
+
+				return Promise.resolve(esame);
+			})
+		.then(
+			r => res.json(r),
+			err => logAndFowardError(res, err, {
+				status: 500,
+				message: 'Impossibile trovare l\'elemento richiesto'
+			})
+		);
+	})
+	.put(jsonParser, (req, res) => {
+		return db.Esami.findOne({
+			anno: req.params.anno,
+			anno_cdl: req.params.annocdl,
+			cdl: req.params.cdl,
+			id_sessione: req.params.idSessione,
+			codice_generale: req.params.codiceGenerale
+		}).then(esame => {
+			if (esame === null) {
+				return Promise.reject({
+					status: 404,
+					message: 'Impossibile trovare l\'elemento richiesto',
+					log: 0
+				});
+			}
+
+			esame.anno = parseInt(req.body.annoAccademico);
+			esame.anno_cdl = req.body.annoCdl;
+			esame.cdl = req.body.cdl;
+			esame.id_sessione = parseInt(req.body.idSessione);
+			esame.codice_generale = req.body.codiceGenerale;
+			esame.crediti = req.body.crediti;
+			esame.tipo_esame = req.body.tipoEsame;
+			esame.matricola_docente = req.body.matricolaDocente;
+			esame.numero_appelli = req.body.numeroAppelli;
+
+			return esame.save();
+		}).then(
+			ok => res.json({status: 'ok'}),
+			err => logAndFowardError(res, err, {
+				status: 500,
+				message: 'Impossibile fare l\'update dell\'elemento richiesto'
+			})
+		);
+	})
+	.delete(jsonParser, (req, res) => {
+		return db.Esami.remove({
+			anno: req.params.anno,
+			anno_cdl: req.params.annocdl,
+			cdl: req.params.cdl,
+			id_sessione: req.params.idSessione,
+			codice_generale: req.params.codiceGenerale
+		}).then(
+			r => {
+				if ((r.result.ok === 1) && (r.result.n === 1)) {
+					return Promise.resolve({status: 'ok'});
+				}
+
+				return Promise.reject({
+					status: 500,
+					message: 'Impossibile trovare l\'oggetto richiesto',
+					log: 1
+				});
+			}
+		).then(
+			json => res.json(json),
+			err => logAndFowardError(res, err, {
+				status: 500,
+				message: 'Impossibile eliminare l\'elemento richiesto'
+			})
+		);
+	})
+
+api.route('/esami')
+	.get((req, res) => {
+		return db.Esami.find({})
+			.then(
+				json => res.json(json),
+				err => logAndFowardError(res, err, {
+					status: 500,
+					message: 'Impossibile ottenere gli elementi di sessioni'
+				})
+			);
+	})
+	.post(jsonParser, (req, res) => {
+		return sessioni.getSessions(
+			'et_cdl',
+			req.body.anno,
+			req.body.cdl,
+			req.body.annocdl,
+			req.body.sessione
+		).then(generatedJSON => {
+			return Promise.all(
+				generatedJSON.listaAppelli.map(appelloLista => {
+					return new db.Esami({
+						anno: parseInt(generatedJSON.infoSessione.AnnoAccademico),
+						anno_cdl: generatedJSON.infoSessione.AnnoCdl,
+						cdl: generatedJSON.infoSessione.Cdl,
+						id_sessione: parseInt(generatedJSON.infoSessione.IdSessione),
+						codice_generale: appelloLista.codiceGenerale,
+						crediti: appelloLista.crediti,
+						tipo_esame: appelloLista.tipoEsame,
+						matricola_docente: appelloLista.matricolaDocente,
+						numero_appelli: appelloLista.numeroAppelli,
+						appelli: appelloLista.appelli.map(appello => ({
+							timestamp: {
+								inizio: appello.dataInizio,
+								fine: appello.dataFine
+							},
+							aula: appello.aula,
+							sede: appello.sede
+						}))
+					}).save();
+				})
+			);
+		}).then(
+			ok => res.json({status: 'ok'}),
+			err => logAndFowardError(res, err, {
+				status: 500,
+				message: 'Alcuni save sono falliti'
 			})
 		);
 	});

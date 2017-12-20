@@ -33,6 +33,9 @@ exports.getSessions = (formtype, anno, cdl, annocdl, sessione) => {
         
             elenco.infoSessione = {
                 AnnoAccademico: json.AnnoAccademico.ID,
+                AnnoCdl: json.Insegnamenti[0].Manifesto[0].Codice.concat('|').concat(json.Insegnamenti[0].Manifesto[0].AnnoCorso), //nome o codice??
+                Cdl: json.Insegnamenti[0].Manifesto[0].LaureaCodice,    //****AGGIUNTO****
+                IdSessione: json.IdSessione,            // ******AGGIUNTO*****
                 NomeFacolta: json.FacoltaNome,
                 Sessione: json.Sessione,
                 DataInizioSessione: new Date(dataInizioSessioneSplit[2], dataInizioSessioneSplit[1] - 1, dataInizioSessioneSplit[0]),//json.DataInizio, 05-06-2017

@@ -54,6 +54,7 @@ test('verifica struttura e campi dell output', () => {
     return sessioni.getSessions('et_cdl', '2016', '0428H', 'Unico|1', '61', 'it').then(data => {
         //var object = JSON.parse(data);              cambiati object in data
         expect(data).toHaveProperty('infoSessione.AnnoAccademico');
+        expect(data).toHaveProperty('infoSessione.IdSessione');
         expect(data).toHaveProperty('infoSessione.NomeFacolta');
         expect(data).toHaveProperty('infoSessione.Sessione');
         expect(data).toHaveProperty('infoSessione.DataInizioSessione');
