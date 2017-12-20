@@ -1963,7 +1963,7 @@ api.route('/esami')
 
 const app = express();
 app.use('/api', api);
-const expressServer = app.listen(3000);
+const expressServer = app.listen(process.env.PORT || 8080);
 
 // export necessario per poter chiudere express in jest a fine test
 exports.expressServer = expressServer;
