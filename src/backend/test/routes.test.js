@@ -52,74 +52,6 @@ const expressServer = require('./../src/index.js').expressServer;
 			});
 		});
 
-		describe('Put', () => {
-			test('Invalid anno', () => {
-				return expect(
-					fetch('http://localhost:3000/api/attivita/NonAnno/ECCose',{
-						method: 'PUT',
-						headers: {'Content-Type': 'application/json'},
-						body: JSON.stringify({
-							label: 'l'
-						})
-					})
-					.then(x => x.text()))
-				.resolves.toEqual('Il campo anno deve essere un numero finito');
-			});
-
-			describe('Check label', () => {
-				test('undefined label', () => {
-					return expect(
-						fetch('http://localhost:3000/api/attivita/2999/ECCose',{
-							method: 'PUT',
-							headers: {'Content-Type': 'application/json'},
-							body: JSON.stringify({
-							})
-						})
-						.then(x => x.text()))
-					.resolves.toEqual('Il campo label deve essere definito');
-				});
-
-				test('label not string', () => {
-					return expect(
-						fetch('http://localhost:3000/api/attivita/2999/ECCose',{
-							method: 'PUT',
-							headers: {'Content-Type': 'application/json'},
-							body: JSON.stringify({
-								label: 213
-							})
-						})
-						.then(x => x.text()))
-					.resolves.toEqual('Il campo label deve essere di tipo string');
-				});
-
-				test('label empty', () => {
-					return expect(
-						fetch('http://localhost:3000/api/attivita/2999/ECCose',{
-							method: 'PUT',
-							headers: {'Content-Type': 'application/json'},
-							body: JSON.stringify({
-								label: ''
-							})
-						})
-						.then(x => x.text()))
-					.resolves.toEqual('Il campo label deve essere una stringa non vuota');
-				});
-			});
-
-			test('Valid query', () => {
-				return expect(
-						fetch('http://localhost:3000/api/attivita/2999/ECProva', {
-							method: 'PUT',
-							headers: {'Content-Type': 'application/json'},
-							body: JSON.stringify({
-								label: 'lProva'
-							})
-						})
-						.then(x => x.json()))
-					.resolves.toEqual({status: 'ok'});
-			});
-		});
-
 		describe('Post', () => {
 			test('Invalid anno', () => {
 				return expect(
@@ -135,6 +67,18 @@ const expressServer = require('./../src/index.js').expressServer;
 			});
 
 			describe('Check label', () => {
+				test('undefined label', () => {
+					return expect(
+						fetch('http://localhost:3000/api/attivita/2999/ECCose',{
+							method: 'POST',
+							headers: {'Content-Type': 'application/json'},
+							body: JSON.stringify({
+							})
+						})
+						.then(x => x.text()))
+					.resolves.toEqual('Il campo label deve essere definito');
+				});
+
 				test('label not string', () => {
 					return expect(
 						fetch('http://localhost:3000/api/attivita/2999/ECCose',{
@@ -162,10 +106,66 @@ const expressServer = require('./../src/index.js').expressServer;
 				});
 			});
 
+			test('Valid query', () => {
+				return expect(
+						fetch('http://localhost:3000/api/attivita/2999/ECProva', {
+							method: 'POST',
+							headers: {'Content-Type': 'application/json'},
+							body: JSON.stringify({
+								label: 'lProva'
+							})
+						})
+						.then(x => x.json()))
+					.resolves.toEqual({status: 'ok'});
+			});
+		});
+
+		describe('Put', () => {
+			test('Invalid anno', () => {
+				return expect(
+					fetch('http://localhost:3000/api/attivita/NonAnno/ECCose',{
+						method: 'PUT',
+						headers: {'Content-Type': 'application/json'},
+						body: JSON.stringify({
+							label: 'l'
+						})
+					})
+					.then(x => x.text()))
+				.resolves.toEqual('Il campo anno deve essere un numero finito');
+			});
+
+			describe('Check label', () => {
+				test('label not string', () => {
+					return expect(
+						fetch('http://localhost:3000/api/attivita/2999/ECCose',{
+							method: 'PUT',
+							headers: {'Content-Type': 'application/json'},
+							body: JSON.stringify({
+								label: 213
+							})
+						})
+						.then(x => x.text()))
+					.resolves.toEqual('Il campo label deve essere di tipo string');
+				});
+
+				test('label empty', () => {
+					return expect(
+						fetch('http://localhost:3000/api/attivita/2999/ECCose',{
+							method: 'PUT',
+							headers: {'Content-Type': 'application/json'},
+							body: JSON.stringify({
+								label: ''
+							})
+						})
+						.then(x => x.text()))
+					.resolves.toEqual('Il campo label deve essere una stringa non vuota');
+				});
+			});
+
 			test('non-existent attivita', () => {
 				return expect(
 						fetch('http://localhost:3000/api/attivita/3094/ECProva', {
-							method: 'POST',
+							method: 'PUT',
 							headers: {'Content-Type': 'application/json'},
 							body: JSON.stringify({
 								label: 'lProva'
@@ -178,7 +178,7 @@ const expressServer = require('./../src/index.js').expressServer;
 			test('Valid query', () => {
 				return expect(
 						fetch('http://localhost:3000/api/attivita/2999/ECProva', {
-							method: 'POST',
+							method: 'PUT',
 							headers: {'Content-Type': 'application/json'},
 							body: JSON.stringify({
 								label: 'lProva'
@@ -301,11 +301,11 @@ const expressServer = require('./../src/index.js').expressServer;
 			});
 		});
 
-		describe('Put', () => {
+		describe('Post', () => {
 			test('Invalid anno', () => {
 				return expect(
 					fetch('http://localhost:3000/api/corsi/nonAnno/0115G1', {
-						method: 'PUT'
+						method: 'POST'
 					})
 					.then(x => x.text()))
 				.resolves.toEqual('Il campo anno deve essere un numero finito');
@@ -314,7 +314,7 @@ const expressServer = require('./../src/index.js').expressServer;
 			test('label undefined', () => {
 				return expect(
 					fetch('http://localhost:3000/api/corsi/2999/0115G2', {
-						method: 'PUT',
+						method: 'POST',
 						headers: {'Content-Type': 'application/json'},
 						body: JSON.stringify({
 							codice_cdl: '31d213',
@@ -337,7 +337,7 @@ const expressServer = require('./../src/index.js').expressServer;
 			test('label not string', () => {
 				return expect(
 					fetch('http://localhost:3000/api/corsi/2999/0115G3', {
-						method: 'PUT',
+						method: 'POST',
 						headers: {'Content-Type': 'application/json'},
 						body: JSON.stringify({
 							'label': [1,2,3],
@@ -361,7 +361,7 @@ const expressServer = require('./../src/index.js').expressServer;
 			test('elenco_anni undefined', () => {
 				return expect(
 					fetch('http://localhost:3000/api/corsi/2999/0115G4', {
-						method: 'PUT',
+						method: 'POST',
 						headers: {'Content-Type': 'application/json'},
 						body: JSON.stringify({
 							label: 'l431',
@@ -375,7 +375,7 @@ const expressServer = require('./../src/index.js').expressServer;
 			test('elenco_anni not array', () => {
 				return expect(
 					fetch('http://localhost:3000/api/corsi/2999/0115G5', {
-						method: 'PUT',
+						method: 'POST',
 						headers: {'Content-Type': 'application/json'},
 						body: JSON.stringify({
 							label: 'l431',
@@ -390,7 +390,7 @@ const expressServer = require('./../src/index.js').expressServer;
 			test('Invalid elenco_anni', () => {
 				return expect(
 					fetch('http://localhost:3000/api/corsi/2999/0115G5', {
-						method: 'PUT',
+						method: 'POST',
 						headers: {'Content-Type': 'application/json'},
 						body: JSON.stringify({
 							label: 'l431',
@@ -425,7 +425,7 @@ const expressServer = require('./../src/index.js').expressServer;
 			test('codice_cdl not string', () => {
 				return expect(
 					fetch('http://localhost:3000/api/corsi/2999/0115G7', {
-						method: 'PUT',
+						method: 'POST',
 						headers: {'Content-Type': 'application/json'},
 						body: JSON.stringify({
 							label: 'l',
@@ -449,7 +449,7 @@ const expressServer = require('./../src/index.js').expressServer;
 			test('Valid query', () => {
 				return expect(
 					fetch('http://localhost:3000/api/corsi/2999/0115G8', {
-						method: 'PUT',
+						method: 'POST',
 						headers: {'Content-Type': 'application/json'},
 						body: JSON.stringify({
 							label: 'l',
@@ -471,11 +471,11 @@ const expressServer = require('./../src/index.js').expressServer;
 			});
 		});
 
-		describe('Post', () => {
+		describe('Put', () => {
 			test('Invalid anno', () => {
 				return expect(
 					fetch('http://localhost:3000/api/corsi/nonAnno/0115G1', {
-						method: 'POST'
+						method: 'PUT'
 					})
 					.then(x => x.text()))
 				.resolves.toEqual('Il campo anno deve essere un numero finito');
@@ -484,7 +484,7 @@ const expressServer = require('./../src/index.js').expressServer;
 			test('codice_cdl not string', () => {
 				return expect(
 					fetch('http://localhost:3000/api/corsi/2999/0115G4', {
-						method: 'POST',
+						method: 'PUT',
 						headers: {'Content-Type': 'application/json'},
 						body: JSON.stringify({
 							label: 'l431',
@@ -498,7 +498,7 @@ const expressServer = require('./../src/index.js').expressServer;
 			test('label not string', () => {
 				return expect(
 					fetch('http://localhost:3000/api/corsi/2999/0115G4', {
-						method: 'POST',
+						method: 'PUT',
 						headers: {'Content-Type': 'application/json'},
 						body: JSON.stringify({
 							label: 431,
@@ -512,7 +512,7 @@ const expressServer = require('./../src/index.js').expressServer;
 			test('elenco_anni not array', () => {
 				return expect(
 					fetch('http://localhost:3000/api/corsi/2999/0115G4', {
-						method: 'POST',
+						method: 'PUT',
 						headers: {'Content-Type': 'application/json'},
 						body: JSON.stringify({
 							label: 'dsa431',
@@ -527,7 +527,7 @@ const expressServer = require('./../src/index.js').expressServer;
 			test('elenco_anni not array', () => {
 				return expect(
 					fetch('http://localhost:3000/api/corsi/2999/0115G4', {
-						method: 'POST',
+						method: 'PUT',
 						headers: {'Content-Type': 'application/json'},
 						body: JSON.stringify({
 							label: 'l',
@@ -561,7 +561,7 @@ const expressServer = require('./../src/index.js').expressServer;
 			test('Non existent corso', () => {
 				return expect(
 					fetch('http://localhost:3000/api/corsi/7094/0115G8', {
-						method: 'POST',
+						method: 'PUT',
 						headers: {'Content-Type': 'application/json'},
 						body: JSON.stringify({
 							label: 'l2',
@@ -585,7 +585,7 @@ const expressServer = require('./../src/index.js').expressServer;
 			test('Valid query', () => {
 				return expect(
 					fetch('http://localhost:3000/api/corsi/2999/0115G8', {
-						method: 'POST',
+						method: 'PUT',
 						headers: {'Content-Type': 'application/json'},
 						body: JSON.stringify({
 							label: 'l2',
@@ -609,7 +609,7 @@ const expressServer = require('./../src/index.js').expressServer;
 			test('valid query', () => {
 				return expect(
 					fetch('http://localhost:3000/api/corsi/2999/0115g8', {
-						method: 'post',
+						method: 'PUT',
 						headers: {'content-type': 'application/json'},
 						body: json.stringify({
 							label: 'l2',
@@ -760,11 +760,11 @@ const expressServer = require('./../src/index.js').expressServer;
 			});
 		});
 
-		describe('Put', () => {
+		describe('Post', () => {
 			test('Invalid anno', () => {
 				return expect(
 						fetch('http://localhost:3000/api/docenti/nonAnno/D000058', {
-							method: 'PUT',
+							method: 'POST',
 							headers: {'Content-Type': 'application/json'},
 							body: JSON.stringify({})
 						})
@@ -776,7 +776,7 @@ const expressServer = require('./../src/index.js').expressServer;
 				test('label undefined', () => {
 					return expect(
 						fetch('http://localhost:3000/api/docenti/2999/n1', {
-							method: 'PUT',
+							method: 'POST',
 							headers: {'Content-Type': 'application/json'},
 							body: JSON.stringify({})
 						})
@@ -787,7 +787,7 @@ const expressServer = require('./../src/index.js').expressServer;
 				test('label not string', () => {
 					return expect(
 						fetch('http://localhost:3000/api/docenti/2999/n2', {
-							method: 'PUT',
+							method: 'POST',
 							headers: {'Content-Type': 'application/json'},
 							body: JSON.stringify({
 								label: 3213
@@ -800,7 +800,7 @@ const expressServer = require('./../src/index.js').expressServer;
 				test('label empty string', () => {
 					return expect(
 						fetch('http://localhost:3000/api/docenti/2999/n3', {
-							method: 'PUT',
+							method: 'POST',
 							headers: {'Content-Type': 'application/json'},
 							body: JSON.stringify({
 								label: ''
@@ -815,7 +815,7 @@ const expressServer = require('./../src/index.js').expressServer;
 				test('sessioni structure(not array)', () => {
 					return expect(
 						fetch('http://localhost:3000/api/docenti/2999/n4', {
-							method: 'PUT',
+							method: 'POST',
 							headers: {'Content-Type': 'application/json'},
 							body: JSON.stringify({
 								label: 'dsa',
@@ -829,7 +829,7 @@ const expressServer = require('./../src/index.js').expressServer;
 				test('sessioni structure(label undefined)', () => {
 					return expect(
 						fetch('http://localhost:3000/api/docenti/2999/n4', {
-							method: 'PUT',
+							method: 'POST',
 							headers: {'Content-Type': 'application/json'},
 							body: JSON.stringify({
 								label: 'dsa',
@@ -846,7 +846,7 @@ const expressServer = require('./../src/index.js').expressServer;
 				test('sessioni structure(id undefined)', () => {
 					return expect(
 						fetch('http://localhost:3000/api/docenti/2999/n4', {
-							method: 'PUT',
+							method: 'POST',
 							headers: {'Content-Type': 'application/json'},
 							body: JSON.stringify({
 								label: 'dsa',
@@ -865,7 +865,7 @@ const expressServer = require('./../src/index.js').expressServer;
 				test('new Docente', () => {
 					return expect(
 						fetch('http://localhost:3000/api/docenti/2999/n14', {
-							method: 'PUT',
+							method: 'POST',
 							headers: {'Content-Type': 'application/json'},
 							body: JSON.stringify({
 								label: 'dsa',
@@ -882,7 +882,7 @@ const expressServer = require('./../src/index.js').expressServer;
 				test('new Docente', () => {
 					return expect(
 						fetch('http://localhost:3000/api/docenti/2999/n24', {
-							method: 'PUT',
+							method: 'POST',
 							headers: {'Content-Type': 'application/json'},
 							body: JSON.stringify({
 								label: 'dsa',
@@ -898,11 +898,11 @@ const expressServer = require('./../src/index.js').expressServer;
 			});
 		});
 
-		describe('Post', () => {
+		describe('Put', () => {
 			test('Invalid anno', () => {
 				return expect(
 						fetch('http://localhost:3000/api/docenti/nonAnno/D000058', {
-							method: 'POST',
+							method: 'PUT',
 							headers: {'Content-Type': 'application/json'},
 							body: JSON.stringify({label: 'l'})
 						})
@@ -914,7 +914,7 @@ const expressServer = require('./../src/index.js').expressServer;
 				test('label not string', () => {
 					return expect(
 						fetch('http://localhost:3000/api/docenti/2999/n2', {
-							method: 'POST',
+							method: 'PUT',
 							headers: {'Content-Type': 'application/json'},
 							body: JSON.stringify({
 								label: 3213
@@ -927,7 +927,7 @@ const expressServer = require('./../src/index.js').expressServer;
 				test('label empty string', () => {
 					return expect(
 						fetch('http://localhost:3000/api/docenti/2999/n3', {
-							method: 'POST',
+							method: 'PUT',
 							headers: {'Content-Type': 'application/json'},
 							body: JSON.stringify({
 								label: ''
@@ -942,7 +942,7 @@ const expressServer = require('./../src/index.js').expressServer;
 				test('sessioni structure(not array)', () => {
 					return expect(
 						fetch('http://localhost:3000/api/docenti/2999/n4', {
-							method: 'POST',
+							method: 'PUT',
 							headers: {'Content-Type': 'application/json'},
 							body: JSON.stringify({
 								label: 'dsa',
@@ -956,7 +956,7 @@ const expressServer = require('./../src/index.js').expressServer;
 				test('sessioni structure(label undefined)', () => {
 					return expect(
 						fetch('http://localhost:3000/api/docenti/2999/n4', {
-							method: 'POST',
+							method: 'PUT',
 							headers: {'Content-Type': 'application/json'},
 							body: JSON.stringify({
 								label: 'dsa',
@@ -973,7 +973,7 @@ const expressServer = require('./../src/index.js').expressServer;
 				test('sessioni structure(id undefined)', () => {
 					return expect(
 						fetch('http://localhost:3000/api/docenti/2999/n4', {
-							method: 'POST',
+							method: 'PUT',
 							headers: {'Content-Type': 'application/json'},
 							body: JSON.stringify({
 								label: 'dsa',
@@ -991,7 +991,7 @@ const expressServer = require('./../src/index.js').expressServer;
 			test('non-existing Docente', () => {
 				return expect(
 					fetch('http://localhost:3000/api/docenti/3999/n14', {
-						method: 'POST',
+						method: 'PUT',
 						headers: {'Content-Type': 'application/json'},
 						body: JSON.stringify({
 							label: 'dsa',
@@ -1008,7 +1008,7 @@ const expressServer = require('./../src/index.js').expressServer;
 			test('new Docente', () => {
 				return expect(
 					fetch('http://localhost:3000/api/docenti/2999/n24', {
-						method: 'POST',
+						method: 'PUT',
 						headers: {'Content-Type': 'application/json'},
 						body: JSON.stringify({
 							label: 'dsa',
@@ -1281,266 +1281,6 @@ const expressServer = require('./../src/index.js').expressServer;
 			});
 		});
 
-		describe('Put', () => {
-			test('Invalid anno', () => {
-				return expect(
-						fetch('http://localhost:3000/api/orari/nonunAnno/CODICE/' +
-							'2017-10-09T02:00:00.000Z/2017-10-19T02:00:00.000Z',
-							{
-								method: 'PUT'
-							})
-						.then(x => x.text()))
-					.resolves.toEqual('Il campo anno deve essere di tipo Number');
-			});
-
-			test('Invalid timestampInizio', () => {
-				return expect(
-						fetch('http://localhost:3000/api/orari/3024/CODICE/' +
-							'2017-as-09T02:00:00.000Z/2017-10-19T02:00:00.000Z',
-							{
-								method: 'PUT'
-							})
-						.then(x => x.text()))
-					.resolves.toEqual('I campi timestamp_inizio e timestamp_fine ' +
-						'devono essere una data ISO');
-			});
-
-			test('Invalid timestampInizio', () => {
-				return expect(
-						fetch('http://localhost:3000/api/orari/3024/CODICE/' +
-							'2017-10-09T02:00:00.000Z/2017-1*-19T02:00:00.000Z',
-							{
-								method: 'PUT'
-							})
-						.then(x => x.text()))
-					.resolves.toEqual('I campi timestamp_inizio e timestamp_fine ' +
-						'devono essere una data ISO');
-			});
-
-			describe('Controlli tipo', () => {
-				test('tipo undefined', () => {
-					return expect(
-							fetch('http://localhost:3000/api/orari/3024/CODICE1/' +
-								'2017-10-09T02:00:00.000Z/2017-10-19T02:00:00.000Z',
-								{
-									method: 'PUT',
-									headers: {'Content-Type': 'application/json'},
-									body: JSON.stringify({
-										docente: "caio"
-									})
-								})
-							.then(x => x.text()))
-						.resolves.toEqual('Il campo tipo è mancante');
-				});
-
-				test('tipo not string', () => {
-					return expect(
-							fetch('http://localhost:3000/api/orari/3024/CODICE1/' +
-								'2017-10-09T02:00:00.000Z/2017-10-19T02:00:00.000Z',
-								{
-									method: 'PUT',
-									headers: {'Content-Type': 'application/json'},
-									body: JSON.stringify({
-										docente: "caio",
-										tipo: 94
-									})
-								})
-							.then(x => x.text()))
-						.resolves.toEqual('Il campo tipo deve essere di tipo string');
-				});
-			});
-
-
-			describe('Controlli docente', () => {
-				test('docente undefined', () => {
-					return expect(
-							fetch('http://localhost:3000/api/orari/3024/CODICE3/' +
-								'2017-10-09T02:00:00.000Z/2017-10-19T02:00:00.000Z',
-								{
-									method: 'PUT',
-									headers: {'Content-Type': 'application/json'},
-									body: JSON.stringify({
-										tipo: 'Lezioni'
-									})
-								})
-							.then(x => x.text()))
-						.resolves.toEqual('Il campo docente è mancante');
-				});
-
-				test('docente not string', () => {
-					return expect(
-							fetch('http://localhost:3000/api/orari/3024/CODICE3/' +
-								'2017-10-09T02:00:00.000Z/2017-10-19T02:00:00.000Z',
-								{
-									method: 'PUT',
-									headers: {'Content-Type': 'application/json'},
-									body: JSON.stringify({
-										docente: [23, 12],
-										tipo: 'Lezioni'
-									})
-								})
-							.then(x => x.text()))
-						.resolves.toEqual('Il campo docente deve essere di tipo string');
-				});
-			});
-
-			describe('Controlli luogo', () => {
-				test('luogo undefined', () => {
-					return expect(
-							fetch('http://localhost:3000/api/orari/3024/CODICE5/' +
-								'2017-10-09T02:00:00.000Z/2017-10-19T02:00:00.000Z',
-								{
-									method: 'PUT',
-									headers: {'Content-Type': 'application/json'},
-									body: JSON.stringify({
-										docente: 'prova',
-										tipo: 'Lezioni',
-									})
-								})
-							.then(x => x.text()))
-						.resolves.toEqual('Il campo luogo deve essere presente');
-				});
-
-				test('luogo not array', () => {
-					return expect(
-							fetch('http://localhost:3000/api/orari/3024/CODICE5/' +
-								'2017-10-09T02:00:00.000Z/2017-10-19T02:00:00.000Z',
-								{
-									method: 'PUT',
-									headers: {'Content-Type': 'application/json'},
-									body: JSON.stringify({
-										docente: 'prova',
-										tipo: 'Lezioni',
-										luogo: 12
-									})
-								})
-							.then(x => x.text()))
-						.resolves.toEqual('Il campo luogo deve essere un array');
-				});
-
-				test('luogo with nothing(correct)', () => {
-					return expect(
-							fetch('http://localhost:3000/api/orari/3024/CODICE6/' +
-								'2017-10-09T02:00:00.000Z/2017-10-19T02:00:00.000Z',
-								{
-									method: 'PUT',
-									headers: {'Content-Type': 'application/json'},
-									body: JSON.stringify({
-										docente: 'prova',
-										tipo: 'Lezioni',
-										luogo: [{}]
-									})
-								})
-							.then(x => x.json()))
-						.resolves.toEqual({status: 'ok'});
-				});
-
-				test('luogo with only codice_aula(correct)', () => {
-					return expect(
-							fetch('http://localhost:3000/api/orari/3024/CODICE7/' +
-								'2017-10-09T02:00:00.000Z/2017-10-19T02:00:00.000Z',
-								{
-									method: 'PUT',
-									headers: {'Content-Type': 'application/json'},
-									body: JSON.stringify({
-										docente: 'prova',
-										tipo: 'Lezioni',
-										luogo: [
-											{codice_aula: 'A07'},
-											{codice_aula: 'A91'}
-										]
-									})
-								})
-							.then(x => x.json()))
-						.resolves.toEqual({status: 'ok'});
-				});
-
-				test('luogo with only codice_sede(correct)', () => {
-					return expect(
-							fetch('http://localhost:3000/api/orari/3024/CODICE8/' +
-								'2017-10-09T02:00:00.000Z/2017-10-19T02:00:00.000Z',
-								{
-									method: 'PUT',
-									headers: {'Content-Type': 'application/json'},
-									body: JSON.stringify({
-										docente: 'prova',
-										tipo: 'Lezioni',
-										luogo: [
-											{codice_sede: 'E101', codice_aula: 'A07'},
-											{codice_sede: 'CLA', codice_aula: 'A91'}
-										]
-									})
-								})
-							.then(x => x.json()))
-						.resolves.toEqual({status: 'ok'});
-				});
-
-				test('luogo con codici misti(correct)', () => {
-					return expect(
-							fetch('http://localhost:3000/api/orari/3024/CODICE9/' +
-								'2017-10-09T02:00:00.000Z/2017-10-19T02:00:00.000Z',
-								{
-									method: 'PUT',
-									headers: {'Content-Type': 'application/json'},
-									body: JSON.stringify({
-										docente: 'prova',
-										tipo: 'Lezioni',
-										luogo: [
-											{codice_sede: 'E101', codice_aula: 'A07'},
-											{codice_sede: 'CLA'},
-											{codice_sede: 'E101'},
-											{codice_aula: 'A91'}
-										]
-									})
-								})
-							.then(x => x.json()))
-						.resolves.toEqual({status: 'ok'});
-				});
-
-				test('luogo con codice_aula di tipo non string', () => {
-					return expect(
-							fetch('http://localhost:3000/api/orari/3024/CODICE10/' +
-								'2017-10-09T02:00:00.000Z/2017-10-19T02:00:00.000Z',
-								{
-									method: 'PUT',
-									headers: {'Content-Type': 'application/json'},
-									body: JSON.stringify({
-										docente: 'prova',
-										tipo: 'Lezioni',
-										luogo: [
-											{codice_aula: 12}
-										]
-									})
-								})
-							.then(x => x.text()))
-						.resolves.toEqual(
-							'Il campo luogo deve avere struttura \n' +
-							'[{codice_aula: string, codice_sede: string}...]');
-				});
-
-				test('luogo con codice_sede di tipo non string', () => {
-					return expect(
-							fetch('http://localhost:3000/api/orari/3024/CODICE11/' +
-								'2017-10-09T02:00:00.000Z/2017-10-19T02:00:00.000Z',
-								{
-									method: 'PUT',
-									headers: {'Content-Type': 'application/json'},
-									body: JSON.stringify({
-										docente: 'prova',
-										tipo: 'Lezioni',
-										luogo: [
-											{codice_sede: ['dsa',231]}
-										]
-									})
-								})
-							.then(x => x.text()))
-						.resolves.toEqual(
-							'Il campo luogo deve avere struttura \n' +
-							'[{codice_aula: string, codice_sede: string}...]');
-				});
-			});
-		});
-
 		describe('Post', () => {
 			test('Invalid anno', () => {
 				return expect(
@@ -1577,23 +1317,22 @@ const expressServer = require('./../src/index.js').expressServer;
 						'devono essere una data ISO');
 			});
 
-			test('Nessun elemento con il codice indicato', () => {
-				return expect(
-						fetch('http://localhost:3000/api/orari/2095/CODICE1/' +
-							'2017-10-09T02:00:00.000Z/2017-10-19T02:00:00.000Z',
-							{
-								method: 'POST',
-								headers: {'Content-Type': 'application/json'},
-								body: JSON.stringify({
-									docente: "caio",
-									tipo: "lezione"
+			describe('Controlli tipo', () => {
+				test('tipo undefined', () => {
+					return expect(
+							fetch('http://localhost:3000/api/orari/3024/CODICE1/' +
+								'2017-10-09T02:00:00.000Z/2017-10-19T02:00:00.000Z',
+								{
+									method: 'POST',
+									headers: {'Content-Type': 'application/json'},
+									body: JSON.stringify({
+										docente: "caio"
+									})
 								})
-							})
-						.then(x => x.text()))
-					.resolves.toEqual('Impossibile trovare l\'elemento richiesto');
-			});
+							.then(x => x.text()))
+						.resolves.toEqual('Il campo tipo è mancante');
+				});
 
-			describe('Controlli lezione', () => {
 				test('tipo not string', () => {
 					return expect(
 							fetch('http://localhost:3000/api/orari/3024/CODICE1/' +
@@ -1613,6 +1352,21 @@ const expressServer = require('./../src/index.js').expressServer;
 
 
 			describe('Controlli docente', () => {
+				test('docente undefined', () => {
+					return expect(
+							fetch('http://localhost:3000/api/orari/3024/CODICE3/' +
+								'2017-10-09T02:00:00.000Z/2017-10-19T02:00:00.000Z',
+								{
+									method: 'POST',
+									headers: {'Content-Type': 'application/json'},
+									body: JSON.stringify({
+										tipo: 'Lezioni'
+									})
+								})
+							.then(x => x.text()))
+						.resolves.toEqual('Il campo docente è mancante');
+				});
+
 				test('docente not string', () => {
 					return expect(
 							fetch('http://localhost:3000/api/orari/3024/CODICE3/' +
@@ -1631,6 +1385,22 @@ const expressServer = require('./../src/index.js').expressServer;
 			});
 
 			describe('Controlli luogo', () => {
+				test('luogo undefined', () => {
+					return expect(
+							fetch('http://localhost:3000/api/orari/3024/CODICE5/' +
+								'2017-10-09T02:00:00.000Z/2017-10-19T02:00:00.000Z',
+								{
+									method: 'POST',
+									headers: {'Content-Type': 'application/json'},
+									body: JSON.stringify({
+										docente: 'prova',
+										tipo: 'Lezioni',
+									})
+								})
+							.then(x => x.text()))
+						.resolves.toEqual('Il campo luogo deve essere presente');
+				});
+
 				test('luogo not array', () => {
 					return expect(
 							fetch('http://localhost:3000/api/orari/3024/CODICE5/' +
@@ -1769,13 +1539,243 @@ const expressServer = require('./../src/index.js').expressServer;
 							'[{codice_aula: string, codice_sede: string}...]');
 				});
 			});
+		});
+
+		describe('Put', () => {
+			test('Invalid anno', () => {
+				return expect(
+						fetch('http://localhost:3000/api/orari/nonunAnno/CODICE/' +
+							'2017-10-09T02:00:00.000Z/2017-10-19T02:00:00.000Z',
+							{
+								method: 'PUT'
+							})
+						.then(x => x.text()))
+					.resolves.toEqual('Il campo anno deve essere di tipo Number');
+			});
+
+			test('Invalid timestampInizio', () => {
+				return expect(
+						fetch('http://localhost:3000/api/orari/3024/CODICE/' +
+							'2017-as-09T02:00:00.000Z/2017-10-19T02:00:00.000Z',
+							{
+								method: 'PUT'
+							})
+						.then(x => x.text()))
+					.resolves.toEqual('I campi timestamp_inizio e timestamp_fine ' +
+						'devono essere una data ISO');
+			});
+
+			test('Invalid timestampInizio', () => {
+				return expect(
+						fetch('http://localhost:3000/api/orari/3024/CODICE/' +
+							'2017-10-09T02:00:00.000Z/2017-1*-19T02:00:00.000Z',
+							{
+								method: 'PUT'
+							})
+						.then(x => x.text()))
+					.resolves.toEqual('I campi timestamp_inizio e timestamp_fine ' +
+						'devono essere una data ISO');
+			});
+
+			test('Nessun elemento con il codice indicato', () => {
+				return expect(
+						fetch('http://localhost:3000/api/orari/2095/CODICE1/' +
+							'2017-10-09T02:00:00.000Z/2017-10-19T02:00:00.000Z',
+							{
+								method: 'PUT',
+								headers: {'Content-Type': 'application/json'},
+								body: JSON.stringify({
+									docente: "caio",
+									tipo: "lezione"
+								})
+							})
+						.then(x => x.text()))
+					.resolves.toEqual('Impossibile trovare l\'elemento richiesto');
+			});
+
+			describe('Controlli lezione', () => {
+				test('tipo not string', () => {
+					return expect(
+							fetch('http://localhost:3000/api/orari/3024/CODICE1/' +
+								'2017-10-09T02:00:00.000Z/2017-10-19T02:00:00.000Z',
+								{
+									method: 'PUT',
+									headers: {'Content-Type': 'application/json'},
+									body: JSON.stringify({
+										docente: "caio",
+										tipo: 94
+									})
+								})
+							.then(x => x.text()))
+						.resolves.toEqual('Il campo tipo deve essere di tipo string');
+				});
+			});
+
+
+			describe('Controlli docente', () => {
+				test('docente not string', () => {
+					return expect(
+							fetch('http://localhost:3000/api/orari/3024/CODICE3/' +
+								'2017-10-09T02:00:00.000Z/2017-10-19T02:00:00.000Z',
+								{
+									method: 'PUT',
+									headers: {'Content-Type': 'application/json'},
+									body: JSON.stringify({
+										docente: [23, 12],
+										tipo: 'Lezioni'
+									})
+								})
+							.then(x => x.text()))
+						.resolves.toEqual('Il campo docente deve essere di tipo string');
+				});
+			});
+
+			describe('Controlli luogo', () => {
+				test('luogo not array', () => {
+					return expect(
+							fetch('http://localhost:3000/api/orari/3024/CODICE5/' +
+								'2017-10-09T02:00:00.000Z/2017-10-19T02:00:00.000Z',
+								{
+									method: 'PUT',
+									headers: {'Content-Type': 'application/json'},
+									body: JSON.stringify({
+										docente: 'prova',
+										tipo: 'Lezioni',
+										luogo: 12
+									})
+								})
+							.then(x => x.text()))
+						.resolves.toEqual('Il campo luogo deve essere un array');
+				});
+
+				test('luogo with nothing(correct)', () => {
+					return expect(
+							fetch('http://localhost:3000/api/orari/3024/CODICE6/' +
+								'2017-10-09T02:00:00.000Z/2017-10-19T02:00:00.000Z',
+								{
+									method: 'PUT',
+									headers: {'Content-Type': 'application/json'},
+									body: JSON.stringify({
+										docente: 'prova',
+										tipo: 'Lezioni',
+										luogo: [{}]
+									})
+								})
+							.then(x => x.json()))
+						.resolves.toEqual({status: 'ok'});
+				});
+
+				test('luogo with only codice_aula(correct)', () => {
+					return expect(
+							fetch('http://localhost:3000/api/orari/3024/CODICE7/' +
+								'2017-10-09T02:00:00.000Z/2017-10-19T02:00:00.000Z',
+								{
+									method: 'PUT',
+									headers: {'Content-Type': 'application/json'},
+									body: JSON.stringify({
+										docente: 'prova',
+										tipo: 'Lezioni',
+										luogo: [
+											{codice_aula: 'A07'},
+											{codice_aula: 'A91'}
+										]
+									})
+								})
+							.then(x => x.json()))
+						.resolves.toEqual({status: 'ok'});
+				});
+
+				test('luogo with only codice_sede(correct)', () => {
+					return expect(
+							fetch('http://localhost:3000/api/orari/3024/CODICE8/' +
+								'2017-10-09T02:00:00.000Z/2017-10-19T02:00:00.000Z',
+								{
+									method: 'PUT',
+									headers: {'Content-Type': 'application/json'},
+									body: JSON.stringify({
+										docente: 'prova',
+										tipo: 'Lezioni',
+										luogo: [
+											{codice_sede: 'E101', codice_aula: 'A07'},
+											{codice_sede: 'CLA', codice_aula: 'A91'}
+										]
+									})
+								})
+							.then(x => x.json()))
+						.resolves.toEqual({status: 'ok'});
+				});
+
+				test('luogo con codici misti(correct)', () => {
+					return expect(
+							fetch('http://localhost:3000/api/orari/3024/CODICE9/' +
+								'2017-10-09T02:00:00.000Z/2017-10-19T02:00:00.000Z',
+								{
+									method: 'PUT',
+									headers: {'Content-Type': 'application/json'},
+									body: JSON.stringify({
+										docente: 'prova',
+										tipo: 'Lezioni',
+										luogo: [
+											{codice_sede: 'E101', codice_aula: 'A07'},
+											{codice_sede: 'CLA'},
+											{codice_sede: 'E101'},
+											{codice_aula: 'A91'}
+										]
+									})
+								})
+							.then(x => x.json()))
+						.resolves.toEqual({status: 'ok'});
+				});
+
+				test('luogo con codice_aula di tipo non string', () => {
+					return expect(
+							fetch('http://localhost:3000/api/orari/3024/CODICE10/' +
+								'2017-10-09T02:00:00.000Z/2017-10-19T02:00:00.000Z',
+								{
+									method: 'PUT',
+									headers: {'Content-Type': 'application/json'},
+									body: JSON.stringify({
+										docente: 'prova',
+										tipo: 'Lezioni',
+										luogo: [
+											{codice_aula: 12}
+										]
+									})
+								})
+							.then(x => x.text()))
+						.resolves.toEqual(
+							'Il campo luogo deve avere struttura \n' +
+							'[{codice_aula: string, codice_sede: string}...]');
+				});
+
+				test('luogo con codice_sede di tipo non string', () => {
+					return expect(
+							fetch('http://localhost:3000/api/orari/3024/CODICE11/' +
+								'2017-10-09T02:00:00.000Z/2017-10-19T02:00:00.000Z',
+								{
+									method: 'PUT',
+									headers: {'Content-Type': 'application/json'},
+									body: JSON.stringify({
+										docente: 'prova',
+										tipo: 'Lezioni',
+										luogo: [
+											{codice_sede: ['dsa',231]}
+										]
+									})
+								})
+							.then(x => x.text()))
+						.resolves.toEqual(
+							'Il campo luogo deve avere struttura \n' +
+							'[{codice_aula: string, codice_sede: string}...]');
+				});
+			});
 
 			test('Valid delete', () => {
 				return expect(
 						fetch('http://localhost:3000/api/orari/3024/CODICE6/' +
 							'2017-10-09T02:00:00.000Z/2017-10-19T02:00:00.000Z',
 							{
-								method: 'POST',
+								method: 'PUT',
 								headers: {'Content-Type': 'application/json'},
 								body: JSON.stringify({
 									docente: 'nuovoDoc',
