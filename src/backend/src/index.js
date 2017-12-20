@@ -1963,7 +1963,15 @@ api.route('/esami')
 
 const app = express();
 app.use('/api', api);
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 const expressServer = app.listen(process.env.PORT || 8080);
+
+
 
 // export necessario per poter chiudere express in jest a fine test
 exports.expressServer = expressServer;
