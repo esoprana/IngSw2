@@ -1173,10 +1173,10 @@ api.route('/corsi/:anno')
 			}, {
 				_id: 0,
 				anno: 0,
-				codice_cdl: 0,
+				//codice_cdl: 0,
 				__v: 0,
 				'elenco_anni.elenco_sessioni._id': 0,
-				'elenco_anni.codice_percorso_cdl': 0,
+				//'elenco_anni.codice_percorso_cdl': 0,
 				'elenco_anni._id': 0
 			})
 			.then(corsi => {
@@ -1207,14 +1207,18 @@ api.route('/corsi/:anno')
 							percorsi[percorso.id] = {
 								label: percorso.label,
 								elenco_sessioni: newElencoSessioni,
-								elenco_attivita: newElencoAttivita
+								elenco_attivita: newElencoAttivita,
+								//TODO: Da togliere
+								codice_percorso_cdl: percorso.codice_percorso_cdl
 							};
 							return percorsi;
 						}, {});
 
 					corsi[corso.id] = {
 						label: corso.label,
-						elenco_anni: newElencoAnni
+						elenco_anni: newElencoAnni,
+						//TODO: Da togliere
+						codice_cdl: corso.codice_cdl
 					};
 
 					return corsi;
@@ -1748,9 +1752,76 @@ api.route('/calendario_eventi.json')
 		}
 	});
 
+api.route('/esami/corsi/:anno/:codice_corso/:codice_percorso/:id_sessione')
+	.get((req, res) => {
+		if (!isFinite(req.params.anno)) {
+			return logAndFowardError(res, {
+				status: 400,
+				message: 'Il campo anno deve essere un numero finito',
+				log: 0
+			});
+		}
+
+		return db.Corso.findOne({
+			anno: req.params.anno,
+			id: req.params.codice_corso,
+			elenco_anni: {$elemMatch: {id: req.params.codice_percorso}}
+		}, {
+			_id: 0,
+			codice_cdl: 1,
+			'elenco_anni.id': 1,
+			'elenco_anni.codice_percorso_cdl': 1
+		}).then(corso => {
+			if ((corso === null)||(corso.codice_cdl === undefined)) {
+				return Promise.reject({
+					status: 404,
+					message: 'L\'elemento richiesto non è stato trovato',
+					log: 0
+				});
+			}
+
+			const tmpPercorso =
+				corso.elenco_anni
+					.find(percorso => percorso.id == req.params.codice_percorso);
+
+			if ((tmpPercorso === undefined)||
+				(tmpPercorso.codice_percorso_cdl === undefined)) {
+				return Promise.reject({
+					status: 404,
+					message: 'L\'elemento richiesto non è stato trovato',
+					log: 0
+				});
+			}
+
+			return db.Esame.find({
+				anno: req.params.anno,
+				anno_cdl: tmpPercorso.codice_percorso_cdl,
+				cdl: corso.codice_cdl,
+				id_sessione: req.params.id_sessione
+			}).then(
+				esame =>  {
+					if (esame === null) {
+						return Promise.reject({
+							status: 404,
+							message: 'Nessun elemento trovato',
+							log: 0
+						});
+					}
+
+					return Promise.resolve(esame);
+				});
+		}).then(
+			json => res.json(json),
+			err => logAndFowardError(res, err, {
+				status: 500,
+				message: 'Impossibile recuperare il percorso indicato'
+			})
+		);
+	});
+
 api.route('/esami/:anno/:cdl/:annocdl/:idSessione/:codiceGenerale')
 	.get((req, res) => {
-		return db.Esami.findOne({
+		return db.Esame.findOne({
 			anno: req.params.anno,
 			anno_cdl: req.params.annocdl,
 			cdl: req.params.cdl,
@@ -1777,7 +1848,7 @@ api.route('/esami/:anno/:cdl/:annocdl/:idSessione/:codiceGenerale')
 		);
 	})
 	.put(jsonParser, (req, res) => {
-		return db.Esami.findOne({
+		return db.Esame.findOne({
 			anno: req.params.anno,
 			anno_cdl: req.params.annocdl,
 			cdl: req.params.cdl,
@@ -1812,7 +1883,7 @@ api.route('/esami/:anno/:cdl/:annocdl/:idSessione/:codiceGenerale')
 		);
 	})
 	.delete(jsonParser, (req, res) => {
-		return db.Esami.remove({
+		return db.Esame.remove({
 			anno: req.params.anno,
 			anno_cdl: req.params.annocdl,
 			cdl: req.params.cdl,
@@ -1837,11 +1908,11 @@ api.route('/esami/:anno/:cdl/:annocdl/:idSessione/:codiceGenerale')
 				message: 'Impossibile eliminare l\'elemento richiesto'
 			})
 		);
-	})
+	});
 
 api.route('/esami')
 	.get((req, res) => {
-		return db.Esami.find({})
+		return db.Esame.find({})
 			.then(
 				json => res.json(json),
 				err => logAndFowardError(res, err, {
@@ -1860,7 +1931,7 @@ api.route('/esami')
 		).then(generatedJSON => {
 			return Promise.all(
 				generatedJSON.listaAppelli.map(appelloLista => {
-					return new db.Esami({
+					return new db.Esame({
 						anno: parseInt(generatedJSON.infoSessione.AnnoAccademico),
 						anno_cdl: generatedJSON.infoSessione.AnnoCdl,
 						cdl: generatedJSON.infoSessione.Cdl,

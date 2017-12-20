@@ -206,15 +206,19 @@ function insertOrari(r, pJSON, nReq) {
 							return db.Orario.update({
 								anno: data[idx].annoScolastico,
 								attivita: att.attivita.codice_attivita,
-								docente: att.attivita.docente,
+								timestamp_inizio: new Date(att.timestamp.inizio),
+								timestamp_fine: new Date(att.timestamp.fine)
+							}, {
+								anno: data[idx].annoScolastico,
+								attivita: att.attivita.codice_attivita,
 								timestamp_inizio: new Date(att.timestamp.inizio),
 								timestamp_fine: new Date(att.timestamp.fine),
-								tipo: att.tipo
-							}, {
-								$addToSet: {luogo: {$each: att.luogo.map(x => ({
+								docente: att.attivita.docente,
+								tipo: att.tipo,
+								luogo: att.luogo.map(x => ({
 									codice_sede: x.codice_dipartimento,
 									codice_aula: x.codice_aula
-								})) } }
+								}))
 							}, {
 								upsert: true
 							});
@@ -285,33 +289,38 @@ function insertEsami(r, pJSON, nReq) {
 			return pJSON(thisRequest)
 			.then(data => {
 				for (let idx = 0; idx < data.length; ++idx) {
-					const sessioni = data.reduce((a, sessione) => {
-						const r = sessione.listaAppelli.map(esame => {
-							if(esame.codiceGenerale === undefined ||
-								esame.codiceGenerale === null
-							) throw "cancaro";
+					const sessioni = data.reduce((a, generatedJSON) => {
+						const ar = [];
+						generatedJSON.listaAppelli.forEach(appelloLista => {
+							if (appelloLista.codiceGenerale !== undefined &&
+								appelloLista.codiceGenerale !== null &&
+								appelloLista.codiceGenerale !== ''
+							) {
+								const e = new db.Esame({
+									anno: parseInt(generatedJSON.infoSessione.AnnoAccademico),
+									anno_cdl: generatedJSON.infoSessione.AnnoCdl,
+									cdl: generatedJSON.infoSessione.Cdl,
+									id_sessione: parseInt(generatedJSON.infoSessione.IdSessione),
+									codice_generale: appelloLista.codiceGenerale,
+									crediti: appelloLista.crediti,
+									tipo_esame: appelloLista.tipoEsame,
+									matricola_docente: appelloLista.matricolaDocente,
+									numero_appelli: appelloLista.numeroAppelli,
+									appelli: appelloLista.appelli.map(appello => ({
+										timestamp: {
+											inizio: appello.dataInizio,
+											fine: appello.dataFine
+										},
+										aula: appello.aula,
+										sede: appello.sede
+									}))
+								});
 
-							const e = new db.Esame({
-								anno: parseInt(sessione.infoSessione.AnnoAccademico),
-								codice_generale: esame.codiceGenerale,
-								crediti: esame.crediti,
-								tipo_esame: esame.tipoEsame,
-								matricola_docente: esame.matricolaDocente,
-								nome_docente: esame.nomeDocente,
-								numero_appelli: esame.numeroAppelli,
-								appelli: esame.appelli.map(appello => ({
-									timestamp: {
-										inizio: appello.dataInizio,
-										fine: appello.dataFine
-									},
-									aula: appello.aula,
-									sede: appello.sede
-								}))
-							});
-							return e.save();
+								ar.push(e.save());
+							}
 						});
 
-						return a.concat(r);
+						return a.concat(ar);
 					}, []);
 
 					tmp.sessioni =
@@ -422,7 +431,7 @@ function initDB() {
 							request.date
 						)
 				)),
-				10
+				1
 			)
 			.then(tmp => {
 				return Promise.all(tmp.orari)

@@ -238,45 +238,45 @@ const esameSchema = new mongoose.Schema({
 	},
 	crediti: {
 		type: Number,
-		required: true
+		required: false
 	},
 	tipo_esame: {
 		type: String,
-		required: true
+		required: false
 	},
 	matricola_docente: {
 		type: String,
-		required: true
+		required: false
 	},
 	numero_appelli: {
 		type: String,
-		required: true
+		required: false
 	},
 	appelli: [{
 		timestamp: {
 			type: {
 				inizio: {
 					type: Date,
-					required: true
+					required: false
 				},
 				fine: {
 					type: Date,
-					required: true
+					required: false
 				}
 			},
-			required: true
+			required: false
 		},
 		aula: {
 			type: String,
-			required: true
+			required: false
 		},
 		sede: {
 			type: String,
-			required: true
+			required: false
 		}
 	}]
 }, {collection: 'esami'});
-esameSchema.index({"anno": 1, "anno_cdl": 1, "cdl": 1, "id_sessione": 1, "codice_generale": 1 }, {unique: true});
+esameSchema.index({"anno": 1, "anno_cdl": 1, "cdl": 1, "id_sessione": 1, "codice_generale": 1});
 
 const sedeSchema = new mongoose.Schema({
 	id: {
