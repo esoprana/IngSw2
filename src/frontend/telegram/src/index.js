@@ -5,7 +5,7 @@ const Telegram = require('telegram-node-bot')
 const fs = require('fs')
 const TelegramBaseController = Telegram.TelegramBaseController
 const TextCommand = Telegram.TextCommand
-const tg = new Telegram.Telegram('463633893:AAHwNAnIa6nz-thSKRJYFDNyP_5yBugeCTI')
+const tg = new Telegram.Telegram('429072411:AAGrDMFv_kQAtwRq28hlEK3kO3ih-CEjKH4')//@ingSw2bot
 const menu = require('./menu.js');
 
 
