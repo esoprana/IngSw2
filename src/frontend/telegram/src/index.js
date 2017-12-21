@@ -6,7 +6,8 @@ const fs = require('fs')
 const TelegramBaseController = Telegram.TelegramBaseController
 const TextCommand = Telegram.TextCommand
 const tg = new Telegram.Telegram('463633893:AAHwNAnIa6nz-thSKRJYFDNyP_5yBugeCTI')
-const CustomInlineMenu = require('./CustomInlineMenu.js');
+const menu = require('./menu.js');
+
 
 class StartController extends TelegramBaseController {
 
@@ -15,11 +16,28 @@ class StartController extends TelegramBaseController {
     */
     startHandler($) {
 
-        var inline_menu= new CustomInlineMenu.CustomInlineMenu($);
-
-        inline_menu=inline_menu.getJsonMenu();
-    
-        $.runInlineMenu(inline_menu)
+        let menuScelta = {
+            layout: 1,
+            method: "sendMessage",
+            params: ["Come posso aiutarti?"],
+            menu: [
+                {
+                    text: "Informazioni sull'orario",
+                    callback: (callbackQuery, message) => {
+                        $.sendMessage('recupero dei dati dal server... potrebbe volerci qualche istante! :)')
+                        menu.init($)
+                    }
+                },
+                {
+                    text: "Informazioni sulle sessioni",
+                    callback: (callbackQuery, message) => {
+                        $.sendMessage('recupero dei dati dal server... potrebbe volerci qualche istante! :)')
+                        menu.init($, true);
+                    }
+                }
+            ]
+        };
+        $.runInlineMenu(menuScelta)
     }
 
 
@@ -38,4 +56,3 @@ tg.router
     new TextCommand('/start', 'startCommand'),
     new StartController()
     ).otherwise(new OtherwiseController)
- 
