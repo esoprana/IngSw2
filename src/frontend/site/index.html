@@ -6,335 +6,336 @@
 		href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" 
 		integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" 
 		crossorigin="anonymous">
-		<style>
-			table, th, td {
-				height: 20px;
-				width: 16.66667%;
-			    padding: 10px;
-			}
-			div {
-				overflow: hidden;
-				text-overflow: ellipsis; 
-				border: 1px #000000;
-			}
-			
-			select, option {
-				width: 100%;
-				text-overflow: ellipsis;
-			}
-			
-			#listaorari div{
-				overflow: hidden;
-			}
-			
-			.nomeCorso{
-				text-size: 0.75em;
-			}
-			
-
-		
-		</style>
+		<link 
+		href="myunisite.css" 
+		rel="stylesheet" 
+		type="text/css">
 		<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
 	</head>
-<body style="background-color:#808080">
-	<div class="container-fluid">
-		<div class="row">
-			<aside class="col-2">
-				<form>
-					<div class="form-group">
-						<label for="annoacc" class="control-label"><h4>Anno Accademico: </h4></label>
-						<div>
-							<select name="annoacc" id="anniaccSelect" style="background-color: #d3d3d3"></select>
+	<body>
+		<nav class="navbar navbar-default navbar-fixed-top" style="background-color:#215272">
+			<button type="button" id="sidebarCollapse" class="navbar-btn">
+				<span></span>
+				<span></span>
+				<span></span>
+			</button>
+
+			<img src="unitnLogo.png">
+		</nav>
+		<div class="wrapper">
+			<nav id="sidebar">
+				<div id="content">
+					<form>
+						<div class="form-group">
+							<label for="annoacc" class="control-label"><h4>Anno Accademico: </h4></label>
+							<div>
+								<select name="annoacc" id="anniaccSelect" style="background-color: #bfedff"></select>
+							</div>
 						</div>
-					</div>
-					<br>
-					<br>
-					<br>			
-					<div class="form-group">
-						<label for="corso" class="control-label"><h4>Corso di Studio: </h4></label>
-						<div>
-							<select name="corso" id="corsiSelect" style="background-color: #d3d3d3"></select>
+						<br>
+						<br>
+						<br>			
+						<div class="form-group">
+							<label for="corso" class="control-label"><h4>Corso di Studio: </h4></label>
+							<div>
+								<select name="corso" id="corsiSelect" style="background-color: #bfedff"></select>
+							</div>
 						</div>
-					</div>
-					<br>
-					<br>
-					<br>
-					<br>	
-					<div class="form-group">
-						<label for="annostu" class="control-label"><h4>Anno di Studio: </h4></label>
-						<div>
-							<select name="annostu" id="annistuSelect" style="background-color: #d3d3d3"></select>
+						<br>
+						<br>
+						<br>
+						<br>	
+						<div class="form-group">
+							<label for="annostu" class="control-label"><h4>Anno di Studio: </h4></label>
+							<div>
+								<select name="annostu" id="annistuSelect" style="background-color: #bfedff"></select>
+							</div>
 						</div>
-					</div>
-					<br>
-					<br>
-					<br>
-					<br>		
-					<div class="form-group">
-					<label for="lezione" class="control-label"><h4>Lezione: </h4></label>
-						<div>
-							<fieldset id="checklezione" style="background-color: #d3d3d3">
-						</div>	
-						</fieldset>
-					</div>
-				</form> 
-			</aside>
-			<div class="col-10">
-				<div class="row">
-					<h4>Orario</h4><br>
-					<table class="table table-xl table-inverse table-condensed table-bordered table-hover" style="padding-top: 0px; position: relative" id="listorari">
-					  <thead>
-						<tr>
-						  <th>#</th>
-						  <th>Lunedi</th>
-						  <th>Martedi</th>
-						  <th>Mercoledi</th>
-						  <th>Giovedi</th>
-						  <th>Venedi</th>
-						</tr>
-					  </thead>
-					  <tbody >
-						<tr>
-							<th scope="row">07:00</th>
-							<th></th>
-							<th></th>
-							<th></th>
-							<th></th>
-							<th></th>
-						</tr>
-						<tr>
-							<th scope="row">08:00</th>
-							<th></th>
-							<th></th>
-							<th></th>
-							<th></th>
-							<th></th>
-						</tr>
-						<tr>
-							<th scope="row">09:00</th>
-							<th></th>
-							<th></th>
-							<th></th>
-							<th></th>
-							<th></th>
-						</tr>
-						<tr>
-							<th scope="row">10:00</th>
-							<th></th>
-							<th></th>
-							<th></th>
-							<th></th>
-							<th></th>
-						</tr>
-						<tr>
-							<th scope="row">11:00</th>
-							<th></th>
-							<th></th>
-							<th></th>
-							<th></th>
-							<th></th>
-						</tr>
-						<tr>
-							<th scope="row">12:00</th>
-							<th></th>
-							<th></th>
-							<th></th>
-							<th></th>
-							<th></th>
-						</tr>
-						<tr>
-							<th scope="row">13:00</th>
-							<th></th>
-							<th></th>
-							<th></th>
-							<th></th>
-							<th></th>
-						</tr>
-						<tr>
-							<th scope="row">14:00</th>
-							<th></th>
-							<th></th>
-							<th></th>
-							<th></th>
-							<th></th>
-						</tr>
-						<tr>
-							<th scope="row">15:00</th>
-							<th></th>
-							<th></th>
-							<th></th>
-							<th></th>
-							<th></th>
-						</tr>
-						<tr>
-							<th scope="row">16:00</th>
-							<th></th>
-							<th></th>
-							<th></th>
-							<th></th>
-							<th></th>
-						</tr>
-						<tr>
-							<th scope="row">17:00</th>
-							<th></th>
-							<th></th>
-							<th></th>
-							<th></th>
-							<th></th>
-						</tr>
-						<tr>
-							<th scope="row">18:00</th>
-							<th></th>
-							<th></th>
-							<th></th>
-							<th></th>
-							<th></th>
-						</tr>
-						<tr>
-							<th scope="row">19:00</th>
-							<th></th>
-							<th></th>
-							<th></th>
-							<th></th>
-							<th></th>
-						</tr>
-					  </tbody>
-					</table>
+						<br>
+						<br>	
+						<div class="form-group">
+							<label for="sessione" class="control-label"><h4>Sessione <br> 'Per visualizzare gli esami': </h4></label>
+							<div>
+								<select name="sessione" id="sessioniSelect" style="background-color: #bfedff"></select>
+							</div>
+						</div>
+				<!--	<br>
+						<br>
+						<br>
+						<br>		
+						<div class="form-group">
+							<label for="lezione" class="control-label"><h4>Lezione: </h4></label>
+							<div>
+								<fieldset id="checklezione" style="background-color: #bfedff">
+							</div>	
+							</fieldset>
+						</div> -->
+					</form> 
 				</div>
-				
-				<div class="row">
-					<div class="col-4">
-						<h4>Avvisi</h4><br>
-						<ul class="list-group" name="avviso" id="listavvisi"></ul>				
+			</nav>
+			<div class="container-fluid">			
+				<div class="row" >
+					<div class="col-1"></div>
+					<div class="col-10">
+					<div class="row justify-content-center">
+					<h4 class="text-center">Orario</h4></div>
+						<div class="row">
+							<ul id="listorari"></ul>
+								<table class="table table-xl table-inverse table-bordered table-hover" style="padding-top: 0px; position: relative">
+								  <thead>
+									<tr>
+									  <th>#</th>
+									  <th>Lunedi</th>
+									  <th>Martedi</th>
+									  <th>Mercoledi</th>
+									  <th>Giovedi</th>
+									  <th>Venedi</th>
+									</tr>
+								  </thead>
+								  <tbody >
+									<tr>
+										<th scope="row">07:00</th>
+										<th></th>
+										<th></th>
+										<th></th>
+										<th></th>
+										<th></th>
+									</tr>
+									<tr>
+										<th scope="row">08:00</th>
+										<th></th>
+										<th></th>
+										<th></th>
+										<th></th>
+										<th></th>
+									</tr>
+									<tr>
+										<th scope="row">09:00</th>
+										<th></th>
+										<th></th>
+										<th></th>
+										<th></th>
+										<th></th>
+									</tr>
+									<tr>
+										<th scope="row">10:00</th>
+										<th></th>
+										<th></th>
+										<th></th>
+										<th></th>
+										<th></th>
+									</tr>
+									<tr>
+										<th scope="row">11:00</th>
+										<th></th>
+										<th></th>
+										<th></th>
+										<th></th>
+										<th></th>
+									</tr>
+									<tr>
+										<th scope="row">12:00</th>
+										<th></th>
+										<th></th>
+										<th></th>
+										<th></th>
+										<th></th>
+									</tr>
+									<tr>
+										<th scope="row">13:00</th>
+										<th></th>
+										<th></th>
+										<th></th>
+										<th></th>
+										<th></th>
+									</tr>
+									<tr>
+										<th scope="row">14:00</th>
+										<th></th>
+										<th></th>
+										<th></th>
+										<th></th>
+										<th></th>
+									</tr>
+									<tr>
+										<th scope="row">15:00</th>
+										<th></th>
+										<th></th>
+										<th></th>
+										<th></th>
+										<th></th>
+									</tr>
+									<tr>
+										<th scope="row">16:00</th>
+										<th></th>
+										<th></th>
+										<th></th>
+										<th></th>
+										<th></th>
+									</tr>
+									<tr>
+										<th scope="row">17:00</th>
+										<th></th>
+										<th></th>
+										<th></th>
+										<th></th>
+										<th></th>
+									</tr>
+									<tr>
+										<th scope="row">18:00</th>
+										<th></th>
+										<th></th>
+										<th></th>
+										<th></th>
+										<th></th>
+									</tr>
+									<tr>
+										<th scope="row">19:00</th>
+										<th></th>
+										<th></th>
+										<th></th>
+										<th></th>
+										<th></th>
+									</tr>
+								  </tbody>
+								</table>
+						</div>
+						
+						<div class="row">
+							<div class="col-4">
+								<h4>Avvisi</h4><br>
+								<ul class="list-group" name="avviso" id="listavvisi"></ul>				
+							</div>
+							<div class="col-4">
+								<h4>Esami</h4><br>
+								<ul class="list-group" name="esame" id="listesami"></ul>		
+							</div>
+							<div class="col-4">
+								<h4>Eventi</h4><br>
+								<ul class="list-group" name="evento" id="listeventi"></ul>
+							</div>
+						</div>
 					</div>
-					<div class="col-4">
-						<h4>Esami</h4><br>
-						<ul class="list-group" name="esame" id="listesami"></ul>		
-					</div>
-					<div class="col-4">
-						<h4>Eventi</h4><br>
-						<ul class="list-group" name="evento" id="listeventi"></ul>
-					</div>
+					<div class="col-1"></div>
 				</div>
 			</div>
 		</div>
-	</div>
 
-
-
-
-<!-- script degli lezione -->
-<script>
-var lezioni = [
-	{
-		nome: "lezione1",
-		codice: "lez001"
-	},
-	{
-		nome: "lezione2",
-		codice: "lez002"
-	},
-	{
-		nome: "lezione3",
-		codice: "lez003"
-	}
-];
-var checklezione = document.getElementById('checklezione');
-lezioni.forEach((lezione) => {
-	var checkbox = document.createElement('input');
-	checkbox.type = "checkbox";
-	checkbox.value = lezione.codice;
-	checkbox.name = lezione.codice;
-	checkbox.checked = "checked";
-	checkbox.innerHTML = lezione.nome;
-	checklezione.append(checkbox,document.createTextNode(lezione.nome),document.createElement('br'));
-});
-</script>
-
-<!-- script degli avvisi -->
-<script>
-var avvisi = [
-	{
-		nome: "avviso1",
-		codice: "avv001"
-	},
-	{
-		nome: "avviso2",
-		codice: "avv002"
-	},
-	{
-		nome: "avviso3",
-		codice: "avv003"
-	}
-];
-var listavvisi = document.getElementById('listavvisi');
-avvisi.forEach((avviso) => {
-	var li = document.createElement('li');
-	li.value = avviso.codice;
-	li.innerHTML = avviso.nome;
-	li.className="list-group-item list-group-item-dark";
-	listavvisi.append(li);
-});
-</script>
-
-<!-- script degli esami -->
-<script>
-
-
-
-</script>
-
-<!-- script degli eventi -->
-<script>
-var eventi = [
-	{
-		nome: "evento1",
-		luogo: "via Roma 1, Trento",
-		data_inizio: "11:00,01/03/18",
-		data_fine: "13:00,01/03/18",
-		codice: "eve001"
-	},
-	{
-		nome: "evento2",
-		luogo: "via Torino 1, Trento",
-		data_inizio: "11:00,02/03/18",
-		data_fine: "13:00,02/03/18",
-		codice: "eve002"
-	},
-	{
-		nome: "evento3",
-		luogo: "via Milano 1, Trento",
-		data_inizio: "11:00,03/03/18",
-		data_fine: "13:00,0/03/18",
-		codice: "eve003"
-	}
-];
-var listeventi = document.getElementById('listeventi');
-	eventi.forEach((evento) => {
-		var titolo = document.createElement('h5');
-		titolo.className = "mb-1";
-		titolo.innerHTML = evento.nome;
 		
-		var divPrincipale = document.createElement('div');
-		divPrincipale.className="d-flex w-100 justify-content-between";
-		divPrincipale.append(titolo);
 
-		var testo = document.createElement('p');
-		testo.className = "mb-1";
-		testo.innerHTML = evento.luogo;
-			
-		var data = document.createElement('small');
-		data.className = "text-muted";
-		data.innerHTML = evento.data_inizio + " - " + evento.data_fine;
-		
-		var li = document.createElement('li');
-		li.className="list-group-item  list-group-item-dark flex-column align-items-start";
-		li.append(divPrincipale,testo,data);
+		<!-- script delle lezioni da reintrodurre nella seconda release
+		<script>
+		var lezioni = [
+			{
+				nome: "lezione1",
+				codice: "lez001"
+			},
+			{
+				nome: "lezione2",
+				codice: "lez002"
+			},
+			{
+				nome: "lezione3",
+				codice: "lez003"
+			}
+		];
+		var checklezione = document.getElementById('checklezione');
+		lezioni.forEach((lezione) => {
+			var checkbox = document.createElement('input');
+			checkbox.type = "checkbox";
+			checkbox.value = lezione.codice;
+			checkbox.name = lezione.codice;
+			checkbox.checked = "checked";
+			checkbox.innerHTML = lezione.nome;
+			checklezione.append(checkbox,document.createTextNode(lezione.nome),document.createElement('br'));
+		});
+		</script> -->
+
+		<!-- script degli avvisi -->
+		<script>
+		var avvisi = [
+			{
+				nome: "avviso1",
+				codice: "avv001"
+			},
+			{
+				nome: "avviso2",
+				codice: "avv002"
+			},
+			{
+				nome: "avviso3",
+				codice: "avv003"
+			}
+		];
+		var listavvisi = document.getElementById('listavvisi');
+		avvisi.forEach((avviso) => {
+			var li = document.createElement('li');
+			li.value = avviso.codice;
+			li.innerHTML = avviso.nome;
+			li.className="list-group-item list-group-item-info";
+			listavvisi.append(li);
+		});
+		</script>
+
+		<!-- script degli eventi -->
+		<script>
+		var eventi = [
+			{
+				nome: "evento1",
+				luogo: "via Roma 1, Trento",
+				data_inizio: "11:00,01/03/18",
+				data_fine: "13:00,01/03/18",
+				codice: "eve001"
+			},
+			{
+				nome: "evento2",
+				luogo: "via Torino 1, Trento",
+				data_inizio: "11:00,02/03/18",
+				data_fine: "13:00,02/03/18",
+				codice: "eve002"
+			},
+			{
+				nome: "evento3",
+				luogo: "via Milano 1, Trento",
+				data_inizio: "11:00,03/03/18",
+				data_fine: "13:00,0/03/18",
+				codice: "eve003"
+			}
+		];
+		var listeventi = document.getElementById('listeventi');
+			eventi.forEach((evento) => {
+				var titolo = document.createElement('h5');
+				titolo.className = "mb-1";
+				titolo.innerHTML = evento.nome;
+				
+				var divPrincipale = document.createElement('div');
+				divPrincipale.className="d-flex w-100 justify-content-between";
+				divPrincipale.append(titolo);
+
+				var testo = document.createElement('p');
+				testo.className = "mb-1";
+				testo.innerHTML = evento.luogo;
+					
+				var data = document.createElement('small');
+				data.className = "text-muted";
+				data.innerHTML = evento.data_inizio + " - " + evento.data_fine;
+				
+				var li = document.createElement('li');
+				li.className="list-group-item flex-column align-items-start list-group-item-info";
+				li.append(divPrincipale,testo,data);
 
 
-		listeventi.append(li);
-	});
-</script>
-<script type="text/javascript" src="Corsi.js"></script>
-</body>
+				listeventi.append(li);
+			});
+		</script> 
+		<script>
+			$(document).ready(function () {
+				$('#sidebarCollapse').on('click', function () {
+					$('#sidebar').toggleClass('active');
+					$(this).toggleClass('active');
+				});
+			});
+		</script>
+		<script type="text/javascript" src="Corsi.js"></script>
+	</body>
 </html>

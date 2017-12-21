@@ -1,0 +1,108 @@
+			body{
+				background: #0098d4;
+			}
+		
+			table, th, td {
+				height: 50px;
+				width: 16.66667%;
+			    padding: 10px;
+			}
+			div {
+				overflow: hidden;
+				text-overflow: ellipsis; 
+				border: 1px #97dffc;
+				text-align: center;
+			}
+			
+			select, option, p {
+				width: 100%;
+				text-overflow: ellipsis;
+			}
+			
+			.nomeCorso{
+				font-size: 0.85rem;
+				line-height: 0.95rem;
+				height: 1.9rem;
+				text-overflow: ellipsis;
+			    font-weight: 600;
+				overflow: none;
+			}
+			
+			.docente{
+				font-size: 0.725rem;				
+			}
+			
+			.aula{
+				font-size: 0.775rem;				
+			}
+			
+			img {
+				width: 20%;
+				height: 20%;
+				display: block;
+				margin: auto;
+			}
+			
+			.wrapper {
+				display: flex;
+				align-items: stretch;
+				
+			}
+
+			#sidebar {
+				min-width: 250px;
+				max-width: 250px;
+				background: #007BAB;
+				color: #000000;
+				padding: 10px;
+				transition: all 0.6s cubic-bezier(0.945, 0.020, 0.270, 0.665);
+				transform-origin: center left;
+			}
+
+			#sidebar.active {
+				margin-left: -250px;
+				transform: rotateY(100deg); 
+			}
+			
+			 #sidebarCollapse {
+				width: 50px;
+				height: 50px;
+				background: #bababa;
+			}
+
+			#sidebarCollapse span {
+				width: 80%;
+				height: 2px;
+				margin: 0 auto;
+				display: block;
+				background: #555;
+				transition: all 0.8s cubic-bezier(0.810, -0.330, 0.345, 1.375);
+			}
+			#sidebarCollapse span:first-of-type {
+				transform: rotate(45deg) translate(2px, 2px);
+			}
+			#sidebarCollapse span:nth-of-type(2) {
+				opacity: 0;
+			}
+			#sidebarCollapse span:last-of-type {
+				transform: rotate(-45deg) translate(1px, -1px);
+			}
+			#sidebarCollapse.active span {
+				transform: none;
+				opacity: 1;
+				margin: 5px auto;
+			}
+			
+			#listorari {
+				z-index: 3;
+			}
+			
+			#listesami {
+				max-height: 400px;
+				overflow: auto;
+			}
+			
+			.list-group-item {
+				padding: 0.25rem 0.35rem 0.25rem 0.35rem;
+				overflow: none;
+			}
