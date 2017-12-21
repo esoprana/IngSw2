@@ -1784,7 +1784,7 @@ api.route('/esami/corsi/:anno/:codice_corso/:codice_percorso/:id_sessione')
 				corso.elenco_anni
 					.find(percorso => percorso.id == req.params.codice_percorso);
 
-			if ((tmpPercorso === undefined)||
+			if ((tmpPercorso === undefined) ||
 				(tmpPercorso.codice_percorso_cdl === undefined)) {
 				return Promise.reject({
 					status: 404,
@@ -1798,17 +1798,58 @@ api.route('/esami/corsi/:anno/:codice_corso/:codice_percorso/:id_sessione')
 				anno_cdl: tmpPercorso.codice_percorso_cdl,
 				cdl: corso.codice_cdl,
 				id_sessione: req.params.id_sessione
+			}, {
+				_id: 0,
+				__v: 0,
+				cdl: 0,
+				anno: 0,
+				anno_cdl: 0,
+				id_sessione: 0,
+				'appelli._id': 0
 			}).then(
-				esame =>  {
-					if (esame === null) {
-						return Promise.reject({
-							status: 404,
-							message: 'Nessun elemento trovato',
-							log: 0
+				esami =>  {
+					const insegnamenti = esami.map(x => x.codice_generale);
+					const docenti = esami.map(x => 'D' + x.matricola_docente);
+
+					if (req.query.deNorm !== undefined) {
+						return db.Insegnamento.find({
+							anno: req.params.anno,
+							id: {$in: insegnamenti}
+						}, {
+							_id: 0,
+							id: 1,
+							label: 1
+						}).then(r => {
+							const insegnamentiMap =
+								new Map(r.map(x => [x.id, x.label]));
+
+							return db.Docente.find({
+								anno: req.params.anno,
+								id: {$in: docenti}
+							}, {
+								_id: 0,
+								id: 1,
+								label: 1
+							}).then( r2 => {
+								const docentiMap =
+									new Map(r2.map(x => [x.id, x.label]));
+
+								const newEsami = esami.map(e => e.toObject());
+
+								for(let i= 0; i<esami.length; ++i) {
+									newEsami[i].nome_docente =
+										docentiMap.get('D' + newEsami[i].matricola_docente);
+
+									newEsami[i].nome_insegnamento =
+										insegnamentiMap.get(newEsami[i].codice_generale);
+								}
+
+								return Promise.resolve(newEsami);
+							});
 						});
 					}
 
-					return Promise.resolve(esame);
+					return Promise.resolve(esami);
 				});
 		}).then(
 			json => res.json(json),

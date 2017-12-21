@@ -306,6 +306,7 @@ function insertEsami(r, pJSON, nReq) {
 									tipo_esame: appelloLista.tipoEsame,
 									matricola_docente: appelloLista.matricolaDocente,
 									numero_appelli: appelloLista.numeroAppelli,
+									nome_esame: appelloLista.nomeEsame,
 									appelli: appelloLista.appelli.map(appello => ({
 										timestamp: {
 											inizio: appello.dataInizio,
